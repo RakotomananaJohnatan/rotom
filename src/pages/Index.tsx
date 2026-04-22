@@ -20,7 +20,7 @@ import rep3 from "@/assets/rep3.jpg";
 import rep4 from "@/assets/rep4.jpg";
 
 const reps = [
-  { name: "Kenny Bongers", phone: "+31-631698138", email: "sales@rotompower.com", img: rep1 },
+  { name: "Usman Mansoor", role: "CTO", phone: "+261 38 11 514 42", email: "usman.mansoor@first-energy.mg", img: rep1 },
   { name: "Tijmen Pesselse", phone: "+31-649905691", email: "sales@rotompower.com", img: rep2 },
   { name: "Arjen van Dijk", phone: "+31-623024203", email: "sales@rotompower.com", img: rep3 },
   { name: "Ronald van der Laar", phone: "+31-666893781", email: "sales@rotompower.com", img: rep4 },
