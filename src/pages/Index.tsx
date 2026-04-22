@@ -147,15 +147,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WhatsApp Banner */}
-      <section className="bg-whatsapp text-whatsapp-foreground py-3">
-        <div className="max-w-[1500px] mx-auto px-6 flex items-center justify-center gap-3 text-sm">
-          <MessageCircle className="size-5" />
-          <span>
-            Ajoutez-nous sur <strong>WhatsApp (+31 (0) 78 20 017 90)</strong> Pour tous les entrants Stock et articles de nouvelles.
-          </span>
-        </div>
-      </section>
 
       {/* Categories */}
       <section className="max-w-[1500px] mx-auto px-6 py-8">
