@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Slider } from "@/components/ui/slider";
 import {
   Search, Globe, Phone, Mail, MessageCircle, Headphones,
   Shield, Truck, Wrench, LifeBuoy, Heart, ChevronDown, Linkedin, Facebook, Youtube, MapPin
