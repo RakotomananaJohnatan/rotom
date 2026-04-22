@@ -1,5 +1,5 @@
 import {
-  Search, Globe, User, Phone, Mail, MessageCircle, Headphones,
+  Search, Globe, Phone, Mail, MessageCircle, Headphones,
   Shield, Truck, Wrench, LifeBuoy, Heart, ChevronDown, Linkedin, Facebook, Youtube, MapPin
 } from "lucide-react";
 
@@ -79,9 +79,6 @@ const Index = () => {
             <button className="flex items-center gap-1.5 text-sm hover:text-accent transition-colors">
               <Globe className="size-4" /> FR <ChevronDown className="size-3" />
             </button>
-            <button className="size-9 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
-              <User className="size-4" />
-            </button>
             <button className="bg-accent text-accent-foreground font-impact text-sm font-bold uppercase tracking-wider px-5 py-3 hover:bg-white transition-colors">
               Demander un devis
             </button>
@@ -127,7 +124,7 @@ const Index = () => {
                 width={72}
                 height={72}
                 alt={rep.name}
-                className="size-[72px] object-cover rounded-sm border-2 border-primary"
+                className="size-[72px] object-cover rounded-full border-2 border-accent"
               />
               <div className="min-w-0">
                 <div className="flex gap-1 mb-1 text-xs">
