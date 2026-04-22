@@ -215,14 +215,17 @@ const Index = () => {
             {/* Power slider */}
             <div className="mb-6">
               <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Puissance (kVA)</h3>
-              <div className="relative h-1 bg-secondary rounded-full">
-                <div className="absolute inset-y-0 left-0 right-0 bg-brand-cyan rounded-full" />
-                <div className="absolute -top-1.5 left-0 size-4 rounded-full bg-brand-cyan border-2 border-white shadow" />
-                <div className="absolute -top-1.5 right-0 size-4 rounded-full bg-brand-cyan border-2 border-white shadow" />
-              </div>
+              <Slider
+                min={POWER_MIN}
+                max={POWER_MAX}
+                step={10}
+                value={powerRange}
+                onValueChange={(v) => setPowerRange([v[0], v[1]] as [number, number])}
+                className="my-4"
+              />
               <div className="flex justify-between font-mono-spec text-xs mt-3 text-foreground">
-                <span>10 kVA</span>
-                <span>2500 kVA</span>
+                <span>{powerRange[0]} kVA</span>
+                <span>{powerRange[1]} kVA</span>
               </div>
             </div>
 
