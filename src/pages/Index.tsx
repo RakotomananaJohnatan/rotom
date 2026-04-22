@@ -3,6 +3,7 @@ import {
   Shield, Truck, Wrench, LifeBuoy, Heart, ChevronDown, Linkedin, Facebook, Youtube, MapPin
 } from "lucide-react";
 
+import logoRotom from "@/assets/logo-rotom.png";
 import genCummins from "@/assets/gen-cummins.jpg";
 import genCat from "@/assets/gen-cat.jpg";
 import genPerkins from "@/assets/gen-perkins.jpg";
@@ -51,14 +52,15 @@ const Index = () => {
       <header className="bg-primary text-primary-foreground border-b-4 border-accent">
         <div className="max-w-[1500px] mx-auto px-6 py-4 flex items-center gap-6">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <div className="font-impact text-3xl font-bold uppercase tracking-tight leading-none">
-              RO<span className="text-accent">T</span>OM
-            </div>
-            <div className="font-mono-spec text-[10px] tracking-[0.25em] text-accent mt-0.5">
-              POWER SOLUTIONS
-            </div>
-          </div>
+          <a href="/" className="flex-shrink-0 bg-white rounded-md px-3 py-2 flex items-center" aria-label="ROTOM Power Generation">
+            <img
+              src={logoRotom}
+              alt="ROTOM Power Generation"
+              width={170}
+              height={56}
+              className="h-12 w-auto object-contain"
+            />
+          </a>
 
           {/* Search */}
           <div className="flex-1 max-w-2xl mx-4">
