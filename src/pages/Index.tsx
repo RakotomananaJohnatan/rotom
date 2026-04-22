@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Slider } from "@/components/ui/slider";
 import {
   Search, Globe, Phone, Mail, MessageCircle, Headphones,
   Shield, Truck, Wrench, LifeBuoy, Heart, ChevronDown, Linkedin, Facebook, Youtube, MapPin
@@ -46,6 +48,15 @@ const navItems = ["Générateurs neufs", "Générateurs d'occasion", "Équipemen
 const brands = ["Caterpillar (CAT)", "Cummins", "Perkins", "Volvo", "FG Wilson", "Doosan"];
 
 const Index = () => {
+  const POWER_MIN = 10;
+  const POWER_MAX = 2500;
+  const [powerRange, setPowerRange] = useState<[number, number]>([POWER_MIN, POWER_MAX]);
+
+  const filteredProducts = products.filter((p) => {
+    const value = parseInt(p.kva, 10);
+    return value >= powerRange[0] && value <= powerRange[1];
+  });
+
   return (
     <div className="min-h-screen bg-background">
       {/* Top Header */}
@@ -204,14 +215,17 @@ const Index = () => {
             {/* Power slider */}
             <div className="mb-6">
               <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Puissance (kVA)</h3>
-              <div className="relative h-1 bg-secondary rounded-full">
-                <div className="absolute inset-y-0 left-0 right-0 bg-brand-cyan rounded-full" />
-                <div className="absolute -top-1.5 left-0 size-4 rounded-full bg-brand-cyan border-2 border-white shadow" />
-                <div className="absolute -top-1.5 right-0 size-4 rounded-full bg-brand-cyan border-2 border-white shadow" />
-              </div>
+              <Slider
+                min={POWER_MIN}
+                max={POWER_MAX}
+                step={10}
+                value={powerRange}
+                onValueChange={(v) => setPowerRange([v[0], v[1]] as [number, number])}
+                className="my-4"
+              />
               <div className="flex justify-between font-mono-spec text-xs mt-3 text-foreground">
-                <span>10 kVA</span>
-                <span>2500 kVA</span>
+                <span>{powerRange[0]} kVA</span>
+                <span>{powerRange[1]} kVA</span>
               </div>
             </div>
 
@@ -286,7 +300,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {products.map((p) => {
+            {filteredProducts.map((p) => {
               const isStock = p.stock === "EN STOCK";
               return (
                 <article
