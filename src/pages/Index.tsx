@@ -42,7 +42,7 @@ const products = [
   { stock: "EN STOCK", name: "Doosan DP180LB", subtitle: "710 kVA — Diesel Generator", kva: "710 kVA", year: "2021", fuel: "Diesel", price: "42.000", img: genDoosan },
 ];
 
-const navItems = ["Générateurs neufs", "Générateurs d'occasion", "Équipements associés", "Services", "À propos", "Actualités", "Contact"];
+const navItems = ["Générateurs neufs", "Générateurs d'occasion", "Équipements associés", "Services", "Contact"];
 const brands = ["Caterpillar (CAT)", "Cummins", "Perkins", "Volvo", "FG Wilson", "Doosan"];
 
 const Index = () => {
@@ -408,7 +408,6 @@ const Index = () => {
               <li><a href="#" className="hover:text-accent">Générateurs d'occasion</a></li>
               <li><a href="#" className="hover:text-accent">Équipements associés</a></li>
               <li><a href="#" className="hover:text-accent">Services</a></li>
-              <li><a href="#" className="hover:text-accent">Actualités</a></li>
               <li><a href="#" className="hover:text-accent">Contact</a></li>
             </ul>
           </div>
