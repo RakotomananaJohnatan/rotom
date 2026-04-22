@@ -48,6 +48,15 @@ const navItems = ["Générateurs neufs", "Générateurs d'occasion", "Équipemen
 const brands = ["Caterpillar (CAT)", "Cummins", "Perkins", "Volvo", "FG Wilson", "Doosan"];
 
 const Index = () => {
+  const POWER_MIN = 10;
+  const POWER_MAX = 2500;
+  const [powerRange, setPowerRange] = useState<[number, number]>([POWER_MIN, POWER_MAX]);
+
+  const filteredProducts = products.filter((p) => {
+    const value = parseInt(p.kva, 10);
+    return value >= powerRange[0] && value <= powerRange[1];
+  });
+
   return (
     <div className="min-h-screen bg-background">
       {/* Top Header */}
