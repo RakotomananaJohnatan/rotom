@@ -4,32 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Power Industrial Design System — navy + hi-vis lime */
+/* ROTOM Power Generation — indigo + lime + cyan */
 
 @layer base {
   :root {
-    --background: 210 20% 96%;
-    --foreground: 222 47% 8%;
+    --background: 210 20% 97%;
+    --foreground: 252 70% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 8%;
+    --card-foreground: 252 70% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 8%;
+    --popover-foreground: 252 70% 12%;
 
-    /* Deep navy from ROTOM */
-    --primary: 222 65% 12%;
+    /* Deep indigo/violet from ROTOM brand */
+    --primary: 252 80% 22%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 20% 92%;
-    --secondary-foreground: 222 47% 12%;
+    --secondary: 250 20% 94%;
+    --secondary-foreground: 252 70% 18%;
 
-    --muted: 215 16% 90%;
-    --muted-foreground: 215 16% 40%;
+    --muted: 250 16% 92%;
+    --muted-foreground: 252 12% 40%;
 
-    /* Hi-vis lime accent */
-    --accent: 72 100% 50%;
-    --accent-foreground: 222 65% 8%;
+    /* Hi-vis lime accent (ROTOM) */
+    --accent: 72 95% 55%;
+    --accent-foreground: 252 80% 18%;
+
+    /* Brand cyan (ROTOM) */
+    --brand-cyan: 199 95% 50%;
+    --brand-cyan-foreground: 252 80% 18%;
 
     --destructive: 0 84% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -37,17 +41,19 @@
     --success: 142 70% 40%;
     --success-foreground: 0 0% 100%;
 
-    --whatsapp: 78 100% 50%;
-    --whatsapp-foreground: 222 65% 8%;
+    --whatsapp: 142 70% 40%;
+    --whatsapp-foreground: 0 0% 100%;
 
-    --border: 215 20% 85%;
-    --input: 215 20% 88%;
-    --ring: 222 65% 12%;
+    --border: 250 18% 88%;
+    --input: 250 18% 90%;
+    --ring: 252 80% 22%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
-    --shadow-block: 4px 4px 0 hsl(222 65% 12%);
-    --shadow-block-accent: 4px 4px 0 hsl(72 100% 50%);
+    --shadow-block: 4px 4px 0 hsl(252 80% 22%);
+    --shadow-block-accent: 4px 4px 0 hsl(72 95% 55%);
+
+    --gradient-brand: linear-gradient(135deg, hsl(252 80% 22%), hsl(199 95% 50%));
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

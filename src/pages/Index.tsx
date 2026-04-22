@@ -3,6 +3,7 @@ import {
   Shield, Truck, Wrench, LifeBuoy, Heart, ChevronDown, Linkedin, Facebook, Youtube, MapPin
 } from "lucide-react";
 
+import logoRotom from "@/assets/logo-rotom.png";
 import genCummins from "@/assets/gen-cummins.jpg";
 import genCat from "@/assets/gen-cat.jpg";
 import genPerkins from "@/assets/gen-perkins.jpg";
@@ -51,14 +52,15 @@ const Index = () => {
       <header className="bg-primary text-primary-foreground border-b-4 border-accent">
         <div className="max-w-[1500px] mx-auto px-6 py-4 flex items-center gap-6">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <div className="font-impact text-3xl font-bold uppercase tracking-tight leading-none">
-              RO<span className="text-accent">T</span>OM
-            </div>
-            <div className="font-mono-spec text-[10px] tracking-[0.25em] text-accent mt-0.5">
-              POWER SOLUTIONS
-            </div>
-          </div>
+          <a href="/" className="flex-shrink-0 bg-white rounded-md px-3 py-2 flex items-center" aria-label="ROTOM Power Generation">
+            <img
+              src={logoRotom}
+              alt="ROTOM Power Generation"
+              width={170}
+              height={56}
+              className="h-12 w-auto object-contain"
+            />
+          </a>
 
           {/* Search */}
           <div className="flex-1 max-w-2xl mx-4">
@@ -175,7 +177,7 @@ const Index = () => {
                 <h3 className="font-impact text-sm uppercase font-semibold text-primary leading-tight mb-1">
                   {cat.title}
                 </h3>
-                <a href="#" className="text-xs text-blue-600 hover:underline inline-flex items-center gap-1">
+                <a href="#" className="text-xs text-brand-cyan hover:underline inline-flex items-center gap-1">
                   Voir plus →
                 </a>
               </div>
@@ -205,16 +207,16 @@ const Index = () => {
           <div className="bg-card border-2 border-border p-5">
             <div className="flex justify-between items-center mb-5 pb-3 border-b-2 border-primary">
               <h2 className="font-impact text-base uppercase font-bold text-primary">Filtrer les résultats</h2>
-              <button className="text-xs text-blue-600 hover:underline">Réinitialiser</button>
+              <button className="text-xs text-brand-cyan hover:underline">Réinitialiser</button>
             </div>
 
             {/* Power slider */}
             <div className="mb-6">
               <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Puissance (kVA)</h3>
               <div className="relative h-1 bg-secondary rounded-full">
-                <div className="absolute inset-y-0 left-0 right-0 bg-blue-600 rounded-full" />
-                <div className="absolute -top-1.5 left-0 size-4 rounded-full bg-blue-600 border-2 border-white shadow" />
-                <div className="absolute -top-1.5 right-0 size-4 rounded-full bg-blue-600 border-2 border-white shadow" />
+                <div className="absolute inset-y-0 left-0 right-0 bg-brand-cyan rounded-full" />
+                <div className="absolute -top-1.5 left-0 size-4 rounded-full bg-brand-cyan border-2 border-white shadow" />
+                <div className="absolute -top-1.5 right-0 size-4 rounded-full bg-brand-cyan border-2 border-white shadow" />
               </div>
               <div className="flex justify-between font-mono-spec text-xs mt-3 text-foreground">
                 <span>10 kVA</span>
@@ -235,7 +237,7 @@ const Index = () => {
                     <span className="group-hover:text-primary transition-colors">{b}</span>
                   </label>
                 ))}
-                <a href="#" className="text-xs text-blue-600 hover:underline inline-block mt-1">Voir plus</a>
+                <a href="#" className="text-xs text-brand-cyan hover:underline inline-block mt-1">Voir plus</a>
               </div>
             </div>
 
@@ -270,7 +272,7 @@ const Index = () => {
               </select>
             </div>
 
-            <button className="w-full bg-blue-600 text-white font-impact text-sm uppercase tracking-wider py-3 hover:bg-blue-700 transition-colors">
+            <button className="w-full bg-brand-cyan text-white font-impact text-sm uppercase tracking-wider py-3 hover:bg-brand-cyan/90 transition-colors">
               Afficher les résultats (215)
             </button>
           </div>
@@ -304,7 +306,7 @@ const Index = () => {
                   <div
                     className={`absolute top-3 left-3 z-10 font-impact text-[10px] font-bold uppercase tracking-wider px-3 py-1 ${
                       isStock
-                        ? "bg-blue-600 text-white"
+                        ? "bg-brand-cyan text-white"
                         : "bg-accent text-accent-foreground"
                     }`}
                   >
@@ -349,7 +351,7 @@ const Index = () => {
 
                     <div className="mt-auto flex items-end justify-between border-t border-border pt-3">
                       <div>
-                        <div className="font-impact text-2xl font-bold text-blue-600 leading-none">
+                        <div className="font-impact text-2xl font-bold text-brand-cyan leading-none">
                           {p.price} €
                         </div>
                         <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">HT</div>
