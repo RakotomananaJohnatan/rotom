@@ -408,7 +408,6 @@ const Index = () => {
               <li><a href="#" className="hover:text-accent">Générateurs d'occasion</a></li>
               <li><a href="#" className="hover:text-accent">Équipements associés</a></li>
               <li><a href="#" className="hover:text-accent">Services</a></li>
-              <li><a href="#" className="hover:text-accent">Actualités</a></li>
               <li><a href="#" className="hover:text-accent">Contact</a></li>
             </ul>
           </div>
