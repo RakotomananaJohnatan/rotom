@@ -1,5 +1,5 @@
 import {
-  Search, Globe, User, Phone, Mail, MessageCircle, Headphones,
+  Search, Globe, Phone, Mail, MessageCircle, Headphones,
   Shield, Truck, Wrench, LifeBuoy, Heart, ChevronDown, Linkedin, Facebook, Youtube, MapPin
 } from "lucide-react";
 
@@ -127,7 +127,7 @@ const Index = () => {
                 width={72}
                 height={72}
                 alt={rep.name}
-                className="size-[72px] object-cover rounded-sm border-2 border-primary"
+                className="size-[72px] object-cover rounded-full border-2 border-accent"
               />
               <div className="min-w-0">
                 <div className="flex gap-1 mb-1 text-xs">
