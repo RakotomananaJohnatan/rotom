@@ -65,9 +65,10 @@ const Index = () => {
       <section className="max-w-[1500px] mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {categories.map((cat) => (
-            <div
+            <Link
               key={cat.title}
-              className="bg-card border-2 border-border hover:border-primary transition-all cursor-pointer p-4 flex items-center gap-4 group"
+              to={cat.to}
+              className="bg-card border-2 border-border hover:border-fluo-yellow transition-all cursor-pointer p-4 flex items-center gap-4 group"
             >
               <img
                 src={cat.img}
@@ -81,26 +82,26 @@ const Index = () => {
                 <h3 className="font-impact text-sm uppercase font-semibold text-primary leading-tight mb-1">
                   {cat.title}
                 </h3>
-                <a href="#" className="text-xs text-brand-cyan hover:underline inline-flex items-center gap-1">
+                <span className="text-xs text-brand-cyan hover:underline inline-flex items-center gap-1">
                   Voir plus →
-                </a>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
 
           {/* Contact CTA card */}
-          <div className="bg-primary text-primary-foreground p-5 flex items-center gap-4 border-2 border-primary">
-            <Headphones className="size-12 text-accent flex-shrink-0" strokeWidth={1.5} />
+          <Link to="/contact" className="bg-primary text-primary-foreground p-5 flex items-center gap-4 border-2 border-primary hover:border-fluo-yellow transition-colors">
+            <Headphones className="size-12 text-fluo-yellow flex-shrink-0" strokeWidth={1.5} />
             <div className="flex-1">
               <h3 className="font-impact text-base uppercase font-bold leading-tight mb-1">
                 Besoin d'un<br />générateur ?
               </h3>
               <p className="text-[11px] text-white/70 mb-2">Notre équipe vous répond sous 24h.</p>
-              <button className="bg-accent text-accent-foreground text-[10px] font-impact font-bold uppercase tracking-wider px-3 py-1.5 hover:bg-white transition-colors">
+              <span className="bg-fluo-yellow text-fluo-yellow-foreground text-[10px] font-impact font-bold uppercase tracking-wider px-3 py-1.5 inline-block">
                 Demander un devis
-              </button>
+              </span>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
