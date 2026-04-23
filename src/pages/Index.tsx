@@ -310,8 +310,8 @@ const Index = () => {
               <span className="text-muted-foreground">Trier par</span>
               <select className="border border-border bg-white px-3 py-1.5 text-sm outline-none">
                 <option>Plus récent</option>
-                <option>Prix croissant</option>
-                <option>Prix décroissant</option>
+                <option>Puissance croissante</option>
+                <option>Puissance décroissante</option>
               </select>
             </div>
           </div>
@@ -371,14 +371,8 @@ const Index = () => {
                       </div>
                     </div>
 
-                    <div className="mt-auto flex items-end justify-between border-t border-border pt-3">
-                      <div>
-                        <div className="font-impact text-2xl font-bold text-brand-cyan leading-none">
-                          {p.price} €
-                        </div>
-                        <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">HT</div>
-                      </div>
-                      <button className="bg-primary text-primary-foreground font-impact text-xs uppercase tracking-wider px-4 py-2.5 hover:bg-accent hover:text-accent-foreground transition-colors">
+                    <div className="mt-auto flex items-center justify-end border-t border-border pt-3">
+                      <button className="bg-primary text-primary-foreground font-impact text-xs uppercase tracking-wider px-4 py-2.5 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground transition-colors">
                         Voir détails
                       </button>
                     </div>
