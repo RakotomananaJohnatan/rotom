@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Slider } from "@/components/ui/slider";
 import {
-  Search, Globe, Phone, Mail, MessageCircle, Headphones,
-  Shield, Truck, Wrench, LifeBuoy, Heart, ChevronDown, Linkedin, Facebook, Youtube, MapPin
+  Headphones, Shield, Truck, Wrench, LifeBuoy, Heart,
 } from "lucide-react";
 
-import logoRotom from "@/assets/logo-rotom.png";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import SalesTeamStrip from "@/components/SalesTeamStrip";
+
 import genCummins from "@/assets/gen-cummins.jpg";
 import genCat from "@/assets/gen-cat.jpg";
 import genPerkins from "@/assets/gen-perkins.jpg";
@@ -16,22 +19,12 @@ import catNeufs from "@/assets/cat-neufs.jpg";
 import catOccasion from "@/assets/cat-occasion.jpg";
 import catHybrid from "@/assets/cat-hybrid.jpg";
 import catEquip from "@/assets/cat-equip.jpg";
-import rep1 from "@/assets/rep1.jpg";
-import rep2 from "@/assets/rep2.jpg";
-import rep3 from "@/assets/rep3.jpg";
-
-
-const reps = [
-  { name: "Usman Mansoor", role: "CTO", phone: "+261 38 11 514 42", email: "usman.mansoor@first-energy.mg", img: rep1 },
-  { name: "Tijmen Pesselse", phone: "+31-649905691", email: "sales@rotompower.com", img: rep2 },
-  { name: "Arjen van Dijk", phone: "+31-623024203", email: "sales@rotompower.com", img: rep3 },
-];
 
 const categories = [
-  { title: "Générateurs Diesel Neufs", img: catNeufs, count: 84 },
-  { title: "Générateurs d'Occasion", img: catOccasion, count: 142 },
-  { title: "Hybrides & Batteries", img: catHybrid, count: 26 },
-  { title: "Équipements Associés", img: catEquip, count: 58 },
+  { title: "Générateurs Diesel Neufs", img: catNeufs, count: 84, to: "/generateurs-neufs" },
+  { title: "Générateurs d'Occasion", img: catOccasion, count: 142, to: "/generateurs-occasion" },
+  { title: "Hybrides & Batteries", img: catHybrid, count: 26, to: "/equipements" },
+  { title: "Équipements Associés", img: catEquip, count: 58, to: "/equipements" },
 ];
 
 const products = [
