@@ -19,7 +19,7 @@ import catEquip from "@/assets/cat-equip.jpg";
 import rep1 from "@/assets/rep1.jpg";
 import rep2 from "@/assets/rep2.jpg";
 import rep3 from "@/assets/rep3.jpg";
-import rep4 from "@/assets/rep4.jpg";
+
 
 const reps = [
   { name: "Usman Mansoor", role: "CTO", phone: "+261 38 11 514 42", email: "usman.mansoor@first-energy.mg", img: rep1 },
