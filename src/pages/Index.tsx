@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Slider } from "@/components/ui/slider";
 import {
-  Search, Globe, Phone, Mail, MessageCircle, Headphones,
-  Shield, Truck, Wrench, LifeBuoy, Heart, ChevronDown, Linkedin, Facebook, Youtube, MapPin
+  Headphones, Shield, Truck, Wrench, LifeBuoy, Heart,
 } from "lucide-react";
 
-import logoRotom from "@/assets/logo-rotom.png";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import SalesTeamStrip from "@/components/SalesTeamStrip";
+
 import genCummins from "@/assets/gen-cummins.jpg";
 import genCat from "@/assets/gen-cat.jpg";
 import genPerkins from "@/assets/gen-perkins.jpg";
@@ -16,22 +19,12 @@ import catNeufs from "@/assets/cat-neufs.jpg";
 import catOccasion from "@/assets/cat-occasion.jpg";
 import catHybrid from "@/assets/cat-hybrid.jpg";
 import catEquip from "@/assets/cat-equip.jpg";
-import rep1 from "@/assets/rep1.jpg";
-import rep2 from "@/assets/rep2.jpg";
-import rep3 from "@/assets/rep3.jpg";
-
-
-const reps = [
-  { name: "Usman Mansoor", role: "CTO", phone: "+261 38 11 514 42", email: "usman.mansoor@first-energy.mg", img: rep1 },
-  { name: "Tijmen Pesselse", phone: "+31-649905691", email: "sales@rotompower.com", img: rep2 },
-  { name: "Arjen van Dijk", phone: "+31-623024203", email: "sales@rotompower.com", img: rep3 },
-];
 
 const categories = [
-  { title: "Générateurs Diesel Neufs", img: catNeufs, count: 84 },
-  { title: "Générateurs d'Occasion", img: catOccasion, count: 142 },
-  { title: "Hybrides & Batteries", img: catHybrid, count: 26 },
-  { title: "Équipements Associés", img: catEquip, count: 58 },
+  { title: "Générateurs Diesel Neufs", img: catNeufs, count: 84, to: "/generateurs-neufs" },
+  { title: "Générateurs d'Occasion", img: catOccasion, count: 142, to: "/generateurs-occasion" },
+  { title: "Hybrides & Batteries", img: catHybrid, count: 26, to: "/equipements" },
+  { title: "Équipements Associés", img: catEquip, count: 58, to: "/equipements" },
 ];
 
 const products = [
@@ -64,106 +57,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Top Header */}
-      <header className="bg-primary text-primary-foreground border-b-4 border-accent">
-        <div className="max-w-[1500px] mx-auto px-6 py-4 flex items-center gap-6">
-          {/* Logo */}
-          <a href="/" className="flex-shrink-0 bg-white rounded-md px-3 py-2 flex items-center" aria-label="ROTOM Power Generation">
-            <img
-              src={logoRotom}
-              alt="ROTOM Power Generation"
-              width={170}
-              height={56}
-              className="h-12 w-auto object-contain"
-            />
-          </a>
-
-          {/* Search */}
-          <div className="flex-1 max-w-2xl mx-4">
-            <div className="flex items-stretch">
-              <input
-                type="text"
-                placeholder="Rechercher un générateur, marque, modèle..."
-                className="flex-1 bg-white text-foreground px-4 py-3 text-sm rounded-l-sm outline-none focus:ring-2 focus:ring-accent placeholder:text-muted-foreground/70"
-              />
-              <button className="bg-white text-primary px-4 border-l border-border rounded-r-sm hover:bg-accent transition-colors">
-                <Search className="size-5" />
-              </button>
-            </div>
-          </div>
-
-          {/* Right actions */}
-          <div className="flex items-center gap-4 ml-auto">
-            <button className="flex items-center gap-1.5 text-sm hover:text-accent transition-colors">
-              <Globe className="size-4" /> FR <ChevronDown className="size-3" />
-            </button>
-            <button className="bg-accent text-accent-foreground font-impact text-sm font-bold uppercase tracking-wider px-5 py-3 hover:bg-white transition-colors">
-              Demander un devis
-            </button>
-          </div>
-        </div>
-
-        {/* Main nav */}
-        <nav className="border-t border-white/10">
-          <div className="max-w-[1500px] mx-auto px-6">
-            <ul className="flex items-center gap-8 justify-center">
-              {navItems.map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="block py-4 text-xs font-impact font-semibold uppercase tracking-widest hover:text-accent transition-colors"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
-      </header>
-
-      {/* Conditions générales tab removed */}
-
-      {/* Sales Team Strip */}
-      <section className="bg-card border-b border-border py-6">
-        <div className="max-w-[1500px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reps.map((rep) => (
-            <div key={rep.name} className="flex items-center gap-4">
-              <img
-                src={rep.img}
-                loading="lazy"
-                width={72}
-                height={72}
-                alt={rep.name}
-                className="size-[72px] object-cover rounded-full border-2 border-accent"
-              />
-              <div className="min-w-0">
-                <div className="flex gap-1 mb-1 text-xs">
-                  <span>🇳🇱</span><span>🇫🇷</span><span>🇪🇸</span><span>🇬🇧</span>
-                </div>
-                <div className="font-bold text-sm text-primary">{rep.name}</div>
-                <div className="flex items-center gap-1.5 text-xs mt-1">
-                  <Phone className="size-3 text-fluo-yellow" />
-                  <span className="text-muted-foreground">Portable :</span>
-                  <a href={`tel:${rep.phone.replace(/\s/g, "")}`} className="text-fluo-yellow font-bold hover:underline">{rep.phone}</a>
-                </div>
-                <a href={`mailto:${rep.email}`} className="text-xs text-brand-cyan font-medium hover:underline">
-                  {rep.email}
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <SiteHeader />
+      <SalesTeamStrip />
 
 
       {/* Categories */}
       <section className="max-w-[1500px] mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {categories.map((cat) => (
-            <div
+            <Link
               key={cat.title}
-              className="bg-card border-2 border-border hover:border-primary transition-all cursor-pointer p-4 flex items-center gap-4 group"
+              to={cat.to}
+              className="bg-card border-2 border-border hover:border-fluo-yellow transition-all cursor-pointer p-4 flex items-center gap-4 group"
             >
               <img
                 src={cat.img}
@@ -177,26 +82,26 @@ const Index = () => {
                 <h3 className="font-impact text-sm uppercase font-semibold text-primary leading-tight mb-1">
                   {cat.title}
                 </h3>
-                <a href="#" className="text-xs text-brand-cyan hover:underline inline-flex items-center gap-1">
+                <span className="text-xs text-brand-cyan hover:underline inline-flex items-center gap-1">
                   Voir plus →
-                </a>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
 
           {/* Contact CTA card */}
-          <div className="bg-primary text-primary-foreground p-5 flex items-center gap-4 border-2 border-primary">
-            <Headphones className="size-12 text-accent flex-shrink-0" strokeWidth={1.5} />
+          <Link to="/contact" className="bg-primary text-primary-foreground p-5 flex items-center gap-4 border-2 border-primary hover:border-fluo-yellow transition-colors">
+            <Headphones className="size-12 text-fluo-yellow flex-shrink-0" strokeWidth={1.5} />
             <div className="flex-1">
               <h3 className="font-impact text-base uppercase font-bold leading-tight mb-1">
                 Besoin d'un<br />générateur ?
               </h3>
               <p className="text-[11px] text-white/70 mb-2">Notre équipe vous répond sous 24h.</p>
-              <button className="bg-accent text-accent-foreground text-[10px] font-impact font-bold uppercase tracking-wider px-3 py-1.5 hover:bg-white transition-colors">
+              <span className="bg-fluo-yellow text-fluo-yellow-foreground text-[10px] font-impact font-bold uppercase tracking-wider px-3 py-1.5 inline-block">
                 Demander un devis
-              </button>
+              </span>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
@@ -406,88 +311,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-primary text-primary-foreground">
-        <div className="max-w-[1500px] mx-auto px-6 py-12 grid grid-cols-2 lg:grid-cols-5 gap-8">
-          <div className="col-span-2 lg:col-span-1">
-            <h4 className="font-impact text-xs uppercase tracking-widest text-accent mb-4">À propos de ROTOM</h4>
-            <p className="text-xs text-white/70 leading-relaxed mb-3">
-              ROTOM est spécialisé dans la vente de groupes électrogènes neufs & d'occasion de 10 kVA à 2500 kVA. Nous accompagnons nos clients partout dans le monde avec des solutions fiables et un service sur mesure.
-            </p>
-            <a href="#" className="text-xs text-accent hover:underline">En savoir plus →</a>
-          </div>
-
-          <div>
-            <h4 className="font-impact text-xs uppercase tracking-widest text-accent mb-4">Liens rapides</h4>
-            <ul className="space-y-2 text-xs text-white/70">
-              <li><a href="#" className="hover:text-accent">Générateurs neufs</a></li>
-              <li><a href="#" className="hover:text-accent">Générateurs d'occasion</a></li>
-              <li><a href="#" className="hover:text-accent">Équipements associés</a></li>
-              <li><a href="#" className="hover:text-accent">Services</a></li>
-              <li><a href="#" className="hover:text-accent">Contact</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-impact text-xs uppercase tracking-widest text-accent mb-4">Services</h4>
-            <ul className="space-y-2 text-xs text-white/70">
-              <li><a href="#" className="hover:text-accent">Recherche sur demande</a></li>
-              <li><a href="#" className="hover:text-accent">Installation</a></li>
-              <li><a href="#" className="hover:text-accent">Maintenance</a></li>
-              <li><a href="#" className="hover:text-accent">Pièces détachées</a></li>
-              <li><a href="#" className="hover:text-accent">Financement</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-impact text-xs uppercase tracking-widest text-accent mb-4">Contact</h4>
-            <ul className="space-y-2.5 text-xs text-white/70">
-              <li className="flex items-start gap-2">
-                <MapPin className="size-3.5 text-accent flex-shrink-0 mt-0.5" />
-                <span>ROTOM Power Solutions<br />Bredaseweg 26<br />4705 RN Roosendaal, Pays-Bas</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="size-3.5 text-accent flex-shrink-0" />
-                <span>+31 (0)165 55 60 62</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="size-3.5 text-accent flex-shrink-0" />
-                <a href="#" className="hover:text-accent">sales@rotom.com</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <MessageCircle className="size-3.5 text-accent flex-shrink-0" />
-                <a href="#" className="hover:text-accent">Discuter sur WhatsApp</a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-impact text-xs uppercase tracking-widest text-accent mb-4">Suivez-nous</h4>
-            <div className="flex gap-3">
-              <a href="#" className="size-10 rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-colors">
-                <Linkedin className="size-4" />
-              </a>
-              <a href="#" className="size-10 rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-colors">
-                <Facebook className="size-4" />
-              </a>
-              <a href="#" className="size-10 rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-colors">
-                <Youtube className="size-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-white/10 bg-accent text-accent-foreground">
-          <div className="max-w-[1500px] mx-auto px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-2 text-xs">
-            <span>© 2026 ROTOM Power Solutions — Tous droits réservés</span>
-            <div className="flex gap-6">
-              <a href="#" className="hover:underline">Mentions légales</a>
-              <a href="#" className="hover:underline">Conditions générales</a>
-              <a href="#" className="hover:underline">Politique de confidentialité</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 };
