@@ -50,10 +50,16 @@ const Index = () => {
   const POWER_MIN = 10;
   const POWER_MAX = 2500;
   const [powerRange, setPowerRange] = useState<[number, number]>([POWER_MIN, POWER_MAX]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
 
   const filteredProducts = products.filter((p) => {
     const value = parseInt(p.kva, 10);
-    return value >= powerRange[0] && value <= powerRange[1];
+    if (value < powerRange[0] || value > powerRange[1]) return false;
+    if (selectedBrands.length > 0) {
+      const matches = selectedBrands.some((b) => p.name.toLowerCase().includes(b.split(" ")[0].toLowerCase()));
+      if (!matches) return false;
+    }
+    return true;
   });
 
   return (
