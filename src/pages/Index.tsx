@@ -201,20 +201,47 @@ const Index = () => {
           <div className="bg-card border-2 border-border p-5">
             <div className="flex justify-between items-center mb-5 pb-3 border-b-2 border-primary">
               <h2 className="font-impact text-base uppercase font-bold text-primary">Filtrer les résultats</h2>
-              <button className="text-xs text-brand-cyan hover:underline">Réinitialiser</button>
+              <button
+                type="button"
+                onClick={() => {
+                  setPowerRange([POWER_MIN, POWER_MAX]);
+                  setSelectedBrands([]);
+                }}
+                className="text-xs text-brand-cyan hover:underline font-semibold"
+              >
+                Réinitialiser
+              </button>
             </div>
 
             {/* Power slider */}
             <div className="mb-6">
               <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Puissance (kVA)</h3>
-              <Slider
-                min={POWER_MIN}
-                max={POWER_MAX}
-                step={10}
-                value={powerRange}
-                onValueChange={(v) => setPowerRange([v[0], v[1]] as [number, number])}
-                className="my-4"
-              />
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  aria-label="Diminuer la puissance min"
+                  onClick={() => setPowerRange(([min, max]) => [Math.max(POWER_MIN, min - 10), max])}
+                  className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
+                >
+                  −
+                </button>
+                <Slider
+                  min={POWER_MIN}
+                  max={POWER_MAX}
+                  step={10}
+                  value={powerRange}
+                  onValueChange={(v) => setPowerRange([v[0], v[1]] as [number, number])}
+                  className="flex-1"
+                />
+                <button
+                  type="button"
+                  aria-label="Augmenter la puissance max"
+                  onClick={() => setPowerRange(([min, max]) => [min, Math.min(POWER_MAX, max + 10)])}
+                  className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
+                >
+                  +
+                </button>
+              </div>
               <div className="flex justify-between font-mono-spec text-xs mt-3 text-foreground">
                 <span>{powerRange[0]} kVA</span>
                 <span>{powerRange[1]} kVA</span>
@@ -229,7 +256,13 @@ const Index = () => {
                   <label key={b} className="flex items-center gap-2 cursor-pointer text-sm group">
                     <input
                       type="checkbox"
-                      className="appearance-none size-4 border-2 border-foreground checked:bg-accent checked:border-foreground relative cursor-pointer"
+                      checked={selectedBrands.includes(b)}
+                      onChange={(e) =>
+                        setSelectedBrands((prev) =>
+                          e.target.checked ? [...prev, b] : prev.filter((x) => x !== b)
+                        )
+                      }
+                      className="appearance-none size-4 border-2 border-foreground checked:bg-brand-cyan checked:border-brand-cyan relative cursor-pointer"
                     />
                     <span className="group-hover:text-primary transition-colors">{b}</span>
                   </label>
@@ -238,20 +271,6 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Price */}
-            <div className="mb-6">
-              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Prix (€)</h3>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="flex items-center border border-border bg-white px-2">
-                  <span className="text-xs text-muted-foreground mr-1">€</span>
-                  <input className="w-full py-1.5 text-sm outline-none" placeholder="Min" />
-                </div>
-                <div className="flex items-center border border-border bg-white px-2">
-                  <span className="text-xs text-muted-foreground mr-1">€</span>
-                  <input className="w-full py-1.5 text-sm outline-none" placeholder="Max" />
-                </div>
-              </div>
-            </div>
 
             {/* Year */}
             <div className="mb-6">
