@@ -25,7 +25,6 @@ const reps = [
   { name: "Usman Mansoor", role: "CTO", phone: "+261 38 11 514 42", email: "usman.mansoor@first-energy.mg", img: rep1 },
   { name: "Tijmen Pesselse", phone: "+31-649905691", email: "sales@rotompower.com", img: rep2 },
   { name: "Arjen van Dijk", phone: "+31-623024203", email: "sales@rotompower.com", img: rep3 },
-  { name: "Ronald van der Laar", phone: "+31-666893781", email: "sales@rotompower.com", img: rep4 },
 ];
 
 const categories = [
@@ -117,18 +116,11 @@ const Index = () => {
         </nav>
       </header>
 
-      {/* Conditions générales tab */}
-      <div className="bg-accent">
-        <div className="max-w-[1500px] mx-auto px-6">
-          <span className="inline-block bg-primary text-primary-foreground font-impact text-xs uppercase tracking-widest px-4 py-2">
-            Conditions générales
-          </span>
-        </div>
-      </div>
+      {/* Conditions générales tab removed */}
 
       {/* Sales Team Strip */}
       <section className="bg-card border-b border-border py-6">
-        <div className="max-w-[1500px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="max-w-[1500px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
           {reps.map((rep) => (
             <div key={rep.name} className="flex items-center gap-4">
               <img
@@ -145,11 +137,11 @@ const Index = () => {
                 </div>
                 <div className="font-bold text-sm text-primary">{rep.name}</div>
                 <div className="flex items-center gap-1.5 text-xs mt-1">
-                  <MessageCircle className="size-3 text-success" />
+                  <Phone className="size-3 text-fluo-yellow" />
                   <span className="text-muted-foreground">Portable :</span>
-                  <span className="text-success font-medium">{rep.phone}</span>
+                  <a href={`tel:${rep.phone.replace(/\s/g, "")}`} className="text-fluo-yellow font-bold hover:underline">{rep.phone}</a>
                 </div>
-                <a href={`mailto:${rep.email}`} className="text-xs text-destructive hover:underline">
+                <a href={`mailto:${rep.email}`} className="text-xs text-brand-cyan font-medium hover:underline">
                   {rep.email}
                 </a>
               </div>
