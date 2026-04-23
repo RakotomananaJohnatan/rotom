@@ -1,0 +1,160 @@
+import { useState } from "react";
+import SiteLayout from "@/components/SiteLayout";
+import PageHero from "@/components/PageHero";
+import SalesTeamStrip from "@/components/SalesTeamStrip";
+import { toast } from "@/hooks/use-toast";
+import { MapPin, Phone, Mail, MessageCircle, Clock, Send } from "lucide-react";
+
+const Contact = () => {
+  const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", power: "", subject: "Demande de devis", message: "" });
+
+  const onChange = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+    setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({ title: "Message envoyé", description: "Notre équipe vous répond sous 24h." });
+    setForm({ name: "", company: "", email: "", phone: "", power: "", subject: "Demande de devis", message: "" });
+  };
+
+  return (
+    <SiteLayout>
+      <PageHero
+        eyebrow="Parlons de votre projet"
+        title="Contactez ROTOM"
+        subtitle="Une question, un devis, une recherche spécifique ? Notre équipe vous répond en 24h, partout dans le monde."
+        breadcrumb={[{ label: "Accueil", to: "/" }, { label: "Contact" }]}
+      />
+
+      {/* Quick contact bar */}
+      <section className="bg-secondary border-b border-border">
+        <div className="max-w-[1500px] mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+          {[
+            { icon: Phone, label: "Téléphone", value: "+31 (0)165 55 60 62", href: "tel:+31165556062", color: "text-fluo-yellow" },
+            { icon: Mail, label: "Email", value: "sales@rotom.com", href: "mailto:sales@rotom.com", color: "text-brand-cyan" },
+            { icon: MessageCircle, label: "WhatsApp", value: "Discuter en direct", href: "#", color: "text-accent" },
+            { icon: Clock, label: "Horaires", value: "Lun–Ven · 8h–18h", href: undefined, color: "text-fluo-yellow" },
+          ].map((item) => {
+            const Inner = (
+              <div className="flex items-center gap-3 bg-card border-2 border-border p-4 h-full hover:border-primary transition-colors">
+                <div className={`size-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0`}>
+                  <item.icon className={`size-5 ${item.color}`} strokeWidth={2} />
+                </div>
+                <div className="min-w-0">
+                  <div className="font-impact text-[10px] uppercase tracking-widest text-muted-foreground">{item.label}</div>
+                  <div className={`text-sm font-bold ${item.color}`}>{item.value}</div>
+                </div>
+              </div>
+            );
+            return item.href ? (
+              <a key={item.label} href={item.href}>{Inner}</a>
+            ) : (
+              <div key={item.label}>{Inner}</div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Form + infos */}
+      <section className="max-w-[1500px] mx-auto px-6 py-14 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10">
+        <div className="bg-card border-2 border-border p-8">
+          <h2 className="font-impact text-2xl uppercase font-bold text-primary mb-1">Envoyez-nous un message</h2>
+          <p className="text-sm text-muted-foreground mb-6">Tous les champs marqués d'un * sont obligatoires.</p>
+
+          <form onSubmit={onSubmit} className="space-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <Field label="Nom complet *" id="name">
+                <input required value={form.name} onChange={onChange("name")} id="name" type="text"
+                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
+              </Field>
+              <Field label="Société" id="company">
+                <input value={form.company} onChange={onChange("company")} id="company" type="text"
+                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
+              </Field>
+              <Field label="Email *" id="email">
+                <input required value={form.email} onChange={onChange("email")} id="email" type="email"
+                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
+              </Field>
+              <Field label="Téléphone" id="phone">
+                <input value={form.phone} onChange={onChange("phone")} id="phone" type="tel"
+                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
+              </Field>
+              <Field label="Puissance recherchée (kVA)" id="power">
+                <input value={form.power} onChange={onChange("power")} id="power" type="text" placeholder="ex. 250"
+                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
+              </Field>
+              <Field label="Sujet" id="subject">
+                <select value={form.subject} onChange={onChange("subject")} id="subject"
+                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan">
+                  <option>Demande de devis</option>
+                  <option>Question technique</option>
+                  <option>Maintenance / SAV</option>
+                  <option>Recherche sur demande</option>
+                  <option>Autre</option>
+                </select>
+              </Field>
+            </div>
+
+            <Field label="Votre message *" id="message">
+              <textarea required value={form.message} onChange={onChange("message")} id="message" rows={6}
+                className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan resize-none" />
+            </Field>
+
+            <button type="submit"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-impact text-sm uppercase tracking-wider px-8 py-3.5 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground transition-colors">
+              <Send className="size-4" /> Envoyer ma demande
+            </button>
+          </form>
+        </div>
+
+        {/* Side infos */}
+        <aside className="space-y-6">
+          <div className="bg-primary text-primary-foreground p-6 border-l-8 border-fluo-yellow">
+            <h3 className="font-impact text-lg uppercase font-bold mb-4">Siège social</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-3">
+                <MapPin className="size-4 text-fluo-yellow flex-shrink-0 mt-0.5" />
+                <span>ROTOM Power Solutions<br />Bredaseweg 26<br />4705 RN Roosendaal<br />Pays-Bas</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="size-4 text-fluo-yellow flex-shrink-0" />
+                <a href="tel:+31165556062" className="text-fluo-yellow font-bold hover:underline">+31 (0)165 55 60 62</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="size-4 text-brand-cyan flex-shrink-0" />
+                <a href="mailto:sales@rotom.com" className="text-brand-cyan hover:underline">sales@rotom.com</a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="border-2 border-border overflow-hidden">
+            <iframe
+              title="ROTOM Roosendaal"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=4.43%2C51.52%2C4.49%2C51.55&layer=mapnik&marker=51.535%2C4.46"
+              className="w-full h-[280px] border-0"
+              loading="lazy"
+            />
+          </div>
+        </aside>
+      </section>
+
+      {/* Sales team */}
+      <section className="border-t-2 border-border bg-secondary py-12">
+        <div className="max-w-[1500px] mx-auto px-6 mb-6 text-center">
+          <div className="font-impact text-xs uppercase tracking-[0.3em] text-brand-cyan mb-2">Vos interlocuteurs</div>
+          <h2 className="font-impact text-3xl uppercase font-bold text-primary">Une équipe dédiée à votre projet</h2>
+        </div>
+        <SalesTeamStrip />
+      </section>
+    </SiteLayout>
+  );
+};
+
+const Field = ({ label, id, children }: { label: string; id: string; children: React.ReactNode }) => (
+  <div>
+    <label htmlFor={id} className="font-impact text-[11px] uppercase tracking-wider text-muted-foreground mb-1.5 block">{label}</label>
+    {children}
+  </div>
+);
+
+export default Contact;
