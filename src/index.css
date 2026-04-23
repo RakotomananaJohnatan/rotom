@@ -31,9 +31,13 @@
     --accent: 72 95% 55%;
     --accent-foreground: 252 80% 18%;
 
-    /* Brand cyan (ROTOM) */
-    --brand-cyan: 199 95% 50%;
+    /* Brand cyan / sky blue (ROTOM) */
+    --brand-cyan: 199 95% 55%;
     --brand-cyan-foreground: 252 80% 18%;
+
+    /* Fluo yellow accent */
+    --fluo-yellow: 58 100% 50%;
+    --fluo-yellow-foreground: 252 80% 18%;
 
     --destructive: 0 84% 50%;
     --destructive-foreground: 0 0% 100%;

@@ -19,13 +19,12 @@ import catEquip from "@/assets/cat-equip.jpg";
 import rep1 from "@/assets/rep1.jpg";
 import rep2 from "@/assets/rep2.jpg";
 import rep3 from "@/assets/rep3.jpg";
-import rep4 from "@/assets/rep4.jpg";
+
 
 const reps = [
   { name: "Usman Mansoor", role: "CTO", phone: "+261 38 11 514 42", email: "usman.mansoor@first-energy.mg", img: rep1 },
   { name: "Tijmen Pesselse", phone: "+31-649905691", email: "sales@rotompower.com", img: rep2 },
   { name: "Arjen van Dijk", phone: "+31-623024203", email: "sales@rotompower.com", img: rep3 },
-  { name: "Ronald van der Laar", phone: "+31-666893781", email: "sales@rotompower.com", img: rep4 },
 ];
 
 const categories = [
@@ -51,10 +50,16 @@ const Index = () => {
   const POWER_MIN = 10;
   const POWER_MAX = 2500;
   const [powerRange, setPowerRange] = useState<[number, number]>([POWER_MIN, POWER_MAX]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
 
   const filteredProducts = products.filter((p) => {
     const value = parseInt(p.kva, 10);
-    return value >= powerRange[0] && value <= powerRange[1];
+    if (value < powerRange[0] || value > powerRange[1]) return false;
+    if (selectedBrands.length > 0) {
+      const matches = selectedBrands.some((b) => p.name.toLowerCase().includes(b.split(" ")[0].toLowerCase()));
+      if (!matches) return false;
+    }
+    return true;
   });
 
   return (
@@ -117,18 +122,11 @@ const Index = () => {
         </nav>
       </header>
 
-      {/* Conditions générales tab */}
-      <div className="bg-accent">
-        <div className="max-w-[1500px] mx-auto px-6">
-          <span className="inline-block bg-primary text-primary-foreground font-impact text-xs uppercase tracking-widest px-4 py-2">
-            Conditions générales
-          </span>
-        </div>
-      </div>
+      {/* Conditions générales tab removed */}
 
       {/* Sales Team Strip */}
       <section className="bg-card border-b border-border py-6">
-        <div className="max-w-[1500px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="max-w-[1500px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
           {reps.map((rep) => (
             <div key={rep.name} className="flex items-center gap-4">
               <img
@@ -145,11 +143,11 @@ const Index = () => {
                 </div>
                 <div className="font-bold text-sm text-primary">{rep.name}</div>
                 <div className="flex items-center gap-1.5 text-xs mt-1">
-                  <MessageCircle className="size-3 text-success" />
+                  <Phone className="size-3 text-fluo-yellow" />
                   <span className="text-muted-foreground">Portable :</span>
-                  <span className="text-success font-medium">{rep.phone}</span>
+                  <a href={`tel:${rep.phone.replace(/\s/g, "")}`} className="text-fluo-yellow font-bold hover:underline">{rep.phone}</a>
                 </div>
-                <a href={`mailto:${rep.email}`} className="text-xs text-destructive hover:underline">
+                <a href={`mailto:${rep.email}`} className="text-xs text-brand-cyan font-medium hover:underline">
                   {rep.email}
                 </a>
               </div>
@@ -209,20 +207,47 @@ const Index = () => {
           <div className="bg-card border-2 border-border p-5">
             <div className="flex justify-between items-center mb-5 pb-3 border-b-2 border-primary">
               <h2 className="font-impact text-base uppercase font-bold text-primary">Filtrer les résultats</h2>
-              <button className="text-xs text-brand-cyan hover:underline">Réinitialiser</button>
+              <button
+                type="button"
+                onClick={() => {
+                  setPowerRange([POWER_MIN, POWER_MAX]);
+                  setSelectedBrands([]);
+                }}
+                className="text-xs text-brand-cyan hover:underline font-semibold"
+              >
+                Réinitialiser
+              </button>
             </div>
 
             {/* Power slider */}
             <div className="mb-6">
               <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Puissance (kVA)</h3>
-              <Slider
-                min={POWER_MIN}
-                max={POWER_MAX}
-                step={10}
-                value={powerRange}
-                onValueChange={(v) => setPowerRange([v[0], v[1]] as [number, number])}
-                className="my-4"
-              />
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  aria-label="Diminuer la puissance min"
+                  onClick={() => setPowerRange(([min, max]) => [Math.max(POWER_MIN, min - 10), max])}
+                  className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
+                >
+                  −
+                </button>
+                <Slider
+                  min={POWER_MIN}
+                  max={POWER_MAX}
+                  step={10}
+                  value={powerRange}
+                  onValueChange={(v) => setPowerRange([v[0], v[1]] as [number, number])}
+                  className="flex-1"
+                />
+                <button
+                  type="button"
+                  aria-label="Augmenter la puissance max"
+                  onClick={() => setPowerRange(([min, max]) => [min, Math.min(POWER_MAX, max + 10)])}
+                  className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
+                >
+                  +
+                </button>
+              </div>
               <div className="flex justify-between font-mono-spec text-xs mt-3 text-foreground">
                 <span>{powerRange[0]} kVA</span>
                 <span>{powerRange[1]} kVA</span>
@@ -237,7 +262,13 @@ const Index = () => {
                   <label key={b} className="flex items-center gap-2 cursor-pointer text-sm group">
                     <input
                       type="checkbox"
-                      className="appearance-none size-4 border-2 border-foreground checked:bg-accent checked:border-foreground relative cursor-pointer"
+                      checked={selectedBrands.includes(b)}
+                      onChange={(e) =>
+                        setSelectedBrands((prev) =>
+                          e.target.checked ? [...prev, b] : prev.filter((x) => x !== b)
+                        )
+                      }
+                      className="appearance-none size-4 border-2 border-foreground checked:bg-brand-cyan checked:border-brand-cyan relative cursor-pointer"
                     />
                     <span className="group-hover:text-primary transition-colors">{b}</span>
                   </label>
@@ -246,20 +277,6 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Price */}
-            <div className="mb-6">
-              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Prix (€)</h3>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="flex items-center border border-border bg-white px-2">
-                  <span className="text-xs text-muted-foreground mr-1">€</span>
-                  <input className="w-full py-1.5 text-sm outline-none" placeholder="Min" />
-                </div>
-                <div className="flex items-center border border-border bg-white px-2">
-                  <span className="text-xs text-muted-foreground mr-1">€</span>
-                  <input className="w-full py-1.5 text-sm outline-none" placeholder="Max" />
-                </div>
-              </div>
-            </div>
 
             {/* Year */}
             <div className="mb-6">
@@ -293,8 +310,8 @@ const Index = () => {
               <span className="text-muted-foreground">Trier par</span>
               <select className="border border-border bg-white px-3 py-1.5 text-sm outline-none">
                 <option>Plus récent</option>
-                <option>Prix croissant</option>
-                <option>Prix décroissant</option>
+                <option>Puissance croissante</option>
+                <option>Puissance décroissante</option>
               </select>
             </div>
           </div>
@@ -354,14 +371,8 @@ const Index = () => {
                       </div>
                     </div>
 
-                    <div className="mt-auto flex items-end justify-between border-t border-border pt-3">
-                      <div>
-                        <div className="font-impact text-2xl font-bold text-brand-cyan leading-none">
-                          {p.price} €
-                        </div>
-                        <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">HT</div>
-                      </div>
-                      <button className="bg-primary text-primary-foreground font-impact text-xs uppercase tracking-wider px-4 py-2.5 hover:bg-accent hover:text-accent-foreground transition-colors">
+                    <div className="mt-auto flex items-center justify-end border-t border-border pt-3">
+                      <button className="bg-primary text-primary-foreground font-impact text-xs uppercase tracking-wider px-4 py-2.5 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground transition-colors">
                         Voir détails
                       </button>
                     </div>
