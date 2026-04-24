@@ -1,51 +1,36 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Slider } from "@/components/ui/slider";
-import {
-  Headphones, Shield, Truck, Wrench, LifeBuoy, Heart,
-} from "lucide-react";
+import { Headphones, Shield, Truck, Wrench, LifeBuoy } from "lucide-react";
 
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import SalesTeamStrip from "@/components/SalesTeamStrip";
+import ProductCard from "@/components/ProductCard";
+import { newProducts, brands } from "@/data/products";
+import { useLang } from "@/i18n/LanguageContext";
 
-import genCummins from "@/assets/gen-cummins.jpg";
-import genCat from "@/assets/gen-cat.jpg";
-import genPerkins from "@/assets/gen-perkins.jpg";
-import genFgWilson from "@/assets/gen-fgwilson.jpg";
-import genVolvo from "@/assets/gen-volvo.jpg";
-import genDoosan from "@/assets/gen-doosan.jpg";
 import catNeufs from "@/assets/cat-neufs.jpg";
 import catOccasion from "@/assets/cat-occasion.jpg";
 import catHybrid from "@/assets/cat-hybrid.jpg";
 import catEquip from "@/assets/cat-equip.jpg";
 
-const categories = [
-  { title: "Générateurs Diesel Neufs", img: catNeufs, count: 84, to: "/generateurs-neufs" },
-  { title: "Générateurs d'Occasion", img: catOccasion, count: 142, to: "/generateurs-occasion" },
-  { title: "Hybrides & Batteries", img: catHybrid, count: 26, to: "/equipements" },
-  { title: "Équipements Associés", img: catEquip, count: 58, to: "/equipements" },
-];
-
-const products = [
-  { stock: "EN STOCK", name: "Cummins C220 D5", subtitle: "220 kVA — Diesel Generator", kva: "220 kVA", year: "2023", fuel: "Diesel", price: "18.750", img: genCummins },
-  { stock: "EN STOCK", name: "Caterpillar DE220E0", subtitle: "220 kVA — Diesel Generator", kva: "220 kVA", year: "2022", fuel: "Diesel", price: "21.900", img: genCat },
-  { stock: "EN STOCK", name: "Perkins 2006A-E88TAG3", subtitle: "250 kVA — Diesel Generator", kva: "250 kVA", year: "2021", fuel: "Diesel", price: "16.500", img: genPerkins },
-  { stock: "SUR COMMANDE", name: "FG Wilson P275-3", subtitle: "275 kVA — Diesel Generator", kva: "275 kVA", year: "2023", fuel: "Diesel", price: "24.800", img: genFgWilson },
-  { stock: "SUR COMMANDE", name: "Volvo TAD1342GE", subtitle: "330 kVA — Diesel Generator", kva: "330 kVA", year: "2022", fuel: "Diesel", price: "26.900", img: genVolvo },
-  { stock: "EN STOCK", name: "Doosan DP180LB", subtitle: "710 kVA — Diesel Generator", kva: "710 kVA", year: "2021", fuel: "Diesel", price: "42.000", img: genDoosan },
-];
-
-const navItems = ["Générateurs neufs", "Générateurs d'occasion", "Équipements associés", "Services", "Contact"];
-const brands = ["Caterpillar (CAT)", "Cummins", "Perkins", "Volvo", "FG Wilson", "Doosan"];
-
 const Index = () => {
+  const { t } = useLang();
+
+  const categories = [
+    { title: t("nav.new"), img: catNeufs, to: "/generateurs-neufs" },
+    { title: t("nav.used"), img: catOccasion, to: "/generateurs-occasion" },
+    { title: "Hybrides & Batteries", img: catHybrid, to: "/equipements" },
+    { title: t("nav.equip"), img: catEquip, to: "/equipements" },
+  ];
+
   const POWER_MIN = 10;
   const POWER_MAX = 2500;
   const [powerRange, setPowerRange] = useState<[number, number]>([POWER_MIN, POWER_MAX]);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
 
-  const filteredProducts = products.filter((p) => {
+  const filteredProducts = newProducts.filter((p) => {
     const value = parseInt(p.kva, 10);
     if (value < powerRange[0] || value > powerRange[1]) return false;
     if (selectedBrands.length > 0) {
@@ -59,7 +44,6 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SiteHeader />
       <SalesTeamStrip />
-
 
       {/* Categories */}
       <section className="max-w-[1500px] mx-auto px-6 py-8">
@@ -89,7 +73,6 @@ const Index = () => {
             </Link>
           ))}
 
-          {/* Contact CTA card */}
           <Link to="/contact" className="bg-primary text-primary-foreground p-5 flex items-center gap-4 border-2 border-primary hover:border-fluo-yellow transition-colors">
             <Headphones className="size-12 text-fluo-yellow flex-shrink-0" strokeWidth={1.5} />
             <div className="flex-1">
@@ -98,7 +81,7 @@ const Index = () => {
               </h3>
               <p className="text-[11px] text-white/70 mb-2">Notre équipe vous répond sous 24h.</p>
               <span className="bg-fluo-yellow text-fluo-yellow-foreground text-[10px] font-impact font-bold uppercase tracking-wider px-3 py-1.5 inline-block">
-                Demander un devis
+                {t("header.cta")}
               </span>
             </div>
           </Link>
@@ -111,7 +94,7 @@ const Index = () => {
         <aside>
           <div className="bg-card border-2 border-border p-5">
             <div className="flex justify-between items-center mb-5 pb-3 border-b-2 border-primary">
-              <h2 className="font-impact text-base uppercase font-bold text-primary">Filtrer les résultats</h2>
+              <h2 className="font-impact text-base uppercase font-bold text-primary">{t("filters.title")}</h2>
               <button
                 type="button"
                 onClick={() => {
@@ -120,22 +103,19 @@ const Index = () => {
                 }}
                 className="text-xs text-brand-cyan hover:underline font-semibold"
               >
-                Réinitialiser
+                {t("filters.reset")}
               </button>
             </div>
 
-            {/* Power slider */}
             <div className="mb-6">
-              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Puissance (kVA)</h3>
+              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.power")}</h3>
               <div className="flex items-center gap-2">
                 <button
                   type="button"
-                  aria-label="Diminuer la puissance min"
-                  onClick={() => setPowerRange(([min, max]) => [Math.max(POWER_MIN, min - 10), max])}
+                  aria-label="-"
+                  onClick={() => setPowerRange(([min, max]) => [Math.max(POWER_MIN, min - 10), max] as [number, number])}
                   className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
-                >
-                  −
-                </button>
+                >−</button>
                 <Slider
                   min={POWER_MIN}
                   max={POWER_MAX}
@@ -146,12 +126,10 @@ const Index = () => {
                 />
                 <button
                   type="button"
-                  aria-label="Augmenter la puissance max"
-                  onClick={() => setPowerRange(([min, max]) => [min, Math.min(POWER_MAX, max + 10)])}
+                  aria-label="+"
+                  onClick={() => setPowerRange(([min, max]) => [min, Math.min(POWER_MAX, max + 10)] as [number, number])}
                   className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
-                >
-                  +
-                </button>
+                >+</button>
               </div>
               <div className="flex justify-between font-mono-spec text-xs mt-3 text-foreground">
                 <span>{powerRange[0]} kVA</span>
@@ -159,9 +137,8 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Brand */}
             <div className="mb-6">
-              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Marque</h3>
+              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.brand")}</h3>
               <div className="space-y-2">
                 {brands.map((b) => (
                   <label key={b} className="flex items-center gap-2 cursor-pointer text-sm group">
@@ -178,29 +155,11 @@ const Index = () => {
                     <span className="group-hover:text-primary transition-colors">{b}</span>
                   </label>
                 ))}
-                <a href="#" className="text-xs text-brand-cyan hover:underline inline-block mt-1">Voir plus</a>
               </div>
             </div>
 
-
-            {/* Year */}
-            <div className="mb-6">
-              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Année</h3>
-              <select className="w-full border border-border bg-white px-3 py-2 text-sm outline-none">
-                <option>Sélectionner</option>
-              </select>
-            </div>
-
-            {/* Disponibilité */}
-            <div className="mb-6">
-              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">Disponibilité</h3>
-              <select className="w-full border border-border bg-white px-3 py-2 text-sm outline-none">
-                <option>Toutes les disponibilités</option>
-              </select>
-            </div>
-
             <button className="w-full bg-brand-cyan text-white font-impact text-sm uppercase tracking-wider py-3 hover:bg-brand-cyan/90 transition-colors">
-              Afficher les résultats (215)
+              {t("filters.show")} ({filteredProducts.length})
             </button>
           </div>
         </aside>
@@ -209,82 +168,20 @@ const Index = () => {
         <div>
           <div className="flex justify-between items-end mb-6 pb-4 border-b-2 border-primary">
             <h2 className="font-impact text-2xl uppercase font-bold text-primary">
-              + 200 Groupes Électrogènes Disponibles
+              {filteredProducts.length} {t("new.count")}
             </h2>
             <div className="flex items-center gap-3 text-sm">
-              <span className="text-muted-foreground">Trier par</span>
+              <span className="text-muted-foreground">{t("sort.label")}</span>
               <select className="border border-border bg-white px-3 py-1.5 text-sm outline-none">
-                <option>Plus récent</option>
-                <option>Puissance croissante</option>
-                <option>Puissance décroissante</option>
+                <option>{t("sort.recent")}</option>
+                <option>{t("sort.kvaAsc")}</option>
+                <option>{t("sort.kvaDesc")}</option>
               </select>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {filteredProducts.map((p) => {
-              const isStock = p.stock === "EN STOCK";
-              return (
-                <article
-                  key={p.name}
-                  className="bg-card border-2 border-border flex flex-col group hover:border-primary transition-all relative"
-                >
-                  {/* Stock badge */}
-                  <div
-                    className={`absolute top-3 left-3 z-10 font-impact text-[10px] font-bold uppercase tracking-wider px-3 py-1 ${
-                      isStock
-                        ? "bg-brand-cyan text-white"
-                        : "bg-accent text-accent-foreground"
-                    }`}
-                  >
-                    {p.stock}
-                  </div>
-                  <button className="absolute top-3 right-3 z-10 size-8 rounded-full bg-white border border-border flex items-center justify-center hover:bg-accent hover:border-accent transition-colors">
-                    <Heart className="size-4" />
-                  </button>
-
-                  {/* Image */}
-                  <div className="aspect-[4/3] bg-secondary border-b-2 border-border flex items-center justify-center overflow-hidden">
-                    <img
-                      src={p.img}
-                      loading="lazy"
-                      width={400}
-                      height={300}
-                      alt={p.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-
-                  <div className="p-4 flex flex-col flex-1">
-                    <h3 className="font-impact text-lg uppercase font-bold text-primary leading-tight">
-                      {p.name}
-                    </h3>
-                    <p className="text-xs text-muted-foreground mb-4">{p.subtitle}</p>
-
-                    <div className="grid grid-cols-3 gap-2 mb-4 font-mono-spec text-[11px]">
-                      <div>
-                        <div className="text-primary font-bold">{p.kva}</div>
-                        <div className="text-muted-foreground uppercase text-[9px] tracking-wider">Puissance</div>
-                      </div>
-                      <div>
-                        <div className="text-primary font-bold">{p.year}</div>
-                        <div className="text-muted-foreground uppercase text-[9px] tracking-wider">Année</div>
-                      </div>
-                      <div>
-                        <div className="text-primary font-bold">{p.fuel}</div>
-                        <div className="text-muted-foreground uppercase text-[9px] tracking-wider">Carburant</div>
-                      </div>
-                    </div>
-
-                    <div className="mt-auto flex items-center justify-end border-t border-border pt-3">
-                      <button className="bg-primary text-primary-foreground font-impact text-xs uppercase tracking-wider px-4 py-2.5 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground transition-colors">
-                        Voir détails
-                      </button>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
+            {filteredProducts.map((p) => <ProductCard key={p.slug} p={p} />)}
           </div>
         </div>
       </section>
