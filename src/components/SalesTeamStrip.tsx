@@ -28,9 +28,9 @@ const SalesTeamStrip = () => (
             </div>
             <div className="font-bold text-sm text-primary">{rep.name}</div>
             <div className="flex items-center gap-1.5 text-xs mt-1">
-              <Phone className="size-3 text-fluo-yellow" />
+              <Phone className="size-3 text-primary" />
               <span className="text-muted-foreground">Portable :</span>
-              <a href={`tel:${rep.phone.replace(/\s/g, "")}`} className="text-fluo-yellow font-bold hover:underline">{rep.phone}</a>
+              <a href={`tel:${rep.phone.replace(/\s/g, "")}`} className="text-primary font-bold hover:text-brand-cyan hover:underline">{rep.phone}</a>
             </div>
             <a href={`mailto:${rep.email}`} className="text-xs text-brand-cyan font-medium hover:underline">
               {rep.email}
