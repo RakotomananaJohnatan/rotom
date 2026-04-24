@@ -1,10 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
-import { Search, Globe, ChevronDown } from "lucide-react";
+import { Globe, ChevronDown } from "lucide-react";
 import logoRotom from "@/assets/logo-rotom.png";
 import { useLang } from "@/i18n/LanguageContext";
 import {
   DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import GlobalSearch from "@/components/GlobalSearch";
 
 const SiteHeader = () => {
   const { t, lang, setLang } = useLang();
@@ -25,16 +26,7 @@ const SiteHeader = () => {
         </Link>
 
         <div className="flex-1 max-w-2xl mx-4">
-          <div className="flex items-stretch">
-            <input
-              type="text"
-              placeholder={t("header.search")}
-              className="flex-1 bg-white text-foreground px-4 py-3 text-sm rounded-l-sm outline-none focus:ring-2 focus:ring-accent placeholder:text-muted-foreground/70"
-            />
-            <button className="bg-white text-primary px-4 border-l border-border rounded-r-sm hover:bg-accent transition-colors">
-              <Search className="size-5" />
-            </button>
-          </div>
+          <GlobalSearch />
         </div>
 
         <div className="flex items-center gap-4 ml-auto">
