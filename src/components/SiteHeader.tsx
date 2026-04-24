@@ -1,17 +1,22 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Search, Globe, ChevronDown } from "lucide-react";
 import logoRotom from "@/assets/logo-rotom.png";
-
-const navItems = [
-  { label: "Générateurs neufs", to: "/generateurs-neufs" },
-  { label: "Générateurs d'occasion", to: "/generateurs-occasion" },
-  { label: "Équipements associés", to: "/equipements" },
-  { label: "Services", to: "/services" },
-  { label: "Contact", to: "/contact" },
-];
+import { useLang } from "@/i18n/LanguageContext";
+import {
+  DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const SiteHeader = () => {
-  useLocation();
+  const { t, lang, setLang } = useLang();
+
+  const navItems = [
+    { label: t("nav.new"), to: "/generateurs-neufs" },
+    { label: t("nav.used"), to: "/generateurs-occasion" },
+    { label: t("nav.equip"), to: "/equipements" },
+    { label: t("nav.services"), to: "/services" },
+    { label: t("nav.contact"), to: "/contact" },
+  ];
+
   return (
     <header className="bg-primary text-primary-foreground border-b-4 border-accent">
       <div className="max-w-[1500px] mx-auto px-6 py-4 flex items-center gap-6">
@@ -23,7 +28,7 @@ const SiteHeader = () => {
           <div className="flex items-stretch">
             <input
               type="text"
-              placeholder="Rechercher un générateur, marque, modèle..."
+              placeholder={t("header.search")}
               className="flex-1 bg-white text-foreground px-4 py-3 text-sm rounded-l-sm outline-none focus:ring-2 focus:ring-accent placeholder:text-muted-foreground/70"
             />
             <button className="bg-white text-primary px-4 border-l border-border rounded-r-sm hover:bg-accent transition-colors">
@@ -33,14 +38,24 @@ const SiteHeader = () => {
         </div>
 
         <div className="flex items-center gap-4 ml-auto">
-          <button className="flex items-center gap-1.5 text-sm hover:text-accent transition-colors">
-            <Globe className="size-4" /> FR <ChevronDown className="size-3" />
-          </button>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1.5 text-sm hover:text-accent transition-colors outline-none">
+              <Globe className="size-4" /> {lang.toUpperCase()} <ChevronDown className="size-3" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="min-w-[120px]">
+              <DropdownMenuItem onClick={() => setLang("fr")} className={lang === "fr" ? "font-bold text-primary" : ""}>
+                🇫🇷 Français
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLang("en")} className={lang === "en" ? "font-bold text-primary" : ""}>
+                🇬🇧 English
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Link
             to="/contact"
             className="bg-accent text-accent-foreground font-impact text-sm font-bold uppercase tracking-wider px-5 py-3 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground transition-colors"
           >
-            Demander un devis
+            {t("header.cta")}
           </Link>
         </div>
       </div>
