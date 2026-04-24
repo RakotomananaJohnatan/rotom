@@ -5,8 +5,10 @@ import CatalogFilters from "@/components/CatalogFilters";
 import ProductCard from "@/components/ProductCard";
 import { usedProducts, brands } from "@/data/products";
 import { CheckCircle2, Wrench, Truck } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
 
 const GenerateursOccasion = () => {
+  const { t } = useLang();
   const [powerRange, setPowerRange] = useState<[number, number]>([10, 2500]);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
 
@@ -20,10 +22,10 @@ const GenerateursOccasion = () => {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Catalogue"
-        title="Générateurs d'Occasion"
-        subtitle="Plus de 140 groupes électrogènes d'occasion révisés, testés et garantis, prêts à être expédiés partout dans le monde."
-        breadcrumb={[{ label: "Accueil", to: "/" }, { label: "Générateurs d'occasion" }]}
+        eyebrow={t("used.hero.eyebrow")}
+        title={t("used.hero.title")}
+        subtitle={t("used.hero.subtitle")}
+        breadcrumb={[{ label: t("common.home"), to: "/" }, { label: t("nav.used") }]}
       />
 
       <section className="bg-brand-cyan/10 border-b border-border">
@@ -61,17 +63,17 @@ const GenerateursOccasion = () => {
         <div>
           <div className="flex justify-between items-end mb-6 pb-4 border-b-2 border-primary">
             <h2 className="font-impact text-2xl uppercase font-bold text-primary">
-              {filtered.length} Générateurs d'occasion
+              {filtered.length} {t("used.count")}
             </h2>
             <select className="border border-border bg-white px-3 py-1.5 text-sm outline-none">
-              <option>Plus récent</option>
-              <option>Puissance croissante</option>
-              <option>Puissance décroissante</option>
+              <option>{t("sort.recent")}</option>
+              <option>{t("sort.kvaAsc")}</option>
+              <option>{t("sort.kvaDesc")}</option>
             </select>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {filtered.map((p) => <ProductCard key={p.name} p={p} />)}
+            {filtered.map((p) => <ProductCard key={p.slug} p={p} />)}
           </div>
         </div>
       </section>

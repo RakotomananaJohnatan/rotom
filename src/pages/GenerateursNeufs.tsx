@@ -5,8 +5,10 @@ import CatalogFilters from "@/components/CatalogFilters";
 import ProductCard from "@/components/ProductCard";
 import { newProducts, brands } from "@/data/products";
 import { Sparkles, Shield, Award } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
 
 const GenerateursNeufs = () => {
+  const { t } = useLang();
   const [powerRange, setPowerRange] = useState<[number, number]>([10, 2500]);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
 
@@ -20,10 +22,10 @@ const GenerateursNeufs = () => {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Catalogue"
-        title="Générateurs Diesel Neufs"
-        subtitle="Découvrez notre gamme de groupes électrogènes neufs de 10 à 2500 kVA, livrés avec garantie constructeur et mise en service."
-        breadcrumb={[{ label: "Accueil", to: "/" }, { label: "Générateurs neufs" }]}
+        eyebrow={t("new.hero.eyebrow")}
+        title={t("new.hero.title")}
+        subtitle={t("new.hero.subtitle")}
+        breadcrumb={[{ label: t("common.home"), to: "/" }, { label: t("nav.new") }]}
       />
 
       <section className="bg-secondary border-b border-border">
@@ -61,17 +63,17 @@ const GenerateursNeufs = () => {
         <div>
           <div className="flex justify-between items-end mb-6 pb-4 border-b-2 border-primary">
             <h2 className="font-impact text-2xl uppercase font-bold text-primary">
-              {filtered.length} Générateurs neufs disponibles
+              {filtered.length} {t("new.count")}
             </h2>
             <select className="border border-border bg-white px-3 py-1.5 text-sm outline-none">
-              <option>Plus récent</option>
-              <option>Puissance croissante</option>
-              <option>Puissance décroissante</option>
+              <option>{t("sort.recent")}</option>
+              <option>{t("sort.kvaAsc")}</option>
+              <option>{t("sort.kvaDesc")}</option>
             </select>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {filtered.map((p) => <ProductCard key={p.name} p={p} />)}
+            {filtered.map((p) => <ProductCard key={p.slug} p={p} />)}
           </div>
         </div>
       </section>
