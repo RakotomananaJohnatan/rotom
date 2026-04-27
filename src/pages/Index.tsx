@@ -269,30 +269,58 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {filteredProducts.map((p) => <ProductCard key={p.slug} p={p} />)}
+            {filteredProducts.map((p, i) => (
+              <Reveal key={p.slug} variant="fade-in-up" delay={Math.min(i, 5) * 60}>
+                <ProductCard p={p} />
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Trust Strip */}
-      <section className="bg-secondary border-y border-border py-8">
-        <div className="max-w-[1500px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="relative bg-secondary border-y border-border py-12 overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
+        <div className="relative max-w-[1500px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { icon: Shield, title: "Entreprise certifiée", desc: "Normes ISO 9001:2015\nQualité garantie" },
             { icon: Truck, title: "Livraison internationale", desc: "Expédition rapide\npartout dans le monde" },
             { icon: Wrench, title: "Testés & contrôlés", desc: "Tous nos groupes sont testés\navant expédition" },
             { icon: LifeBuoy, title: "Support expert", desc: "Une équipe disponible pour\nvous accompagner" },
-          ].map((item) => (
-            <div key={item.title} className="flex items-center gap-4">
-              <div className="size-12 rounded-full bg-white border-2 border-primary flex items-center justify-center flex-shrink-0">
-                <item.icon className="size-6 text-primary" strokeWidth={1.5} />
+          ].map((item, i) => (
+            <Reveal key={item.title} variant="fade-in-up" delay={i * 100}>
+              <div className="flex items-center gap-4 group">
+                <div className="size-14 rounded-full bg-card border-2 border-primary flex items-center justify-center flex-shrink-0 group-hover:bg-fluo-yellow group-hover:border-fluo-yellow transition-colors">
+                  <item.icon className="size-6 text-primary group-hover:text-fluo-yellow-foreground transition-colors" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <div className="font-impact text-sm uppercase font-bold text-primary">{item.title}</div>
+                  <div className="text-xs text-muted-foreground whitespace-pre-line">{item.desc}</div>
+                </div>
               </div>
-              <div>
-                <div className="font-impact text-sm uppercase font-bold text-primary">{item.title}</div>
-                <div className="text-xs text-muted-foreground whitespace-pre-line">{item.desc}</div>
-              </div>
-            </div>
+            </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="relative bg-primary text-primary-foreground overflow-hidden">
+        <div className="absolute -top-20 left-1/4 size-80 rounded-full bg-brand-cyan/20 blur-3xl" aria-hidden />
+        <div className="absolute -bottom-20 right-1/4 size-80 rounded-full bg-fluo-yellow/15 blur-3xl" aria-hidden />
+        <div className="relative max-w-[1500px] mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-8">
+          <Reveal variant="slide-in-left">
+            <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-3">Prêt à équiper votre site ?</div>
+            <h2 className="font-impact text-3xl md:text-5xl uppercase font-bold leading-tight">
+              Un projet ? Une recherche précise ?<br />
+              <span className="text-gradient-brand">Parlons-en.</span>
+            </h2>
+          </Reveal>
+          <Reveal variant="slide-in-right" delay={150}>
+            <Link to="/contact" className="group inline-flex items-center gap-3 bg-fluo-yellow text-fluo-yellow-foreground font-impact text-sm font-bold uppercase tracking-wider px-8 py-5 hover:shadow-glow transition-all">
+              {t("header.cta")}
+              <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Reveal>
         </div>
       </section>
 
