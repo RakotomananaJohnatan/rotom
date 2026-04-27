@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, ElementType, CSSProperties } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import { cn } from "@/lib/utils";
 
@@ -9,19 +9,15 @@ interface RevealProps {
   variant?: Variant;
   delay?: number;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
 }
 
 const Reveal = ({ children, variant = "fade-in-up", delay = 0, className, as: Tag = "div" }: RevealProps) => {
   const { ref, visible } = useReveal<HTMLDivElement>();
   const animClass = `animate-${variant}`;
+  const style: CSSProperties = visible ? { animationDelay: `${delay}ms` } : {};
   return (
-    // @ts-expect-error dynamic tag
-    <Tag
-      ref={ref}
-      style={{ animationDelay: visible ? `${delay}ms` : undefined }}
-      className={cn(visible ? animClass : "opacity-0", className)}
-    >
+    <Tag ref={ref} style={style} className={cn(visible ? animClass : "opacity-0", className)}>
       {children}
     </Tag>
   );
