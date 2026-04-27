@@ -90,7 +90,7 @@ const CatalogFilters = ({
 
       <div className="mb-6">
         <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.year")}</h3>
-        <select value={year} onChange={(e) => setYear(e.target.value)} className="w-full border border-border bg-white px-3 py-2 text-sm outline-none">
+        <select value={year} onChange={(e) => setYear(e.target.value)} className="w-full border border-border bg-background px-3 py-2 text-sm outline-none">
           <option value="">{t("filters.allYears")}</option>
           <option>2024</option><option>2023</option><option>2022</option><option>2021</option>
         </select>
@@ -98,7 +98,7 @@ const CatalogFilters = ({
 
       <div className="mb-6">
         <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.availability")}</h3>
-        <select value={availability} onChange={(e) => setAvailability(e.target.value)} className="w-full border border-border bg-white px-3 py-2 text-sm outline-none">
+        <select value={availability} onChange={(e) => setAvailability(e.target.value)} className="w-full border border-border bg-background px-3 py-2 text-sm outline-none">
           <option value="">{t("filters.allAvailability")}</option>
           <option>{t("common.inStock")}</option>
           <option>{t("common.onOrder")}</option>
