@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useEffect, useState, ReactNode } from "react";
 import { fr } from "./fr";
 import { en } from "./en";
 
@@ -7,13 +7,13 @@ type Dict = typeof fr;
 
 const dicts: Record<Lang, Dict> = { fr, en };
 
-interface Ctx {
+export interface LangCtx {
   lang: Lang;
   setLang: (l: Lang) => void;
   t: (key: string) => string;
 }
 
-const LanguageContext = createContext<Ctx | null>(null);
+export const LanguageContext = createContext<LangCtx | null>(null);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Lang>(() => {
@@ -39,8 +39,5 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useLang = () => {
-  const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error("useLang must be used within LanguageProvider");
-  return ctx;
-};
+// Re-export for backwards compatibility
+export { useLang } from "./useLang";
