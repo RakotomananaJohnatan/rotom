@@ -1,7 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import { Globe, ChevronDown } from "lucide-react";
+import { Globe, ChevronDown, Sun, Moon } from "lucide-react";
 import logoRotom from "@/assets/logo-rotom.png";
 import { useLang } from "@/i18n/LanguageContext";
+import { useTheme } from "@/theme/ThemeContext";
 import {
   DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -9,6 +10,7 @@ import GlobalSearch from "@/components/GlobalSearch";
 
 const SiteHeader = () => {
   const { t, lang, setLang } = useLang();
+  const { theme, toggle } = useTheme();
 
   const navItems = [
     { label: t("nav.new"), to: "/generateurs-neufs" },
@@ -30,6 +32,14 @@ const SiteHeader = () => {
         </div>
 
         <div className="flex items-center gap-4 ml-auto">
+          <button
+            type="button"
+            onClick={toggle}
+            aria-label={theme === "dark" ? "Passer en mode clair" : "Passer en mode sombre"}
+            className="flex items-center justify-center size-8 hover:text-accent transition-colors outline-none"
+          >
+            {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+          </button>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1.5 text-sm hover:text-accent transition-colors outline-none">
               <Globe className="size-4" /> {lang.toUpperCase()} <ChevronDown className="size-3" />

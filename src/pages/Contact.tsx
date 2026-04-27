@@ -92,19 +92,19 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <Field label={t("contact.form.name")} id="name">
                 <input required value={form.name} onChange={onChange("name")} id="name" type="text"
-                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
+                  className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
               </Field>
               <Field label={t("contact.form.company")} id="company">
                 <input value={form.company} onChange={onChange("company")} id="company" type="text"
-                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
+                  className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
               </Field>
               <Field label={t("contact.form.email")} id="email">
                 <input required value={form.email} onChange={onChange("email")} id="email" type="email"
-                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
+                  className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
               </Field>
               <Field label={t("contact.form.phone")} id="phone">
                 <input value={form.phone} onChange={onChange("phone")} id="phone" type="tel"
-                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
+                  className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
               </Field>
 
               {/* Searchable Combobox for power */}
@@ -115,7 +115,7 @@ const Contact = () => {
                       type="button"
                       role="combobox"
                       aria-expanded={openPower}
-                      className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan flex items-center justify-between text-left"
+                      className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan flex items-center justify-between text-left"
                     >
                       <span className={cn("truncate", !selectedProduct && "text-muted-foreground")}>
                         {selectedProduct ? `${selectedProduct.kva} — ${selectedProduct.name}` : t("contact.form.powerPlaceholder")}
@@ -152,7 +152,7 @@ const Contact = () => {
 
               <Field label={t("contact.form.subject")} id="subject">
                 <select value={form.subject} onChange={onChange("subject")} id="subject"
-                  className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan">
+                  className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan">
                   <option>{t("contact.subject.quote")}</option>
                   <option>{t("contact.subject.tech")}</option>
                   <option>{t("contact.subject.svc")}</option>
@@ -164,7 +164,7 @@ const Contact = () => {
 
             <Field label={t("contact.form.message")} id="message">
               <textarea required value={form.message} onChange={onChange("message")} id="message" rows={6}
-                className="w-full border-2 border-border bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-cyan resize-none" />
+                className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan resize-none" />
             </Field>
 
             <button type="submit"

@@ -65,7 +65,7 @@ const GenerateursNeufs = () => {
             <h2 className="font-impact text-2xl uppercase font-bold text-primary">
               {filtered.length} {t("new.count")}
             </h2>
-            <select className="border border-border bg-white px-3 py-1.5 text-sm outline-none">
+            <select className="border border-border bg-background px-3 py-1.5 text-sm outline-none">
               <option>{t("sort.recent")}</option>
               <option>{t("sort.kvaAsc")}</option>
               <option>{t("sort.kvaDesc")}</option>

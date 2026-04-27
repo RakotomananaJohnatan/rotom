@@ -70,25 +70,60 @@
   }
 
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 10%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 10%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222 47% 12%;
-    --secondary: 217 32% 18%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 32% 18%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 72 100% 50%;
-    --accent-foreground: 222 65% 8%;
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 32% 18%;
-    --input: 217 32% 18%;
-    --ring: 72 100% 50%;
+    --background: 252 35% 7%;
+    --foreground: 210 30% 96%;
+
+    --card: 252 30% 11%;
+    --card-foreground: 210 30% 96%;
+
+    --popover: 252 30% 11%;
+    --popover-foreground: 210 30% 96%;
+
+    /* Primary stays as the brand surface — slightly lifted for dark */
+    --primary: 252 50% 18%;
+    --primary-foreground: 210 30% 98%;
+
+    --secondary: 252 25% 14%;
+    --secondary-foreground: 210 30% 96%;
+
+    --muted: 252 20% 16%;
+    --muted-foreground: 250 10% 70%;
+
+    --accent: 72 95% 55%;
+    --accent-foreground: 252 80% 12%;
+
+    --brand-cyan: 199 95% 60%;
+    --brand-cyan-foreground: 252 80% 12%;
+
+    --fluo-yellow: 58 100% 55%;
+    --fluo-yellow-foreground: 252 80% 12%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 65% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --whatsapp: 142 65% 45%;
+    --whatsapp-foreground: 0 0% 100%;
+
+    --border: 252 20% 20%;
+    --input: 252 20% 18%;
+    --ring: 72 95% 55%;
+
+    --shadow-block: 4px 4px 0 hsl(72 95% 55%);
+    --shadow-block-accent: 4px 4px 0 hsl(199 95% 60%);
+
+    --gradient-brand: linear-gradient(135deg, hsl(252 50% 22%), hsl(199 95% 50%));
+
+    --sidebar-background: 252 35% 8%;
+    --sidebar-foreground: 210 30% 90%;
+    --sidebar-primary: 210 30% 96%;
+    --sidebar-primary-foreground: 252 50% 12%;
+    --sidebar-accent: 252 25% 14%;
+    --sidebar-accent-foreground: 210 30% 96%;
+    --sidebar-border: 252 20% 20%;
+    --sidebar-ring: 72 95% 55%;
   }
 }
 
