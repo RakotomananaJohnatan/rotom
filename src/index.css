@@ -125,6 +125,21 @@
     --sidebar-border: 252 20% 20%;
     --sidebar-ring: 72 95% 55%;
   }
+
+  /* Dark mode readability overrides:
+     `--primary` doubles as brand SURFACE (header/footer/CTA bg) AND as TEXT
+     color on light cards. In dark mode, dark-on-dark text is unreadable, so
+     we keep bg-primary indigo but force text-primary/border-primary to use
+     the light foreground. */
+  .dark .text-primary {
+    color: hsl(var(--foreground)) !important;
+  }
+  .dark .border-primary {
+    border-color: hsl(var(--foreground) / 0.4) !important;
+  }
+  .dark .text-brand-cyan {
+    color: hsl(199 95% 65%) !important;
+  }
 }
 
 @layer base {
