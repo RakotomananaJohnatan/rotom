@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Slider } from "@/components/ui/slider";
-import { Headphones, Shield, Truck, Wrench, LifeBuoy } from "lucide-react";
+import { Headphones, Shield, Truck, Wrench, LifeBuoy, ArrowRight, Zap, Globe2, Award } from "lucide-react";
 
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import SalesTeamStrip from "@/components/SalesTeamStrip";
 import ProductCard from "@/components/ProductCard";
+import Reveal from "@/components/Reveal";
+import Counter from "@/components/Counter";
 import { newProducts, brands } from "@/data/products";
 import { useLang } from "@/i18n/LanguageContext";
 
