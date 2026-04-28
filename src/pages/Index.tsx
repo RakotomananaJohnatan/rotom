@@ -92,7 +92,7 @@ const Index = () => {
                     {cat.title}
                   </h3>
                   <span className="text-xs text-brand-cyan inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Voir plus <ArrowRight className="size-3" />
+                    {t("home.cat.viewMore")} <ArrowRight className="size-3" />
                   </span>
                 </div>
               </Link>
@@ -105,9 +105,9 @@ const Index = () => {
               <Headphones className="size-12 text-fluo-yellow flex-shrink-0 relative" strokeWidth={1.5} />
               <div className="flex-1 relative">
                 <h3 className="font-impact text-base uppercase font-bold leading-tight mb-1">
-                  Besoin d'un<br />générateur ?
+                  {t("home.cat.need.title")}
                 </h3>
-                <p className="text-[11px] text-white/70 mb-2">Notre équipe vous répond sous 24h.</p>
+                <p className="text-[11px] text-white/70 mb-2">{t("home.cat.need.desc")}</p>
                 <span className="bg-fluo-yellow text-fluo-yellow-foreground text-[10px] font-impact font-bold uppercase tracking-wider px-3 py-1.5 inline-block">
                   {t("header.cta")}
                 </span>
@@ -226,17 +226,17 @@ const Index = () => {
         <div className="absolute -bottom-32 -left-20 size-[380px] rounded-full bg-fluo-yellow/15 blur-3xl" aria-hidden />
         <div className="relative max-w-[1500px] mx-auto px-6 py-14">
           <Reveal variant="fade-in-up" className="mb-8">
-            <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-2">25+ ans d'expertise · 60+ pays</div>
+            <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-2">{t("home.stats.eyebrow")}</div>
             <h2 className="font-impact text-2xl md:text-3xl uppercase font-bold leading-tight">
-              Énergie <span className="text-gradient-brand">industrielle</span> de 10 à 2 500 kVA
+              {t("home.stats.title.1")} <span className="text-gradient-brand">{t("home.stats.title.2")}</span> {t("home.stats.title.3")}
             </h2>
           </Reveal>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: Zap, v: 200, suffix: "+", l: "Groupes en stock" },
-              { icon: Globe2, v: 60, suffix: "+", l: "Pays livrés" },
-              { icon: Award, v: 25, suffix: " ans", l: "D'expérience" },
-              { icon: LifeBuoy, v: 24, suffix: "/7", l: "Support technique" },
+              { icon: Zap, v: 200, suffix: "+", l: t("home.stats.s1") },
+              { icon: Globe2, v: 60, suffix: "+", l: t("home.stats.s2") },
+              { icon: Award, v: 25, suffix: t("home.stats.s3.suffix"), l: t("home.stats.s3") },
+              { icon: LifeBuoy, v: 24, suffix: "/7", l: t("home.stats.s4") },
             ].map((s, i) => (
               <Reveal key={s.l} variant="fade-in-up" delay={i * 80}>
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-5 hover:border-fluo-yellow transition-colors h-full">
@@ -257,10 +257,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
         <div className="relative max-w-[1500px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: Shield, title: "Entreprise certifiée", desc: "Normes ISO 9001:2015\nQualité garantie" },
-            { icon: Truck, title: "Livraison internationale", desc: "Expédition rapide\npartout dans le monde" },
-            { icon: Wrench, title: "Testés & contrôlés", desc: "Tous nos groupes sont testés\navant expédition" },
-            { icon: LifeBuoy, title: "Support expert", desc: "Une équipe disponible pour\nvous accompagner" },
+            { icon: Shield, title: t("home.trust.1.title"), desc: t("home.trust.1.desc") },
+            { icon: Truck, title: t("home.trust.2.title"), desc: t("home.trust.2.desc") },
+            { icon: Wrench, title: t("home.trust.3.title"), desc: t("home.trust.3.desc") },
+            { icon: LifeBuoy, title: t("home.trust.4.title"), desc: t("home.trust.4.desc") },
           ].map((item, i) => (
             <Reveal key={item.title} variant="fade-in-up" delay={i * 100}>
               <div className="flex items-center gap-4 group">
@@ -283,10 +283,10 @@ const Index = () => {
         <div className="absolute -bottom-20 right-1/4 size-80 rounded-full bg-fluo-yellow/15 blur-3xl" aria-hidden />
         <div className="relative max-w-[1500px] mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-8">
           <Reveal variant="slide-in-left">
-            <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-3">Prêt à équiper votre site ?</div>
+            <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-3">{t("home.cta.eyebrow")}</div>
             <h2 className="font-impact text-3xl md:text-5xl uppercase font-bold leading-tight">
-              Un projet ? Une recherche précise ?<br />
-              <span className="text-gradient-brand">Parlons-en.</span>
+              {t("home.cta.title.1")}<br />
+              <span className="text-gradient-brand">{t("home.cta.title.2")}</span>
             </h2>
           </Reveal>
           <Reveal variant="slide-in-right" delay={150}>
