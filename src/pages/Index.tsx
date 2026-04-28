@@ -47,74 +47,15 @@ const Index = () => {
       <SiteHeader />
       <SalesTeamStrip />
 
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-primary text-primary-foreground">
-        <div className="absolute inset-0 bg-grid opacity-40" aria-hidden />
-        <div className="absolute -top-32 -right-32 size-[480px] rounded-full bg-brand-cyan/30 blur-3xl" aria-hidden />
-        <div className="absolute -bottom-40 -left-20 size-[420px] rounded-full bg-fluo-yellow/20 blur-3xl" aria-hidden />
-
-        <div className="relative max-w-[1500px] mx-auto px-6 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
-          <Reveal variant="fade-in-up">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 px-3 py-1.5 mb-6">
-              <span className="size-2 rounded-full bg-fluo-yellow animate-pulse" />
-              <span className="text-[11px] font-impact uppercase tracking-[0.25em]">25+ ans d'expertise · 60+ pays</span>
-            </div>
-            <h1 className="font-impact font-bold uppercase leading-[0.95] text-5xl md:text-7xl mb-6">
-              Énergie <span className="text-gradient-brand">industrielle</span><br />
-              de 10 à 2 500 kVA.
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-xl mb-8 leading-relaxed">
-              Groupes électrogènes neufs et d'occasion, équipements & services. Des solutions fiables, livrées partout dans le monde.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/generateurs-neufs"
-                className="group inline-flex items-center gap-2 bg-fluo-yellow text-fluo-yellow-foreground font-impact text-sm font-bold uppercase tracking-wider px-7 py-4 hover:shadow-glow transition-all"
-              >
-                Voir le catalogue
-                <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-impact text-sm font-bold uppercase tracking-wider px-7 py-4 hover:bg-white/20 transition-all"
-              >
-                {t("header.cta")}
-              </Link>
-            </div>
-          </Reveal>
-
-          <Reveal variant="scale-in" delay={150} className="hidden lg:block">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-brand-cyan/40 to-fluo-yellow/30 blur-2xl" aria-hidden />
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-6 grid grid-cols-2 gap-4">
-                {[
-                  { icon: Zap, v: 200, suffix: "+", l: "Groupes en stock" },
-                  { icon: Globe2, v: 60, suffix: "+", l: "Pays livrés" },
-                  { icon: Award, v: 25, suffix: " ans", l: "D'expérience" },
-                  { icon: LifeBuoy, v: 24, suffix: "/7", l: "Support technique" },
-                ].map((s) => (
-                  <div key={s.l} className="bg-white/5 border border-white/10 p-5 hover:border-fluo-yellow transition-colors">
-                    <s.icon className="size-6 text-fluo-yellow mb-3" strokeWidth={1.5} />
-                    <div className="font-impact text-3xl font-bold leading-none">
-                      <Counter to={s.v} suffix={s.suffix} />
-                    </div>
-                    <div className="text-[11px] uppercase tracking-wider text-white/60 mt-2">{s.l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-
-        {/* Brand marquee */}
-        <div className="relative border-t border-white/10 py-5 overflow-hidden">
-          <div className="flex gap-12 animate-marquee whitespace-nowrap" style={{ width: "max-content" }}>
-            {[...brands, ...brands].map((b, i) => (
-              <span key={`${b}-${i}`} className="font-impact text-sm uppercase tracking-[0.25em] text-white/40">
-                {b}
-              </span>
-            ))}
-          </div>
+      {/* Brand marquee */}
+      <section className="relative bg-primary text-primary-foreground border-y-2 border-fluo-yellow/40 py-4 overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
+        <div className="relative flex gap-12 animate-marquee whitespace-nowrap" style={{ width: "max-content" }}>
+          {[...brands, ...brands].map((b, i) => (
+            <span key={`${b}-${i}`} className="font-impact text-sm uppercase tracking-[0.25em] text-white/50">
+              {b}
+            </span>
+          ))}
         </div>
       </section>
 
@@ -272,6 +213,39 @@ const Index = () => {
             {filteredProducts.map((p, i) => (
               <Reveal key={p.slug} variant="fade-in-up" delay={Math.min(i, 5) * 60}>
                 <ProductCard p={p} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats (déplacés depuis le hero) */}
+      <section className="relative bg-primary text-primary-foreground overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-40" aria-hidden />
+        <div className="absolute -top-32 -right-32 size-[420px] rounded-full bg-brand-cyan/25 blur-3xl" aria-hidden />
+        <div className="absolute -bottom-32 -left-20 size-[380px] rounded-full bg-fluo-yellow/15 blur-3xl" aria-hidden />
+        <div className="relative max-w-[1500px] mx-auto px-6 py-14">
+          <Reveal variant="fade-in-up" className="mb-8">
+            <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-2">25+ ans d'expertise · 60+ pays</div>
+            <h2 className="font-impact text-2xl md:text-3xl uppercase font-bold leading-tight">
+              Énergie <span className="text-gradient-brand">industrielle</span> de 10 à 2 500 kVA
+            </h2>
+          </Reveal>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { icon: Zap, v: 200, suffix: "+", l: "Groupes en stock" },
+              { icon: Globe2, v: 60, suffix: "+", l: "Pays livrés" },
+              { icon: Award, v: 25, suffix: " ans", l: "D'expérience" },
+              { icon: LifeBuoy, v: 24, suffix: "/7", l: "Support technique" },
+            ].map((s, i) => (
+              <Reveal key={s.l} variant="fade-in-up" delay={i * 80}>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-5 hover:border-fluo-yellow transition-colors h-full">
+                  <s.icon className="size-6 text-fluo-yellow mb-3" strokeWidth={1.5} />
+                  <div className="font-impact text-3xl md:text-4xl font-bold leading-none">
+                    <Counter to={s.v} suffix={s.suffix} />
+                  </div>
+                  <div className="text-[11px] uppercase tracking-wider text-white/60 mt-2">{s.l}</div>
+                </div>
               </Reveal>
             ))}
           </div>
