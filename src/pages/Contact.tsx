@@ -6,6 +6,7 @@ import SalesTeamStrip from "@/components/SalesTeamStrip";
 import { toast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, MessageCircle, Clock, Send, Check, ChevronsUpDown } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import Reveal from "@/components/Reveal";
 import { allProducts, findProductBySlug } from "@/data/products";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
@@ -61,10 +62,10 @@ const Contact = () => {
             { icon: Mail, label: t("contact.quick.email"), value: "sales@rotom.com", href: "mailto:sales@rotom.com", color: "text-brand-cyan" },
             { icon: MessageCircle, label: t("contact.quick.whatsapp"), value: t("contact.quick.whatsappValue"), href: "#", color: "text-accent" },
             { icon: Clock, label: t("contact.quick.hours"), value: t("contact.quick.hoursValue"), href: undefined, color: "text-brand-cyan" },
-          ].map((item) => {
+          ].map((item, i) => {
             const Inner = (
-              <div className="flex items-center gap-3 bg-card border-2 border-border p-4 h-full hover:border-primary transition-colors">
-                <div className="size-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+              <div className="lift flex items-center gap-3 bg-card border-2 border-border p-4 h-full hover:border-primary transition-colors group">
+                <div className="size-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <item.icon className={`size-5 ${item.color}`} strokeWidth={2} />
                 </div>
                 <div className="min-w-0">
@@ -73,10 +74,10 @@ const Contact = () => {
                 </div>
               </div>
             );
-            return item.href ? (
-              <a key={item.label} href={item.href}>{Inner}</a>
-            ) : (
-              <div key={item.label}>{Inner}</div>
+            return (
+              <Reveal key={item.label} variant="fade-in-up" delay={i * 80}>
+                {item.href ? <a href={item.href}>{Inner}</a> : Inner}
+              </Reveal>
             );
           })}
         </div>
@@ -84,7 +85,7 @@ const Contact = () => {
 
       {/* Form + infos */}
       <section className="max-w-[1500px] mx-auto px-6 py-14 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10">
-        <div className="bg-card border-2 border-border p-8">
+        <Reveal variant="slide-in-left" className="bg-card border-2 border-border p-8">
           <h2 className="font-impact text-2xl uppercase font-bold text-primary mb-1">{t("contact.form.title")}</h2>
           <p className="text-sm text-muted-foreground mb-6">{t("contact.form.required")}</p>
 
@@ -168,17 +169,18 @@ const Contact = () => {
             </Field>
 
             <button type="submit"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-impact text-sm uppercase tracking-wider px-8 py-3.5 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground transition-colors">
-              <Send className="size-4" /> {t("contact.form.send")}
+              className="group inline-flex items-center gap-2 bg-primary text-primary-foreground font-impact text-sm uppercase tracking-wider px-8 py-3.5 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground transition-all hover:scale-105">
+              <Send className="size-4 transition-transform group-hover:translate-x-1" /> {t("contact.form.send")}
             </button>
           </form>
-        </div>
+        </Reveal>
 
         {/* Side infos */}
-        <aside className="space-y-6">
-          <div className="bg-primary text-primary-foreground p-6 border-l-8 border-fluo-yellow">
-            <h3 className="font-impact text-lg uppercase font-bold mb-4">{t("contact.hq")}</h3>
-            <ul className="space-y-3 text-sm">
+        <Reveal as="aside" variant="slide-in-right" className="space-y-6">
+          <div className="relative bg-primary text-primary-foreground p-6 border-l-8 border-fluo-yellow overflow-hidden">
+            <div className="absolute -top-12 -right-12 size-40 rounded-full bg-fluo-yellow/15 blur-3xl pointer-events-none" />
+            <h3 className="relative font-impact text-lg uppercase font-bold mb-4">{t("contact.hq")}</h3>
+            <ul className="relative space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="size-4 text-accent flex-shrink-0 mt-0.5" />
                 <span>ROTOM Power Solutions<br />Bredaseweg 26<br />4705 RN Roosendaal<br />Pays-Bas</span>
@@ -194,7 +196,7 @@ const Contact = () => {
             </ul>
           </div>
 
-          <div className="border-2 border-border overflow-hidden">
+          <div className="border-2 border-border overflow-hidden lift">
             <iframe
               title="ROTOM Roosendaal"
               src="https://www.openstreetmap.org/export/embed.html?bbox=4.43%2C51.52%2C4.49%2C51.55&layer=mapnik&marker=51.535%2C4.46"
@@ -202,14 +204,14 @@ const Contact = () => {
               loading="lazy"
             />
           </div>
-        </aside>
+        </Reveal>
       </section>
 
       <section className="border-t-2 border-border bg-secondary py-12">
-        <div className="max-w-[1500px] mx-auto px-6 mb-6 text-center">
+        <Reveal variant="fade-in-up" className="max-w-[1500px] mx-auto px-6 mb-6 text-center">
           <div className="font-impact text-xs uppercase tracking-[0.3em] text-brand-cyan mb-2">{t("contact.team.eyebrow")}</div>
           <h2 className="font-impact text-3xl uppercase font-bold text-primary">{t("contact.team.title")}</h2>
-        </div>
+        </Reveal>
         <SalesTeamStrip />
       </section>
     </SiteLayout>
