@@ -6,6 +6,7 @@ import ProductCard from "@/components/ProductCard";
 import { usedProducts, brands } from "@/data/products";
 import { CheckCircle2, Wrench, Truck } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import Reveal from "@/components/Reveal";
 
 const GenerateursOccasion = () => {
   const { t } = useLang();
@@ -34,16 +35,18 @@ const GenerateursOccasion = () => {
             { icon: CheckCircle2, title: "Testés en charge", desc: "Bancs de test certifiés" },
             { icon: Wrench, title: "Révisés", desc: "Pièces d'usure remplacées" },
             { icon: Truck, title: "Livraison rapide", desc: "Stock disponible immédiat" },
-          ].map((it) => (
-            <div key={it.title} className="flex items-center gap-3 bg-card border-2 border-border p-4">
-              <div className="size-10 rounded-full bg-brand-cyan flex items-center justify-center flex-shrink-0">
-                <it.icon className="size-5 text-white" strokeWidth={2} />
+          ].map((it, i) => (
+            <Reveal key={it.title} variant="fade-in-up" delay={i * 100}>
+              <div className="lift flex items-center gap-3 bg-card border-2 border-border p-4 h-full hover:border-brand-cyan transition-colors group">
+                <div className="size-10 rounded-full bg-brand-cyan flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <it.icon className="size-5 text-white" strokeWidth={2} />
+                </div>
+                <div>
+                  <div className="font-impact text-sm uppercase font-bold text-primary">{it.title}</div>
+                  <div className="text-xs text-muted-foreground">{it.desc}</div>
+                </div>
               </div>
-              <div>
-                <div className="font-impact text-sm uppercase font-bold text-primary">{it.title}</div>
-                <div className="text-xs text-muted-foreground">{it.desc}</div>
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -73,7 +76,11 @@ const GenerateursOccasion = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {filtered.map((p) => <ProductCard key={p.slug} p={p} />)}
+            {filtered.map((p, i) => (
+              <Reveal key={p.slug} variant="fade-in-up" delay={Math.min(i, 8) * 60} className="lift">
+                <ProductCard p={p} />
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
