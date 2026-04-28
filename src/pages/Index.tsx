@@ -219,6 +219,39 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Stats (déplacés depuis le hero) */}
+      <section className="relative bg-primary text-primary-foreground overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-40" aria-hidden />
+        <div className="absolute -top-32 -right-32 size-[420px] rounded-full bg-brand-cyan/25 blur-3xl" aria-hidden />
+        <div className="absolute -bottom-32 -left-20 size-[380px] rounded-full bg-fluo-yellow/15 blur-3xl" aria-hidden />
+        <div className="relative max-w-[1500px] mx-auto px-6 py-14">
+          <Reveal variant="fade-in-up" className="mb-8">
+            <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-2">25+ ans d'expertise · 60+ pays</div>
+            <h2 className="font-impact text-2xl md:text-3xl uppercase font-bold leading-tight">
+              Énergie <span className="text-gradient-brand">industrielle</span> de 10 à 2 500 kVA
+            </h2>
+          </Reveal>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { icon: Zap, v: 200, suffix: "+", l: "Groupes en stock" },
+              { icon: Globe2, v: 60, suffix: "+", l: "Pays livrés" },
+              { icon: Award, v: 25, suffix: " ans", l: "D'expérience" },
+              { icon: LifeBuoy, v: 24, suffix: "/7", l: "Support technique" },
+            ].map((s, i) => (
+              <Reveal key={s.l} variant="fade-in-up" delay={i * 80}>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-5 hover:border-fluo-yellow transition-colors h-full">
+                  <s.icon className="size-6 text-fluo-yellow mb-3" strokeWidth={1.5} />
+                  <div className="font-impact text-3xl md:text-4xl font-bold leading-none">
+                    <Counter to={s.v} suffix={s.suffix} />
+                  </div>
+                  <div className="text-[11px] uppercase tracking-wider text-white/60 mt-2">{s.l}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Trust Strip */}
       <section className="relative bg-secondary border-y border-border py-12 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
