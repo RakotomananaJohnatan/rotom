@@ -23,7 +23,7 @@ const Index = () => {
   const categories = [
     { title: t("nav.new"), img: catNeufs, to: "/generateurs-neufs" },
     { title: t("nav.used"), img: catOccasion, to: "/generateurs-occasion" },
-    { title: "Hybrides & Batteries", img: catHybrid, to: "/equipements" },
+    { title: t("home.cat.hybrid"), img: catHybrid, to: "/equipements" },
     { title: t("nav.equip"), img: catEquip, to: "/equipements" },
   ];
 
@@ -63,13 +63,13 @@ const Index = () => {
       <section className="max-w-[1500px] mx-auto px-6 py-14">
         <Reveal variant="fade-in-up" className="mb-8 flex items-end justify-between gap-6 flex-wrap">
           <div>
-            <div className="font-impact text-xs uppercase tracking-[0.3em] text-brand-cyan mb-2">Catalogue</div>
+            <div className="font-impact text-xs uppercase tracking-[0.3em] text-brand-cyan mb-2">{t("home.cat.eyebrow")}</div>
             <h2 className="font-impact text-3xl md:text-4xl uppercase font-bold text-primary">
-              Explorez nos gammes
+              {t("home.cat.title")}
             </h2>
           </div>
           <Link to="/generateurs-neufs" className="text-sm font-impact uppercase tracking-wider text-brand-cyan link-underline">
-            Tout voir
+            {t("home.cat.viewAll")}
           </Link>
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
