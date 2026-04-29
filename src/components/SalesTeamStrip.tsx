@@ -10,8 +10,8 @@ export const reps = [
 ];
 
 const SalesTeamStrip = () => (
-  <section className="bg-card border-b border-border py-6">
-    <div className="max-w-[1500px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+  <section className="bg-card border-b border-border py-5 sm:py-6">
+    <div className="max-w-[1500px] mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
       {reps.map((rep) => (
         <div key={rep.name} className="flex items-center gap-4">
           <img
