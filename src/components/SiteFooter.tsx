@@ -6,8 +6,8 @@ const SiteFooter = () => {
   const { t } = useLang();
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="max-w-[1500px] mx-auto px-6 py-12 grid grid-cols-2 lg:grid-cols-5 gap-8">
-        <div className="col-span-2 lg:col-span-1">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-10 sm:py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="sm:col-span-2 lg:col-span-1">
           <h4 className="font-impact text-xs uppercase tracking-widest text-accent mb-4">{t("footer.about.title")}</h4>
           <p className="text-xs text-white/70 leading-relaxed mb-3">{t("footer.about.body")}</p>
         </div>
@@ -73,9 +73,9 @@ const SiteFooter = () => {
       </div>
 
       <div className="border-t border-white/10 bg-accent text-accent-foreground">
-        <div className="max-w-[1500px] mx-auto px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-2 text-xs">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-center">
           <span>{t("footer.copyright")}</span>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link to="/mentions-legales" className="hover:underline">{t("footer.legal")}</Link>
             <Link to="/conditions-generales" className="hover:underline">{t("footer.terms")}</Link>
             <Link to="/politique-confidentialite" className="hover:underline">{t("footer.privacy")}</Link>
