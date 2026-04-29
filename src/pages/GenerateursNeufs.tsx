@@ -30,7 +30,7 @@ const GenerateursNeufs = () => {
       />
 
       <section className="bg-secondary border-b border-border">
-        <div className="max-w-[1500px] mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
             { icon: Sparkles, title: "Modèles 2024", desc: "Dernière génération moteur" },
             { icon: Shield, title: "Garantie 2 ans", desc: "Pièces & main d'œuvre incluses" },
@@ -51,7 +51,7 @@ const GenerateursNeufs = () => {
         </div>
       </section>
 
-      <section className="max-w-[1500px] mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
+      <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
         <aside>
           <CatalogFilters
             brands={brands}

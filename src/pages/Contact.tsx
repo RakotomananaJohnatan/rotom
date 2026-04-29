@@ -56,7 +56,7 @@ const Contact = () => {
 
       {/* Quick contact bar */}
       <section className="bg-secondary border-b border-border">
-        <div className="max-w-[1500px] mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-4 gap-4">
           {[
             { icon: Phone, label: t("contact.quick.phone"), value: "+31 (0)165 55 60 62", href: "tel:+31165556062", color: "text-accent" },
             { icon: Mail, label: t("contact.quick.email"), value: "sales@rotom.com", href: "mailto:sales@rotom.com", color: "text-brand-cyan" },
@@ -84,7 +84,7 @@ const Contact = () => {
       </section>
 
       {/* Form + infos */}
-      <section className="max-w-[1500px] mx-auto px-6 py-14 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10">
+      <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-14 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10">
         <Reveal variant="slide-in-left" className="bg-card border-2 border-border p-8">
           <h2 className="font-impact text-2xl uppercase font-bold text-primary mb-1">{t("contact.form.title")}</h2>
           <p className="text-sm text-muted-foreground mb-6">{t("contact.form.required")}</p>
@@ -208,7 +208,7 @@ const Contact = () => {
       </section>
 
       <section className="border-t-2 border-border bg-secondary py-12">
-        <Reveal variant="fade-in-up" className="max-w-[1500px] mx-auto px-6 mb-6 text-center">
+        <Reveal variant="fade-in-up" className="max-w-[1500px] mx-auto px-4 sm:px-6 mb-6 text-center">
           <div className="font-impact text-xs uppercase tracking-[0.3em] text-brand-cyan mb-2">{t("contact.team.eyebrow")}</div>
           <h2 className="font-impact text-3xl uppercase font-bold text-primary">{t("contact.team.title")}</h2>
         </Reveal>

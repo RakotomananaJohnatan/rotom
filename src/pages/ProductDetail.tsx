@@ -15,7 +15,7 @@ const ProductDetail = () => {
   if (!product) {
     return (
       <SiteLayout>
-        <div className="max-w-[1500px] mx-auto px-6 py-24 text-center">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-24 text-center">
           <h1 className="font-impact text-4xl uppercase font-bold text-primary mb-4">{t("product.notFound")}</h1>
           <Link to="/generateurs-neufs" className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-impact text-sm uppercase tracking-wider px-6 py-3 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground transition-colors">
             {t("product.notFound.cta")}
@@ -56,7 +56,7 @@ const ProductDetail = () => {
         ]}
       />
 
-      <section className="max-w-[1500px] mx-auto px-6 py-10">
+      <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-10">
         <Link to={catalogTo} className="inline-flex items-center gap-1.5 text-sm text-brand-cyan hover:underline mb-6">
           <ChevronLeft className="size-4" /> {t("common.backToCatalog")}
         </Link>
@@ -139,7 +139,7 @@ const ProductDetail = () => {
 
       {related.length > 0 && (
         <section className="bg-secondary border-t border-border py-12">
-          <div className="max-w-[1500px] mx-auto px-6">
+          <div className="max-w-[1500px] mx-auto px-4 sm:px-6">
             <h2 className="font-impact text-2xl uppercase font-bold text-primary mb-6">{catalogLabel}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {related.map((p) => <ProductCard key={p.slug} p={p} />)}
