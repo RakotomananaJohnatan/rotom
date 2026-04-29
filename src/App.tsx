@@ -13,6 +13,9 @@ import Equipements from "./pages/Equipements.tsx";
 import Services from "./pages/Services.tsx";
 import Contact from "./pages/Contact.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
+import MentionsLegales from "./pages/MentionsLegales.tsx";
+import ConditionsGenerales from "./pages/ConditionsGenerales.tsx";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +35,9 @@ const App = () => (
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/produit/:slug" element={<ProductDetail />} />
+              <Route path="/mentions-legales" element={<MentionsLegales />} />
+              <Route path="/conditions-generales" element={<ConditionsGenerales />} />
+              <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
