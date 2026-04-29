@@ -50,7 +50,7 @@ const Services = () => {
         breadcrumb={[{ label: t("common.home"), to: "/" }, { label: t("nav.services") }]}
       />
 
-      <section className="max-w-[1500px] mx-auto px-6 py-14">
+      <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((s, i) => (
             <Reveal key={s.title} variant="fade-in-up" delay={i * 80}>
@@ -68,12 +68,12 @@ const Services = () => {
 
       <section className="relative bg-secondary border-y border-border py-16 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
-        <div className="relative max-w-[1500px] mx-auto px-6">
+        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6">
           <Reveal variant="fade-in-up" className="text-center mb-10">
             <div className="font-impact text-xs uppercase tracking-[0.3em] text-brand-cyan mb-2">{t("services.process.eyebrow")}</div>
             <h2 className="font-impact text-3xl md:text-4xl uppercase font-bold text-primary">{t("services.process.title")}</h2>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {process.map((step, i) => (
               <Reveal key={step.n} variant="fade-in-up" delay={i * 100}>
                 <div className="lift bg-card border-2 border-border p-5 relative h-full hover:border-fluo-yellow transition-colors">
@@ -87,7 +87,7 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="max-w-[1500px] mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <Reveal variant="slide-in-left">
           <div className="font-impact text-xs uppercase tracking-[0.3em] text-brand-cyan mb-2">{t("services.why.eyebrow")}</div>
           <h2 className="font-impact text-3xl md:text-4xl uppercase font-bold text-primary mb-6">{t("services.why.title.1")}<br />{t("services.why.title.2")}</h2>
@@ -101,7 +101,7 @@ const Services = () => {
           </ul>
         </Reveal>
         <Reveal variant="slide-in-right">
-          <div className="relative bg-primary text-primary-foreground p-10 border-l-8 border-fluo-yellow overflow-hidden">
+          <div className="relative bg-primary text-primary-foreground p-6 sm:p-10 border-l-8 border-fluo-yellow overflow-hidden">
             <div className="absolute -top-16 -right-16 size-48 rounded-full bg-fluo-yellow/15 blur-3xl pointer-events-none" />
             <div className="relative grid grid-cols-2 gap-6">
               {stats.map((stat) => {
@@ -109,7 +109,7 @@ const Services = () => {
                 const suffix = stat.v.replace(/^\d+/, "");
                 return (
                   <div key={stat.l}>
-                    <div className="font-impact text-5xl font-bold text-fluo-yellow leading-none">
+                    <div className="font-impact text-4xl sm:text-5xl font-bold text-fluo-yellow leading-none">
                       {isNaN(num) ? stat.v : <><Counter to={num} />{suffix}</>}
                     </div>
                     <div className="text-xs uppercase tracking-wider text-white/70 mt-2">{stat.l}</div>
@@ -123,7 +123,7 @@ const Services = () => {
 
       <section className="relative bg-fluo-yellow text-fluo-yellow-foreground overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
-        <div className="relative max-w-[1500px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-6">
+        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-6">
           <Reveal variant="slide-in-left">
             <h2 className="font-impact text-2xl md:text-3xl uppercase font-bold">{t("services.cta.title")}</h2>
             <p className="text-sm mt-1">{t("services.cta.desc")}</p>

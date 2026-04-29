@@ -26,7 +26,7 @@ const Equipements = () => {
         breadcrumb={[{ label: t("common.home"), to: "/" }, { label: t("equip.hero.title") }]}
       />
 
-      <section className="max-w-[1500px] mx-auto px-6 py-12">
+      <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {equipments.map((eq, i) => (
             <Reveal key={eq.title} variant="fade-in-up" delay={i * 80}>
@@ -51,7 +51,7 @@ const Equipements = () => {
       <section className="relative bg-primary text-primary-foreground border-y-4 border-fluo-yellow overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
         <div className="absolute -top-24 -right-24 size-72 rounded-full bg-fluo-yellow/20 blur-3xl pointer-events-none" />
-        <div className="relative max-w-[1500px] mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-6">
+        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-6">
           <Reveal variant="slide-in-left">
             <h2 className="font-impact text-3xl uppercase font-bold mb-2">{t("equip.custom.title")}</h2>
             <p className="text-white/80">{t("equip.custom.desc")}</p>

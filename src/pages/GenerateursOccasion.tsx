@@ -30,7 +30,7 @@ const GenerateursOccasion = () => {
       />
 
       <section className="bg-brand-cyan/10 border-b border-border">
-        <div className="max-w-[1500px] mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
             { icon: CheckCircle2, title: "Testés en charge", desc: "Bancs de test certifiés" },
             { icon: Wrench, title: "Révisés", desc: "Pièces d'usure remplacées" },
@@ -51,7 +51,7 @@ const GenerateursOccasion = () => {
         </div>
       </section>
 
-      <section className="max-w-[1500px] mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
+      <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
         <aside>
           <CatalogFilters
             brands={brands}

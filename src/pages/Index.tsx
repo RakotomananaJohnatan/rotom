@@ -60,7 +60,7 @@ const Index = () => {
       </section>
 
       {/* Categories */}
-      <section className="max-w-[1500px] mx-auto px-6 py-14">
+      <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-14">
         <Reveal variant="fade-in-up" className="mb-8 flex items-end justify-between gap-6 flex-wrap">
           <div>
             <div className="font-impact text-xs uppercase tracking-[0.3em] text-brand-cyan mb-2">{t("home.cat.eyebrow")}</div>
@@ -72,7 +72,7 @@ const Index = () => {
             {t("home.cat.viewAll")}
           </Link>
         </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {categories.map((cat, i) => (
             <Reveal key={cat.title} variant="fade-in-up" delay={i * 80}>
               <Link
@@ -118,7 +118,7 @@ const Index = () => {
       </section>
 
       {/* Main Content: Sidebar + Grid */}
-      <section className="max-w-[1500px] mx-auto px-6 pb-12 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
+      <section className="max-w-[1500px] mx-auto px-4 sm:px-6 pb-12 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
         {/* Sidebar Filters */}
         <aside>
           <div className="bg-card border-2 border-border p-5">
@@ -195,13 +195,13 @@ const Index = () => {
 
         {/* Product Grid */}
         <div>
-          <div className="flex justify-between items-end mb-6 pb-4 border-b-2 border-primary">
-            <h2 className="font-impact text-2xl uppercase font-bold text-primary">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 mb-6 pb-4 border-b-2 border-primary">
+            <h2 className="font-impact text-xl sm:text-2xl uppercase font-bold text-primary">
               {filteredProducts.length} {t("new.count")}
             </h2>
             <div className="flex items-center gap-3 text-sm">
               <span className="text-muted-foreground">{t("sort.label")}</span>
-              <select className="border border-border bg-background px-3 py-1.5 text-sm outline-none">
+              <select className="border border-border bg-background px-3 py-1.5 text-sm outline-none flex-1 sm:flex-none">
                 <option>{t("sort.recent")}</option>
                 <option>{t("sort.kvaAsc")}</option>
                 <option>{t("sort.kvaDesc")}</option>
@@ -224,7 +224,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-grid opacity-40" aria-hidden />
         <div className="absolute -top-32 -right-32 size-[420px] rounded-full bg-brand-cyan/25 blur-3xl" aria-hidden />
         <div className="absolute -bottom-32 -left-20 size-[380px] rounded-full bg-fluo-yellow/15 blur-3xl" aria-hidden />
-        <div className="relative max-w-[1500px] mx-auto px-6 py-14">
+        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 py-14">
           <Reveal variant="fade-in-up" className="mb-8">
             <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-2">{t("home.stats.eyebrow")}</div>
             <h2 className="font-impact text-2xl md:text-3xl uppercase font-bold leading-tight">
@@ -255,7 +255,7 @@ const Index = () => {
       {/* Trust Strip */}
       <section className="relative bg-secondary border-y border-border py-12 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
-        <div className="relative max-w-[1500px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { icon: Shield, title: t("home.trust.1.title"), desc: t("home.trust.1.desc") },
             { icon: Truck, title: t("home.trust.2.title"), desc: t("home.trust.2.desc") },
@@ -281,10 +281,10 @@ const Index = () => {
       <section className="relative bg-primary text-primary-foreground overflow-hidden">
         <div className="absolute -top-20 left-1/4 size-80 rounded-full bg-brand-cyan/20 blur-3xl" aria-hidden />
         <div className="absolute -bottom-20 right-1/4 size-80 rounded-full bg-fluo-yellow/15 blur-3xl" aria-hidden />
-        <div className="relative max-w-[1500px] mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-8">
+        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-8">
           <Reveal variant="slide-in-left">
             <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-3">{t("home.cta.eyebrow")}</div>
-            <h2 className="font-impact text-3xl md:text-5xl uppercase font-bold leading-tight">
+            <h2 className="font-impact text-2xl sm:text-3xl md:text-5xl uppercase font-bold leading-tight">
               {t("home.cta.title.1")}<br />
               <span className="text-gradient-brand">{t("home.cta.title.2")}</span>
             </h2>
