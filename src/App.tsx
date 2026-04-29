@@ -16,6 +16,7 @@ import ProductDetail from "./pages/ProductDetail.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
 import ConditionsGenerales from "./pages/ConditionsGenerales.tsx";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.tsx";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/generateurs-neufs" element={<GenerateursNeufs />} />
