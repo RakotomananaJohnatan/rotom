@@ -46,12 +46,7 @@ const CatalogFilters = ({
             type="button"
             aria-label="-"
             onClick={() =>
-              setPowerRange([
-                Math.max(POWER_MIN, powerRange[1] - 10),
-                Math.max(POWER_MIN + 10, powerRange[1] - 10) > powerRange[1]
-                  ? powerRange[1]
-                  : powerRange[1],
-              ])
+              setPowerRange([Math.max(POWER_MIN, powerRange[0] - 10), powerRange[1]])
             }
             className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
           >−</button>
@@ -67,10 +62,7 @@ const CatalogFilters = ({
             type="button"
             aria-label="+"
             onClick={() =>
-              setPowerRange([
-                powerRange[0],
-                Math.min(POWER_MAX, powerRange[1] + 10),
-              ])
+              setPowerRange([powerRange[0], Math.min(POWER_MAX, powerRange[1] + 10)])
             }
             className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
           >+</button>
