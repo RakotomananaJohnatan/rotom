@@ -76,9 +76,9 @@ const SiteFooter = () => {
         <div className="max-w-[1500px] mx-auto px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-2 text-xs">
           <span>{t("footer.copyright")}</span>
           <div className="flex gap-6">
-            <a href="#" className="hover:underline">{t("footer.legal")}</a>
-            <a href="#" className="hover:underline">{t("footer.terms")}</a>
-            <a href="#" className="hover:underline">{t("footer.privacy")}</a>
+            <Link to="/mentions-legales" className="hover:underline">{t("footer.legal")}</Link>
+            <Link to="/conditions-generales" className="hover:underline">{t("footer.terms")}</Link>
+            <Link to="/politique-confidentialite" className="hover:underline">{t("footer.privacy")}</Link>
           </div>
         </div>
       </div>
