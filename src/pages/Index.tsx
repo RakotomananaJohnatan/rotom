@@ -195,13 +195,13 @@ const Index = () => {
 
         {/* Product Grid */}
         <div>
-          <div className="flex justify-between items-end mb-6 pb-4 border-b-2 border-primary">
-            <h2 className="font-impact text-2xl uppercase font-bold text-primary">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 mb-6 pb-4 border-b-2 border-primary">
+            <h2 className="font-impact text-xl sm:text-2xl uppercase font-bold text-primary">
               {filteredProducts.length} {t("new.count")}
             </h2>
             <div className="flex items-center gap-3 text-sm">
               <span className="text-muted-foreground">{t("sort.label")}</span>
-              <select className="border border-border bg-background px-3 py-1.5 text-sm outline-none">
+              <select className="border border-border bg-background px-3 py-1.5 text-sm outline-none flex-1 sm:flex-none">
                 <option>{t("sort.recent")}</option>
                 <option>{t("sort.kvaAsc")}</option>
                 <option>{t("sort.kvaDesc")}</option>

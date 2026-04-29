@@ -85,7 +85,7 @@ const Contact = () => {
 
       {/* Form + infos */}
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-14 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10">
-        <Reveal variant="slide-in-left" className="bg-card border-2 border-border p-8">
+        <Reveal variant="slide-in-left" className="bg-card border-2 border-border p-5 sm:p-8">
           <h2 className="font-impact text-2xl uppercase font-bold text-primary mb-1">{t("contact.form.title")}</h2>
           <p className="text-sm text-muted-foreground mb-6">{t("contact.form.required")}</p>
 
