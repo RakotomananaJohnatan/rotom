@@ -72,7 +72,7 @@ const Index = () => {
             {t("home.cat.viewAll")}
           </Link>
         </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {categories.map((cat, i) => (
             <Reveal key={cat.title} variant="fade-in-up" delay={i * 80}>
               <Link
@@ -284,7 +284,7 @@ const Index = () => {
         <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-8">
           <Reveal variant="slide-in-left">
             <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-3">{t("home.cta.eyebrow")}</div>
-            <h2 className="font-impact text-3xl md:text-5xl uppercase font-bold leading-tight">
+            <h2 className="font-impact text-2xl sm:text-3xl md:text-5xl uppercase font-bold leading-tight">
               {t("home.cta.title.1")}<br />
               <span className="text-gradient-brand">{t("home.cta.title.2")}</span>
             </h2>

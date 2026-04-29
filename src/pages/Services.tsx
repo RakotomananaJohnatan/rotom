@@ -73,7 +73,7 @@ const Services = () => {
             <div className="font-impact text-xs uppercase tracking-[0.3em] text-brand-cyan mb-2">{t("services.process.eyebrow")}</div>
             <h2 className="font-impact text-3xl md:text-4xl uppercase font-bold text-primary">{t("services.process.title")}</h2>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {process.map((step, i) => (
               <Reveal key={step.n} variant="fade-in-up" delay={i * 100}>
                 <div className="lift bg-card border-2 border-border p-5 relative h-full hover:border-fluo-yellow transition-colors">
@@ -101,7 +101,7 @@ const Services = () => {
           </ul>
         </Reveal>
         <Reveal variant="slide-in-right">
-          <div className="relative bg-primary text-primary-foreground p-10 border-l-8 border-fluo-yellow overflow-hidden">
+          <div className="relative bg-primary text-primary-foreground p-6 sm:p-10 border-l-8 border-fluo-yellow overflow-hidden">
             <div className="absolute -top-16 -right-16 size-48 rounded-full bg-fluo-yellow/15 blur-3xl pointer-events-none" />
             <div className="relative grid grid-cols-2 gap-6">
               {stats.map((stat) => {
@@ -109,7 +109,7 @@ const Services = () => {
                 const suffix = stat.v.replace(/^\d+/, "");
                 return (
                   <div key={stat.l}>
-                    <div className="font-impact text-5xl font-bold text-fluo-yellow leading-none">
+                    <div className="font-impact text-4xl sm:text-5xl font-bold text-fluo-yellow leading-none">
                       {isNaN(num) ? stat.v : <><Counter to={num} />{suffix}</>}
                     </div>
                     <div className="text-xs uppercase tracking-wider text-white/70 mt-2">{stat.l}</div>
