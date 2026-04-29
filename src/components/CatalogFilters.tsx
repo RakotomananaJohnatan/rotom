@@ -45,7 +45,9 @@ const CatalogFilters = ({
           <button
             type="button"
             aria-label="-"
-            onClick={() => setPowerRange([Math.max(POWER_MIN, powerRange[0] - 10), powerRange[1]])}
+            onClick={() =>
+              setPowerRange([Math.max(POWER_MIN, powerRange[0] - 10), powerRange[1]])
+            }
             className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
           >−</button>
           <Slider
@@ -59,7 +61,9 @@ const CatalogFilters = ({
           <button
             type="button"
             aria-label="+"
-            onClick={() => setPowerRange([powerRange[0], Math.min(POWER_MAX, powerRange[1] + 10)])}
+            onClick={() =>
+              setPowerRange([powerRange[0], Math.min(POWER_MAX, powerRange[1] + 10)])
+            }
             className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
           >+</button>
         </div>
