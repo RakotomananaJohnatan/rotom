@@ -1,5 +1,6 @@
 export const en = {
   // Header / nav
+  "nav.home": "Home",
   "nav.new": "New generators",
   "nav.used": "Used generators",
   "nav.equip": "Related equipment",

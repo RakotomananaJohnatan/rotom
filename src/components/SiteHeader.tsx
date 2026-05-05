@@ -27,6 +27,7 @@ const SiteHeader = () => {
   }, [mobileOpen]);
 
   const navItems = [
+    { label: t("nav.home"), to: "/" },
     { label: t("nav.new"), to: "/generateurs-neufs" },
     { label: t("nav.used"), to: "/generateurs-occasion" },
     { label: t("nav.equip"), to: "/equipements" },
