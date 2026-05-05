@@ -32,9 +32,9 @@ const GenerateursNeufs = () => {
       <section className="bg-secondary border-b border-border">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
-            { icon: Sparkles, title: "Modèles 2024", desc: "Dernière génération moteur" },
-            { icon: Shield, title: "Garantie 2 ans", desc: "Pièces & main d'œuvre incluses" },
-            { icon: Award, title: "Conformité CE", desc: "Normes européennes & ISO" },
+            { icon: Sparkles, title: t("new.feat.1.title"), desc: t("new.feat.1.desc") },
+            { icon: Shield, title: t("new.feat.2.title"), desc: t("new.feat.2.desc") },
+            { icon: Award, title: t("new.feat.3.title"), desc: t("new.feat.3.desc") },
           ].map((it, i) => (
             <Reveal key={it.title} variant="fade-in-up" delay={i * 100}>
               <div className="lift flex items-center gap-3 bg-card border-2 border-border p-4 h-full hover:border-fluo-yellow transition-colors group">
