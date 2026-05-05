@@ -63,7 +63,13 @@ export const en = {
   "used.hero.eyebrow": "Catalog",
   "used.hero.title": "Used Generators",
   "used.hero.subtitle": "More than 140 used generators, refurbished, tested and warrantied, ready to ship worldwide.",
-  "used.count": "Used generators",
+  "used.count": "Used generators available",
+  "used.feat.1.title": "Load-tested",
+  "used.feat.1.desc": "Certified test benches",
+  "used.feat.2.title": "Refurbished",
+  "used.feat.2.desc": "Wear parts replaced",
+  "used.feat.3.title": "Fast delivery",
+  "used.feat.3.desc": "In-stock & ready to ship",
 
   // Sort
   "sort.label": "Sort by",
@@ -194,7 +200,7 @@ export const en = {
   "home.cat.hybrid": "Hybrid & Batteries",
   "home.cat.need.title": "Need a generator?",
   "home.cat.need.desc": "Our team replies within 24h.",
-  "home.stats.eyebrow": "25+ years of expertise · 60+ countries",
+  "home.stats.eyebrow": "10+ years of expertise · in Madagascar",
   "home.stats.title.1": "Industrial",
   "home.stats.title.2": "power",
   "home.stats.title.3": "from 10 to 2,500 kVA",

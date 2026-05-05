@@ -64,6 +64,12 @@ export const fr = {
   "used.hero.title": "Générateurs d'Occasion",
   "used.hero.subtitle": "Plus de 140 groupes électrogènes d'occasion révisés, testés et garantis, prêts à être expédiés partout dans le monde.",
   "used.count": "Générateurs d'occasion",
+  "used.feat.1.title": "Testés en charge",
+  "used.feat.1.desc": "Bancs de test certifiés",
+  "used.feat.2.title": "Révisés",
+  "used.feat.2.desc": "Pièces d'usure remplacées",
+  "used.feat.3.title": "Livraison rapide",
+  "used.feat.3.desc": "Stock disponible immédiat",
 
   // Sort
   "sort.label": "Trier par",
@@ -194,7 +200,7 @@ export const fr = {
   "home.cat.hybrid": "Hybrides & Batteries",
   "home.cat.need.title": "Besoin d'un générateur ?",
   "home.cat.need.desc": "Notre équipe vous répond sous 24h.",
-  "home.stats.eyebrow": "25+ ans d'expertise · 60+ pays",
+  "home.stats.eyebrow": "10+ ans d'expertise · à Madagascar",
   "home.stats.title.1": "Énergie",
   "home.stats.title.2": "industrielle",
   "home.stats.title.3": "de 10 à 2 500 kVA",
