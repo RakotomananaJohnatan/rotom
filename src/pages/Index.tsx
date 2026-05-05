@@ -231,10 +231,9 @@ const Index = () => {
               {t("home.stats.title.1")} <span className="text-gradient-brand">{t("home.stats.title.2")}</span> {t("home.stats.title.3")}
             </h2>
           </Reveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { icon: Zap, v: 200, suffix: "+", l: t("home.stats.s1") },
-              { icon: Globe2, v: 60, suffix: "+", l: t("home.stats.s2") },
               { icon: Award, v: 25, suffix: t("home.stats.s3.suffix"), l: t("home.stats.s3") },
               { icon: LifeBuoy, v: 24, suffix: "/7", l: t("home.stats.s4") },
             ].map((s, i) => (
@@ -255,10 +254,8 @@ const Index = () => {
       {/* Trust Strip */}
       <section className="relative bg-secondary border-y border-border py-12 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
-        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
-            { icon: Shield, title: t("home.trust.1.title"), desc: t("home.trust.1.desc") },
-            { icon: Truck, title: t("home.trust.2.title"), desc: t("home.trust.2.desc") },
             { icon: Wrench, title: t("home.trust.3.title"), desc: t("home.trust.3.desc") },
             { icon: LifeBuoy, title: t("home.trust.4.title"), desc: t("home.trust.4.desc") },
           ].map((item, i) => (
