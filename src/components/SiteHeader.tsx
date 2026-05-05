@@ -103,6 +103,7 @@ const SiteHeader = () => {
               <li key={item.to}>
                 <NavLink
                   to={item.to}
+                  end={item.to === "/"}
                   className={({ isActive }) =>
                     `block py-4 text-xs font-impact font-semibold uppercase tracking-widest transition-colors ${
                       isActive ? "text-fluo-yellow border-b-2 border-fluo-yellow" : "hover:text-accent"
@@ -126,6 +127,7 @@ const SiteHeader = () => {
                 <li key={item.to}>
                   <NavLink
                     to={item.to}
+                    end={item.to === "/"}
                     className={({ isActive }) =>
                       `block py-3 text-sm font-impact font-semibold uppercase tracking-widest border-b border-white/10 transition-colors ${
                         isActive ? "text-fluo-yellow" : "hover:text-accent"
