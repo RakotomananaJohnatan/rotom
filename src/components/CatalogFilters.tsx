@@ -2,12 +2,13 @@ import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { useLang } from "@/i18n/LanguageContext";
 
+export type CategoryKey = "open" | "closed" | "new" | "used";
+
 interface CatalogFiltersProps {
-  brands: string[];
   powerRange: [number, number];
   setPowerRange: (r: [number, number]) => void;
-  selectedBrands: string[];
-  setSelectedBrands: (b: string[]) => void;
+  selectedCategories: CategoryKey[];
+  setSelectedCategories: (c: CategoryKey[]) => void;
   resultCount: number;
 }
 
@@ -15,11 +16,18 @@ const POWER_MIN = 10;
 const POWER_MAX = 2500;
 
 const CatalogFilters = ({
-  brands, powerRange, setPowerRange, selectedBrands, setSelectedBrands, resultCount
+  powerRange, setPowerRange, selectedCategories, setSelectedCategories, resultCount,
 }: CatalogFiltersProps) => {
   const { t } = useLang();
   const [year, setYear] = useState("");
   const [availability, setAvailability] = useState("");
+
+  const categories: { key: CategoryKey; label: string }[] = [
+    { key: "open", label: t("filters.cat.open") },
+    { key: "closed", label: t("filters.cat.closed") },
+    { key: "new", label: t("filters.cat.new") },
+    { key: "used", label: t("filters.cat.used") },
+  ];
 
   return (
     <div className="bg-card border-2 border-border p-5">
@@ -29,7 +37,7 @@ const CatalogFilters = ({
           type="button"
           onClick={() => {
             setPowerRange([POWER_MIN, POWER_MAX]);
-            setSelectedBrands([]);
+            setSelectedCategories([]);
             setYear("");
             setAvailability("");
           }}
@@ -45,9 +53,7 @@ const CatalogFilters = ({
           <button
             type="button"
             aria-label="-"
-            onClick={() =>
-              setPowerRange([Math.max(POWER_MIN, powerRange[0] - 10), powerRange[1]])
-            }
+            onClick={() => setPowerRange([Math.max(POWER_MIN, powerRange[0] - 10), powerRange[1]])}
             className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
           >−</button>
           <Slider
@@ -61,9 +67,7 @@ const CatalogFilters = ({
           <button
             type="button"
             aria-label="+"
-            onClick={() =>
-              setPowerRange([powerRange[0], Math.min(POWER_MAX, powerRange[1] + 10)])
-            }
+            onClick={() => setPowerRange([powerRange[0], Math.min(POWER_MAX, powerRange[1] + 10)])}
             className="size-7 flex items-center justify-center rounded-full bg-fluo-yellow text-fluo-yellow-foreground font-bold hover:brightness-110 transition"
           >+</button>
         </div>
@@ -74,19 +78,23 @@ const CatalogFilters = ({
       </div>
 
       <div className="mb-6">
-        <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.brand")}</h3>
+        <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.category")}</h3>
         <div className="space-y-2">
-          {brands.map((b) => (
-            <label key={b} className="flex items-center gap-2 cursor-pointer text-sm group">
+          {categories.map((c) => (
+            <label key={c.key} className="flex items-center gap-2 cursor-pointer text-sm group">
               <input
                 type="checkbox"
-                checked={selectedBrands.includes(b)}
+                checked={selectedCategories.includes(c.key)}
                 onChange={(e) =>
-                  setSelectedBrands(e.target.checked ? [...selectedBrands, b] : selectedBrands.filter((x) => x !== b))
+                  setSelectedCategories(
+                    e.target.checked
+                      ? [...selectedCategories, c.key]
+                      : selectedCategories.filter((x) => x !== c.key)
+                  )
                 }
                 className="appearance-none size-4 border-2 border-foreground checked:bg-brand-cyan checked:border-brand-cyan relative cursor-pointer"
               />
-              <span className="group-hover:text-primary transition-colors">{b}</span>
+              <span className="group-hover:text-primary transition-colors">{c.label}</span>
             </label>
           ))}
         </div>

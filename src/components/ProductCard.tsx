@@ -11,6 +11,7 @@ export interface Product {
   img: string;
   slug: string;
   condition: "new" | "used";
+  type?: "open" | "closed";
 }
 
 const ProductCard = ({ p }: { p: Product }) => {

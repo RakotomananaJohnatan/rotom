@@ -10,6 +10,7 @@ import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import { newProducts, brands } from "@/data/products";
+import type { CategoryKey } from "@/components/CatalogFilters";
 import { useLang } from "@/i18n/LanguageContext";
 
 import catNeufs from "@/assets/cat-neufs.jpg";
@@ -30,14 +31,23 @@ const Index = () => {
   const POWER_MIN = 10;
   const POWER_MAX = 2500;
   const [powerRange, setPowerRange] = useState<[number, number]>([POWER_MIN, POWER_MAX]);
-  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<CategoryKey[]>([]);
+
+  const categoryOptions: { key: CategoryKey; label: string }[] = [
+    { key: "open", label: t("filters.cat.open") },
+    { key: "closed", label: t("filters.cat.closed") },
+    { key: "new", label: t("filters.cat.new") },
+    { key: "used", label: t("filters.cat.used") },
+  ];
 
   const filteredProducts = newProducts.filter((p) => {
     const value = parseInt(p.kva, 10);
     if (value < powerRange[0] || value > powerRange[1]) return false;
-    if (selectedBrands.length > 0) {
-      const matches = selectedBrands.some((b) => p.name.toLowerCase().includes(b.split(" ")[0].toLowerCase()));
-      if (!matches) return false;
+    if (selectedCategories.length > 0) {
+      const typeSel = selectedCategories.filter((c) => c === "open" || c === "closed");
+      const condSel = selectedCategories.filter((c) => c === "new" || c === "used");
+      if (typeSel.length && (!p.type || !typeSel.includes(p.type))) return false;
+      if (condSel.length && !condSel.includes(p.condition)) return false;
     }
     return true;
   });
@@ -128,7 +138,7 @@ const Index = () => {
                 type="button"
                 onClick={() => {
                   setPowerRange([POWER_MIN, POWER_MAX]);
-                  setSelectedBrands([]);
+                  setSelectedCategories([]);
                 }}
                 className="text-xs text-brand-cyan hover:underline font-semibold"
               >
@@ -167,21 +177,21 @@ const Index = () => {
             </div>
 
             <div className="mb-6">
-              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.brand")}</h3>
+              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.category")}</h3>
               <div className="space-y-2">
-                {brands.map((b) => (
-                  <label key={b} className="flex items-center gap-2 cursor-pointer text-sm group">
+                {categoryOptions.map((c) => (
+                  <label key={c.key} className="flex items-center gap-2 cursor-pointer text-sm group">
                     <input
                       type="checkbox"
-                      checked={selectedBrands.includes(b)}
+                      checked={selectedCategories.includes(c.key)}
                       onChange={(e) =>
-                        setSelectedBrands((prev) =>
-                          e.target.checked ? [...prev, b] : prev.filter((x) => x !== b)
+                        setSelectedCategories((prev) =>
+                          e.target.checked ? [...prev, c.key] : prev.filter((x) => x !== c.key)
                         )
                       }
                       className="appearance-none size-4 border-2 border-foreground checked:bg-brand-cyan checked:border-brand-cyan relative cursor-pointer"
                     />
-                    <span className="group-hover:text-primary transition-colors">{b}</span>
+                    <span className="group-hover:text-primary transition-colors">{c.label}</span>
                   </label>
                 ))}
               </div>
@@ -231,10 +241,9 @@ const Index = () => {
               {t("home.stats.title.1")} <span className="text-gradient-brand">{t("home.stats.title.2")}</span> {t("home.stats.title.3")}
             </h2>
           </Reveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { icon: Zap, v: 200, suffix: "+", l: t("home.stats.s1") },
-              { icon: Globe2, v: 60, suffix: "+", l: t("home.stats.s2") },
               { icon: Award, v: 25, suffix: t("home.stats.s3.suffix"), l: t("home.stats.s3") },
               { icon: LifeBuoy, v: 24, suffix: "/7", l: t("home.stats.s4") },
             ].map((s, i) => (
@@ -255,10 +264,8 @@ const Index = () => {
       {/* Trust Strip */}
       <section className="relative bg-secondary border-y border-border py-12 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
-        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
-            { icon: Shield, title: t("home.trust.1.title"), desc: t("home.trust.1.desc") },
-            { icon: Truck, title: t("home.trust.2.title"), desc: t("home.trust.2.desc") },
             { icon: Wrench, title: t("home.trust.3.title"), desc: t("home.trust.3.desc") },
             { icon: LifeBuoy, title: t("home.trust.4.title"), desc: t("home.trust.4.desc") },
           ].map((item, i) => (

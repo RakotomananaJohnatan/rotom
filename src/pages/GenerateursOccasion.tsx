@@ -3,7 +3,8 @@ import SiteLayout from "@/components/SiteLayout";
 import PageHero from "@/components/PageHero";
 import CatalogFilters from "@/components/CatalogFilters";
 import ProductCard from "@/components/ProductCard";
-import { usedProducts, brands } from "@/data/products";
+import { usedProducts } from "@/data/products";
+import type { CategoryKey } from "@/components/CatalogFilters";
 import { CheckCircle2, Wrench, Truck } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import Reveal from "@/components/Reveal";
@@ -11,14 +12,19 @@ import Reveal from "@/components/Reveal";
 const GenerateursOccasion = () => {
   const { t } = useLang();
   const [powerRange, setPowerRange] = useState<[number, number]>([10, 2500]);
-  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<CategoryKey[]>([]);
 
   const filtered = useMemo(() => usedProducts.filter((p) => {
     const v = parseInt(p.kva, 10);
     if (v < powerRange[0] || v > powerRange[1]) return false;
-    if (selectedBrands.length && !selectedBrands.some((b) => p.name.toLowerCase().includes(b.split(" ")[0].toLowerCase()))) return false;
+    if (selectedCategories.length) {
+      const typeSel = selectedCategories.filter((c) => c === "open" || c === "closed");
+      const condSel = selectedCategories.filter((c) => c === "new" || c === "used");
+      if (typeSel.length && (!p.type || !typeSel.includes(p.type))) return false;
+      if (condSel.length && !condSel.includes(p.condition)) return false;
+    }
     return true;
-  }), [powerRange, selectedBrands]);
+  }), [powerRange, selectedCategories]);
 
   return (
     <SiteLayout>
@@ -32,9 +38,9 @@ const GenerateursOccasion = () => {
       <section className="bg-brand-cyan/10 border-b border-border">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
-            { icon: CheckCircle2, title: "Testés en charge", desc: "Bancs de test certifiés" },
-            { icon: Wrench, title: "Révisés", desc: "Pièces d'usure remplacées" },
-            { icon: Truck, title: "Livraison rapide", desc: "Stock disponible immédiat" },
+            { icon: CheckCircle2, title: t("used.feat.1.title"), desc: t("used.feat.1.desc") },
+            { icon: Wrench, title: t("used.feat.2.title"), desc: t("used.feat.2.desc") },
+            { icon: Truck, title: t("used.feat.3.title"), desc: t("used.feat.3.desc") },
           ].map((it, i) => (
             <Reveal key={it.title} variant="fade-in-up" delay={i * 100}>
               <div className="lift flex items-center gap-3 bg-card border-2 border-border p-4 h-full hover:border-brand-cyan transition-colors group">
@@ -54,11 +60,10 @@ const GenerateursOccasion = () => {
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
         <aside>
           <CatalogFilters
-            brands={brands}
             powerRange={powerRange}
             setPowerRange={setPowerRange}
-            selectedBrands={selectedBrands}
-            setSelectedBrands={setSelectedBrands}
+            selectedCategories={selectedCategories}
+            setSelectedCategories={setSelectedCategories}
             resultCount={filtered.length}
           />
         </aside>
