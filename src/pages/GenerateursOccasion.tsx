@@ -32,9 +32,9 @@ const GenerateursOccasion = () => {
       <section className="bg-brand-cyan/10 border-b border-border">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
-            { icon: CheckCircle2, title: "Testés en charge", desc: "Bancs de test certifiés" },
-            { icon: Wrench, title: "Révisés", desc: "Pièces d'usure remplacées" },
-            { icon: Truck, title: "Livraison rapide", desc: "Stock disponible immédiat" },
+            { icon: CheckCircle2, title: t("used.feat.1.title"), desc: t("used.feat.1.desc") },
+            { icon: Wrench, title: t("used.feat.2.title"), desc: t("used.feat.2.desc") },
+            { icon: Truck, title: t("used.feat.3.title"), desc: t("used.feat.3.desc") },
           ].map((it, i) => (
             <Reveal key={it.title} variant="fade-in-up" delay={i * 100}>
               <div className="lift flex items-center gap-3 bg-card border-2 border-border p-4 h-full hover:border-brand-cyan transition-colors group">
