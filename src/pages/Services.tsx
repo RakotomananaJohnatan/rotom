@@ -13,7 +13,7 @@ const Services = () => {
     { icon: Search, title: t("services.s1.title"), desc: t("services.s1.desc") },
     { icon: Cog, title: t("services.s2.title"), desc: t("services.s2.desc") },
     { icon: Wrench, title: t("services.s3.title"), desc: t("services.s3.desc") },
-    { icon: Truck, title: t("services.s4.title"), desc: t("services.s4.desc") },
+    { icon: Gauge, title: t("services.s4.title"), desc: t("services.s4.desc") },
     { icon: LifeBuoy, title: t("services.s5.title"), desc: t("services.s5.desc") },
     { icon: CreditCard, title: t("services.s6.title"), desc: t("services.s6.desc") },
   ];
