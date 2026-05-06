@@ -11,7 +11,7 @@ import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import { newProducts, brands } from "@/data/products";
 import type { CategoryKey } from "@/components/CatalogFilters";
-import { useLang } from "@/i18n/LanguageContext";
+import { useLang } from "@/i18n/useLang";
 
 import catNeufs from "@/assets/cat-neufs.jpg";
 import catOccasion from "@/assets/cat-occasion.jpg";

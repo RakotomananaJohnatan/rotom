@@ -5,7 +5,7 @@ import PageHero from "@/components/PageHero";
 import SalesTeamStrip from "@/components/SalesTeamStrip";
 import { toast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, MessageCircle, Clock, Send, Check, ChevronsUpDown } from "lucide-react";
-import { useLang } from "@/i18n/LanguageContext";
+import { useLang } from "@/i18n/useLang";
 import Reveal from "@/components/Reveal";
 import { allProducts, findProductBySlug } from "@/data/products";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";

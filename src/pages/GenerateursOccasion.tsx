@@ -6,7 +6,7 @@ import ProductCard from "@/components/ProductCard";
 import { usedProducts } from "@/data/products";
 import type { CategoryKey } from "@/components/CatalogFilters";
 import { CheckCircle2, Wrench, Truck } from "lucide-react";
-import { useLang } from "@/i18n/LanguageContext";
+import { useLang } from "@/i18n/useLang";
 import Reveal from "@/components/Reveal";
 
 const GenerateursOccasion = () => {
