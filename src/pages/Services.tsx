@@ -30,14 +30,12 @@ const Services = () => {
     t("services.why.b1"),
     t("services.why.b2"),
     t("services.why.b3"),
-    t("services.why.b4"),
     t("services.why.b5"),
   ];
 
   const stats = [
     { v: "10+", l: t("services.stat1") },
     { v: "200+", l: t("services.stat2") },
-    { v: "60+", l: t("services.stat3") },
     { v: "24/7", l: t("services.stat4") },
   ];
 
