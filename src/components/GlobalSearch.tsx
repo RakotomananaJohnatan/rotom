@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search, X, Package, FileText, Layers, Wrench, Factory, AtSign, Loader2 } from "lucide-react";
-import { useLang } from "@/i18n/LanguageContext";
+import { useLang } from "@/i18n/useLang";
 import { searchEntries, ResolvedEntry, SearchResultType } from "@/lib/search";
 import { cn } from "@/lib/utils";
 
