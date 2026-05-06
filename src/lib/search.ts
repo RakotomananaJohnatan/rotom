@@ -34,7 +34,7 @@ const services: SearchEntry[] = [
   { id: "svc-parts", type: "service", titleKey: "footer.svc.parts", to: "/services", keywords: ["pieces", "spare parts", "detachees"] },
   { id: "svc-financing", type: "service", titleKey: "footer.svc.financing", to: "/services", keywords: ["financement", "credit", "financing", "leasing"] },
   { id: "svc-support", type: "service", title: "Support 24/7", to: "/services", keywords: ["support", "24/7", "assistance", "telemaintenance"] },
-  { id: "svc-shipping", type: "service", title: "Livraison internationale / International shipping", to: "/services", keywords: ["livraison", "shipping", "international", "logistics", "douane"] },
+  { id: "svc-delivery", type: "service", title: "Livraison internationale / International delivery", to: "/services", keywords: ["livraison", "delivery", "international", "logistics", "douane"] },
 ];
 
 const equipments: SearchEntry[] = [
