@@ -35,7 +35,7 @@ const Services = () => {
   ];
 
   const stats = [
-    { v: "25+", l: t("services.stat1") },
+    { v: "10+", l: t("services.stat1") },
     { v: "200+", l: t("services.stat2") },
     { v: "60+", l: t("services.stat3") },
     { v: "24/7", l: t("services.stat4") },

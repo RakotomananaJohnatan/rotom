@@ -183,7 +183,7 @@ export const fr = {
   "services.p5.title": "Installation & SAV",
   "services.p5.desc": "Mise en service sur site et accompagnement long terme.",
   "services.why.eyebrow": "Pourquoi ROTOM",
-  "services.why.title.1": "Plus de 25 ans",
+  "services.why.title.1": "Plus de 10 ans",
   "services.why.title.2": "d'expertise énergétique",
   "services.why.b1": "Réseau international de partenaires constructeurs",
   "services.why.b2": "Stock permanent de plus de 200 groupes",

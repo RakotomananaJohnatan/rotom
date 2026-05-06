@@ -244,7 +244,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { icon: Zap, v: 200, suffix: "+", l: t("home.stats.s1") },
-              { icon: Award, v: 25, suffix: t("home.stats.s3.suffix"), l: t("home.stats.s3") },
+              { icon: Award, v: 10, suffix: t("home.stats.s3.suffix"), l: t("home.stats.s3") },
               { icon: LifeBuoy, v: 24, suffix: "/7", l: t("home.stats.s4") },
             ].map((s, i) => (
               <Reveal key={s.l} variant="fade-in-up" delay={i * 80}>
