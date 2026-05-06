@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
-import { useLang } from "@/i18n/LanguageContext";
+import { useLang } from "@/i18n/useLang";
 
 export type CategoryKey = "open" | "closed" | "new" | "used";
 

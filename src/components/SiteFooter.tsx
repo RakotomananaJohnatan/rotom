@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, MessageCircle, Linkedin, Facebook, Youtube } from "lucide-react";
-import { useLang } from "@/i18n/LanguageContext";
+import { useLang } from "@/i18n/useLang";
 
 const SiteFooter = () => {
   const { t } = useLang();
