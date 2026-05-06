@@ -183,7 +183,7 @@ export const en = {
   "services.p5.title": "Installation & after-sales",
   "services.p5.desc": "On-site commissioning and long-term support.",
   "services.why.eyebrow": "Why ROTOM",
-  "services.why.title.1": "More than 25 years",
+  "services.why.title.1": "More than 10 years",
   "services.why.title.2": "of power expertise",
   "services.why.b1": "International network of manufacturer partners",
   "services.why.b2": "Permanent stock of 200+ generators",
