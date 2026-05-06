@@ -251,7 +251,7 @@ export const en = {
   "terms.s2.title": "2. Quotes and orders",
   "terms.s2.body": "Quotes are valid for 30 days unless otherwise stated. Orders become firm upon receipt of the signed purchase order and deposit. Delivery times are given as an indication only.",
   "terms.s3.title": "3. Prices and payment",
-  "terms.s3.body": "Prices are quoted in euros, excluding tax and shipping. Unless otherwise agreed, payment terms are: 30% deposit on order, balance before shipment. Late payments incur penalties at the applicable statutory rate.",
+  "terms.s3.body": "Prices are quoted in euros, excluding tax and delivery. Unless otherwise agreed, payment terms are: 30% deposit on order, balance before delivery. Late payments incur penalties at the applicable statutory rate.",
   "terms.s4.title": "4. Delivery and transfer of risk",
   "terms.s4.body": "Deliveries are made according to the Incoterms 2020 specified in the quote (EXW by default). Risk transfers as soon as the goods are made available at our warehouses.",
   "terms.s5.title": "5. Warranty",
