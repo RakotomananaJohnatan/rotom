@@ -153,6 +153,12 @@ export const fr = {
   "equip.cable.desc": "Coffrets de couplage, parallèles, synchronisation.",
   "equip.control.title": "Modules de contrôle",
   "equip.control.desc": "DSE, ComAp, télémaintenance et supervision GSM.",
+  "equip.filter.label": "Filtres :",
+  "equip.filter.all": "Tous",
+  "equip.filter.power": "Énergie & contrôle",
+  "equip.filter.storage": "Stockage",
+  "equip.filter.acoustic": "Insonorisation",
+  "equip.filter.cabling": "Câblage",
 
   // Services
   "services.hero.eyebrow": "Notre savoir-faire",

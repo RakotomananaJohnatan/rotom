@@ -153,6 +153,12 @@ export const en = {
   "equip.cable.desc": "Coupling, paralleling and synchronisation panels.",
   "equip.control.title": "Control modules",
   "equip.control.desc": "DSE, ComAp, remote maintenance and GSM monitoring.",
+  "equip.filter.label": "Filters:",
+  "equip.filter.all": "All",
+  "equip.filter.power": "Power & control",
+  "equip.filter.storage": "Storage",
+  "equip.filter.acoustic": "Soundproofing",
+  "equip.filter.cabling": "Cabling",
 
   // Services
   "services.hero.eyebrow": "Our expertise",
