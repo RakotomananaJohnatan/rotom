@@ -46,15 +46,7 @@ const equipments: SearchEntry[] = [
   { id: "eq-control", type: "equipment", title: "Modules de contrôle (DSE, ComAp)", to: "/equipements", keywords: ["dse", "comap", "telemaintenance", "supervision", "gsm"] },
 ];
 
-const brandsList = ["Caterpillar", "CAT", "Cummins", "Perkins", "Volvo", "FG Wilson", "Doosan"];
-const brandEntries: SearchEntry[] = brandsList.map((b) => ({
-  id: `brand-${b.toLowerCase().replace(/\s+/g, "-")}`,
-  type: "brand",
-  title: b,
-  subtitle: "Brand",
-  to: `/generateurs-neufs?brand=${encodeURIComponent(b)}`,
-  keywords: [b, "marque", "brand"],
-}));
+const brandEntries: SearchEntry[] = [];
 
 const productEntries: SearchEntry[] = allProducts.map((p) => ({
   id: `product-${p.slug}`,

@@ -9,7 +9,7 @@ import SalesTeamStrip from "@/components/SalesTeamStrip";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
-import { newProducts, brands } from "@/data/products";
+import { newProducts } from "@/data/products";
 import type { CategoryKey } from "@/components/CatalogFilters";
 import { useLang } from "@/i18n/useLang";
 
@@ -57,17 +57,6 @@ const Index = () => {
       <SiteHeader />
       <SalesTeamStrip />
 
-      {/* Brand marquee */}
-      <section className="relative bg-primary text-primary-foreground border-y-2 border-fluo-yellow/40 py-4 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
-        <div className="relative flex gap-12 animate-marquee whitespace-nowrap" style={{ width: "max-content" }}>
-          {[...brands, ...brands].map((b, i) => (
-            <span key={`${b}-${i}`} className="font-impact text-sm uppercase tracking-[0.25em] text-white/50">
-              {b}
-            </span>
-          ))}
-        </div>
-      </section>
 
       {/* Categories */}
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-14">
