@@ -57,17 +57,6 @@ const Index = () => {
       <SiteHeader />
       <SalesTeamStrip />
 
-      {/* Brand marquee */}
-      <section className="relative bg-primary text-primary-foreground border-y-2 border-fluo-yellow/40 py-4 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
-        <div className="relative flex gap-12 animate-marquee whitespace-nowrap" style={{ width: "max-content" }}>
-          {[...brands, ...brands].map((b, i) => (
-            <span key={`${b}-${i}`} className="font-impact text-sm uppercase tracking-[0.25em] text-white/50">
-              {b}
-            </span>
-          ))}
-        </div>
-      </section>
 
       {/* Categories */}
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-14">
