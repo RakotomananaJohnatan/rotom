@@ -1,4 +1,3 @@
-import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import PageHero from "@/components/PageHero";
@@ -6,33 +5,17 @@ import { Fuel, Zap, Box, Volume2, Cable, Gauge, ArrowRight } from "lucide-react"
 import { useLang } from "@/i18n/useLang";
 import Reveal from "@/components/Reveal";
 
-type EquipCategory = "all" | "power" | "storage" | "acoustic" | "cabling";
-
 const Equipements = () => {
   const { t } = useLang();
-  const [activeCat, setActiveCat] = useState<EquipCategory>("all");
 
-  const equipments = useMemo(
-    () => [
-      { icon: Zap, title: t("equip.ats.title"), desc: t("equip.ats.desc"), count: 18, cat: "power" as EquipCategory },
-      { icon: Fuel, title: t("equip.tank.title"), desc: t("equip.tank.desc"), count: 12, cat: "storage" as EquipCategory },
-      { icon: Volume2, title: t("equip.canopy.title"), desc: t("equip.canopy.desc"), count: 9, cat: "acoustic" as EquipCategory },
-      { icon: Box, title: t("equip.container.title"), desc: t("equip.container.desc"), count: 7, cat: "storage" as EquipCategory },
-      { icon: Cable, title: t("equip.cable.title"), desc: t("equip.cable.desc"), count: 14, cat: "cabling" as EquipCategory },
-      { icon: Gauge, title: t("equip.control.title"), desc: t("equip.control.desc"), count: 22, cat: "power" as EquipCategory },
-    ],
-    [t]
-  );
-
-  const filters: { key: EquipCategory; label: string }[] = [
-    { key: "all", label: t("equip.filter.all") },
-    { key: "power", label: t("equip.filter.power") },
-    { key: "storage", label: t("equip.filter.storage") },
-    { key: "acoustic", label: t("equip.filter.acoustic") },
-    { key: "cabling", label: t("equip.filter.cabling") },
+  const equipments = [
+    { icon: Zap, title: t("equip.ats.title"), desc: t("equip.ats.desc"), count: 18 },
+    { icon: Fuel, title: t("equip.tank.title"), desc: t("equip.tank.desc"), count: 12 },
+    { icon: Volume2, title: t("equip.canopy.title"), desc: t("equip.canopy.desc"), count: 9 },
+    { icon: Box, title: t("equip.container.title"), desc: t("equip.container.desc"), count: 7 },
+    { icon: Cable, title: t("equip.cable.title"), desc: t("equip.cable.desc"), count: 14 },
+    { icon: Gauge, title: t("equip.control.title"), desc: t("equip.control.desc"), count: 22 },
   ];
-
-  const filtered = activeCat === "all" ? equipments : equipments.filter((e) => e.cat === activeCat);
 
   return (
     <SiteLayout>
@@ -44,31 +27,8 @@ const Equipements = () => {
       />
 
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-12">
-        <div className="mb-8 flex flex-wrap items-center gap-2 border-b-2 border-border pb-4">
-          <span className="font-impact text-xs uppercase tracking-[0.25em] text-muted-foreground mr-2">
-            {t("equip.filter.label")}
-          </span>
-          {filters.map((f) => {
-            const isActive = activeCat === f.key;
-            return (
-              <button
-                key={f.key}
-                type="button"
-                onClick={() => setActiveCat(f.key)}
-                className={`font-impact text-xs uppercase tracking-wider px-4 py-2 border-2 transition-all ${
-                  isActive
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-card text-foreground border-border hover:border-brand-cyan hover:text-brand-cyan"
-                }`}
-              >
-                {f.label}
-              </button>
-            );
-          })}
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filtered.map((eq, i) => (
+          {equipments.map((eq, i) => (
             <Reveal key={eq.title} variant="fade-in-up" delay={i * 80}>
               <article className="lift bg-card border-2 border-border p-6 group hover:border-fluo-yellow hover:shadow-block transition-all h-full">
                 <div className="flex items-start justify-between mb-4">

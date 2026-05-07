@@ -25,10 +25,7 @@ const ConditionsGenerales = () => {
             <h2>{t("terms.s4.title")}</h2>
             <p>{t("terms.s4.body")}</p>
             <h2>{t("terms.s5.title")}</h2>
-            <h3>{t("terms.s5.1.title")}</h3>
-            <p>{t("terms.s5.1.body")}</p>
-            <h3>{t("terms.s5.2.title")}</h3>
-            <p>{t("terms.s5.2.body")}</p>
+            <p>{t("terms.s5.body")}</p>
             <h2>{t("terms.s6.title")}</h2>
             <p>{t("terms.s6.body")}</p>
             <h2>{t("terms.s7.title")}</h2>

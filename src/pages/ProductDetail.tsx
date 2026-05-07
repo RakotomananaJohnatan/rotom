@@ -34,7 +34,7 @@ const ProductDetail = () => {
   const features = [
     t("product.detail.feat1"),
     t("product.detail.feat2"),
-    ...(product.type === "open" ? [] : [t("product.detail.feat3")]),
+    t("product.detail.feat3"),
     t("product.detail.feat4"),
     t("product.detail.feat5"),
     t("product.detail.feat6"),
