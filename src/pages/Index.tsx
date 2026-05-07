@@ -9,7 +9,7 @@ import SalesTeamStrip from "@/components/SalesTeamStrip";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
-import { newProducts, brands } from "@/data/products";
+import { newProducts } from "@/data/products";
 import type { CategoryKey } from "@/components/CatalogFilters";
 import { useLang } from "@/i18n/useLang";
 
