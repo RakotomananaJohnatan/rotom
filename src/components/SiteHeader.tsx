@@ -39,7 +39,7 @@ const SiteHeader = () => {
     <header className="bg-primary text-primary-foreground border-b-4 border-accent">
       {/* Top row */}
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-3 sm:gap-6">
-        <Link to="/" className="flex-shrink-0 bg-white rounded-md px-2 sm:px-3 py-1.5 sm:py-2 flex items-center" aria-label="ROTOM Power Generation">
+        <Link to="/" className="flex-shrink-0 rounded-md px-2 sm:px-3 py-1.5 sm:py-2 flex items-center bg-[#ddff00]" aria-label="ROTOM Power Generation">
           <img src={logoRotom} alt="ROTOM Power Generation" width={170} height={56} className="h-9 sm:h-12 w-auto object-contain" />
         </Link>
 
