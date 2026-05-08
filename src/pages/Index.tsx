@@ -13,6 +13,7 @@ import { newProducts } from "@/data/products";
 import type { CategoryKey } from "@/components/CatalogFilters";
 import { useLang } from "@/i18n/useLang";
 
+import heroIndustrial from "@/assets/hero-industrial.png";
 import catNeufs from "@/assets/cat-neufs.jpg";
 import catOccasion from "@/assets/cat-occasion.jpg";
 import catHybrid from "@/assets/cat-hybrid.jpg";
@@ -57,6 +58,77 @@ const Index = () => {
       <SiteHeader />
       <SalesTeamStrip />
 
+      {/* HERO */}
+      <section className="relative w-full overflow-hidden bg-[#0a0a0a]">
+        <div className="relative aspect-[16/9] max-h-[88vh] w-full">
+          <img
+            src={heroIndustrial}
+            alt="Site industriel avec groupes électrogènes ROTOM"
+            width={1920}
+            height={1080}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" aria-hidden />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" aria-hidden />
+
+          <div className="relative z-10 h-full max-w-[1500px] mx-auto px-4 sm:px-6 flex flex-col justify-center">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-3 mb-5 sm:mb-7">
+                <span className="block h-[2px] w-10 sm:w-14 bg-[#c4ff00]" />
+                <span className="font-impact text-[11px] sm:text-xs uppercase tracking-[0.3em] text-[#c4ff00] font-bold">
+                  Expertise &amp; Performance
+                </span>
+              </div>
+
+              <h1 className="font-impact uppercase font-extrabold text-white leading-[0.95] tracking-tight text-4xl sm:text-6xl md:text-7xl lg:text-[88px]">
+                Votre Spécialiste en<br />
+                <span className="text-[#c4ff00]">Groupes Électrogènes</span>
+              </h1>
+
+              <p className="mt-5 sm:mt-7 text-white/75 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
+                Solutions professionnelles de puissance pour l'industrie, le BTP et les collectivités.
+                Vente, installation et maintenance préventive.
+              </p>
+
+              <div className="mt-7 sm:mt-9 flex flex-wrap gap-3 sm:gap-4">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center justify-center gap-2 bg-[#1e6cff] hover:bg-[#1558d6] text-white font-impact text-xs sm:text-sm font-bold uppercase tracking-[0.18em] px-7 sm:px-9 py-4 sm:py-5 transition-all hover:shadow-[0_10px_30px_-10px_rgba(30,108,255,0.7)] hover:-translate-y-0.5"
+                >
+                  Obtenir un devis
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  to="/generateurs-neufs"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white/90 text-white hover:bg-white hover:text-black font-impact text-xs sm:text-sm font-bold uppercase tracking-[0.18em] px-7 sm:px-9 py-4 sm:py-5 transition-all hover:-translate-y-0.5"
+                >
+                  Voir nos produits
+                </Link>
+              </div>
+
+              <div className="mt-10 sm:mt-14 flex items-stretch gap-8 sm:gap-12 border-t border-white/15 pt-6 sm:pt-7 max-w-md">
+                <div>
+                  <div className="font-impact text-2xl sm:text-3xl font-bold text-white leading-none">
+                    10<span className="text-[#c4ff00]">+</span>
+                  </div>
+                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-white/60 mt-2">
+                    Ans d'expertise
+                  </div>
+                </div>
+                <div className="w-px bg-white/15" />
+                <div>
+                  <div className="font-impact text-sm sm:text-base font-bold text-white leading-tight">
+                    Solutions énergétiques
+                  </div>
+                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-white/60 mt-2">
+                    Industrielles
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Categories */}
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 py-14">
