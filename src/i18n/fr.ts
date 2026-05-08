@@ -159,6 +159,9 @@ export const fr = {
   "equip.filter.storage": "Stockage",
   "equip.filter.acoustic": "Insonorisation",
   "equip.filter.cabling": "Câblage",
+  "equip.filter.filters": "Filtres",
+  "equip.filters.title": "Filtres",
+  "equip.filters.desc": "Filtres à huile, à air, à carburant et séparateurs d'eau pour groupes électrogènes.",
 
   // Services
   "services.hero.eyebrow": "Notre savoir-faire",
