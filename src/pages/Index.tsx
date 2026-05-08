@@ -68,8 +68,7 @@ const Index = () => {
             height={1080}
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" aria-hidden />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" aria-hidden />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/15" aria-hidden />
 
           <div className="relative z-10 h-full max-w-[1500px] mx-auto px-4 sm:px-6 flex flex-col justify-center">
             <div className="max-w-2xl">
