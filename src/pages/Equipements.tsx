@@ -2,11 +2,11 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import PageHero from "@/components/PageHero";
-import { Fuel, Zap, Box, Volume2, Cable, Gauge, ArrowRight } from "lucide-react";
+import { Fuel, Zap, Box, Volume2, Cable, Gauge, Filter, ArrowRight } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
 import Reveal from "@/components/Reveal";
 
-type EquipCategory = "all" | "power" | "storage" | "acoustic" | "cabling";
+type EquipCategory = "all" | "power" | "storage" | "acoustic" | "cabling" | "filters";
 
 const Equipements = () => {
   const { t } = useLang();
@@ -20,6 +20,7 @@ const Equipements = () => {
       { icon: Box, title: t("equip.container.title"), desc: t("equip.container.desc"), count: 7, cat: "storage" as EquipCategory },
       { icon: Cable, title: t("equip.cable.title"), desc: t("equip.cable.desc"), count: 14, cat: "cabling" as EquipCategory },
       { icon: Gauge, title: t("equip.control.title"), desc: t("equip.control.desc"), count: 22, cat: "power" as EquipCategory },
+      { icon: Filter, title: t("equip.filters.title"), desc: t("equip.filters.desc"), count: 25, cat: "filters" as EquipCategory },
     ],
     [t]
   );
@@ -30,6 +31,7 @@ const Equipements = () => {
     { key: "storage", label: t("equip.filter.storage") },
     { key: "acoustic", label: t("equip.filter.acoustic") },
     { key: "cabling", label: t("equip.filter.cabling") },
+    { key: "filters", label: t("equip.filter.filters") },
   ];
 
   const filtered = activeCat === "all" ? equipments : equipments.filter((e) => e.cat === activeCat);
