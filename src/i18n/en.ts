@@ -159,6 +159,9 @@ export const en = {
   "equip.filter.storage": "Storage",
   "equip.filter.acoustic": "Soundproofing",
   "equip.filter.cabling": "Cabling",
+  "equip.filter.filters": "Filters",
+  "equip.filters.title": "Filters",
+  "equip.filters.desc": "Oil, air, fuel filters and water separators for generator sets.",
 
   // Services
   "services.hero.eyebrow": "Our expertise",
