@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import PageHero from "@/components/PageHero";
-import { Fuel, Zap, Box, Volume2, Cable, Gauge, ArrowRight } from "lucide-react";
+import { Fuel, Zap, Box, Volume2, Cable, Gauge, Filter, ArrowRight } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
 import Reveal from "@/components/Reveal";
 
