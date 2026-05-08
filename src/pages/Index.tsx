@@ -71,15 +71,15 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/15" aria-hidden />
 
           <div className="relative z-10 h-full max-w-[1500px] mx-auto px-4 sm:px-6 flex flex-col justify-center">
-            <div className="max-w-2xl">
-              <div className="flex items-center gap-3 mb-5 sm:mb-7">
-                <span className="block h-[2px] w-10 sm:w-14 bg-[#c4ff00]" />
-                <span className="font-impact text-[11px] sm:text-xs uppercase tracking-[0.3em] text-[#c4ff00] font-bold">
+            <div className="max-w-xl lg:ml-16 xl:ml-24">
+              <div className="flex items-center gap-3 mb-4 sm:mb-5">
+                <span className="block h-[2px] w-8 sm:w-12 bg-[#c4ff00]" />
+                <span className="font-impact text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-[#c4ff00] font-bold">
                   Expertise &amp; Performance
                 </span>
               </div>
 
-              <h1 className="font-impact uppercase font-extrabold text-white leading-[0.95] tracking-tight text-4xl sm:text-6xl md:text-7xl lg:text-[88px]">
+              <h1 className="font-impact uppercase font-extrabold text-white leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 Votre Spécialiste en<br />
                 <span className="text-[#c4ff00]">Groupes Électrogènes</span>
               </h1>
