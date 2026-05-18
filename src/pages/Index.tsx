@@ -75,7 +75,7 @@ const Index = () => {
               <div className="flex items-center gap-3 mb-4 sm:mb-5">
                 <span className="block h-[2px] w-8 sm:w-12 bg-[#c4ff00]" />
                 <span className="font-impact text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-[#c4ff00] font-bold">
-                  Expertise &amp; Performance
+                  {t("home.hero.eyebrow")}
                 </span>
               </div>
 
