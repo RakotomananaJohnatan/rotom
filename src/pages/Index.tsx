@@ -80,8 +80,8 @@ const Index = () => {
               </div>
 
               <h1 className="font-impact uppercase font-extrabold text-white leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                Votre Spécialiste en<br />
-                <span className="text-[#c4ff00]">Groupes Électrogènes</span>
+                {t("home.hero.title1")}<br />
+                <span className="text-[#c4ff00]">{t("home.hero.title2")}</span>
               </h1>
 
               <p className="mt-5 sm:mt-7 text-white/75 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
