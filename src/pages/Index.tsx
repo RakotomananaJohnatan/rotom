@@ -84,44 +84,24 @@ const Index = () => {
                 <span className="block text-[#c4ff00] hero-float">{t("home.hero.title2")}</span>
               </h1>
 
-              <p className="mt-5 sm:mt-7 text-white/75 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
+              <p className="mt-6 sm:mt-8 text-white/80 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed hero-rise" style={{ animationDelay: "320ms" }}>
                 {t("home.hero.subtitle")}
               </p>
 
-              <div className="mt-7 sm:mt-9 flex flex-wrap gap-3 sm:gap-4">
+              <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 hero-rise" style={{ animationDelay: "480ms" }}>
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center justify-center gap-2 bg-[#1e6cff] hover:bg-[#1558d6] text-white font-impact text-xs sm:text-sm font-bold uppercase tracking-[0.18em] px-7 sm:px-9 py-4 sm:py-5 transition-all hover:shadow-[0_10px_30px_-10px_rgba(30,108,255,0.7)] hover:-translate-y-0.5"
+                  className="group inline-flex items-center justify-center gap-2 bg-[#1e6cff] hover:bg-[#1558d6] text-white font-impact text-xs sm:text-sm font-bold uppercase tracking-[0.18em] px-7 sm:px-9 py-4 sm:py-5 rounded-full transition-all hover:shadow-[0_10px_30px_-10px_rgba(30,108,255,0.7)] hover:-translate-y-0.5"
                 >
                   {t("home.hero.cta1")}
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
                   to="/generateurs-neufs"
-                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white/90 text-white hover:bg-white hover:text-black font-impact text-xs sm:text-sm font-bold uppercase tracking-[0.18em] px-7 sm:px-9 py-4 sm:py-5 transition-all hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white/90 text-white hover:bg-white hover:text-black font-impact text-xs sm:text-sm font-bold uppercase tracking-[0.18em] px-7 sm:px-9 py-4 sm:py-5 rounded-full transition-all hover:-translate-y-0.5"
                 >
                   {t("home.hero.cta2")}
                 </Link>
-              </div>
-
-              <div className="mt-10 sm:mt-14 flex items-stretch gap-8 sm:gap-12 border-t border-white/15 pt-6 sm:pt-7 max-w-md">
-                <div>
-                  <div className="font-impact text-2xl sm:text-3xl font-bold text-white leading-none">
-                    {t("home.hero.stat1.value")}<span className="text-[#c4ff00]">+</span>
-                  </div>
-                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-white/60 mt-2">
-                    {t("home.hero.stat1.label")}
-                  </div>
-                </div>
-                <div className="w-px bg-white/15" />
-                <div>
-                  <div className="font-impact text-sm sm:text-base font-bold text-white leading-tight">
-                    {t("home.hero.stat2.title")}
-                  </div>
-                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-white/60 mt-2">
-                    {t("home.hero.stat2.label")}
-                  </div>
-                </div>
               </div>
             </div>
           </div>
