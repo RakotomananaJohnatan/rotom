@@ -85,8 +85,7 @@ const Index = () => {
               </h1>
 
               <p className="mt-5 sm:mt-7 text-white/75 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
-                Solutions professionnelles de puissance pour l'industrie, le BTP et les collectivités.
-                Vente, installation et maintenance préventive.
+                {t("home.hero.subtitle")}
               </p>
 
               <div className="mt-7 sm:mt-9 flex flex-wrap gap-3 sm:gap-4">
