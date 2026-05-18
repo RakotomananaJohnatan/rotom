@@ -107,7 +107,7 @@ const Index = () => {
               <div className="mt-10 sm:mt-14 flex items-stretch gap-8 sm:gap-12 border-t border-white/15 pt-6 sm:pt-7 max-w-md">
                 <div>
                   <div className="font-impact text-2xl sm:text-3xl font-bold text-white leading-none">
-                    10<span className="text-[#c4ff00]">+</span>
+                    {t("home.hero.stat1.value")}<span className="text-[#c4ff00]">+</span>
                   </div>
                   <div className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-white/60 mt-2">
                     Ans d'expertise
