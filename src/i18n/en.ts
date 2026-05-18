@@ -1,4 +1,16 @@
 export const en = {
+  // Home hero
+  "home.hero.eyebrow": "Expertise & Performance",
+  "home.hero.title1": "Your Specialist in",
+  "home.hero.title2": "Power Generators",
+  "home.hero.subtitle": "Professional power solutions for industry, construction and public services. Sales, installation and preventive maintenance.",
+  "home.hero.cta1": "Get a quote",
+  "home.hero.cta2": "View our products",
+  "home.hero.stat1.value": "10",
+  "home.hero.stat1.label": "Years of expertise",
+  "home.hero.stat2.title": "Energy solutions",
+  "home.hero.stat2.label": "Industrial",
+
   // Header / nav
   "nav.home": "Home",
   "nav.new": "New generators",
