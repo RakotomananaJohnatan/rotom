@@ -116,7 +116,7 @@ const Index = () => {
                 <div className="w-px bg-white/15" />
                 <div>
                   <div className="font-impact text-sm sm:text-base font-bold text-white leading-tight">
-                    Solutions énergétiques
+                    {t("home.hero.stat2.title")}
                   </div>
                   <div className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-white/60 mt-2">
                     Industrielles
