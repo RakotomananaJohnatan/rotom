@@ -110,7 +110,7 @@ const Index = () => {
                     {t("home.hero.stat1.value")}<span className="text-[#c4ff00]">+</span>
                   </div>
                   <div className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-white/60 mt-2">
-                    Ans d'expertise
+                    {t("home.hero.stat1.label")}
                   </div>
                 </div>
                 <div className="w-px bg-white/15" />
