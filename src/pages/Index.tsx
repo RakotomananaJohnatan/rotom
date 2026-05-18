@@ -100,7 +100,7 @@ const Index = () => {
                   to="/generateurs-neufs"
                   className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white/90 text-white hover:bg-white hover:text-black font-impact text-xs sm:text-sm font-bold uppercase tracking-[0.18em] px-7 sm:px-9 py-4 sm:py-5 transition-all hover:-translate-y-0.5"
                 >
-                  Voir nos produits
+                  {t("home.hero.cta2")}
                 </Link>
               </div>
 
