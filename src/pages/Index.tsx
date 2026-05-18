@@ -119,7 +119,7 @@ const Index = () => {
                     {t("home.hero.stat2.title")}
                   </div>
                   <div className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-white/60 mt-2">
-                    Industrielles
+                    {t("home.hero.stat2.label")}
                   </div>
                 </div>
               </div>
