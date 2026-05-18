@@ -93,7 +93,7 @@ const Index = () => {
                   to="/contact"
                   className="group inline-flex items-center justify-center gap-2 bg-[#1e6cff] hover:bg-[#1558d6] text-white font-impact text-xs sm:text-sm font-bold uppercase tracking-[0.18em] px-7 sm:px-9 py-4 sm:py-5 transition-all hover:shadow-[0_10px_30px_-10px_rgba(30,108,255,0.7)] hover:-translate-y-0.5"
                 >
-                  Obtenir un devis
+                  {t("home.hero.cta1")}
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
