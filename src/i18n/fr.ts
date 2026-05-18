@@ -1,4 +1,16 @@
 export const fr = {
+  // Home hero
+  "home.hero.eyebrow": "Expertise & Performance",
+  "home.hero.title1": "Votre Spécialiste en",
+  "home.hero.title2": "Groupes Électrogènes",
+  "home.hero.subtitle": "Solutions professionnelles de puissance pour l'industrie, le BTP et les collectivités. Vente, installation et maintenance préventive.",
+  "home.hero.cta1": "Obtenir un devis",
+  "home.hero.cta2": "Voir nos produits",
+  "home.hero.stat1.value": "10",
+  "home.hero.stat1.label": "Ans d'expertise",
+  "home.hero.stat2.title": "Solutions énergétiques",
+  "home.hero.stat2.label": "Industrielles",
+
   // Header / nav
   "nav.home": "Accueil",
   "nav.new": "Générateurs neufs",
