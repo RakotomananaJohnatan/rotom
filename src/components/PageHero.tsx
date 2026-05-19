@@ -24,12 +24,12 @@ const PageHero = ({ eyebrow, title, subtitle, breadcrumb }: PageHeroProps) => (
         ))}
       </nav>
       {eyebrow && (
-        <div className="hero-rise font-impact text-[11px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-brand-cyan mb-3" style={{ animationDelay: "120ms" }}>{eyebrow}</div>
+        <div className="hero-rise font-impact text-[11px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-brand-cyan mb-3" style={{ animationDelay: "150ms" }}>{eyebrow}</div>
       )}
-      <h1 className="hero-rise font-impact text-2xl sm:text-4xl md:text-5xl uppercase font-bold leading-tight max-w-3xl" style={{ animationDelay: "240ms" }}>
+      <h1 className="hero-rise font-impact text-2xl sm:text-4xl md:text-5xl uppercase font-bold leading-tight max-w-3xl" style={{ animationDelay: "300ms" }}>
         {title}
       </h1>
-      {subtitle && <p className="hero-rise text-white/80 mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base" style={{ animationDelay: "380ms" }}>{subtitle}</p>}
+      {subtitle && <p className="hero-rise text-white/80 mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base" style={{ animationDelay: "450ms" }}>{subtitle}</p>}
     </div>
   </section>
 );
