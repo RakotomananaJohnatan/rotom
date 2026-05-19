@@ -12,6 +12,7 @@ import GenerateursOccasion from "./pages/GenerateursOccasion.tsx";
 import Equipements from "./pages/Equipements.tsx";
 import Services from "./pages/Services.tsx";
 import Contact from "./pages/Contact.tsx";
+import DemandeSurMesure from "./pages/DemandeSurMesure.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
 import ConditionsGenerales from "./pages/ConditionsGenerales.tsx";
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/equipements" element={<Equipements />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/demande-sur-mesure" element={<DemandeSurMesure />} />
               <Route path="/produit/:slug" element={<ProductDetail />} />
               <Route path="/mentions-legales" element={<MentionsLegales />} />
               <Route path="/conditions-generales" element={<ConditionsGenerales />} />

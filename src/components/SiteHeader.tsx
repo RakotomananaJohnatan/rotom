@@ -32,6 +32,7 @@ const SiteHeader = () => {
     { label: t("nav.used"), to: "/generateurs-occasion" },
     { label: t("nav.equip"), to: "/equipements" },
     { label: t("nav.services"), to: "/services" },
+    { label: t("nav.custom"), to: "/demande-sur-mesure" },
     { label: t("nav.contact"), to: "/contact" },
   ];
 
