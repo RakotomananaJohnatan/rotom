@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import SiteLayout from "@/components/SiteLayout";
+import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { toast } from "@/hooks/use-toast";
@@ -93,6 +94,11 @@ const DemandeSurMesure = () => {
 
   return (
     <SiteLayout>
+      <Seo
+        title="Demande sur mesure — ROTOM"
+        description="Configurez votre groupe électrogène sur mesure : puissance, carburant, contraintes techniques. Réponse technique personnalisée ROTOM."
+        path="/demande-sur-mesure"
+      />
       <PageHero
         eyebrow={t("custom.hero.eyebrow")}
         title={t("custom.hero.title")}

@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import SiteLayout from "@/components/SiteLayout";
+import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import CatalogFilters from "@/components/CatalogFilters";
 import ProductCard from "@/components/ProductCard";
@@ -28,6 +29,11 @@ const GenerateursNeufs = () => {
 
   return (
     <SiteLayout>
+      <Seo
+        title="Générateurs neufs — ROTOM"
+        description="Catalogue de groupes électrogènes neufs ROTOM de 10 à 2500 kVA : Diesel, Gaz, capotés ou ouverts. Livraison et installation en France."
+        path="/generateurs-neufs"
+      />
       <PageHero
         eyebrow={t("new.hero.eyebrow")}
         title={t("new.hero.title")}

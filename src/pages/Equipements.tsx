@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
+import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import { Fuel, Zap, Box, Volume2, Cable, Gauge, Filter, ArrowRight } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
@@ -38,6 +39,11 @@ const Equipements = () => {
 
   return (
     <SiteLayout>
+      <Seo
+        title="Équipements — ROTOM"
+        description="Équipements pour groupes électrogènes : ATS, parafoudres, cuves carburant, capotages acoustiques, câblage et filtration."
+        path="/equipements"
+      />
       <PageHero
         eyebrow={t("equip.hero.eyebrow")}
         title={t("equip.hero.title")}

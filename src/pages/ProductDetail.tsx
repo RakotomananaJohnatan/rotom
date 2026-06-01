@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
+import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import { findProductBySlug, allProducts } from "@/data/products";
 import { useLang } from "@/i18n/useLang";
@@ -46,6 +47,30 @@ const ProductDetail = () => {
 
   return (
     <SiteLayout>
+      <Seo
+        title={`${product.name} — ${product.kva} ${product.fuel} — ROTOM`}
+        description={`${product.name} : ${product.subtitle}. ${product.stock === "EN STOCK" ? "Disponible en stock" : "Sur commande"} chez ROTOM. Devis et livraison rapides.`}
+        path={`/produit/${product.slug}`}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: product.name,
+          description: product.subtitle,
+          brand: { "@type": "Brand", name: "ROTOM" },
+          category: product.condition === "new" ? "Groupe électrogène neuf" : "Groupe électrogène d'occasion",
+          additionalProperty: [
+            { "@type": "PropertyValue", name: "Puissance", value: product.kva },
+            { "@type": "PropertyValue", name: "Carburant", value: product.fuel },
+            { "@type": "PropertyValue", name: "Année", value: product.year },
+          ],
+          offers: {
+            "@type": "Offer",
+            availability: product.stock === "EN STOCK" ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+            priceCurrency: "EUR",
+            seller: { "@type": "Organization", name: "ROTOM Power Solutions" },
+          },
+        }}
+      />
       <PageHero
         eyebrow={t("product.detail.eyebrow")}
         title={product.name}
