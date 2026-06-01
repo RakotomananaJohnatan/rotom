@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import SiteLayout from "@/components/SiteLayout";
+import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import CatalogFilters from "@/components/CatalogFilters";
 import ProductCard from "@/components/ProductCard";
@@ -28,6 +29,11 @@ const GenerateursOccasion = () => {
 
   return (
     <SiteLayout>
+      <Seo
+        title="Générateurs d'occasion — ROTOM"
+        description="Groupes électrogènes d'occasion révisés et garantis ROTOM, de 10 à 2500 kVA. Disponibles en stock avec maintenance assurée."
+        path="/generateurs-occasion"
+      />
       <PageHero
         eyebrow={t("used.hero.eyebrow")}
         title={t("used.hero.title")}

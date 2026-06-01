@@ -1,0 +1,21 @@
+# ROTOM Power Solutions
+
+> Spécialiste de la vente, location et maintenance de groupes électrogènes industriels de 10 à 2500 kVA.
+
+ROTOM commercialise des groupes électrogènes neufs et d'occasion (Diesel, Gaz), des équipements associés (ATS, parafoudres, cuves) et propose des services de maintenance, dépannage et installation sur site.
+
+## Pages
+
+- [Accueil](/): Présentation de ROTOM et de son offre énergétique.
+- [Générateurs neufs](/generateurs-neufs): Catalogue de groupes électrogènes neufs de 10 à 2500 kVA.
+- [Générateurs d'occasion](/generateurs-occasion): Groupes électrogènes d'occasion révisés et garantis.
+- [Équipements](/equipements): ATS, parafoudres, cuves et accessoires.
+- [Services](/services): Maintenance, dépannage, installation et contrats de service.
+- [Demande sur mesure](/demande-sur-mesure): Formulaire pour configurer un groupe électrogène personnalisé.
+- [Contact](/contact): Coordonnées et formulaire de contact ROTOM.
+
+## Optional
+
+- [Mentions légales](/mentions-legales)
+- [Conditions générales](/conditions-generales)
+- [Politique de confidentialité](/politique-confidentialite)

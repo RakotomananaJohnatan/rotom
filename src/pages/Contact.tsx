@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
+import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import SalesTeamStrip from "@/components/SalesTeamStrip";
 import { toast } from "@/hooks/use-toast";
@@ -47,6 +48,11 @@ const Contact = () => {
 
   return (
     <SiteLayout>
+      <Seo
+        title="Contact — ROTOM"
+        description="Contactez ROTOM pour un devis sur un groupe électrogène industriel, une demande de maintenance ou une intervention urgente."
+        path="/contact"
+      />
       <PageHero
         eyebrow={t("contact.hero.eyebrow")}
         title={t("contact.hero.title")}

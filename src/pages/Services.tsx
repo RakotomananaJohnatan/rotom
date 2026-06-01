@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
+import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import { Search, Wrench, Gauge, LifeBuoy, CreditCard, Cog, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
@@ -41,6 +42,11 @@ const Services = () => {
 
   return (
     <SiteLayout>
+      <Seo
+        title="Services — ROTOM"
+        description="Services ROTOM : maintenance, dépannage, installation et contrats de service pour groupes électrogènes industriels partout en France."
+        path="/services"
+      />
       <PageHero
         eyebrow={t("services.hero.eyebrow")}
         title={t("services.hero.title")}

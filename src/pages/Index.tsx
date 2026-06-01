@@ -6,6 +6,7 @@ import { Headphones, Shield, Truck, Wrench, LifeBuoy, ArrowRight, Zap, Globe2, A
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import SalesTeamStrip from "@/components/SalesTeamStrip";
+import Seo from "@/components/Seo";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
@@ -55,6 +56,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="ROTOM — Groupes électrogènes industriels 10 à 2500 kVA"
+        description="ROTOM : spécialiste de la vente, location et maintenance de groupes électrogènes industriels Diesel et Gaz de 10 à 2500 kVA. Neufs, occasion et sur mesure."
+        path="/"
+      />
       <SiteHeader />
       <SalesTeamStrip />
 
