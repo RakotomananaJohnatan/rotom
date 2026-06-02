@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Slider } from "@/components/ui/slider";
-import { Headphones, Shield, Truck, Wrench, LifeBuoy, ArrowRight, Zap, Globe2, Award } from "lucide-react";
+import { Headphones, Shield, Truck, Wrench, LifeBuoy, ArrowRight, Zap, Globe2, Award, ShieldCheck, Headset } from "lucide-react";
 
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -309,19 +309,20 @@ const Index = () => {
       {/* Trust Strip */}
       <section className="relative bg-secondary border-y border-border py-12 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
-        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
           {[
-            { icon: Wrench, title: t("home.trust.3.title"), desc: t("home.trust.3.desc") },
-            { icon: LifeBuoy, title: t("home.trust.4.title"), desc: t("home.trust.4.desc") },
+            { icon: ShieldCheck, title: t("home.trust.3.title"), desc: t("home.trust.3.desc") },
+            { icon: Headset, title: t("home.trust.4.title"), desc: t("home.trust.4.desc") },
           ].map((item, i) => (
             <Reveal key={item.title} variant="fade-in-up" delay={i * 100}>
-              <div className="flex items-center gap-4 group">
-                <div className="size-14 rounded-full bg-card border-2 border-primary flex items-center justify-center flex-shrink-0 group-hover:bg-fluo-yellow group-hover:border-fluo-yellow transition-colors">
-                  <item.icon className="size-6 text-primary group-hover:text-fluo-yellow-foreground transition-colors" strokeWidth={1.5} />
+              <div className="flex flex-col items-center text-center gap-4 group max-w-xs">
+                <div className="relative size-20 rounded-full bg-card border-2 border-primary flex items-center justify-center flex-shrink-0 group-hover:bg-fluo-yellow group-hover:border-fluo-yellow transition-all duration-300 group-hover:scale-110 group-hover:shadow-glow">
+                  <span className="absolute inset-0 rounded-full bg-fluo-yellow/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden />
+                  <item.icon className="relative size-9 text-primary group-hover:text-fluo-yellow-foreground transition-colors" strokeWidth={1.75} />
                 </div>
                 <div>
-                  <div className="font-impact text-sm uppercase font-bold text-primary">{item.title}</div>
-                  <div className="text-xs text-muted-foreground whitespace-pre-line">{item.desc}</div>
+                  <div className="font-impact text-base uppercase font-bold text-primary tracking-wide">{item.title}</div>
+                  <div className="text-sm text-muted-foreground whitespace-pre-line mt-1">{item.desc}</div>
                 </div>
               </div>
             </Reveal>
