@@ -66,7 +66,7 @@ const Index = () => {
 
       {/* HERO */}
       <section className="relative w-full overflow-hidden bg-[#0a0a0a]">
-        <div className="relative aspect-[16/9] max-h-[88vh] w-full">
+        <div className="relative w-full min-h-[600px] sm:min-h-0 sm:aspect-[16/9] sm:max-h-[88vh]">
           <img
             src={heroIndustrial}
             alt="Site industriel avec groupes électrogènes ROTOM"
