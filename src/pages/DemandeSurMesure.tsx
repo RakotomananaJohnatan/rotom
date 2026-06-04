@@ -361,7 +361,7 @@ const Field = ({
   children: React.ReactNode;
   className?: string;
 }) => (
-  <div className={className}>
+  <div className={`min-w-0 ${className ?? ""}`}>
     <label htmlFor={id} className="font-impact text-[11px] uppercase tracking-wider text-muted-foreground mb-1.5 block">
       {label}
     </label>
