@@ -9,7 +9,7 @@ import ProductCard from "@/components/ProductCard";
 
 const ProductDetail = () => {
   const { slug = "" } = useParams();
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const navigate = useNavigate();
   const product = findProductBySlug(slug);
 
@@ -145,15 +145,18 @@ const ProductDetail = () => {
           <h3 className="font-impact text-base uppercase font-bold text-primary p-4 border-b-2 border-primary">{t("product.detail.specs")}</h3>
           <table className="w-full text-sm">
             <tbody>
-              {[
-                [t("common.power"), product.kva],
-                [t("common.year"), product.year],
-                [t("common.fuel"), product.fuel],
-                ["Stock", isStock ? t("common.inStock") : t("common.onOrder")],
-                ["Référence", product.slug.toUpperCase()],
-              ].map(([k, v], i) => (
+              {(product.specs
+                ? product.specs[lang]
+                : ([
+                    [t("common.power"), product.kva],
+                    [t("common.year"), product.year],
+                    [t("common.fuel"), product.fuel],
+                    ["Stock", isStock ? t("common.inStock") : t("common.onOrder")],
+                    ["Référence", product.slug.toUpperCase()],
+                  ] as [string, string][])
+              ).map(([k, v], i) => (
                 <tr key={k} className={i % 2 ? "bg-secondary/40" : ""}>
-                  <td className="px-4 py-3 font-impact uppercase text-xs text-muted-foreground tracking-wider w-1/3">{k}</td>
+                  <td className="px-4 py-3 font-impact uppercase text-xs text-muted-foreground tracking-wider w-1/3 align-top">{k}</td>
                   <td className="px-4 py-3 font-mono-spec">{v}</td>
                 </tr>
               ))}
