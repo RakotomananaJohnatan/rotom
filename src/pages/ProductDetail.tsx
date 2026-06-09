@@ -9,7 +9,7 @@ import ProductCard from "@/components/ProductCard";
 
 const ProductDetail = () => {
   const { slug = "" } = useParams();
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const navigate = useNavigate();
   const product = findProductBySlug(slug);
 
