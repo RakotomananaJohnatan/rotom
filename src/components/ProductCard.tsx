@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/useLang";
 
+export type SpecRow = [string, string];
 export interface Product {
   stock: string;
   name: string;
@@ -12,6 +13,7 @@ export interface Product {
   slug: string;
   condition: "new" | "used";
   type?: "open" | "closed";
+  specs?: { fr: SpecRow[]; en: SpecRow[] };
 }
 
 const ProductCard = ({ p }: { p: Product }) => {
