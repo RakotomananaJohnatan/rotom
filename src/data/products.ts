@@ -4,6 +4,12 @@ import genPerkins from "@/assets/gen-perkins.jpg";
 import genFgWilson from "@/assets/gen-fgwilson.jpg";
 import genVolvo from "@/assets/gen-volvo.jpg";
 import genDoosan from "@/assets/gen-doosan.jpg";
+import genSR from "@/assets/gen-sr.jpg";
+import genSRAU from "@/assets/gen-srau.jpg";
+import genSR2 from "@/assets/gen-sr2.jpg";
+import genSE from "@/assets/gen-se.jpg";
+import genSREU from "@/assets/gen-sreu.jpg";
+import genSC from "@/assets/gen-sc.jpg";
 import type { Product } from "@/components/ProductCard";
 
 export const brands = ["ROTOM"];
@@ -19,13 +25,70 @@ const enrich = (
 ): Product[] =>
   list.map((p) => ({ ...p, condition, slug: slugify(p.name) }));
 
+// ROTOM silent-type genset catalogs (all silent diesel).
+// `kva` stores the upper power bound used by the catalog slider filter.
+// The full power range is shown in the subtitle.
 export const newProducts: Product[] = enrich([
-  { stock: "EN STOCK", name: "ROTOM RG-220", subtitle: "220 kVA — Diesel Generator Neuf", kva: "220 kVA", year: "2024", fuel: "Diesel", img: genCummins, type: "closed" },
-  { stock: "SUR COMMANDE", name: "ROTOM RG-330", subtitle: "330 kVA — Diesel Generator Neuf", kva: "330 kVA", year: "2024", fuel: "Diesel", img: genCat, type: "closed" },
-  { stock: "EN STOCK", name: "ROTOM RG-400", subtitle: "400 kVA — Diesel Generator Neuf", kva: "400 kVA", year: "2024", fuel: "Diesel", img: genPerkins, type: "open" },
-  { stock: "SUR COMMANDE", name: "ROTOM RG-550", subtitle: "550 kVA — Diesel Generator Neuf", kva: "550 kVA", year: "2024", fuel: "Diesel", img: genFgWilson, type: "closed" },
-  { stock: "EN STOCK", name: "ROTOM RG-660", subtitle: "660 kVA — Diesel Generator Neuf", kva: "660 kVA", year: "2024", fuel: "Diesel", img: genVolvo, type: "open" },
-  { stock: "EN STOCK", name: "ROTOM RG-1000", subtitle: "1000 kVA — Diesel Generator Neuf", kva: "1000 kVA", year: "2024", fuel: "Diesel", img: genDoosan, type: "open" },
+  {
+    stock: "EN STOCK",
+    name: "ROTOM SR",
+    subtitle: "Silent-type Genset · 6 à 750 kVA · Diesel",
+    kva: "750 kVA",
+    year: "2024",
+    fuel: "Diesel",
+    img: genSR,
+    type: "closed",
+  },
+  {
+    stock: "EN STOCK",
+    name: "ROTOM SRAU",
+    subtitle: "Australia Rental Type · 6 à 750 kVA · Diesel",
+    kva: "750 kVA",
+    year: "2024",
+    fuel: "Diesel",
+    img: genSRAU,
+    type: "closed",
+  },
+  {
+    stock: "EN STOCK",
+    name: "ROTOM SR2",
+    subtitle: "Silent-type SR2 · 6 à 1000 kVA · Diesel",
+    kva: "1000 kVA",
+    year: "2024",
+    fuel: "Diesel",
+    img: genSR2,
+    type: "closed",
+  },
+  {
+    stock: "SUR COMMANDE",
+    name: "ROTOM SE",
+    subtitle: "Silent-type SE · 6 à 1100 kVA · Diesel",
+    kva: "1100 kVA",
+    year: "2024",
+    fuel: "Diesel",
+    img: genSE,
+    type: "closed",
+  },
+  {
+    stock: "EN STOCK",
+    name: "ROTOM SREU",
+    subtitle: "Europe Rental EURO 5 · 6 à 750 kVA · Diesel",
+    kva: "750 kVA",
+    year: "2024",
+    fuel: "Diesel",
+    img: genSREU,
+    type: "closed",
+  },
+  {
+    stock: "SUR COMMANDE",
+    name: "ROTOM SC",
+    subtitle: "Container-type · ≥ 500 kVA · Diesel",
+    kva: "1500 kVA",
+    year: "2024",
+    fuel: "Diesel",
+    img: genSC,
+    type: "closed",
+  },
 ], "new");
 
 export const usedProducts: Product[] = enrich([
