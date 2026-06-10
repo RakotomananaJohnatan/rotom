@@ -14,6 +14,8 @@ export interface Product {
   condition: "new" | "used";
   type?: "open" | "closed";
   specs?: { fr: SpecRow[]; en: SpecRow[] };
+  description?: { fr: string; en: string };
+  included?: { fr: string[]; en: string[] };
 }
 
 const ProductCard = ({ p }: { p: Product }) => {

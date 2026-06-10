@@ -32,14 +32,16 @@ const ProductDetail = () => {
 
   const related = allProducts.filter((p) => p.slug !== product.slug && p.condition === product.condition).slice(0, 3);
 
-  const features = [
-    t("product.detail.feat1"),
-    t("product.detail.feat2"),
-    ...(product.type === "open" ? [] : [t("product.detail.feat3")]),
-    t("product.detail.feat4"),
-    t("product.detail.feat5"),
-    t("product.detail.feat6"),
-  ];
+  const features = product.included
+    ? product.included[lang]
+    : [
+        t("product.detail.feat1"),
+        t("product.detail.feat2"),
+        ...(product.type === "open" ? [] : [t("product.detail.feat3")]),
+        t("product.detail.feat4"),
+        t("product.detail.feat5"),
+        t("product.detail.feat6"),
+      ];
 
   const goQuote = () => {
     navigate(`/contact?power=${encodeURIComponent(product.slug)}`);
@@ -115,7 +117,7 @@ const ProductDetail = () => {
 
             <div className="mb-6">
               <h3 className="font-impact text-sm uppercase font-bold text-primary mb-2">{t("product.detail.desc")}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{t("product.detail.descBody")}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{product.description ? product.description[lang] : t("product.detail.descBody")}</p>
             </div>
 
             <div className="mb-8">

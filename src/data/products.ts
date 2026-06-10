@@ -10,6 +10,7 @@ import genSR2 from "@/assets/gen-sr2.jpg";
 import genSE from "@/assets/gen-se.jpg";
 import genSREU from "@/assets/gen-sreu.jpg";
 import genSC from "@/assets/gen-sc.jpg";
+import genOE500 from "@/assets/gen-oe500.jpg";
 import type { Product } from "@/components/ProductCard";
 
 export const brands = ["ROTOM"];
@@ -244,6 +245,66 @@ export const newProducts: Product[] = enrich([
         ["Structure", "Container standard"],
         ["Electrical Components", "Chint"],
         ["Certification", "CE, ISO8528"],
+      ],
+    },
+  },
+  {
+    stock: "SUR COMMANDE",
+    name: "ROTOM OE-500",
+    subtitle: "Open-type Genset · 500 kVA · Diesel",
+    kva: "500 kVA",
+    year: "TBD",
+    fuel: "Diesel",
+    img: genOE500,
+    type: "open",
+    description: {
+      fr: "Groupe électrogène industriel de type ouvert équipé d'un moteur Cummins QSZ13-G3. Conçu pour les applications Prime et Secours nécessitant une puissance élevée, il offre une consommation de carburant optimisée et une grande fiabilité pour les sites industriels, chantiers de construction et installations permanentes.",
+      en: "Industrial open-type generator set powered by a Cummins QSZ13-G3 engine. Designed for prime and standby applications requiring high power output, it delivers optimised fuel consumption and high reliability for industrial sites, construction sites, and permanent installations.",
+    },
+    included: {
+      fr: [
+        "Moteur Cummins QSZ13-G3 (13L, 6 cylindres)",
+        "Alternateur TAL A473 C",
+        "Tableau de contrôle DSE 8610 MKII",
+        "Test de charge en usine (0% à 110%)",
+        "Certifié CE et ISO8528",
+      ],
+      en: [
+        "Cummins QSZ13-G3 engine (13L, 6 cylinders)",
+        "TAL A473 C alternator",
+        "DSE 8610 MKII control panel",
+        "Factory load test (0% to 110%)",
+        "CE and ISO8528 certified",
+      ],
+    },
+    specs: {
+      fr: [
+        ["Puissance Prime", "500 kVA / 400 kW"],
+        ["Puissance Secours", "550 kVA / 440 kW"],
+        ["Application", "Prime / Secours"],
+        ["Carburant", "Diesel"],
+        ["Moteur", "Cummins QSZ13-G3"],
+        ["Vitesse nominale", "1500 tr/min (50Hz)"],
+        ["Alternateur", "TAL A473 C"],
+        ["Système de refroidissement", "Refroidi par eau"],
+        ["Dimensions (L×l×H)", "3560 × 1380 × 2080 mm"],
+        ["Poids net", "3490 kg"],
+        ["Température ambiante", "+5°C ~ +50°C"],
+        ["Certification", "CE, ISO8528, ISO3046"],
+      ],
+      en: [
+        ["Prime Power", "500 kVA / 400 kW"],
+        ["Standby Power", "550 kVA / 440 kW"],
+        ["Application", "Prime / Standby"],
+        ["Fuel", "Diesel"],
+        ["Engine", "Cummins QSZ13-G3"],
+        ["Rated Speed", "1500 RPM (50Hz)"],
+        ["Alternator", "TAL A473 C"],
+        ["Cooling System", "Water cooled"],
+        ["Dimensions (L×W×H)", "3560 × 1380 × 2080 mm"],
+        ["Net Weight", "3490 kg"],
+        ["Ambient Temperature", "+5°C ~ +50°C"],
+        ["Certification", "CE, ISO8528, ISO3046"],
       ],
     },
   },
