@@ -32,15 +32,15 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SR",
-    subtitle: "Silent-type Genset · 6 à 750 kVA · Diesel",
-    kva: "750 kVA",
+    subtitle: "Silent-type Genset · 6 à 650 kVA · Diesel",
+    kva: "650 kVA",
     year: "2024",
     fuel: "Diesel",
     img: genSR,
     type: "closed",
     specs: {
       fr: [
-        ["Puissance", "6 ~ 750 kVA"],
+        ["Puissance", "6 ~ 650 kVA"],
         ["Application", "Prime / Secours"],
         ["Carburant", "Diesel"],
         ["Niveau sonore", "65–80 dBA @ 7m (75% charge)"],
@@ -52,7 +52,7 @@ export const newProducts: Product[] = enrich([
         ["Certification", "CE, ISO8528"],
       ],
       en: [
-        ["Power", "6 ~ 750 kVA"],
+        ["Power", "6 ~ 650 kVA"],
         ["Application", "Prime / Standby"],
         ["Fuel", "Diesel"],
         ["Noise Level", "65–80 dBA @ 7m (75% load)"],
@@ -68,15 +68,15 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SRAU",
-    subtitle: "Australia Rental Type · 6 à 750 kVA · Diesel",
-    kva: "750 kVA",
+    subtitle: "Australia Rental Type · 6 à 650 kVA · Diesel",
+    kva: "650 kVA",
     year: "2024",
     fuel: "Diesel",
     img: genSRAU,
     type: "closed",
     specs: {
       fr: [
-        ["Puissance", "6 ~ 750 kVA"],
+        ["Puissance", "6 ~ 650 kVA"],
         ["Application", "Prime / Secours"],
         ["Carburant", "Diesel"],
         ["Niveau sonore", "65–71 dBA @ 7m (75% charge)"],
@@ -88,7 +88,7 @@ export const newProducts: Product[] = enrich([
         ["Certification", "CE, ISO8528"],
       ],
       en: [
-        ["Power", "6 ~ 750 kVA"],
+        ["Power", "6 ~ 650 kVA"],
         ["Application", "Prime / Standby"],
         ["Fuel", "Diesel"],
         ["Noise Level", "65–71 dBA @ 7m (75% load)"],
@@ -140,15 +140,15 @@ export const newProducts: Product[] = enrich([
   {
     stock: "SUR COMMANDE",
     name: "ROTOM SE",
-    subtitle: "Silent-type SE · 6 à 1100 kVA · Diesel",
-    kva: "1100 kVA",
+    subtitle: "Silent-type SE · 6 à 1000 kVA · Diesel",
+    kva: "1000 kVA",
     year: "2024",
     fuel: "Diesel",
     img: genSE,
     type: "closed",
     specs: {
       fr: [
-        ["Puissance", "6 ~ 1100 kVA"],
+        ["Puissance", "6 ~ 1000 kVA"],
         ["Application", "Secours"],
         ["Carburant", "Diesel"],
         ["Niveau sonore", "70–90 dBA @ 7m (75% charge)"],
@@ -160,7 +160,7 @@ export const newProducts: Product[] = enrich([
         ["Certification", "CE, ISO8528"],
       ],
       en: [
-        ["Power", "6 ~ 1100 kVA"],
+        ["Power", "6 ~ 1000 kVA"],
         ["Application", "Standby"],
         ["Fuel", "Diesel"],
         ["Noise Level", "70–90 dBA @ 7m (75% load)"],
@@ -176,15 +176,15 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SREU",
-    subtitle: "Europe Rental EURO 5 · 6 à 750 kVA · Diesel",
-    kva: "750 kVA",
+    subtitle: "Europe Rental EURO 5 · 6 à 650 kVA · Diesel",
+    kva: "650 kVA",
     year: "2024",
     fuel: "Diesel",
     img: genSREU,
     type: "closed",
     specs: {
       fr: [
-        ["Puissance", "6 ~ 750 kVA"],
+        ["Puissance", "6 ~ 650 kVA"],
         ["Application", "Prime / Secours"],
         ["Carburant", "Diesel"],
         ["Niveau sonore", "65–71 dBA @ 7m (75% charge)"],
@@ -197,7 +197,7 @@ export const newProducts: Product[] = enrich([
         ["Certification", "CE, ISO8528"],
       ],
       en: [
-        ["Power", "6 ~ 750 kVA"],
+        ["Power", "6 ~ 650 kVA"],
         ["Application", "Prime / Standby"],
         ["Fuel", "Diesel"],
         ["Noise Level", "65–71 dBA @ 7m (75% load)"],
