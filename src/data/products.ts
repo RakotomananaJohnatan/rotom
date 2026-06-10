@@ -20,11 +20,28 @@ export type ProductType = "open" | "closed";
 const slugify = (s: string) =>
   s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
+// Auto-classify generator type from the model code (the token after "ROTOM ").
+// Convention: codes starting with "S" → closed (silent), starting with "O" → open.
+// Returns null when the name doesn't match the convention (fallback to explicit type).
+export const inferTypeFromName = (name: string): ProductType | null => {
+  const match = name.trim().match(/^ROTOM\s+([A-Z]+)/i);
+  if (!match) return null;
+  const code = match[1].toUpperCase();
+  if (code.startsWith("S")) return "closed";
+  if (code.startsWith("O")) return "open";
+  return null;
+};
+
 const enrich = (
   list: (Omit<Product, "slug" | "condition"> & { type: ProductType })[],
   condition: "new" | "used"
 ): Product[] =>
-  list.map((p) => ({ ...p, condition, slug: slugify(p.name) }));
+  list.map((p) => ({
+    ...p,
+    type: inferTypeFromName(p.name) ?? p.type,
+    condition,
+    slug: slugify(p.name),
+  }));
 
 // ROTOM silent-type genset catalogs (all silent diesel).
 // `kva` stores the upper power bound used by the catalog slider filter.
