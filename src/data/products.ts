@@ -215,7 +215,7 @@ export const newProducts: Product[] = enrich([
     stock: "SUR COMMANDE",
     name: "ROTOM SC",
     subtitle: "Container-type · ≥ 500 kVA · Diesel",
-    kva: "1500 kVA",
+    kva: "≥ 500 kVA",
     year: "2024",
     fuel: "Diesel",
     img: genSC,
