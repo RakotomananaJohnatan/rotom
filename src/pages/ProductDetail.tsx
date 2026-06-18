@@ -26,7 +26,7 @@ const ProductDetail = () => {
     );
   }
 
-  const isStock = product.stock === "EN STOCK";
+  
   const catalogTo = product.condition === "new" ? "/generateurs-neufs" : "/generateurs-occasion";
   const catalogLabel = product.condition === "new" ? t("nav.new") : t("nav.used");
 
@@ -91,9 +91,6 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Image */}
           <div className="relative bg-card border-2 border-border">
-            <div className={`absolute top-4 left-4 z-10 font-impact text-xs font-bold uppercase tracking-wider px-3 py-1.5 ${isStock ? "bg-brand-cyan text-white" : "bg-accent text-accent-foreground"}`}>
-              {isStock ? t("common.inStock") : t("common.onOrder")}
-            </div>
             <img src={product.img} alt={product.name} className="w-full aspect-[4/3] object-cover" />
           </div>
 
@@ -153,7 +150,6 @@ const ProductDetail = () => {
                     [t("common.power"), product.kva],
                     [t("common.year"), product.year],
                     [t("common.fuel"), product.fuel],
-                    ["Stock", isStock ? t("common.inStock") : t("common.onOrder")],
                     ["Référence", product.slug.toUpperCase()],
                   ] as [string, string][])
               ).map(([k, v], i) => (
