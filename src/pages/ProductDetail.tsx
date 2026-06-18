@@ -150,7 +150,6 @@ const ProductDetail = () => {
                     [t("common.power"), product.kva],
                     [t("common.year"), product.year],
                     [t("common.fuel"), product.fuel],
-                    ["Stock", isStock ? t("common.inStock") : t("common.onOrder")],
                     ["Référence", product.slug.toUpperCase()],
                   ] as [string, string][])
               ).map(([k, v], i) => (
