@@ -20,17 +20,8 @@ export interface Product {
 
 const ProductCard = ({ p }: { p: Product }) => {
   const { t } = useLang();
-  const isStock = p.stock === "EN STOCK";
-  const stockLabel = isStock ? t("common.inStock") : t("common.onOrder");
   return (
     <article className="bg-card border-2 border-border flex flex-col group hover:border-primary transition-all relative">
-      <div
-        className={`absolute top-3 left-3 z-10 font-impact text-[10px] font-bold uppercase tracking-wider px-3 py-1 ${
-          isStock ? "bg-brand-cyan text-white" : "bg-accent text-accent-foreground"
-        }`}
-      >
-        {stockLabel}
-      </div>
 
       <Link to={`/produit/${p.slug}`} className="aspect-[4/3] bg-secondary border-b-2 border-border flex items-center justify-center overflow-hidden">
         <img
