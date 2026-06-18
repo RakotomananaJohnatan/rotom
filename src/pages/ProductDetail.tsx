@@ -91,9 +91,6 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Image */}
           <div className="relative bg-card border-2 border-border">
-            <div className={`absolute top-4 left-4 z-10 font-impact text-xs font-bold uppercase tracking-wider px-3 py-1.5 ${isStock ? "bg-brand-cyan text-white" : "bg-accent text-accent-foreground"}`}>
-              {isStock ? t("common.inStock") : t("common.onOrder")}
-            </div>
             <img src={product.img} alt={product.name} className="w-full aspect-[4/3] object-cover" />
           </div>
 
