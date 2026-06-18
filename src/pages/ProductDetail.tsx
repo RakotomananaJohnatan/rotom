@@ -26,7 +26,7 @@ const ProductDetail = () => {
     );
   }
 
-  const isStock = product.stock === "EN STOCK";
+  
   const catalogTo = product.condition === "new" ? "/generateurs-neufs" : "/generateurs-occasion";
   const catalogLabel = product.condition === "new" ? t("nav.new") : t("nav.used");
 
