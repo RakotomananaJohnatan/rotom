@@ -63,7 +63,6 @@ const ProductDetail = () => {
           additionalProperty: [
             { "@type": "PropertyValue", name: "Puissance", value: product.kva },
             { "@type": "PropertyValue", name: "Carburant", value: product.fuel },
-            { "@type": "PropertyValue", name: "Année", value: product.year },
           ],
           offers: {
             "@type": "Offer",
@@ -99,10 +98,9 @@ const ProductDetail = () => {
             <p className="text-sm text-muted-foreground mb-2">{product.subtitle}</p>
             <h2 className="font-impact text-3xl uppercase font-bold text-primary mb-6">{product.name}</h2>
 
-            <div className="grid grid-cols-3 gap-3 mb-6 font-mono-spec">
+            <div className="grid grid-cols-2 gap-3 mb-6 font-mono-spec">
               {[
                 { v: product.kva, l: t("common.power") },
-                { v: product.year, l: t("common.year") },
                 { v: product.fuel, l: t("common.fuel") },
               ].map((s) => (
                 <div key={s.l} className="bg-secondary border-2 border-border p-4">
