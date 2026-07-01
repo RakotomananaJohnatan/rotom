@@ -146,7 +146,7 @@ const ProductDetail = () => {
                 ? product.specs[lang]
                 : ([
                     [t("common.power"), product.kva],
-                    [t("common.year"), product.year],
+                    
                     [t("common.fuel"), product.fuel],
                     ["Référence", product.slug.toUpperCase()],
                   ] as [string, string][])
