@@ -40,14 +40,10 @@ const ProductCard = ({ p }: { p: Product }) => {
         </Link>
         <p className="text-xs text-muted-foreground mb-4">{p.subtitle}</p>
 
-        <div className="grid grid-cols-3 gap-2 mb-4 font-mono-spec text-[11px]">
+        <div className="grid grid-cols-2 gap-2 mb-4 font-mono-spec text-[11px]">
           <div>
             <div className="text-primary font-bold">{p.kva}</div>
             <div className="text-muted-foreground uppercase text-[9px] tracking-wider">{t("common.power")}</div>
-          </div>
-          <div>
-            <div className="text-primary font-bold">{p.year}</div>
-            <div className="text-muted-foreground uppercase text-[9px] tracking-wider">{t("common.year")}</div>
           </div>
           <div>
             <div className="text-primary font-bold">{p.fuel}</div>
