@@ -42,9 +42,7 @@ const ProductCard = ({ p }: { p: Product }) => {
 
         <div className="grid grid-cols-2 gap-2 mb-4 font-mono-spec text-[11px]">
           <div>
-          <div className="text-primary font-bold">
-            {p.subtitle.includes("·") ? p.subtitle.split("·")[1].trim() : p.kva}
-          </div>
+            <div className="text-primary font-bold">{p.kva}</div>
             <div className="text-muted-foreground uppercase text-[9px] tracking-wider">{t("common.power")}</div>
           </div>
           <div>
