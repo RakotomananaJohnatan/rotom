@@ -16,7 +16,8 @@ const GenerateursNeufs = () => {
   const [selectedCategories, setSelectedCategories] = useState<CategoryKey[]>([]);
 
   const filtered = useMemo(() => newProducts.filter((p) => {
-    const v = parseInt(p.kva, 10);
+    const nums = p.kva.match(/\d+/g);
+    const value = nums ? Math.max(...nums.map(Number)) : 0;
     if (v < powerRange[0] || v > powerRange[1]) return false;
     if (selectedCategories.length) {
       const typeSel = selectedCategories.filter((c) => c === "open" || c === "closed");
