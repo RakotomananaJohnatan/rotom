@@ -43,7 +43,8 @@ const Index = () => {
   ];
 
   const filteredProducts = newProducts.filter((p) => {
-    const value = parseInt(p.kva, 10);
+    const nums = p.kva.match(/\d+/g);
+    const value = nums ? Math.max(...nums.map(Number)) : 0;
     if (value < powerRange[0] || value > powerRange[1]) return false;
     if (selectedCategories.length > 0) {
       const typeSel = selectedCategories.filter((c) => c === "open" || c === "closed");
