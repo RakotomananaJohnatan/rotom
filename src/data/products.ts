@@ -58,7 +58,7 @@ export const newProducts: Product[] = enrich([
     type: "closed",
     specs: {
       fr: [
-        ["Puissance", "6 ~ 650 kVA"],
+        ["Puissance", "6 à 650 kVA"],
         ["Application", "Prime / Secours"],
         ["Carburant", "Diesel"],
         ["Niveau sonore", "65–80 dBA @ 7m (75% charge)"],
@@ -70,7 +70,7 @@ export const newProducts: Product[] = enrich([
         ["Certification", "CE, ISO8528"],
       ],
       en: [
-        ["Power", "6 ~ 650 kVA"],
+        ["Power", "6 to 650 kVA"],
         ["Application", "Prime / Standby"],
         ["Fuel", "Diesel"],
         ["Noise Level", "65–80 dBA @ 7m (75% load)"],
@@ -94,7 +94,7 @@ export const newProducts: Product[] = enrich([
     type: "closed",
     specs: {
       fr: [
-        ["Puissance", "6 ~ 650 kVA"],
+        ["Puissance", "6 à 650 kVA"],
         ["Application", "Prime / Secours"],
         ["Carburant", "Diesel"],
         ["Niveau sonore", "65–71 dBA @ 7m (75% charge)"],
@@ -106,7 +106,7 @@ export const newProducts: Product[] = enrich([
         ["Certification", "CE, ISO8528"],
       ],
       en: [
-        ["Power", "6 ~ 650 kVA"],
+        ["Power", "6 to 650 kVA"],
         ["Application", "Prime / Standby"],
         ["Fuel", "Diesel"],
         ["Noise Level", "65–71 dBA @ 7m (75% load)"],
@@ -130,7 +130,7 @@ export const newProducts: Product[] = enrich([
     type: "closed",
     specs: {
       fr: [
-        ["Puissance", "6 ~ 1000 kVA"],
+        ["Puissance", "6 à 1000 kVA"],
         ["Application", "Prime / Secours"],
         ["Carburant", "Diesel"],
         ["Niveau sonore", "65–88 dBA @ 7m (75% charge)"],
@@ -142,7 +142,7 @@ export const newProducts: Product[] = enrich([
         ["Certification", "CE, ISO8528"],
       ],
       en: [
-        ["Power", "6 ~ 1000 kVA"],
+        ["Power", "6 to 1000 kVA"],
         ["Application", "Prime / Standby"],
         ["Fuel", "Diesel"],
         ["Noise Level", "65–88 dBA @ 7m (75% load)"],
@@ -166,7 +166,7 @@ export const newProducts: Product[] = enrich([
     type: "closed",
     specs: {
       fr: [
-        ["Puissance", "6 ~ 1000 kVA"],
+        ["Puissance", "6 à 1000 kVA"],
         ["Application", "Secours"],
         ["Carburant", "Diesel"],
         ["Niveau sonore", "70–90 dBA @ 7m (75% charge)"],
@@ -178,7 +178,7 @@ export const newProducts: Product[] = enrich([
         ["Certification", "CE, ISO8528"],
       ],
       en: [
-        ["Power", "6 ~ 1000 kVA"],
+        ["Power", "6 to 1000 kVA"],
         ["Application", "Standby"],
         ["Fuel", "Diesel"],
         ["Noise Level", "70–90 dBA @ 7m (75% load)"],
@@ -202,7 +202,7 @@ export const newProducts: Product[] = enrich([
     type: "closed",
     specs: {
       fr: [
-        ["Puissance", "6 ~ 650 kVA"],
+        ["Puissance", "6 à 650 kVA"],
         ["Application", "Prime / Secours"],
         ["Carburant", "Diesel"],
         ["Niveau sonore", "65–71 dBA @ 7m (75% charge)"],
@@ -215,7 +215,7 @@ export const newProducts: Product[] = enrich([
         ["Certification", "CE, ISO8528"],
       ],
       en: [
-        ["Power", "6 ~ 650 kVA"],
+        ["Power", "6 to 650 kVA"],
         ["Application", "Prime / Standby"],
         ["Fuel", "Diesel"],
         ["Noise Level", "65–71 dBA @ 7m (75% load)"],
@@ -296,6 +296,7 @@ export const newProducts: Product[] = enrich([
     },
     specs: {
       fr: [
+        ["Puissance", "500 kVA"],
         ["Puissance Prime", "500 kVA / 400 kW"],
         ["Puissance Secours", "550 kVA / 440 kW"],
         ["Application", "Prime / Secours"],
@@ -310,6 +311,7 @@ export const newProducts: Product[] = enrich([
         ["Certification", "CE, ISO8528, ISO3046"],
       ],
       en: [
+        ["Power", "500 kVA"],
         ["Prime Power", "500 kVA / 400 kW"],
         ["Standby Power", "550 kVA / 440 kW"],
         ["Application", "Prime / Standby"],
