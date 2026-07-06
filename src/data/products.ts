@@ -7,7 +7,7 @@ import genDoosan from "@/assets/gen-doosan.jpg";
 import genSR from "@/assets/gen-sr.jpg";
 import genSRAU from "@/assets/gen-srau.jpg";
 import genSR2 from "@/assets/gen-sr2.jpg";
-import genSE from "@/assets/gen-se.jpeg";
+import genSE from "@/assets/gen-se.jpg";
 import genSREU from "@/assets/gen-sreu.jpg";
 import genSC from "@/assets/gen-sc.png";
 import genOE500 from "@/assets/gen-oe500.jpg";
