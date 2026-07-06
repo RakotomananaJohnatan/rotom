@@ -151,10 +151,16 @@ const ProductDetail = () => {
                     ["Référence", product.slug.toUpperCase()],
                   ] as [string, string][])
               ).map(([k, v], i) => (
-                <tr key={k} className={i % 2 ? "bg-secondary/40" : ""}>
-                  <td className="px-4 py-3 font-impact uppercase text-xs text-muted-foreground tracking-wider w-1/3 align-top">{k}</td>
-                  <td className="px-4 py-3 font-mono-spec">{v}</td>
-                </tr>
+                v === "" ? (
+                  <tr key={`h-${k}-${i}`} className="bg-primary/5">
+                    <td colSpan={2} className="px-4 py-2.5 font-impact uppercase text-xs font-bold text-primary tracking-wider border-t border-b border-primary/20">{k}</td>
+                  </tr>
+                ) : (
+                  <tr key={`${k}-${i}`} className={i % 2 ? "bg-secondary/40" : ""}>
+                    <td className="px-4 py-3 font-impact uppercase text-xs text-muted-foreground tracking-wider w-1/3 align-top">{k}</td>
+                    <td className="px-4 py-3 font-mono-spec">{v}</td>
+                  </tr>
+                )
               ))}
             </tbody>
           </table>
