@@ -18,7 +18,7 @@ const GenerateursNeufs = () => {
   const filtered = useMemo(() => newProducts.filter((p) => {
     const nums = p.kva.match(/\d+/g);
     const value = nums ? Math.max(...nums.map(Number)) : 0;
-    if (v < powerRange[0] || v > powerRange[1]) return false;
+    if (value < powerRange[0] || value > powerRange[1]) return false;
     if (selectedCategories.length) {
       const typeSel = selectedCategories.filter((c) => c === "open" || c === "closed");
       const condSel = selectedCategories.filter((c) => c === "new" || c === "used");
