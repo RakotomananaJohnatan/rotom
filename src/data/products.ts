@@ -334,7 +334,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SR",
-    subtitle: "Silent-type Genset · 6 à 650 kVA · Diesel",
+    subtitle: "Rounded corners, With anti collision corner · 6 à 650 kVA · Diesel",
     kva: "6 à 650 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -345,7 +345,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SRAU",
-    subtitle: "Australia Rental Type · 6 à 650 kVA · Diesel",
+    subtitle: "Rounded corners/Right angle optional, With anti collision corner · 6 à 650 kVA · Diesel",
     kva: "6 à 650 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -356,7 +356,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SR2",
-    subtitle: "Silent-type SR2 · 6 à 1000 kVA · Diesel",
+    subtitle: "Right angle, Without anti collision · 6 à 1000 kVA · Diesel",
     kva: "6 à 1000 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -367,7 +367,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "SUR COMMANDE",
     name: "ROTOM SE",
-    subtitle: "Silent-type SE · 6 à 1000 kVA · Diesel",
+    subtitle: "Right angle, Without anti collision · 6 à 1000 kVA · Diesel",
     kva: "6 à 1000 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -378,7 +378,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SREU",
-    subtitle: "Europe Rental EURO 5 · 6 à 650 kVA · Diesel",
+    subtitle: "Rounded corners/Right angle optional, With anti collision corner · 6 à 650 kVA · Diesel",
     kva: "6 à 650 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -389,7 +389,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "SUR COMMANDE",
     name: "ROTOM SC",
-    subtitle: "Container-type · ≥ 500 kVA · Diesel",
+    subtitle: "Containerized · ≥ 500 kVA · Diesel",
     kva: "≥ 500 kVA",
     year: "2024",
     fuel: "Diesel",
