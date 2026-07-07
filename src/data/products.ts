@@ -187,7 +187,7 @@ const specsSR = (() => {
     "Conteneurisation et stockage": "Empilable 6-30 kVA",
   };
   return {
-    fr: base.fr.map(([label, value]) => [label, frMap[label] ?? value]),
+    fr: base.fr.map(([label, value]) => [label, frMap[label] ?? value]) as [string, string][],
     en: base.en,
   };
 })();
