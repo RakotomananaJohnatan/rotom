@@ -67,7 +67,11 @@ const GlobalSearch = () => {
   const choose = (r: ResolvedEntry) => {
     setOpen(false);
     setQuery("");
-    navigate(r.to);
+    if (r.external || r.to.startsWith("http")) {
+      window.open(r.to, "_blank", "noopener,noreferrer");
+    } else {
+      navigate(r.to);
+    }
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

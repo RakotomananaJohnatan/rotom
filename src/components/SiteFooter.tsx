@@ -39,7 +39,11 @@ const SiteFooter = () => {
           <ul className="space-y-2.5 text-xs text-white/70">
             <li className="flex items-start gap-2">
               <MapPin className="size-3.5 text-accent flex-shrink-0 mt-0.5" />
-              <span>ROTOM Power Solutions<br />Alarobia, Rue Tsarasaotra<br />Antananarivo 101, Madagascar</span>
+              <span>ROTOM Power Solutions<br />
+                <a href="https://maps.app.goo.gl/oKPJMuFEaW4FH6vTA" target="_blank" rel="noopener noreferrer" className="underline hover:text-fluo-yellow">
+                  Alarobia, Rue Tsarasaotra<br />Antananarivo 101, Madagascar
+                </a>
+              </span>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="size-3.5 text-accent flex-shrink-0" />

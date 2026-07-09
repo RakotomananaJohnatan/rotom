@@ -2,6 +2,7 @@ import SiteLayout from "@/components/SiteLayout";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { useLang } from "@/i18n/useLang";
+import AddressLink from "@/components/AddressLink";
 
 const MentionsLegales = () => {
   const { t } = useLang();
@@ -17,7 +18,7 @@ const MentionsLegales = () => {
         <Reveal>
           <article className="prose prose-neutral dark:prose-invert max-w-none">
             <h2>{t("legal.s1.title")}</h2>
-            <p>{t("legal.s1.body")}</p>
+            <p><AddressLink>{t("legal.s1.body")}</AddressLink></p>
             <h2>{t("legal.s2.title")}</h2>
             <p>{t("legal.s2.body")}</p>
             <h2>{t("legal.s3.title")}</h2>
