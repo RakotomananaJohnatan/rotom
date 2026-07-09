@@ -2,6 +2,7 @@ import SiteLayout from "@/components/SiteLayout";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { useLang } from "@/i18n/useLang";
+import AddressLink from "@/components/AddressLink";
 
 const MentionsLegales = () => {
   const { t } = useLang();
