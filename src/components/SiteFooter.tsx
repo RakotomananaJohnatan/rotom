@@ -39,19 +39,19 @@ const SiteFooter = () => {
           <ul className="space-y-2.5 text-xs text-white/70">
             <li className="flex items-start gap-2">
               <MapPin className="size-3.5 text-accent flex-shrink-0 mt-0.5" />
-              <span>ROTOM Power Solutions<br />Bredaseweg 26<br />4705 RN Roosendaal, {t("footer.contact") === "Contact" ? "Pays-Bas" : "Netherlands"}</span>
+              <span>ROTOM Power Solutions<br />Alarobia, Rue Tsarasaotra<br />Antananarivo 101, Madagascar</span>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="size-3.5 text-accent flex-shrink-0" />
-              <a href="tel:+31165556062" className="text-accent hover:underline font-bold">+31 (0)165 55 60 62</a>
+              <a href="tel:+261381153104" className="text-accent hover:underline font-bold">+261 38 11 531 04</a>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="size-3.5 text-brand-cyan flex-shrink-0" />
-              <a href="mailto:sales@rotom.com" className="text-brand-cyan hover:underline">sales@rotom.com</a>
+              <a href="mailto:sales@rotom-power.com" className="text-brand-cyan hover:underline">sales@rotom-power.com</a>
             </li>
             <li className="flex items-center gap-2">
               <MessageCircle className="size-3.5 text-accent flex-shrink-0" />
-              <a href="#" className="hover:text-fluo-yellow">{t("footer.whatsapp")}</a>
+              <a href="https://wa.me/261381153104" target="_blank" rel="noopener noreferrer" className="hover:text-fluo-yellow">{t("footer.whatsapp")}</a>
             </li>
           </ul>
         </div>
