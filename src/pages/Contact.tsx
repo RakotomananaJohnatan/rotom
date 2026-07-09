@@ -64,9 +64,9 @@ const Contact = () => {
       <section className="bg-secondary border-b border-border">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-4 gap-4">
           {[
-            { icon: Phone, label: t("contact.quick.phone"), value: "+31 (0)165 55 60 62", href: "tel:+31165556062", color: "text-accent" },
-            { icon: Mail, label: t("contact.quick.email"), value: "sales@rotom.com", href: "mailto:sales@rotom.com", color: "text-brand-cyan" },
-            { icon: MessageCircle, label: t("contact.quick.whatsapp"), value: t("contact.quick.whatsappValue"), href: "#", color: "text-accent" },
+            { icon: Phone, label: t("contact.quick.phone"), value: "+261 38 11 531 04", href: "tel:+261381153104", color: "text-accent" },
+            { icon: Mail, label: t("contact.quick.email"), value: "sales@rotom-power.com", href: "mailto:sales@rotom-power.com", color: "text-brand-cyan" },
+            { icon: MessageCircle, label: t("contact.quick.whatsapp"), value: t("contact.quick.whatsappValue"), href: "https://wa.me/261381153104", color: "text-accent" },
             { icon: Clock, label: t("contact.quick.hours"), value: t("contact.quick.hoursValue"), href: undefined, color: "text-brand-cyan" },
           ].map((item, i) => {
             const Inner = (
