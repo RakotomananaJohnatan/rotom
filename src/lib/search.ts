@@ -59,9 +59,9 @@ const productEntries: SearchEntry[] = allProducts.map((p) => ({
 }));
 
 const contactInfo: SearchEntry[] = [
-  { id: "ct-phone", type: "contact", title: "+31 (0)165 55 60 62", subtitle: "Téléphone / Phone", to: "/contact", keywords: ["telephone", "phone", "+31", "appeler", "call"] },
-  { id: "ct-email", type: "contact", title: "sales@rotom.com", subtitle: "Email", to: "/contact", keywords: ["mail", "email", "sales", "@rotom"] },
-  { id: "ct-address", type: "contact", title: "Bredaseweg 26, 4705 RN Roosendaal", subtitle: "Pays-Bas / Netherlands", to: "/contact", keywords: ["adresse", "address", "roosendaal", "netherlands", "pays-bas", "siege", "headquarters"] },
+  { id: "ct-phone", type: "contact", title: "+261 38 11 531 04", subtitle: "Téléphone / Phone", to: "/contact", keywords: ["telephone", "phone", "+261", "appeler", "call"] },
+  { id: "ct-email", type: "contact", title: "sales@rotom-power.com", subtitle: "Email", to: "/contact", keywords: ["mail", "email", "sales", "@rotom"] },
+  { id: "ct-address", type: "contact", title: "Alarobia, Rue Tsarasaotra, Antananarivo 101", subtitle: "Madagascar", to: "/contact", keywords: ["adresse", "address", "antananarivo", "madagascar", "alarobia", "siege", "headquarters"] },
   { id: "ct-whatsapp", type: "contact", title: "WhatsApp", subtitle: "Discuter en direct / Chat live", to: "/contact", keywords: ["whatsapp", "chat", "messagerie"] },
 ];
 
