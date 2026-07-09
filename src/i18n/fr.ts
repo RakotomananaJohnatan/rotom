@@ -327,11 +327,11 @@ export const fr = {
   "legal.s1.title": "Éditeur du site",
   "legal.s1.body": "ROTOM Power Solutions — Alarobia, Rue Tsarasaotra, Antananarivo 101, Madagascar. Téléphone : +261 38 11 531 04. Email : sales@rotom-power.com. Numéro KvK : 12345678. TVA intracommunautaire : NL123456789B01.",
   "legal.s2.title": "Directeur de la publication",
-  "legal.s2.body": "Le directeur de la publication est le représentant légal de ROTOM Power Solutions B.V.",
+  "legal.s2.body": "Le directeur de la publication est le représentant légal de ROTOM Power Solutions",
   "legal.s3.title": "Hébergement",
   "legal.s3.body": "Le site est hébergé par Lovable, plateforme de déploiement web. Pour toute demande relative à l'hébergement, vous pouvez contacter notre éditeur.",
   "legal.s4.title": "Propriété intellectuelle",
-  "legal.s4.body": "L'ensemble des contenus présents sur ce site (textes, images, logos, vidéos, marques) est protégé par le droit d'auteur et reste la propriété exclusive de ROTOM Power Solutions B.V. ou de ses partenaires. Toute reproduction, totale ou partielle, est interdite sans autorisation écrite préalable.",
+  "legal.s4.body": "L'ensemble des contenus présents sur ce site (textes, images, logos, vidéos, marques) est protégé par le droit d'auteur et reste la propriété exclusive de ROTOM Power Solutions ou de ses partenaires. Toute reproduction, totale ou partielle, est interdite sans autorisation écrite préalable.",
   "legal.s5.title": "Limitation de responsabilité",
   "legal.s5.body": "ROTOM s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Toutefois, l'éditeur ne saurait être tenu responsable des erreurs, omissions ou indisponibilités du service. Les caractéristiques techniques des produits sont données à titre indicatif et peuvent évoluer sans préavis.",
 
@@ -373,7 +373,7 @@ export const fr = {
   "privacy.s5.title": "Destinataires et transferts",
   "privacy.s5.body": "Vos données sont accessibles uniquement à nos équipes commerciales et techniques, ainsi qu'à nos sous-traitants (hébergement, emailing) liés par des accords de confidentialité. Aucun transfert hors UE n'est effectué sans garanties appropriées.",
   "privacy.s6.title": "Vos droits",
-  "privacy.s6.body": "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité de vos données. Pour exercer ces droits, contactez-nous à sales@rotom.com.",
+  "privacy.s6.body": "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité de vos données. Pour exercer ces droits, contactez-nous à sales@rotom-power.com.",
   "privacy.s7.title": "Cookies",
   "privacy.s7.body": "Notre site utilise des cookies techniques nécessaires à son bon fonctionnement, ainsi que des cookies de mesure d'audience anonymisés. Vous pouvez configurer votre navigateur pour les refuser.",
 };
