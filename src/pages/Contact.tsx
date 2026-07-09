@@ -64,9 +64,9 @@ const Contact = () => {
       <section className="bg-secondary border-b border-border">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-4 gap-4">
           {[
-            { icon: Phone, label: t("contact.quick.phone"), value: "+31 (0)165 55 60 62", href: "tel:+31165556062", color: "text-accent" },
-            { icon: Mail, label: t("contact.quick.email"), value: "sales@rotom.com", href: "mailto:sales@rotom.com", color: "text-brand-cyan" },
-            { icon: MessageCircle, label: t("contact.quick.whatsapp"), value: t("contact.quick.whatsappValue"), href: "#", color: "text-accent" },
+            { icon: Phone, label: t("contact.quick.phone"), value: "+261 38 11 531 04", href: "tel:+261381153104", color: "text-accent" },
+            { icon: Mail, label: t("contact.quick.email"), value: "sales@rotom-power.com", href: "mailto:sales@rotom-power.com", color: "text-brand-cyan" },
+            { icon: MessageCircle, label: t("contact.quick.whatsapp"), value: t("contact.quick.whatsappValue"), href: "https://wa.me/261381153104", color: "text-accent" },
             { icon: Clock, label: t("contact.quick.hours"), value: t("contact.quick.hoursValue"), href: undefined, color: "text-brand-cyan" },
           ].map((item, i) => {
             const Inner = (
@@ -189,23 +189,23 @@ const Contact = () => {
             <ul className="relative space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="size-4 text-accent flex-shrink-0 mt-0.5" />
-                <span>ROTOM Power Solutions<br />Bredaseweg 26<br />4705 RN Roosendaal<br />Pays-Bas</span>
+                <span>ROTOM Power Solutions<br />Alarobia, Rue Tsarasaotra<br />Antananarivo 101<br />Madagascar</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="size-4 text-accent flex-shrink-0" />
-                <a href="tel:+31165556062" className="text-accent font-bold hover:underline">+31 (0)165 55 60 62</a>
+                <a href="tel:+261381153104" className="text-accent font-bold hover:underline">+261 38 11 531 04</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="size-4 text-brand-cyan flex-shrink-0" />
-                <a href="mailto:sales@rotom.com" className="text-brand-cyan hover:underline">sales@rotom.com</a>
+                <a href="mailto:sales@rotom-power.com" className="text-brand-cyan hover:underline">sales@rotom-power.com</a>
               </li>
             </ul>
           </div>
 
           <div className="border-2 border-border overflow-hidden lift">
             <iframe
-              title="ROTOM Roosendaal"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=4.43%2C51.52%2C4.49%2C51.55&layer=mapnik&marker=51.535%2C4.46"
+              title="ROTOM Antananarivo"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=47.52%2C-18.90%2C47.56%2C-18.87&layer=mapnik&marker=-18.885%2C47.540"
               className="w-full h-[280px] border-0"
               loading="lazy"
             />
