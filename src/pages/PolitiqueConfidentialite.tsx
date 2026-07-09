@@ -18,7 +18,7 @@ const PolitiqueConfidentialite = () => {
         <Reveal>
           <article className="prose prose-neutral dark:prose-invert max-w-none">
             <h2>{t("privacy.s1.title")}</h2>
-            <p>{t("privacy.s1.body")}</p>
+            <p><AddressLink>{t("privacy.s1.body")}</AddressLink></p>
             <h2>{t("privacy.s2.title")}</h2>
             <p>{t("privacy.s2.body")}</p>
             <h2>{t("privacy.s3.title")}</h2>
