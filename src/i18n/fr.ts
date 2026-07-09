@@ -363,7 +363,7 @@ export const fr = {
   "privacy.title": "Politique de confidentialité",
   "privacy.subtitle": "Comment ROTOM collecte, utilise et protège vos données personnelles, conformément au RGPD.",
   "privacy.s1.title": "Responsable du traitement",
-  "privacy.s1.body": "ROTOM Power Solutions B.V., Bredaseweg 26, 4705 RN Roosendaal, Pays-Bas. Pour toute question relative à vos données : sales@rotom.com.",
+  "privacy.s1.body": "ROTOM Power Solutions, Alarobia, Rue Tsarasaotra, Antananarivo 101, Madagascar. Pour toute question relative à vos données : sales@rotom-power.com.",
   "privacy.s2.title": "Données collectées",
   "privacy.s2.body": "Nous collectons les données que vous nous transmettez via nos formulaires (nom, société, email, téléphone, message) ainsi que des données techniques de navigation (adresse IP, type de navigateur, pages consultées).",
   "privacy.s3.title": "Finalités du traitement",
