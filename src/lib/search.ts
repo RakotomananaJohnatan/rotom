@@ -14,6 +14,8 @@ export interface SearchEntry {
   // Free-text keywords to widen matching (any language, raw strings)
   keywords?: string[];
   to: string;
+  // Whether the entry should open in a new tab (e.g. external maps link)
+  external?: boolean;
   img?: string;
 }
 
