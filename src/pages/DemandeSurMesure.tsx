@@ -81,15 +81,51 @@ const DemandeSurMesure = () => {
   const scrollToForm = () =>
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: t("custom.toast.title"),
-      description: t("custom.toast.desc"),
-    });
-    setSubmitted(true);
-    setForm(initial);
-    setFiles([]);
+    const data = new FormData();
+    data.append("access_key", "5bcbb7a9-17d8-4271-ba1a-c5f93fdfb8d7");
+    data.append("subject", "Demande sur mesure — ROTOM");
+    data.append("from_name", form.name || "Demande sur mesure ROTOM");
+    data.append("replyto", form.email);
+
+    data.append("INFORMATIONS CLIENT", "");
+    data.append("Nom complet", form.name);
+    data.append("Société", form.company);
+    data.append("Email", form.email);
+    data.append("Téléphone", form.phone);
+    data.append("Pays/Ville", form.location);
+
+    data.append("BESOIN TECHNIQUE", "");
+    data.append("Type de groupe électrogène", form.genType);
+    data.append("Puissance souhaitée (kVA)", form.power);
+    data.append("Type de carburant", form.fuel);
+    data.append("Usage prévu", form.usage);
+    data.append("Autonomie souhaitée", form.autonomy);
+    data.append("Installation souhaitée", form.installation);
+    data.append("Localisation", form.location);
+    data.append("Objectif souhaité", form.description);
+
+    data.append("CONTRAINTES & BESOINS SPÉCIFIQUES", "");
+    data.append("Budget estimatif", form.budget);
+    data.append("Délai souhaité", form.deadline);
+    data.append("Conditions d'installation", form.conditions);
+    data.append("Exigences particulières", form.description);
+
+    files.forEach((f, i) => data.append(`Fichier joint ${i + 1}`, f, f.name));
+
+    try {
+      await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      toast({
+        title: "Demande envoyée",
+        description: "Votre demande a bien été envoyée. Notre équipe vous contactera dans les plus brefs délais.",
+      });
+      setSubmitted(true);
+      setForm(initial);
+      setFiles([]);
+    } catch {
+      toast({ title: "Erreur", description: "L'envoi a échoué. Veuillez réessayer." });
+    }
   };
 
   return (
