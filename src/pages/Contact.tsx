@@ -38,10 +38,33 @@ const Contact = () => {
   const onChange = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: t("contact.toast.title"), description: t("contact.toast.desc") });
-    setForm({ name: "", company: "", email: "", phone: "", power: "", subject: t("contact.subject.quote"), message: "" });
+    const selected = form.power ? findProductBySlug(form.power) : null;
+    const powerLabel = selected ? `${selected.kva} — ${selected.name}` : "";
+    const data = new FormData();
+    data.append("access_key", "5bcbb7a9-17d8-4271-ba1a-c5f93fdfb8d7");
+    data.append("subject", `Contact ROTOM — ${form.subject}`);
+    data.append("from_name", form.name || "Contact ROTOM");
+    data.append("replyto", form.email);
+    data.append("CONTACT", "");
+    data.append("Nom complet", form.name);
+    data.append("Société", form.company);
+    data.append("Email", form.email);
+    data.append("Téléphone", form.phone);
+    data.append("Puissance recherchée (kVA)", powerLabel);
+    data.append("Sujet", form.subject);
+    data.append("Message", form.message);
+    try {
+      await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      toast({
+        title: "Message envoyé",
+        description: "Votre demande a bien été envoyée. Notre équipe vous contactera dans les plus brefs délais.",
+      });
+      setForm({ name: "", company: "", email: "", phone: "", power: "", subject: t("contact.subject.quote"), message: "" });
+    } catch {
+      toast({ title: "Erreur", description: "L'envoi a échoué. Veuillez réessayer." });
+    }
   };
 
   const selectedProduct = form.power ? findProductBySlug(form.power) : null;
