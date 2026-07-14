@@ -727,7 +727,7 @@ export const usedProducts: Product[] = enrich([
   ...usedSeeds.map((s) => ({
     stock: "EN STOCK",
     name: s.power,
-    subtitle: "Groupe électrogène d'occasion / Used generator",
+    subtitle: "i18n:products.used.subtitle",
     kva: s.kva,
     year: "—",
     fuel: "Diesel",

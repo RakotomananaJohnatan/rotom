@@ -31,6 +31,7 @@ const ProductDetail = () => {
   const catalogLabel = product.condition === "new" ? t("nav.new") : t("nav.used");
 
   const related = allProducts.filter((p) => p.slug !== product.slug && p.condition === product.condition).slice(0, 3);
+  const resolvedSubtitle = product.subtitle.startsWith("i18n:") ? t(product.subtitle.slice(5)) : product.subtitle;
 
   const features = product.included
     ? product.included[lang]
@@ -51,13 +52,13 @@ const ProductDetail = () => {
     <SiteLayout>
       <Seo
         title={`${product.name} — ${product.kva} ${product.fuel} — ROTOM`}
-        description={`${product.name} : ${product.subtitle}. ${product.stock === "EN STOCK" ? "Disponible en stock" : "Sur commande"} chez ROTOM. Devis et livraison rapides.`}
+        description={`${product.name} : ${resolvedSubtitle}. ${product.stock === "EN STOCK" ? "Disponible en stock" : "Sur commande"} chez ROTOM. Devis et livraison rapides.`}
         path={`/produit/${product.slug}`}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Product",
           name: product.name,
-          description: product.subtitle,
+          description: resolvedSubtitle,
           brand: { "@type": "Brand", name: "ROTOM" },
           category: product.condition === "new" ? "Groupe électrogène neuf" : "Groupe électrogène d'occasion",
           additionalProperty: [
@@ -95,7 +96,7 @@ const ProductDetail = () => {
 
           {/* Specs + CTA */}
           <div className="flex flex-col">
-            <p className="text-sm text-muted-foreground mb-2">{product.subtitle}</p>
+            <p className="text-sm text-muted-foreground mb-2">{resolvedSubtitle}</p>
             <h2 className="font-impact text-3xl uppercase font-bold text-primary mb-6">{product.name}</h2>
 
             <div className="grid grid-cols-2 gap-3 mb-6 font-mono-spec">
