@@ -189,6 +189,8 @@ export const en = {
   "contact.subject.other": "Other",
   "contact.toast.title": "Message sent",
   "contact.toast.desc": "Our team will reply within 24h.",
+  "contact.toast.error.title": "Error",
+  "contact.toast.error.desc": "Sending failed. Please try again.",
   "contact.quick.phone": "Phone",
   "contact.quick.email": "Email",
   "contact.quick.whatsapp": "WhatsApp",
