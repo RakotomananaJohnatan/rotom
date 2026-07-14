@@ -216,7 +216,7 @@ const Contact = () => {
             <ul className="relative space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="size-4 text-accent flex-shrink-0 mt-0.5" />
-                <span>ROTOM Power Solutions<br />
+                <span>ROTOM Power Generation<br />
                   <a href="https://maps.app.goo.gl/oKPJMuFEaW4FH6vTA" target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-cyan">
                     Alarobia, Rue Tsarasaotra<br />Antananarivo 101<br />Madagascar
                   </a>

@@ -68,7 +68,7 @@ const ProductDetail = () => {
             "@type": "Offer",
             availability: product.stock === "EN STOCK" ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
             priceCurrency: "EUR",
-            seller: { "@type": "Organization", name: "ROTOM Power Solutions" },
+            seller: { "@type": "Organization", name: "ROTOM Power Generation" },
           },
         }}
       />
