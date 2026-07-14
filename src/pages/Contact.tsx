@@ -42,7 +42,7 @@ const Contact = () => {
     e.preventDefault();
     const selected = form.power ? findProductBySlug(form.power) : null;
     const powerLabel = selected ? `${selected.kva} — ${selected.name}` : "";
-    const data = new FormData();
+    const data = new URLSearchParams();
     data.append("access_key", "5bcbb7a9-17d8-4271-ba1a-c5f93fdfb8d7");
     data.append("subject", `Contact ROTOM — ${form.subject}`);
     data.append("from_name", form.name || "Contact ROTOM");
@@ -56,7 +56,11 @@ const Contact = () => {
     data.append("Sujet", form.subject);
     data.append("Message", form.message);
     try {
-      await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: data,
+      });
       toast({
         title: "Message envoyé",
         description: "Votre demande a bien été envoyée. Notre équipe vous contactera dans les plus brefs délais.",
