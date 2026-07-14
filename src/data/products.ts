@@ -675,7 +675,7 @@ const makeUsedSpecs = (opts: {
   fuelTank: string; fuelTankFr: string;
   control: string;
   soundEn: string; soundFr: string;
-}): { fr: SpecRow[]; en: SpecRow[] } => ({
+}): { fr: [string, string][]; en: [string, string][] } => ({
   en: [
     ["Ratings", opts.ratingsEn],
     ["Engine", opts.engine],
