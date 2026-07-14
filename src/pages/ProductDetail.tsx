@@ -31,6 +31,7 @@ const ProductDetail = () => {
   const catalogLabel = product.condition === "new" ? t("nav.new") : t("nav.used");
 
   const related = allProducts.filter((p) => p.slug !== product.slug && p.condition === product.condition).slice(0, 3);
+  const resolvedSubtitle = product.subtitle.startsWith("i18n:") ? t(product.subtitle.slice(5)) : product.subtitle;
 
   const features = product.included
     ? product.included[lang]
