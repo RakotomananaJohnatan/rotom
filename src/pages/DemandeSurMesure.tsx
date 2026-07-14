@@ -69,7 +69,7 @@ const DemandeSurMesure = () => {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const data = new FormData();
+    const data = new URLSearchParams();
     data.append("access_key", "5bcbb7a9-17d8-4271-ba1a-c5f93fdfb8d7");
     data.append("subject", "Demande sur mesure — ROTOM");
     data.append("from_name", form.name || "Demande sur mesure ROTOM");
@@ -99,7 +99,11 @@ const DemandeSurMesure = () => {
     data.append("Exigences particulières", form.description);
 
     try {
-      await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: data,
+      });
       toast({
         title: "Demande envoyée",
         description: "Votre demande a bien été envoyée. Notre équipe vous contactera dans les plus brefs délais.",
