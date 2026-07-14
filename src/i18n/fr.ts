@@ -31,6 +31,8 @@ export const fr = {
   "custom.form.required": "Les champs marqués d'un * sont obligatoires.",
   "custom.toast.title": "Demande envoyée",
   "custom.toast.desc": "Notre équipe commerciale vous recontacte sous 24h.",
+  "custom.toast.error.title": "Erreur",
+  "custom.toast.error.desc": "L'envoi a échoué. Veuillez réessayer.",
   "custom.success.title": "Merci pour votre demande",
   "custom.success.body": "Nous avons bien reçu votre projet. Un ingénieur commercial vous répondra sous 24h ouvrées.",
   "custom.success.again": "Envoyer une nouvelle demande",
