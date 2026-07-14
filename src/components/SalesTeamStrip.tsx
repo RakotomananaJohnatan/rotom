@@ -1,9 +1,9 @@
 import { Phone } from "lucide-react";
-import rep1 from "@/assets/rep1.jpg";
+import usmanAsset from "@/assets/usman-mansoor.png.asset.json";
 import shahidAsset from "@/assets/shahid-mian.png.asset.json";
 
 export const reps = [
-  { name: "Usman Mansoor", role: "CTO", phone: "+261 38 11 514 42", email: "usman.mansoor@first-energy.mg", img: rep1 },
+  { name: "Usman Mansoor", role: "CTO", phone: "+261 38 11 514 42", email: "usman.mansoor@first-energy.mg", img: usmanAsset.url },
   { name: "Shahid Mian", role: "Sales Manager", phone: "+261 38 11 381 82", email: "shahid.mian@first-energy.mg", img: shahidAsset.url },
 ];
 
