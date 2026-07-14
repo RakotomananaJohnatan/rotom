@@ -41,8 +41,8 @@ export const fr = {
   "custom.sec.tech.desc": "Caractéristiques du groupe électrogène recherché.",
   "custom.sec.constraints.title": "Contraintes & besoins spécifiques",
   "custom.sec.constraints.desc": "Budget, délais et précisions complémentaires.",
-  "custom.sec.files.title": "Documents complémentaires",
-  "custom.sec.files.desc": "Photos, plans, cahier des charges ou documents techniques.",
+  "custom.files.note": "Pour joindre des documents complémentaires (photos, plans, spécifications techniques), merci de les envoyer directement à :",
+  "custom.files.email": "sales@rotom-power.com",
 
   "custom.f.name": "Nom complet *",
   "custom.f.company": "Société",
@@ -88,8 +88,6 @@ export const fr = {
   "custom.opt.install.fixed": "Installation fixe",
   "custom.opt.install.mobile": "Installation mobile",
 
-  "custom.files.cta": "Déposer vos fichiers",
-  "custom.files.hint": "PDF, images, plans, cahier des charges — jusqu'à 8 fichiers",
   "header.search": "Rechercher un générateur, marque, modèle...",
   "header.cta": "Demander un devis",
 
