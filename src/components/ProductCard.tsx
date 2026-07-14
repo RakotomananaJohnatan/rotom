@@ -38,7 +38,7 @@ const ProductCard = ({ p }: { p: Product }) => {
         <Link to={`/produit/${p.slug}`}>
           <h3 className="font-impact text-lg uppercase font-bold text-primary leading-tight hover:text-brand-cyan transition-colors">{p.name}</h3>
         </Link>
-        <p className="text-xs text-muted-foreground mb-4">{p.subtitle}</p>
+        <p className="text-xs text-muted-foreground mb-4">{p.subtitle.startsWith("i18n:") ? t(p.subtitle.slice(5)) : p.subtitle}</p>
 
         <div className="grid grid-cols-2 gap-2 mb-4 font-mono-spec text-[11px]">
           <div>
