@@ -22,7 +22,7 @@ const SalesTeamStrip = () => (
           />
           <div className="min-w-0">
             <div className="flex gap-1 mb-1 text-xs">
-              <span>🇳🇱</span><span>🇫🇷</span><span>🇪🇸</span><span>🇬🇧</span>
+              <span>🇫🇷</span><span>🇬🇧</span>
             </div>
             <div className="font-bold text-sm text-primary">{rep.name}</div>
             <div className="flex items-center gap-1.5 text-xs mt-1">
