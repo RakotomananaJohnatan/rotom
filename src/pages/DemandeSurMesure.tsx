@@ -7,12 +7,9 @@ import { toast } from "@/hooks/use-toast";
 import { useLang } from "@/i18n/useLang";
 import {
   Send,
-  Upload,
-  X,
   User,
   Gauge,
   Settings2,
-  FileText,
   CheckCircle2,
 } from "lucide-react";
 
@@ -59,7 +56,6 @@ const initial: FormState = {
 const DemandeSurMesure = () => {
   const { t } = useLang();
   const [form, setForm] = useState<FormState>(initial);
-  const [files, setFiles] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -67,16 +63,6 @@ const DemandeSurMesure = () => {
     (k: keyof FormState) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
       setForm((f) => ({ ...f, [k]: e.target.value }));
-
-  const onFiles = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const list = e.target.files;
-    if (!list) return;
-    const next = [...files, ...Array.from(list)].slice(0, 8);
-    setFiles(next);
-    e.target.value = "";
-  };
-
-  const removeFile = (i: number) => setFiles((f) => f.filter((_, idx) => idx !== i));
 
   const scrollToForm = () =>
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -112,8 +98,6 @@ const DemandeSurMesure = () => {
     data.append("Conditions d'installation", form.conditions);
     data.append("Exigences particulières", form.description);
 
-    files.forEach((f, i) => data.append(`Fichier joint ${i + 1}`, f, f.name));
-
     try {
       await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
       toast({
@@ -122,7 +106,6 @@ const DemandeSurMesure = () => {
       });
       setSubmitted(true);
       setForm(initial);
-      setFiles([]);
     } catch {
       toast({ title: "Erreur", description: "L'envoi a échoué. Veuillez réessayer." });
     }
@@ -292,54 +275,16 @@ const DemandeSurMesure = () => {
                 </div>
               </Section>
 
-              {/* Section: Files */}
-              <Section icon={FileText} title={t("custom.sec.files.title")} desc={t("custom.sec.files.desc")}>
-                <label
-                  htmlFor="files"
-                  className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-border bg-background hover:border-brand-cyan transition-colors px-6 py-10 cursor-pointer text-center"
+              {/* Note: documents */}
+              <p className="text-sm text-muted-foreground">
+                {t("custom.files.note")}{" "}
+                <a
+                  href={`mailto:${t("custom.files.email")}`}
+                  className="text-brand-cyan hover:underline"
                 >
-                  <Upload className="size-7 text-brand-cyan" />
-                  <span className="font-impact text-sm uppercase tracking-wider text-primary">
-                    {t("custom.files.cta")}
-                  </span>
-                  <span className="text-xs text-muted-foreground">{t("custom.files.hint")}</span>
-                  <input
-                    id="files"
-                    type="file"
-                    multiple
-                    accept="image/*,.pdf,.dwg,.doc,.docx,.xls,.xlsx,.zip"
-                    className="hidden"
-                    onChange={onFiles}
-                  />
-                </label>
-
-                {files.length > 0 && (
-                  <ul className="mt-4 space-y-2">
-                    {files.map((f, i) => (
-                      <li
-                        key={`${f.name}-${i}`}
-                        className="flex items-center justify-between gap-3 border-2 border-border bg-background px-3 py-2 text-sm"
-                      >
-                        <div className="min-w-0 flex items-center gap-2">
-                          <FileText className="size-4 text-brand-cyan flex-shrink-0" />
-                          <span className="truncate">{f.name}</span>
-                          <span className="text-xs text-muted-foreground flex-shrink-0">
-                            {(f.size / 1024).toFixed(0)} KB
-                          </span>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => removeFile(i)}
-                          aria-label="Remove"
-                          className="size-7 flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          <X className="size-4" />
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </Section>
+                  {t("custom.files.email")}
+                </a>
+              </p>
 
               <div className="flex flex-wrap gap-3 pt-2 border-t border-border">
                 <button

@@ -41,8 +41,8 @@ export const en = {
   "custom.sec.tech.desc": "Specifications of the generator you need.",
   "custom.sec.constraints.title": "Constraints & specific needs",
   "custom.sec.constraints.desc": "Budget, deadlines and additional details.",
-  "custom.sec.files.title": "Supporting documents",
-  "custom.sec.files.desc": "Photos, plans, specifications or technical documents.",
+  "custom.files.note": "To attach additional documents (photos, plans, technical specifications), please send them directly to:",
+  "custom.files.email": "sales@rotom-power.com",
 
   "custom.f.name": "Full name *",
   "custom.f.company": "Company",
@@ -88,8 +88,6 @@ export const en = {
   "custom.opt.install.fixed": "Fixed installation",
   "custom.opt.install.mobile": "Mobile installation",
 
-  "custom.files.cta": "Drop your files",
-  "custom.files.hint": "PDF, images, plans, specifications — up to 8 files",
   "header.search": "Search a generator, brand, model...",
   "header.cta": "Request a quote",
 
