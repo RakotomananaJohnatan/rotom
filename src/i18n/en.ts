@@ -31,6 +31,8 @@ export const en = {
   "custom.form.required": "Fields marked with * are required.",
   "custom.toast.title": "Request sent",
   "custom.toast.desc": "Our sales team will get back to you within 24h.",
+  "custom.toast.error.title": "Error",
+  "custom.toast.error.desc": "Sending failed. Please try again.",
   "custom.success.title": "Thank you for your request",
   "custom.success.body": "We have received your project. A sales engineer will reply within 24 business hours.",
   "custom.success.again": "Send another request",
