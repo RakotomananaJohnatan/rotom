@@ -62,12 +62,12 @@ const Contact = () => {
         body: data,
       });
       toast({
-        title: "Message envoyé",
-        description: "Votre demande a bien été envoyée. Notre équipe vous contactera dans les plus brefs délais.",
+        title: t("contact.toast.title"),
+        description: t("contact.toast.desc"),
       });
       setForm({ name: "", company: "", email: "", phone: "", power: "", subject: t("contact.subject.quote"), message: "" });
     } catch {
-      toast({ title: "Erreur", description: "L'envoi a échoué. Veuillez réessayer." });
+      toast({ title: t("contact.toast.error.title"), description: t("contact.toast.error.desc") });
     }
   };
 
