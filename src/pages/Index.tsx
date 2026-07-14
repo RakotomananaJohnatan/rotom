@@ -86,9 +86,9 @@ const Index = () => {
                 </span>
               </div>
 
-              <h1 className="font-impact uppercase font-extrabold text-white leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[88px] hero-rise" style={{ animationDelay: "120ms" }}>
+              <h1 className={`font-impact uppercase font-extrabold text-white leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[88px] hero-rise ${lang === "fr" ? "text-[clamp(1.5rem,7vw,2.25rem)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[88px]" : ""}`} style={{ animationDelay: "120ms" }}>
                 <span className="block">{t("home.hero.title1")}</span>
-                <span className={`block text-[#c4ff00] hero-float whitespace-nowrap ${lang === "fr" ? "text-[clamp(1.25rem,5.5vw,2rem)] sm:text-[clamp(1.75rem,6.5vw,3rem)] md:text-[clamp(2rem,6vw,4rem)] lg:text-[clamp(2.5rem,5.5vw,5rem)] xl:text-[72px]" : ""}`}>{t("home.hero.title2")}</span>
+                <span className={`block text-[#c4ff00] hero-float whitespace-nowrap ${lang === "fr" ? "tracking-[-0.08em]" : ""}`}>{t("home.hero.title2")}</span>
               </h1>
 
               <p className="mt-6 sm:mt-8 text-white/80 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed hero-rise" style={{ animationDelay: "320ms" }}>
