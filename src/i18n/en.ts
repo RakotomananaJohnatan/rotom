@@ -378,4 +378,5 @@ export const en = {
   "privacy.s6.body": "In accordance with the GDPR, you have the right to access, rectify, erase, object to, restrict and port your data. To exercise these rights, contact us at sales@rotom-power.com.",
   "privacy.s7.title": "Cookies",
   "privacy.s7.body": "Our website uses technical cookies necessary for its proper operation, as well as anonymised audience measurement cookies. You can configure your browser to refuse them.",
+  "products.used.subtitle": "Used generator",
 };

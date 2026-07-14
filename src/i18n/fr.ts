@@ -378,4 +378,5 @@ export const fr = {
   "privacy.s6.body": "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité de vos données. Pour exercer ces droits, contactez-nous à sales@rotom-power.com.",
   "privacy.s7.title": "Cookies",
   "privacy.s7.body": "Notre site utilise des cookies techniques nécessaires à son bon fonctionnement, ainsi que des cookies de mesure d'audience anonymisés. Vous pouvez configurer votre navigateur pour les refuser.",
+  "products.used.subtitle": "Groupe électrogène d'occasion",
 };
