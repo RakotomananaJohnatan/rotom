@@ -236,7 +236,7 @@ const Contact = () => {
           <div className="border-2 border-border overflow-hidden lift">
             <iframe
               title="ROTOM Antananarivo"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=47.52%2C-18.90%2C47.56%2C-18.87&layer=mapnik&marker=-18.885%2C47.540"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=47.5080%2C-18.8792%2C47.5280%2C-18.8592&layer=mapnik&marker=-18.8692%2C47.5180"
               className="w-full h-[280px] border-0"
               loading="lazy"
             />
