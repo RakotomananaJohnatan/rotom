@@ -666,13 +666,82 @@ export const newProducts: Product[] = enrich([
   },
 ], "new");
 
+// Simple used-generator spec factory. Values are shown as-is on the product card / detail page.
+// Labels are localized; values are kept identical across FR and EN except where a light FR
+// wording improves readability (Canopy → Capoté, Open → Ouvert, Prime → Continue, Standby → Secours).
+const makeUsedSpecs = (opts: {
+  ratingsEn: string; ratingsFr: string;
+  engine: string; alternator: string; speed: string; phase: string;
+  fuelTank: string; fuelTankFr: string;
+  control: string;
+  soundEn: string; soundFr: string;
+}): { fr: SpecRow[]; en: SpecRow[] } => ({
+  en: [
+    ["Ratings", opts.ratingsEn],
+    ["Engine", opts.engine],
+    ["Alternator", opts.alternator],
+    ["Speed", opts.speed],
+    ["Phase", opts.phase],
+    ["Fuel Tank Capacity", opts.fuelTank],
+    ["Control Panel", opts.control],
+    ["Sound Proofing", opts.soundEn],
+  ],
+  fr: [
+    ["Puissance nominale", opts.ratingsFr],
+    ["Moteur", opts.engine],
+    ["Alternateur", opts.alternator],
+    ["Vitesse", opts.speed],
+    ["Phase", opts.phase],
+    ["Capacité du réservoir", opts.fuelTankFr],
+    ["Panneau de contrôle", opts.control],
+    ["Insonorisation", opts.soundFr],
+  ],
+});
+
+type UsedSeed = {
+  power: string; // e.g. "250 kVA / 200 kW"
+  kva: string; // e.g. "250 kVA"
+  ratingsEn: string; ratingsFr: string;
+  engine: string; alternator: string;
+  fuelTank: string; fuelTankFr: string;
+  control: string;
+  soundEn: "Canopy" | "Open"; soundFr: "Capoté" | "Ouvert";
+};
+
+const usedSeeds: UsedSeed[] = [
+  { power: "250 kVA / 200 kW", kva: "250 kVA", ratingsEn: "250 kVA / 200 kW (Standby)", ratingsFr: "250 kVA / 200 kW (Secours)", engine: "Perkins 1300 series", alternator: "Leroy Somer / FG Wilson", fuelTank: "Standard 503-liter spill containment tank", fuelTankFr: "Réservoir standard 503 L à rétention", control: "DSE7320/8610", soundEn: "Canopy", soundFr: "Capoté" },
+  { power: "675 kVA / 540 kW", kva: "675 kVA", ratingsEn: "675 kVA / 540 kW (Prime)", ratingsFr: "675 kVA / 540 kW (Continue)", engine: "Perkins 1300 series", alternator: "Leroy Somer", fuelTank: "Standard 600-liter spill containment tank", fuelTankFr: "Réservoir standard 600 L à rétention", control: "DSE7320/8610", soundEn: "Open", soundFr: "Ouvert" },
+  { power: "500 kVA / 400 kW", kva: "500 kVA", ratingsEn: "500 kVA / 400 kW (Prime)", ratingsFr: "500 kVA / 400 kW (Continue)", engine: "Doosan KZ550", alternator: "Mecc alte", fuelTank: "Standard 600-liter spill containment tank", fuelTankFr: "Réservoir standard 600 L à rétention", control: "DSE8610", soundEn: "Canopy", soundFr: "Capoté" },
+  { power: "640 kVA / 512 kW", kva: "640 kVA", ratingsEn: "640 kVA / 512 kW (Prime)", ratingsFr: "640 kVA / 512 kW (Continue)", engine: "Doosan Bobcat PG710", alternator: "Mecalt", fuelTank: "Standard 600-liter spill containment tank", fuelTankFr: "Réservoir standard 600 L à rétention", control: "DSE8610", soundEn: "Canopy", soundFr: "Capoté" },
+  { power: "60 kVA / 50 kW", kva: "60 kVA", ratingsEn: "60 kVA / 50 kW (Prime)", ratingsFr: "60 kVA / 50 kW (Continue)", engine: "Cummins Bobcat", alternator: "Stamford", fuelTank: "Standard 60-liter spill containment tank", fuelTankFr: "Réservoir standard 60 L à rétention", control: "DSE", soundEn: "Canopy", soundFr: "Capoté" },
+  { power: "30 kVA / 24 kW", kva: "30 kVA", ratingsEn: "30 kVA / 24 kW (Prime)", ratingsFr: "30 kVA / 24 kW (Continue)", engine: "Cummins Bobcat", alternator: "Stamford", fuelTank: "Standard 50-liter spill containment tank", fuelTankFr: "Réservoir standard 50 L à rétention", control: "DSE", soundEn: "Canopy", soundFr: "Capoté" },
+  { power: "20 kVA / 16 kW", kva: "20 kVA", ratingsEn: "20 kVA / 16 kW (Prime)", ratingsFr: "20 kVA / 16 kW (Continue)", engine: "Cummins Bobcat", alternator: "Stamford", fuelTank: "Standard 40-liter spill containment tank", fuelTankFr: "Réservoir standard 40 L à rétention", control: "DSE", soundEn: "Canopy", soundFr: "Capoté" },
+  { power: "375 kVA / 300 kW", kva: "375 kVA", ratingsEn: "375 kVA / 300 kW (Prime)", ratingsFr: "375 kVA / 300 kW (Continue)", engine: "Cummins", alternator: "Leroy Somer", fuelTank: "Standard 400-liter spill containment tank", fuelTankFr: "Réservoir standard 400 L à rétention", control: "DSE", soundEn: "Open", soundFr: "Ouvert" },
+  { power: "13 kVA / 10 kW", kva: "13 kVA", ratingsEn: "13 kVA / 10 kW (Prime)", ratingsFr: "13 kVA / 10 kW (Continue)", engine: "Himoinsa", alternator: "Leroy Somer", fuelTank: "Standard 30-liter spill containment tank", fuelTankFr: "Réservoir standard 30 L à rétention", control: "—", soundEn: "Canopy", soundFr: "Capoté" },
+  { power: "275 kVA / 200 kW", kva: "275 kVA", ratingsEn: "275 kVA / 200 kW (Prime)", ratingsFr: "275 kVA / 200 kW (Continue)", engine: "Perkins", alternator: "Leroy Somer", fuelTank: "Standard 300-liter spill containment tank", fuelTankFr: "Réservoir standard 300 L à rétention", control: "DSE 7320 MKII", soundEn: "Canopy", soundFr: "Capoté" },
+  { power: "700 kVA / 560 kW", kva: "700 kVA", ratingsEn: "700 kVA / 560 kW (Prime)", ratingsFr: "700 kVA / 560 kW (Continue)", engine: "SDMO Doosan", alternator: "Leroy Somer", fuelTank: "Standard 600-liter spill containment tank", fuelTankFr: "Réservoir standard 600 L à rétention", control: "APM403", soundEn: "Canopy", soundFr: "Capoté" },
+  { power: "410 kVA / 328 kW", kva: "410 kVA", ratingsEn: "410 kVA / 328 kW (Prime)", ratingsFr: "410 kVA / 328 kW (Continue)", engine: "Doosan", alternator: "Stamford PI044G1", fuelTank: "Standard 600-liter spill containment tank", fuelTankFr: "Réservoir standard 600 L à rétention", control: "DSE 7320 MKII", soundEn: "Canopy", soundFr: "Capoté" },
+];
+
 export const usedProducts: Product[] = enrich([
-  { stock: "EN STOCK", name: "ROTOM RU-150", subtitle: "150 kVA — Diesel Generator Occasion", kva: "150 kVA", year: "2018", fuel: "Diesel", img: genCummins, type: "closed" },
-  { stock: "EN STOCK", name: "ROTOM RU-220", subtitle: "220 kVA — Diesel Generator Occasion", kva: "220 kVA", year: "2019", fuel: "Diesel", img: genCat, type: "closed" },
-  { stock: "EN STOCK", name: "ROTOM RU-250", subtitle: "250 kVA — Diesel Generator Occasion", kva: "250 kVA", year: "2017", fuel: "Diesel", img: genPerkins, type: "open" },
-  { stock: "SUR COMMANDE", name: "ROTOM RU-275", subtitle: "275 kVA — Diesel Generator Occasion", kva: "275 kVA", year: "2020", fuel: "Diesel", img: genFgWilson, type: "closed" },
-  { stock: "EN STOCK", name: "ROTOM RU-330", subtitle: "330 kVA — Diesel Generator Occasion", kva: "330 kVA", year: "2018", fuel: "Diesel", img: genVolvo, type: "open" },
-  { stock: "EN STOCK", name: "ROTOM RU-710", subtitle: "710 kVA — Diesel Generator Occasion", kva: "710 kVA", year: "2016", fuel: "Diesel", img: genDoosan, type: "open" },
+  ...usedSeeds.map((s) => ({
+    stock: "EN STOCK",
+    name: s.power,
+    subtitle: "Groupe électrogène d'occasion / Used generator",
+    kva: s.kva,
+    year: "—",
+    fuel: "Diesel",
+    img: "/placeholder.svg",
+    type: (s.soundEn === "Canopy" ? "closed" : "open") as ProductType,
+    specs: makeUsedSpecs({
+      ratingsEn: s.ratingsEn, ratingsFr: s.ratingsFr,
+      engine: s.engine, alternator: s.alternator,
+      speed: "1500 RPM (50 Hz)", phase: "3-Phase",
+      fuelTank: s.fuelTank, fuelTankFr: s.fuelTankFr,
+      control: s.control,
+      soundEn: s.soundEn, soundFr: s.soundFr,
+    }),
+  })),
 ], "used");
 
 export const allProducts: Product[] = [...newProducts, ...usedProducts];
