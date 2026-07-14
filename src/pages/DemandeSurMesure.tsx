@@ -105,13 +105,13 @@ const DemandeSurMesure = () => {
         body: data,
       });
       toast({
-        title: "Demande envoyée",
-        description: "Votre demande a bien été envoyée. Notre équipe vous contactera dans les plus brefs délais.",
+        title: t("custom.toast.title"),
+        description: t("custom.toast.desc"),
       });
       setSubmitted(true);
       setForm(initial);
     } catch {
-      toast({ title: "Erreur", description: "L'envoi a échoué. Veuillez réessayer." });
+      toast({ title: t("custom.toast.error.title"), description: t("custom.toast.error.desc") });
     }
   };
 
