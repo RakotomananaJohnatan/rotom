@@ -21,7 +21,7 @@ import catHybrid from "@/assets/cat-hybrid.jpg";
 import catEquip from "@/assets/cat-equip.jpg";
 
 const Index = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   const categories = [
     { title: t("nav.new"), img: catNeufs, to: "/generateurs-neufs" },
