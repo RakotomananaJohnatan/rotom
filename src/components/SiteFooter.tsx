@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, MessageCircle, Linkedin, Facebook, Youtube } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Linkedin, Facebook } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
 
 const SiteFooter = () => {
@@ -68,9 +68,6 @@ const SiteFooter = () => {
             </a>
             <a href="#" aria-label="Facebook" className="size-10 rounded-full bg-white/10 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground flex items-center justify-center transition-colors">
               <Facebook className="size-4" />
-            </a>
-            <a href="#" aria-label="YouTube" className="size-10 rounded-full bg-white/10 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground flex items-center justify-center transition-colors">
-              <Youtube className="size-4" />
             </a>
           </div>
         </div>
