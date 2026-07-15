@@ -146,7 +146,7 @@ export const en = {
   "new.count": "New generators available",
   "new.feat.1.title": "2024 models",
   "new.feat.1.desc": "Latest engine generation",
-  "new.feat.2.title": "2-year warranty",
+  "new.feat.2.title": "1-year or 1000 operating hours warranty",
   "new.feat.2.desc": "Parts & labour included",
   "new.feat.3.title": "CE compliant",
   "new.feat.3.desc": "European & ISO standards",
