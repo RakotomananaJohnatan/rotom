@@ -69,9 +69,6 @@ const SiteFooter = () => {
             <a href="#" aria-label="Facebook" className="size-10 rounded-full bg-white/10 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground flex items-center justify-center transition-colors">
               <Facebook className="size-4" />
             </a>
-            <a href="#" aria-label="YouTube" className="size-10 rounded-full bg-white/10 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground flex items-center justify-center transition-colors">
-              <Youtube className="size-4" />
-            </a>
           </div>
         </div>
       </div>
