@@ -6,7 +6,7 @@ import genVolvo from "@/assets/gen-volvo.jpg";
 import genDoosan from "@/assets/gen-doosan.jpg";
 import genSRAsset from "@/assets/rotom-sr.jpg.asset.json";
 import genSRAUAsset from "@/assets/rotom-srau.jpg.asset.json";
-import genSR2 from "@/assets/gen-sr2.jpg";
+import genSR2Asset from "@/assets/rotom-sr2.jpg.asset.json";
 import genSE from "@/assets/gen-se.jpg";
 import genSREU from "@/assets/gen-sreu.jpg";
 import genSC from "@/assets/gen-sc.png";
@@ -565,7 +565,7 @@ export const newProducts: Product[] = enrich([
     kva: "6 à 1000 kVA",
     year: "2024",
     fuel: "Diesel",
-    img: genSR2,
+    img: genSR2Asset.url,
     type: "closed",
     specs: specsSR2,
   },
