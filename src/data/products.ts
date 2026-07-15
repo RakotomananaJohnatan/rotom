@@ -10,7 +10,7 @@ import genSR2Asset from "@/assets/rotom-sr2.jpg.asset.json";
 import genSE from "@/assets/gen-se.jpg";
 import genSREUAsset from "@/assets/rotom-sreu.jpg.asset.json";
 import genSCAsset from "@/assets/rotom-sc.jpg.asset.json";
-import genOE500 from "@/assets/gen-oe500.jpg";
+import genOE500Asset from "@/assets/rotom-oe-500.jpg.asset.json";
 import type { Product } from "@/components/ProductCard";
 
 export const brands = ["ROTOM"];
@@ -609,7 +609,7 @@ export const newProducts: Product[] = enrich([
     kva: "500 kVA",
     year: "TBD",
     fuel: "Diesel",
-    img: genOE500,
+    img: genOE500Asset.url,
     type: "open",
     description: {
       fr: "Groupe électrogène industriel de type ouvert équipé d'un moteur Cummins QSZ13-G3. Conçu pour les applications Prime et Secours nécessitant une puissance élevée, il offre une consommation de carburant optimisée et une grande fiabilité pour les sites industriels, chantiers de construction et installations permanentes.",
