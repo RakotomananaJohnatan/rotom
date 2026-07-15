@@ -9,7 +9,7 @@ import genSRAUAsset from "@/assets/rotom-srau.jpg.asset.json";
 import genSR2Asset from "@/assets/rotom-sr2.jpg.asset.json";
 import genSE from "@/assets/gen-se.jpg";
 import genSREUAsset from "@/assets/rotom-sreu.jpg.asset.json";
-import genSC from "@/assets/gen-sc.png";
+import genSCAsset from "@/assets/rotom-sc.jpg.asset.json";
 import genOE500 from "@/assets/gen-oe500.jpg";
 import type { Product } from "@/components/ProductCard";
 
@@ -598,7 +598,7 @@ export const newProducts: Product[] = enrich([
     kva: "≥ 500 kVA",
     year: "2024",
     fuel: "Diesel",
-    img: genSC,
+    img: genSCAsset.url,
     type: "closed",
     specs: specsSC,
   },
