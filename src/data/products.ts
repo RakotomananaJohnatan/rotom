@@ -4,7 +4,7 @@ import genPerkins from "@/assets/gen-perkins.jpg";
 import genFgWilson from "@/assets/gen-fgwilson.jpg";
 import genVolvo from "@/assets/gen-volvo.jpg";
 import genDoosan from "@/assets/gen-doosan.jpg";
-import genSR from "@/assets/gen-sr.jpg";
+import genSRAsset from "@/assets/rotom-sr.jpg.asset.json";
 import genSRAU from "@/assets/gen-srau.jpg";
 import genSR2 from "@/assets/gen-sr2.jpg";
 import genSE from "@/assets/gen-se.jpg";
