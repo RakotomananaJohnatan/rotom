@@ -146,7 +146,7 @@ export const fr = {
   "new.count": "Générateurs neufs disponibles",
   "new.feat.1.title": "Modèles 2024",
   "new.feat.1.desc": "Dernière génération moteur",
-  "new.feat.2.title": "Garantie 2 ans",
+  "new.feat.2.title": "Garantie 1 an ou 1000 heures de marche",
   "new.feat.2.desc": "Pièces & main d'œuvre incluses",
   "new.feat.3.title": "Conformité CE",
   "new.feat.3.desc": "Normes européennes & ISO",
