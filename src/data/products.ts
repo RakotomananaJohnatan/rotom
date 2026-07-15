@@ -598,7 +598,7 @@ export const newProducts: Product[] = enrich([
     kva: "≥ 500 kVA",
     year: "2024",
     fuel: "Diesel",
-    img: genSC,
+    img: genSCAsset.url,
     type: "closed",
     specs: specsSC,
   },
