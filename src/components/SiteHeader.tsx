@@ -212,12 +212,12 @@ const SiteHeader = () => {
         </div>
       )}
     </header>
-      <div
-        ref={placeholderRef}
-        style={{ height: headerHeight }}
-        aria-hidden="true"
-        className="w-full flex-shrink-0"
-      />
+    <div
+      ref={placeholderRef}
+      style={{ height: headerHeight }}
+      aria-hidden="true"
+      className="w-full flex-shrink-0"
+    />
     </>
   );
 };
