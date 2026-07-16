@@ -7,7 +7,7 @@ import genDoosan from "@/assets/gen-doosan.jpg";
 import genSRAsset from "@/assets/rotom-sr.jpg.asset.json";
 import genSRAUAsset from "@/assets/rotom-srau.jpg.asset.json";
 import genSR2Asset from "@/assets/rotom-sr2.jpg.asset.json";
-import genSE from "@/assets/gen-se.jpg";
+import genSEAsset from "@/assets/rotom-se.jpg.asset.json";
 import genSREUAsset from "@/assets/rotom-sreu.jpg.asset.json";
 import genSCAsset from "@/assets/rotom-sc.jpg.asset.json";
 import genOE500Asset from "@/assets/rotom-oe-500.jpg.asset.json";
@@ -576,7 +576,7 @@ export const newProducts: Product[] = enrich([
     kva: "6 à 1000 kVA",
     year: "2024",
     fuel: "Diesel",
-    img: genSE,
+    img: genSEAsset.url,
     type: "closed",
     specs: specsSE,
   },
