@@ -110,6 +110,10 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-8px)" },
         },
+        "mail-pulse": {
+          "0%, 100%": { transform: "scale(1) rotate(-3deg)" },
+          "50%": { transform: "scale(1.08) rotate(3deg)" },
+        },
         "marquee": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
