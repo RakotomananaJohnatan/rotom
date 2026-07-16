@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Globe, ChevronDown, Sun, Moon, Menu, X } from "lucide-react";
 import logoRotom from "@/assets/logo-rotom.svg";
 import { useLang } from "@/i18n/useLang";
 import { useTheme } from "@/theme/ThemeContext";
+import { cn } from "@/lib/utils";
 import {
   DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -13,6 +14,10 @@ const SiteHeader = () => {
   const { t, lang, setLang } = useLang();
   const { theme, toggle } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const headerRef = useRef<HTMLElement>(null);
+  const placeholderRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   // Close mobile menu on route change
@@ -26,6 +31,29 @@ const SiteHeader = () => {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
+  // Detect scroll to strengthen shadow
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Measure header height to reserve space with a placeholder
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const update = () => setHeaderHeight(el.offsetHeight);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    window.addEventListener("resize", update);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
   const navItems = [
     { label: t("nav.home"), to: "/" },
     { label: t("nav.new"), to: "/generateurs-neufs" },
@@ -37,7 +65,14 @@ const SiteHeader = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-primary text-primary-foreground border-b-4 border-accent shadow-md">
+    <>
+      <header
+        ref={headerRef}
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground border-b-4 border-accent transition-shadow duration-300",
+          scrolled ? "shadow-xl" : "shadow-md"
+        )}
+      >
       {/* Top row */}
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-3 sm:gap-6">
         <Link to="/" className="flex-shrink-0 rounded-md px-2 sm:px-3 py-1.5 sm:py-2 flex items-center bg-[#ddff00] ml-0" aria-label="ROTOM Power Generation">
@@ -177,6 +212,13 @@ const SiteHeader = () => {
         </div>
       )}
     </header>
+    <div
+      ref={placeholderRef}
+      style={{ height: headerHeight }}
+      aria-hidden="true"
+      className="w-full flex-shrink-0"
+    />
+    </>
   );
 };
 
