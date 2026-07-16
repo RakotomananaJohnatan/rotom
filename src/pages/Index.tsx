@@ -5,7 +5,7 @@ import { Headphones, Shield, Truck, Wrench, LifeBuoy, ArrowRight, Zap, Globe2, A
 
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import SalesTeamStrip from "@/components/SalesTeamStrip";
+import ContactCtaBanner from "@/components/ContactCtaBanner";
 import Seo from "@/components/Seo";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
