@@ -202,6 +202,9 @@ export const en = {
   "contact.hq": "Headquarters",
   "contact.team.eyebrow": "Your contacts",
   "contact.team.title": "A team dedicated to your project",
+  "cta.contact.title": "Need advice?",
+  "cta.contact.subtitle": "Contact our team for personalized advice",
+  "cta.contact.button": "Contact us directly",
 
   // Product detail
   "product.detail.eyebrow": "Product sheet",

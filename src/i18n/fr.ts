@@ -202,6 +202,9 @@ export const fr = {
   "contact.hq": "Siège social",
   "contact.team.eyebrow": "Vos interlocuteurs",
   "contact.team.title": "Une équipe dédiée à votre projet",
+  "cta.contact.title": "Besoin de conseil ?",
+  "cta.contact.subtitle": "Contactez notre équipe pour des conseils personnalisés",
+  "cta.contact.button": "Contactez-nous directement",
 
   // Product detail
   "product.detail.eyebrow": "Fiche produit",
