@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Globe, ChevronDown, Sun, Moon, Menu, X } from "lucide-react";
 import logoRotom from "@/assets/logo-rotom.svg";
@@ -15,6 +15,9 @@ const SiteHeader = () => {
   const { theme, toggle } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const headerRef = useRef<HTMLElement>(null);
+  const placeholderRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   // Close mobile menu on route change
@@ -28,12 +31,27 @@ const SiteHeader = () => {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
-  // Detect scroll to strengthen shadow and confirm sticky behaviour
+  // Detect scroll to strengthen shadow
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Measure header height to reserve space with a placeholder
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const update = () => setHeaderHeight(el.offsetHeight);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    window.addEventListener("resize", update);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
   const navItems = [
