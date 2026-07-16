@@ -4,6 +4,7 @@ import { Globe, ChevronDown, Sun, Moon, Menu, X } from "lucide-react";
 import logoRotom from "@/assets/logo-rotom.svg";
 import { useLang } from "@/i18n/useLang";
 import { useTheme } from "@/theme/ThemeContext";
+import { cn } from "@/lib/utils";
 import {
   DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -13,6 +14,7 @@ const SiteHeader = () => {
   const { t, lang, setLang } = useLang();
   const { theme, toggle } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   // Close mobile menu on route change
@@ -25,6 +27,14 @@ const SiteHeader = () => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
+
+  // Detect scroll to strengthen shadow and confirm sticky behaviour
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navItems = [
     { label: t("nav.home"), to: "/" },
