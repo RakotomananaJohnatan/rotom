@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
-import SalesTeamStrip from "@/components/SalesTeamStrip";
+import ContactCtaBanner from "@/components/ContactCtaBanner";
 import { toast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, MessageCircle, Clock, Send, Check, ChevronsUpDown } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
