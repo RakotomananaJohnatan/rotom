@@ -63,7 +63,7 @@ const Index = () => {
         path="/"
       />
       <SiteHeader />
-      <SalesTeamStrip />
+      <ContactCtaBanner />
 
       {/* HERO */}
       <section className="relative w-full overflow-hidden bg-[#0a0a0a]">
