@@ -129,6 +129,7 @@ export default {
         "slide-in-right": "slide-in-right 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
         "shimmer": "shimmer 2.5s linear infinite",
         "float": "float 4s ease-in-out infinite",
+        "mail-pulse": "mail-pulse 3s ease-in-out infinite",
         "marquee": "marquee 30s linear infinite",
       },
       backgroundImage: {
