@@ -244,13 +244,7 @@ const Contact = () => {
         </Reveal>
       </section>
 
-      <section className="border-t-2 border-border bg-secondary py-12">
-        <Reveal variant="fade-in-up" className="max-w-[1500px] mx-auto px-4 sm:px-6 mb-6 text-center">
-          <div className="font-impact text-xs uppercase tracking-[0.3em] text-brand-cyan mb-2">{t("contact.team.eyebrow")}</div>
-          <h2 className="font-impact text-3xl uppercase font-bold text-primary">{t("contact.team.title")}</h2>
-        </Reveal>
-        <SalesTeamStrip />
-      </section>
+      <ContactCtaBanner />
     </SiteLayout>
   );
 };
