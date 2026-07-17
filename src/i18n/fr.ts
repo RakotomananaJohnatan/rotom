@@ -77,7 +77,8 @@ export const fr = {
   "custom.f.description": "Décrivez précisément votre besoin *",
   "custom.f.descriptionPh": "Contexte, contraintes site, équipements à alimenter, environnement...",
 
-  "custom.opt.select": "Sélectionner...",
+  "custom.opt.select": "-- Aucun --",
+  "common.none": "-- Aucun --",
   "custom.opt.genType.open": "Type ouvert",
   "custom.opt.genType.closed": "Type fermé / insonorisé",
   "custom.opt.genType.container": "Container 20' / 40'",

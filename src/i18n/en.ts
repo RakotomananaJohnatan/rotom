@@ -77,7 +77,8 @@ export const en = {
   "custom.f.description": "Describe your need precisely *",
   "custom.f.descriptionPh": "Context, site constraints, equipment to power, environment...",
 
-  "custom.opt.select": "Select...",
+  "custom.opt.select": "-- None --",
+  "common.none": "-- None --",
   "custom.opt.genType.open": "Open type",
   "custom.opt.genType.closed": "Closed / soundproof",
   "custom.opt.genType.container": "Container 20' / 40'",

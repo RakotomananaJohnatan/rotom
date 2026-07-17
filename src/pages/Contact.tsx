@@ -187,6 +187,7 @@ const Contact = () => {
               <Field label={t("contact.form.subject")} id="subject">
                 <select value={form.subject} onChange={onChange("subject")} id="subject"
                   className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan">
+                  <option value="">{t("common.none")}</option>
                   <option>{t("contact.subject.quote")}</option>
                   <option>{t("contact.subject.tech")}</option>
                   <option>{t("contact.subject.svc")}</option>
