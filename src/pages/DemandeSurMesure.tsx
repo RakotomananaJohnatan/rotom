@@ -32,6 +32,9 @@ type FormState = {
   deadline: string;
   conditions: string;
   description: string;
+  engineBrand: string;
+  alternatorBrand: string;
+  controller: string;
 };
 
 const initial: FormState = {
