@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import BrandCascadeSelect, { type BrandOption } from "@/components/BrandCascadeSelect";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
