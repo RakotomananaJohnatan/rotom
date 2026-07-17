@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Check, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLang } from "@/i18n/useLang";
 
 export type BrandOption = {
   value: string;
