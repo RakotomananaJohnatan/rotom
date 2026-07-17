@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import BrandCascadeSelect, { type BrandOption } from "@/components/BrandCascadeSelect";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
@@ -12,6 +13,36 @@ import {
   Settings2,
   CheckCircle2,
 } from "lucide-react";
+
+const ENGINE_BRANDS: BrandOption[] = [
+  { value: "Perkins", label: "Perkins", color: "#0033A0" },
+  { value: "Cummins", label: "Cummins", color: "#C8102E" },
+  { value: "Baudouin", label: "Baudouin", color: "#1B3A6B" },
+  { value: "Volvo Penta", label: "Volvo Penta", color: "#1E3160" },
+  { value: "Doosan", label: "Doosan", color: "#F58220" },
+  { value: "Weichai", label: "Weichai", color: "#E30613" },
+  { value: "Yuchai", label: "Yuchai", color: "#0B6E4F" },
+  { value: "SME", label: "SME", color: "#333333" },
+  { value: "SCANIA", label: "SCANIA", color: "#041E42" },
+  { value: "YANMAR", label: "YANMAR", color: "#C8102E" },
+  { value: "KUBOTA", label: "KUBOTA", color: "#F5A623" },
+  { value: "HD Hyundai", label: "HD Hyundai", color: "#002C5F" },
+  { value: "FAW", label: "FAW", color: "#B71C1C" },
+  { value: "SDEC", label: "SDEC", color: "#1F6FEB" },
+];
+
+const ALTERNATOR_BRANDS: BrandOption[] = [
+  { value: "Stamford", label: "Stamford", color: "#003DA5" },
+  { value: "Leroy Somer", label: "Leroy Somer", color: "#E30613" },
+  { value: "Mecc Alte", label: "Mecc Alte", color: "#0B4D8C" },
+];
+
+const CONTROLLERS: BrandOption[] = [
+  { value: "Deep Sea Electronics (DSE)", label: "Deep Sea Electronics (DSE)", color: "#004990" },
+  { value: "SmartGen", label: "SmartGen", color: "#0A8F3C" },
+  { value: "ComAp", label: "ComAp", color: "#E30613" },
+];
+
 
 type FormState = {
   name: string;
@@ -31,6 +62,9 @@ type FormState = {
   deadline: string;
   conditions: string;
   description: string;
+  engineBrand: string;
+  alternatorBrand: string;
+  controller: string;
 };
 
 const initial: FormState = {
@@ -51,6 +85,9 @@ const initial: FormState = {
   deadline: "",
   conditions: "",
   description: "",
+  engineBrand: "",
+  alternatorBrand: "",
+  controller: "",
 };
 
 const DemandeSurMesure = () => {
@@ -90,6 +127,9 @@ const DemandeSurMesure = () => {
     data.append("Autonomie souhaitée", form.autonomy);
     data.append("Installation souhaitée", form.installation);
     data.append("Localisation", form.location);
+    data.append("Engine Brand", form.engineBrand || "Non renseigné");
+    data.append("Alternator Brand", form.alternatorBrand || "Non renseigné");
+    data.append("Controller/Operating Module", form.controller || "Non renseigné");
     data.append("Objectif souhaité", form.description);
 
     data.append("CONTRAINTES & BESOINS SPÉCIFIQUES", "");
@@ -250,6 +290,42 @@ const DemandeSurMesure = () => {
                   <Field label={t("custom.f.quantity")} id="quantity">
                     <Input type="number" min={1} id="quantity" value={form.quantity} onChange={onChange("quantity")} />
                   </Field>
+                </div>
+
+                {/* Cascading brand selects */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+                  <BrandCascadeSelect
+                    id="engineBrand"
+                    label={t("custom.f.engineBrand")}
+                    placeholder={t("custom.f.brandPlaceholder")}
+                    options={ENGINE_BRANDS}
+                    value={form.engineBrand}
+                    onChange={(v) =>
+                      setForm((f) => ({ ...f, engineBrand: v, alternatorBrand: "", controller: "" }))
+                    }
+                  />
+                  {form.engineBrand && (
+                    <BrandCascadeSelect
+                      id="alternatorBrand"
+                      label={t("custom.f.alternatorBrand")}
+                      placeholder={t("custom.f.brandPlaceholder")}
+                      options={ALTERNATOR_BRANDS}
+                      value={form.alternatorBrand}
+                      onChange={(v) =>
+                        setForm((f) => ({ ...f, alternatorBrand: v, controller: "" }))
+                      }
+                    />
+                  )}
+                  {form.alternatorBrand && (
+                    <BrandCascadeSelect
+                      id="controller"
+                      label={t("custom.f.controller")}
+                      placeholder={t("custom.f.controllerPlaceholder")}
+                      options={CONTROLLERS}
+                      value={form.controller}
+                      onChange={(v) => setForm((f) => ({ ...f, controller: v }))}
+                    />
+                  )}
                 </div>
               </Section>
 
