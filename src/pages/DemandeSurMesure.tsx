@@ -97,6 +97,9 @@ const DemandeSurMesure = () => {
     data.append("Autonomie souhaitée", form.autonomy);
     data.append("Installation souhaitée", form.installation);
     data.append("Localisation", form.location);
+    data.append("Engine Brand", form.engineBrand || "Non renseigné");
+    data.append("Alternator Brand", form.alternatorBrand || "Non renseigné");
+    data.append("Controller/Operating Module", form.controller || "Non renseigné");
     data.append("Objectif souhaité", form.description);
 
     data.append("CONTRAINTES & BESOINS SPÉCIFIQUES", "");
