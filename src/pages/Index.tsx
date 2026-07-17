@@ -22,6 +22,7 @@ import catEquip from "@/assets/cat-equip.jpg";
 
 const Index = () => {
   const { t, lang } = useLang();
+  const navigate = useNavigate();
 
   const categories = [
     { title: t("nav.new"), img: catNeufs, to: "/generateurs-neufs" },
