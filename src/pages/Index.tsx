@@ -407,9 +407,4 @@ const FinalCta = ({ t }: { t: (k: string) => string }) => {
 
 
 
-      <SiteFooter />
-    </div>
-  );
-};
-
 export default Index;
