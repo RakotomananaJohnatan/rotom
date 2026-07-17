@@ -365,7 +365,7 @@ const FinalCta = ({ t }: { t: (k: string) => string }) => {
   return (
     <section
       ref={ref}
-      className="relative text-primary-foreground overflow-hidden bg-[length:200%_200%] bg-gradient-to-r from-primary via-[hsl(var(--brand-cyan))] to-primary motion-safe:animate-gradient-move"
+      className="relative text-primary-foreground overflow-hidden bg-[length:200%_200%] bg-gradient-to-r from-primary via-[hsl(270_80%_45%)] to-primary motion-safe:animate-gradient-move"
     >
       <div className="absolute inset-0 bg-primary/40" aria-hidden />
       <div className="absolute -top-20 left-1/4 size-80 rounded-full bg-brand-cyan/20 blur-3xl" aria-hidden />
