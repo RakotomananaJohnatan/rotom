@@ -85,6 +85,24 @@ const BrandCascadeSelect = ({ id, label, options, value, onChange, placeholder }
             role="listbox"
             className="absolute z-30 mt-1 w-full max-h-72 overflow-auto border-2 border-border bg-background shadow-lg animate-fade-in"
           >
+            <li>
+              <button
+                type="button"
+                role="option"
+                aria-selected={!value}
+                onClick={() => {
+                  onChange("");
+                  setOpen(false);
+                }}
+                className={cn(
+                  "w-full flex items-center gap-2.5 px-3 py-2 text-sm text-left text-muted-foreground hover:bg-secondary transition-colors",
+                  !value && "bg-secondary"
+                )}
+              >
+                <span className="flex-1 truncate">{t("common.none")}</span>
+                {!value && <Check className="size-4 text-brand-cyan" />}
+              </button>
+            </li>
             {options.map((o) => {
               const isSel = o.value === value;
               return (
