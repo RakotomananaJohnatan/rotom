@@ -45,18 +45,17 @@ const GenerateursNeufs = () => {
       <section className="bg-secondary border-b border-border">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
-            { icon: Sparkles, title: t("new.feat.1.title"), desc: t("new.feat.1.desc") },
-            { icon: Shield, title: t("new.feat.2.title"), desc: t("new.feat.2.desc") },
-            { icon: Award, title: t("new.feat.3.title"), desc: t("new.feat.3.desc") },
+            { icon: Sparkles, title: t("new.feat.1.title") },
+            { icon: Shield, title: t("new.feat.2.title") },
+            { icon: Award, title: t("new.feat.3.title") },
           ].map((it, i) => (
             <Reveal key={it.title} variant="fade-in-up" delay={i * 100}>
               <div className="lift flex items-center gap-3 bg-card border-2 border-border p-4 h-full hover:border-fluo-yellow transition-colors group">
                 <div className="size-10 rounded-full bg-fluo-yellow flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <it.icon className="size-5 text-fluo-yellow-foreground" strokeWidth={2} />
                 </div>
-                <div>
+                <div className="flex flex-col justify-center">
                   <div className="font-impact text-sm uppercase font-bold text-primary">{it.title}</div>
-                  <div className="text-xs text-muted-foreground">{it.desc}</div>
                 </div>
               </div>
             </Reveal>
