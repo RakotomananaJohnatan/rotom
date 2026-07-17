@@ -139,6 +139,8 @@ export default {
         "float": "float 4s ease-in-out infinite",
         "mail-pulse": "mail-pulse 3s ease-in-out infinite",
         "marquee": "marquee 30s linear infinite",
+        "gradient-move": "gradient-move 12s ease-in-out infinite",
+        "cta-pulse": "cta-pulse 2.2s ease-in-out infinite",
       },
       backgroundImage: {
         "grid-pattern": "linear-gradient(hsl(var(--border)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)",
