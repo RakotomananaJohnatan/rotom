@@ -261,6 +261,42 @@ const DemandeSurMesure = () => {
                     <Input type="number" min={1} id="quantity" value={form.quantity} onChange={onChange("quantity")} />
                   </Field>
                 </div>
+
+                {/* Cascading brand selects */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+                  <BrandCascadeSelect
+                    id="engineBrand"
+                    label={t("custom.f.engineBrand")}
+                    placeholder={t("custom.f.brandPlaceholder")}
+                    options={ENGINE_BRANDS}
+                    value={form.engineBrand}
+                    onChange={(v) =>
+                      setForm((f) => ({ ...f, engineBrand: v, alternatorBrand: "", controller: "" }))
+                    }
+                  />
+                  {form.engineBrand && (
+                    <BrandCascadeSelect
+                      id="alternatorBrand"
+                      label={t("custom.f.alternatorBrand")}
+                      placeholder={t("custom.f.brandPlaceholder")}
+                      options={ALTERNATOR_BRANDS}
+                      value={form.alternatorBrand}
+                      onChange={(v) =>
+                        setForm((f) => ({ ...f, alternatorBrand: v, controller: "" }))
+                      }
+                    />
+                  )}
+                  {form.alternatorBrand && (
+                    <BrandCascadeSelect
+                      id="controller"
+                      label={t("custom.f.controller")}
+                      placeholder={t("custom.f.controllerPlaceholder")}
+                      options={CONTROLLERS}
+                      value={form.controller}
+                      onChange={(v) => setForm((f) => ({ ...f, controller: v }))}
+                    />
+                  )}
+                </div>
               </Section>
 
               {/* Section: Contraintes */}
