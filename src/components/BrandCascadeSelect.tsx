@@ -35,6 +35,7 @@ const BrandLogo = ({ option, size = 20 }: { option: BrandOption; size?: number }
 );
 
 const BrandCascadeSelect = ({ id, label, options, value, onChange, placeholder }: Props) => {
+  const { t } = useLang();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const selected = options.find((o) => o.value === value);
