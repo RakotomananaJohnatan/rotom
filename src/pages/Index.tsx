@@ -350,25 +350,62 @@ const Index = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="relative bg-primary text-primary-foreground overflow-hidden">
-        <div className="absolute -top-20 left-1/4 size-80 rounded-full bg-brand-cyan/20 blur-3xl" aria-hidden />
-        <div className="absolute -bottom-20 right-1/4 size-80 rounded-full bg-fluo-yellow/15 blur-3xl" aria-hidden />
-        <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-8">
-          <Reveal variant="slide-in-left">
-            <div className="font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-3">{t("home.cta.eyebrow")}</div>
-            <h2 className="font-impact text-2xl sm:text-3xl md:text-5xl uppercase font-bold leading-tight">
-              {t("home.cta.title.1")}<br />
-              <span className="text-gradient-brand">{t("home.cta.title.2")}</span>
-            </h2>
-          </Reveal>
-          <Reveal variant="slide-in-right" delay={150}>
-            <Link to="/contact" className="group inline-flex items-center gap-3 bg-fluo-yellow text-fluo-yellow-foreground font-impact text-sm font-bold uppercase tracking-wider px-8 py-5 hover:shadow-glow transition-all">
-              {t("header.cta")}
-              <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Reveal>
+      <FinalCta t={t} />
+
+      <SiteFooter />
+    </div>
+  );
+};
+
+const FinalCta = ({ t }: { t: (k: string) => string }) => {
+  const { ref, visible } = useReveal<HTMLElement>();
+  const [typingDone, setTypingDone] = useState(false);
+  return (
+    <section
+      ref={ref}
+      className="relative text-primary-foreground overflow-hidden bg-[length:200%_200%] bg-gradient-to-r from-primary via-[hsl(var(--brand-cyan))] to-primary motion-safe:animate-gradient-move"
+    >
+      <div className="absolute inset-0 bg-primary/40" aria-hidden />
+      <div className="absolute -top-20 left-1/4 size-80 rounded-full bg-brand-cyan/20 blur-3xl" aria-hidden />
+      <div className="absolute -bottom-20 right-1/4 size-80 rounded-full bg-fluo-yellow/15 blur-3xl" aria-hidden />
+      <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-8">
+        <div>
+          <div
+            className={`font-impact text-xs uppercase tracking-[0.3em] text-fluo-yellow mb-3 ${visible ? "motion-safe:animate-fade-in" : "opacity-0"}`}
+            style={{ animationDelay: "200ms", animationFillMode: "both" }}
+          >
+            {t("home.cta.eyebrow")}
+          </div>
+          <h2 className="font-impact text-2xl sm:text-3xl md:text-5xl uppercase font-bold leading-tight min-h-[1.2em]">
+            <Typewriter
+              text={t("home.cta.title.1")}
+              start={visible}
+              startDelay={600}
+              speed={40}
+              onDone={() => setTypingDone(true)}
+              className="block"
+            />
+            <span
+              className={`block text-gradient-brand ${typingDone ? "motion-safe:animate-fade-in-up" : "opacity-0"}`}
+            >
+              {t("home.cta.title.2")}
+            </span>
+          </h2>
         </div>
-      </section>
+        <Link
+          to="/contact"
+          className={`group inline-flex items-center gap-3 bg-fluo-yellow text-fluo-yellow-foreground font-impact text-sm font-bold uppercase tracking-wider px-8 py-5 rounded-full hover:shadow-glow hover:scale-[1.04] transition-all duration-300 motion-safe:animate-cta-pulse ${visible ? "motion-safe:animate-fade-in-up" : "opacity-0"}`}
+          style={{ animationDelay: visible ? "400ms" : undefined }}
+        >
+          {t("header.cta")}
+          <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+
 
       <SiteFooter />
     </div>
