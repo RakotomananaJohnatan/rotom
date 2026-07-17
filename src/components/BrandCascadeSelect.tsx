@@ -125,7 +125,7 @@ const BrandCascadeSelect = ({ id, label, options, value, onChange, placeholder }
             ref={listRef}
             role="listbox"
             style={{ top: coords.top, left: coords.left, width: coords.width }}
-            className="absolute z-[100] mt-1 max-h-72 overflow-auto border-2 border-border bg-background shadow-lg animate-fade-in"
+            className="absolute z-[100] mt-1 max-h-72 overflow-auto border-2 border-border bg-background shadow-lg"
           >
             <li>
               <button
