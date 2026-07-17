@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Check, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLang } from "@/i18n/useLang";
@@ -37,16 +38,53 @@ const BrandLogo = ({ option, size = 20 }: { option: BrandOption; size?: number }
 const BrandCascadeSelect = ({ id, label, options, value, onChange, placeholder }: Props) => {
   const { t } = useLang();
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+  const [coords, setCoords] = useState({ top: 0, left: 0, width: 0 });
   const selected = options.find((o) => o.value === value);
+
+  const updateCoords = () => {
+    if (!triggerRef.current) return;
+    const rect = triggerRef.current.getBoundingClientRect();
+    setCoords({
+      top: rect.bottom + window.scrollY,
+      left: rect.left + window.scrollX,
+      width: rect.width,
+    });
+  };
+
+  useLayoutEffect(() => {
+    if (open) updateCoords();
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onScroll = () => updateCoords();
+    const onResize = () => updateCoords();
+    window.addEventListener("scroll", onScroll, true);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("scroll", onScroll, true);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [open]);
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      const target = e.target as Node;
+      if (triggerRef.current?.contains(target) || listRef.current?.contains(target)) return;
+      setOpen(false);
     };
-    document.addEventListener("mousedown", onClick);
-    return () => document.removeEventListener("mousedown", onClick);
-  }, []);
+    if (open) {
+      document.addEventListener("mousedown", onClick);
+      return () => document.removeEventListener("mousedown", onClick);
+    }
+  }, [open]);
+
+  const handleSelect = (v: string) => {
+    onChange(v);
+    setOpen(false);
+  };
 
   return (
     <div className="min-w-0 animate-fade-in-up">
@@ -56,44 +94,45 @@ const BrandCascadeSelect = ({ id, label, options, value, onChange, placeholder }
       >
         {label}
       </label>
-      <div ref={ref} className="relative">
-        <button
-          type="button"
-          id={id}
-          onClick={() => setOpen((o) => !o)}
-          aria-haspopup="listbox"
-          aria-expanded={open}
-          className={cn(
-            "w-full border-2 border-border bg-background px-3 py-2.5 text-sm text-left flex items-center gap-2 outline-none focus:border-brand-cyan transition-colors",
-            open && "border-brand-cyan"
-          )}
-        >
-          {selected ? (
-            <>
-              <BrandLogo option={selected} />
-              <span className="flex-1 truncate">{selected.label}</span>
-            </>
-          ) : (
-            <span className="flex-1 text-muted-foreground">{placeholder}</span>
-          )}
-          <ChevronDown
-            className={cn("size-4 text-muted-foreground transition-transform", open && "rotate-180")}
-          />
-        </button>
-        {open && (
+      <button
+        type="button"
+        id={id}
+        ref={triggerRef}
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        className={cn(
+          "w-full border-2 border-border bg-background px-3 py-2.5 text-sm text-left flex items-center gap-2 outline-none focus:border-brand-cyan transition-colors",
+          open && "border-brand-cyan"
+        )}
+      >
+        {selected ? (
+          <>
+            <BrandLogo option={selected} />
+            <span className="flex-1 truncate">{selected.label}</span>
+          </>
+        ) : (
+          <span className="flex-1 text-muted-foreground">{placeholder}</span>
+        )}
+        <ChevronDown
+          className={cn("size-4 text-muted-foreground transition-transform", open && "rotate-180")}
+        />
+      </button>
+      {open &&
+        typeof document !== "undefined" &&
+        createPortal(
           <ul
+            ref={listRef}
             role="listbox"
-            className="absolute z-30 mt-1 w-full max-h-72 overflow-auto border-2 border-border bg-background shadow-lg animate-fade-in"
+            style={{ top: coords.top, left: coords.left, width: coords.width }}
+            className="absolute z-[100] mt-1 max-h-72 overflow-auto border-2 border-border bg-background shadow-lg"
           >
             <li>
               <button
                 type="button"
                 role="option"
                 aria-selected={!value}
-                onClick={() => {
-                  onChange("");
-                  setOpen(false);
-                }}
+                onClick={() => handleSelect("")}
                 className={cn(
                   "w-full flex items-center gap-2.5 px-3 py-2 text-sm text-left text-muted-foreground hover:bg-secondary transition-colors",
                   !value && "bg-secondary"
@@ -111,10 +150,7 @@ const BrandCascadeSelect = ({ id, label, options, value, onChange, placeholder }
                     type="button"
                     role="option"
                     aria-selected={isSel}
-                    onClick={() => {
-                      onChange(o.value);
-                      setOpen(false);
-                    }}
+                    onClick={() => handleSelect(o.value)}
                     className={cn(
                       "w-full flex items-center gap-2.5 px-3 py-2 text-sm text-left hover:bg-secondary transition-colors",
                       isSel && "bg-secondary"
@@ -127,9 +163,9 @@ const BrandCascadeSelect = ({ id, label, options, value, onChange, placeholder }
                 </li>
               );
             })}
-          </ul>
+          </ul>,
+          document.body
         )}
-      </div>
     </div>
   );
 };
