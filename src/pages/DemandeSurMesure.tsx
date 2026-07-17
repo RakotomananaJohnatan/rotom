@@ -14,6 +14,36 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
+const ENGINE_BRANDS: BrandOption[] = [
+  { value: "Perkins", label: "Perkins", color: "#0033A0" },
+  { value: "Cummins", label: "Cummins", color: "#C8102E" },
+  { value: "Baudouin", label: "Baudouin", color: "#1B3A6B" },
+  { value: "Volvo Penta", label: "Volvo Penta", color: "#1E3160" },
+  { value: "Doosan", label: "Doosan", color: "#F58220" },
+  { value: "Weichai", label: "Weichai", color: "#E30613" },
+  { value: "Yuchai", label: "Yuchai", color: "#0B6E4F" },
+  { value: "SME", label: "SME", color: "#333333" },
+  { value: "SCANIA", label: "SCANIA", color: "#041E42" },
+  { value: "YANMAR", label: "YANMAR", color: "#C8102E" },
+  { value: "KUBOTA", label: "KUBOTA", color: "#F5A623" },
+  { value: "HD Hyundai", label: "HD Hyundai", color: "#002C5F" },
+  { value: "FAW", label: "FAW", color: "#B71C1C" },
+  { value: "SDEC", label: "SDEC", color: "#1F6FEB" },
+];
+
+const ALTERNATOR_BRANDS: BrandOption[] = [
+  { value: "Stamford", label: "Stamford", color: "#003DA5" },
+  { value: "Leroy Somer", label: "Leroy Somer", color: "#E30613" },
+  { value: "Mecc Alte", label: "Mecc Alte", color: "#0B4D8C" },
+];
+
+const CONTROLLERS: BrandOption[] = [
+  { value: "Deep Sea Electronics (DSE)", label: "Deep Sea Electronics (DSE)", color: "#004990" },
+  { value: "SmartGen", label: "SmartGen", color: "#0A8F3C" },
+  { value: "ComAp", label: "ComAp", color: "#E30613" },
+];
+
+
 type FormState = {
   name: string;
   company: string;
