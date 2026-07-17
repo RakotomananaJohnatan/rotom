@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Slider } from "@/components/ui/slider";
 import { Headphones, Shield, Truck, Wrench, LifeBuoy, ArrowRight, Zap, Globe2, Award, ShieldCheck, Headset } from "lucide-react";
 
@@ -22,6 +22,7 @@ import catEquip from "@/assets/cat-equip.jpg";
 
 const Index = () => {
   const { t, lang } = useLang();
+  const navigate = useNavigate();
 
   const categories = [
     { title: t("nav.new"), img: catNeufs, to: "/generateurs-neufs" },
@@ -243,11 +244,28 @@ const Index = () => {
               </div>
             </div>
 
+            <div className="mb-6">
+              <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.customRequest.title")}</h3>
+              <button
+                type="button"
+                onClick={() => navigate("/demande-sur-mesure")}
+                className="w-full flex items-center gap-3 border border-border rounded-md p-3 hover:bg-primary/5 hover:border-primary transition-colors text-left group"
+              >
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground shrink-0">
+                  <Wrench className="w-4 h-4" />
+                </span>
+                <span className="text-sm text-foreground group-hover:text-primary transition-colors">
+                  {t("filters.customRequest.label")}
+                </span>
+              </button>
+            </div>
+
             <button className="w-full bg-brand-cyan text-white font-impact text-sm uppercase tracking-wider py-3 hover:bg-brand-cyan/90 transition-colors">
               {t("filters.show")} ({filteredProducts.length})
             </button>
           </div>
         </aside>
+
 
         {/* Product Grid */}
         <div>
