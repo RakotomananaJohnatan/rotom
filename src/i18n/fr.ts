@@ -138,6 +138,8 @@ export const fr = {
   "filters.availability": "Disponibilité",
   "filters.allAvailability": "Toutes les disponibilités",
   "filters.show": "Afficher les résultats",
+  "filters.customRequest.title": "DEMANDE CUSTOM",
+  "filters.customRequest.label": "Cherchez un générateur spécifique ?",
 
   // Catalog pages
   "new.hero.eyebrow": "Catalogue",

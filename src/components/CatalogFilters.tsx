@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Wrench } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { useLang } from "@/i18n/useLang";
 
@@ -19,6 +21,7 @@ const CatalogFilters = ({
   powerRange, setPowerRange, selectedCategories, setSelectedCategories, resultCount,
 }: CatalogFiltersProps) => {
   const { t } = useLang();
+  const navigate = useNavigate();
   const [year, setYear] = useState("");
   const [availability, setAvailability] = useState("");
 
@@ -115,6 +118,23 @@ const CatalogFilters = ({
           <option>{t("common.inStock")}</option>
           <option>{t("common.onOrder")}</option>
         </select>
+      </div>
+
+      <div className="mb-6">
+        <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.customRequest.title")}</h3>
+        <button
+          type="button"
+          onClick={() => navigate("/demande-sur-mesure")}
+          className="w-full text-left border-2 border-border bg-background p-3 flex items-center gap-3 hover:border-primary hover:bg-primary/5 transition-colors group"
+        >
+          <div className="size-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+            <Wrench className="size-5 text-primary-foreground" strokeWidth={2} />
+          </div>
+          <div>
+            <div className="font-impact text-sm uppercase font-bold text-primary">{t("filters.customRequest.title")}</div>
+            <div className="text-xs text-muted-foreground">{t("filters.customRequest.label")}</div>
+          </div>
+        </button>
       </div>
 
       <button className="w-full bg-brand-cyan text-white font-impact text-sm uppercase tracking-wider py-3 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground transition-colors">
