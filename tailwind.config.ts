@@ -118,6 +118,14 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "gradient-move": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        "cta-pulse": {
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(var(--fluo-yellow) / 0.55)" },
+          "50%": { boxShadow: "0 0 0 14px hsl(var(--fluo-yellow) / 0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
