@@ -39,5 +39,3 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Re-export for backwards compatibility
-export { useLang } from "./useLang";
