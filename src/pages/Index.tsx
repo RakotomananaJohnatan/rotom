@@ -10,6 +10,8 @@ import Seo from "@/components/Seo";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
+import Typewriter from "@/components/Typewriter";
+import { useReveal } from "@/hooks/useReveal";
 import { newProducts } from "@/data/products";
 import type { CategoryKey } from "@/components/CatalogFilters";
 import { useLang } from "@/i18n/useLang";
