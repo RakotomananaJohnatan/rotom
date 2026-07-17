@@ -106,7 +106,7 @@ const CatalogFilters = ({
       <div className="mb-6">
         <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.year")}</h3>
         <select value={year} onChange={(e) => setYear(e.target.value)} className="w-full border border-border bg-background px-3 py-2 text-sm outline-none">
-          <option value="">{t("filters.allYears")}</option>
+          <option value="">{t("common.none")}</option>
           <option>2024</option><option>2023</option><option>2022</option><option>2021</option>
         </select>
       </div>
