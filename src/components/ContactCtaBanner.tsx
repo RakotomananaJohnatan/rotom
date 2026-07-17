@@ -4,7 +4,7 @@ import { useLang } from "@/i18n/useLang";
 const ContactCtaBanner = () => {
   const { t } = useLang();
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-background dark:bg-card">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-8 sm:py-10 flex flex-col md:flex-row items-center md:items-center justify-between gap-6 text-center md:text-left">
         <div className="flex items-center gap-4 md:gap-6">
           <div className="hidden sm:flex size-14 md:size-16 rounded-full bg-primary items-center justify-center flex-shrink-0">
