@@ -55,6 +55,9 @@ const initial: FormState = {
   deadline: "",
   conditions: "",
   description: "",
+  engineBrand: "",
+  alternatorBrand: "",
+  controller: "",
 };
 
 const DemandeSurMesure = () => {
