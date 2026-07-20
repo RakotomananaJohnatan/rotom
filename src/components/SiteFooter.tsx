@@ -76,7 +76,7 @@ const SiteFooter = () => {
 
       <div className="border-t border-white/10 bg-accent text-accent-foreground">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-center">
-          <span>{t("footer.copyright")}</span>
+          <span>{t("footer.copyright").replace("{{year}}", String(currentYear))}</span>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link to="/mentions-legales" className="hover:underline">{t("footer.legal")}</Link>
             <Link to="/conditions-generales" className="hover:underline">{t("footer.terms")}</Link>
