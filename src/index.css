@@ -256,3 +256,18 @@ html, body, #root {
 }
 .hero-rise { animation: hero-rise 0.9s ease-out both; }
 .hero-float { animation: hero-float 5s ease-in-out infinite; }
+
+@media (max-width: 768px) {
+  .home-hero,
+  .home-hero-frame {
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+
+  .home-hero-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+}
