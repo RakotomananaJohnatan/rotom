@@ -335,7 +335,7 @@ export const fr = {
   "legal.title": "Mentions légales",
   "legal.subtitle": "Informations relatives à l'éditeur du site et à son hébergement.",
   "legal.s1.title": "Éditeur du site",
-  "legal.s1.body": "ROTOM Power Generation — Alarobia, Rue Tsarasaotra, Antananarivo 101, Madagascar. Téléphone : +261 38 11 531 04. Email : sales@rotom-power.com. Numéro KvK : 12345678. TVA intracommunautaire : NL123456789B01.",
+  "legal.s1.body": "ROTOM Power Generation — Alarobia, Rue Tsarasaotra, Antananarivo 101, Madagascar. Téléphone : +261 38 11 531 04. Email : sales@rotom-power.com.",
   "legal.s2.title": "Directeur de la publication",
   "legal.s2.body": "Le directeur de la publication est le représentant légal de ROTOM Power Generation",
   "legal.s3.title": "Hébergement",
