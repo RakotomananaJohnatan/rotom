@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Wrench } from "lucide-react";
+
 import { Slider } from "@/components/ui/slider";
 import { useLang } from "@/i18n/useLang";
 
