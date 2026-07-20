@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 
 import { Slider } from "@/components/ui/slider";
@@ -22,7 +21,6 @@ const CatalogFilters = ({
 }: CatalogFiltersProps) => {
   const { t } = useLang();
   const navigate = useNavigate();
-  
 
   const categories: { key: CategoryKey; label: string }[] = [
     { key: "open", label: t("filters.cat.open") },
@@ -99,7 +97,6 @@ const CatalogFilters = ({
           ))}
         </div>
       </div>
-
 
       <div className="mb-6">
         <label
