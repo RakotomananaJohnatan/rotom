@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface TypewriterProps {
   text: string;
@@ -25,13 +25,20 @@ const Typewriter = ({
 }: TypewriterProps) => {
   const [count, setCount] = useState(0);
   const [done, setDone] = useState(false);
+  const onDoneRef = useRef(onDone);
 
   useEffect(() => {
+    onDoneRef.current = onDone;
+  }, [onDone]);
+
+  useEffect(() => {
+    setCount(0);
+    setDone(false);
     if (!start) return;
     if (prefersReducedMotion()) {
       setCount(text.length);
       setDone(true);
-      onDone?.();
+      onDoneRef.current?.();
       return;
     }
     let i = 0;
@@ -43,7 +50,7 @@ const Typewriter = ({
         if (i >= text.length) {
           clearInterval(interval);
           setDone(true);
-          onDone?.();
+          onDoneRef.current?.();
         }
       }, speed);
     }, startDelay);
@@ -51,7 +58,7 @@ const Typewriter = ({
       clearTimeout(timeout);
       if (interval) clearInterval(interval);
     };
-  }, [start, text, speed, startDelay, onDone]);
+  }, [start, text, speed, startDelay]);
 
   return (
     <span className={className} aria-label={text}>
