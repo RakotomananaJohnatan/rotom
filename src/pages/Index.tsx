@@ -16,7 +16,7 @@ import { newProducts } from "@/data/products";
 import type { CategoryKey } from "@/components/CatalogFilters";
 import { useLang } from "@/i18n/useLang";
 
-import heroIndustrial from "@/assets/hero-industrial.png";
+import heroIndustrial from "@/assets/hero-industrial-new.jpg.asset.json";
 import catNeufs from "@/assets/cat-neufs.jpg";
 import catOccasion from "@/assets/cat-occasion.jpg";
 import catHybrid from "@/assets/cat-hybrid.jpg";
