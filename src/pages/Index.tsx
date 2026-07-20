@@ -69,14 +69,14 @@ const Index = () => {
       <ContactCtaBanner />
 
       {/* HERO */}
-      <section className="relative w-full overflow-hidden bg-[#0a0a0a]">
-        <div className="relative w-full min-h-[600px] sm:min-h-0 sm:aspect-[16/9] sm:max-h-[88vh]">
+      <section className="home-hero relative w-full overflow-hidden bg-[#0a0a0a]">
+        <div className="home-hero-frame relative w-full min-h-[600px] sm:min-h-0 sm:aspect-[16/9] sm:max-h-[88vh]">
           <img
             src={heroIndustrial.url}
             alt="Site industriel avec groupes électrogènes ROTOM"
             width={1920}
             height={1080}
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="home-hero-image absolute inset-0 h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/15" aria-hidden />
 
