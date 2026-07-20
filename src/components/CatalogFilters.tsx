@@ -22,7 +22,6 @@ const CatalogFilters = ({
 }: CatalogFiltersProps) => {
   const { t } = useLang();
   const navigate = useNavigate();
-  const [year, setYear] = useState("");
   const [availability, setAvailability] = useState("");
 
   const categories: { key: CategoryKey; label: string }[] = [
@@ -41,7 +40,6 @@ const CatalogFilters = ({
           onClick={() => {
             setPowerRange([POWER_MIN, POWER_MAX]);
             setSelectedCategories([]);
-            setYear("");
             setAvailability("");
           }}
           className="text-xs text-brand-cyan hover:underline font-semibold"
@@ -101,14 +99,6 @@ const CatalogFilters = ({
             </label>
           ))}
         </div>
-      </div>
-
-      <div className="mb-6">
-        <h3 className="font-impact text-xs uppercase tracking-wider mb-3 text-muted-foreground">{t("filters.year")}</h3>
-        <select value={year} onChange={(e) => setYear(e.target.value)} className="w-full border border-border bg-background px-3 py-2 text-sm outline-none">
-          <option value="">{t("common.none")}</option>
-          <option>2024</option><option>2023</option><option>2022</option><option>2021</option>
-        </select>
       </div>
 
       <div className="mb-6">
