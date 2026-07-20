@@ -4,6 +4,7 @@ import { useLang } from "@/i18n/useLang";
 
 const SiteFooter = () => {
   const { t } = useLang();
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-10 sm:py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">

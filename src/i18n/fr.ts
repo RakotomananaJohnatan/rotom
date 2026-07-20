@@ -112,7 +112,7 @@ export const fr = {
   "footer.svc.parts": "Pièces détachées",
   "footer.svc.financing": "Financement",
   "footer.whatsapp": "Discuter sur WhatsApp",
-  "footer.copyright": "© 2026 ROTOM Power Generation — Tous droits réservés",
+  "footer.copyright": "© {{year}} ROTOM Power Generation — Tous droits réservés",
   "footer.legal": "Mentions légales",
   "footer.terms": "Conditions générales",
   "footer.privacy": "Politique de confidentialité",
