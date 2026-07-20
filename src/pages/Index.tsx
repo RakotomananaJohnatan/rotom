@@ -76,7 +76,7 @@ const Index = () => {
             alt="Site industriel avec groupes électrogènes ROTOM"
             width={1920}
             height={1080}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/15" aria-hidden />
 
