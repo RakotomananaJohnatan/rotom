@@ -289,9 +289,10 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
             {filteredProducts.map((p, i) => (
-              <Reveal key={p.slug} variant="fade-in-up" delay={Math.min(i, 5) * 60}>
+              <Reveal key={p.slug} variant="fade-in-up" delay={Math.min(i, 5) * 60} className="h-full">
                 <ProductCard p={p} />
               </Reveal>
+
             ))}
           </div>
         </div>
