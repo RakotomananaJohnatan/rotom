@@ -88,9 +88,10 @@ const GenerateursNeufs = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
             {filtered.map((p, i) => (
-              <Reveal key={p.slug} variant="fade-in-up" delay={Math.min(i, 8) * 60} className="lift">
+              <Reveal key={p.slug} variant="fade-in-up" delay={Math.min(i, 8) * 60} className="lift h-full">
                 <ProductCard p={p} />
               </Reveal>
+
             ))}
           </div>
         </div>
