@@ -21,7 +21,7 @@ export interface Product {
 const ProductCard = ({ p }: { p: Product }) => {
   const { t } = useLang();
   return (
-    <article className="bg-card border-2 border-border flex flex-col group hover:border-primary transition-all relative">
+    <article className="bg-card border-2 border-border flex flex-col h-full group hover:border-primary transition-all relative">
 
       <Link to={`/produit/${p.slug}`} className="aspect-[4/3] bg-secondary border-b-2 border-border flex items-center justify-center overflow-hidden">
         <img
