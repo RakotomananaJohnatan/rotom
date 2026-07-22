@@ -1,35 +1,31 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/useLang";
+import { loadAnalytics } from "@/lib/analytics";
 
 const STORAGE_KEY = "rotom_cookie_consent";
 
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
     openCookieSettings?: () => void;
   }
 }
-
-const updateConsent = (granted: boolean) => {
-  if (typeof window === "undefined") return;
-  if (typeof window.gtag === "function") {
-    window.gtag("consent", "update", {
-      analytics_storage: granted ? "granted" : "denied",
-    });
-  }
-};
 
 const CookieBanner = () => {
   const { t } = useLang();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let stored: string | null = null;
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (!stored) setVisible(true);
+      stored = localStorage.getItem(STORAGE_KEY);
     } catch {
+      // ignore
+    }
+    if (!stored) {
       setVisible(true);
+    } else if (stored === "granted") {
+      loadAnalytics();
     }
     window.openCookieSettings = () => setVisible(true);
     return () => {
@@ -43,9 +39,12 @@ const CookieBanner = () => {
     } catch {
       // ignore
     }
-    updateConsent(granted);
+    if (granted) {
+      loadAnalytics();
+    }
     setVisible(false);
   };
+
 
   if (!visible) return null;
 
