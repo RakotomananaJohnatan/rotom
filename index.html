@@ -1,27 +1,12 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <!-- Google tag (gtag.js) with Consent Mode v2 (denied by default) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRHQNMZQCE"></script>
+    <!-- Google Analytics 4 — loaded ONLY after explicit user consent (RGPD).
+         No script, no request, no page_view is sent until the user clicks "Accept"
+         in the cookie banner. Loader lives in src/lib/analytics.ts. -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('consent', 'default', {
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        analytics_storage: 'denied',
-        wait_for_update: 500
-      });
-      try {
-        var stored = localStorage.getItem('rotom_cookie_consent');
-        if (stored === 'granted') {
-          gtag('consent', 'update', { analytics_storage: 'granted' });
-        }
-      } catch (e) {}
-      gtag('js', new Date());
-      gtag('config', 'G-VRHQNMZQCE', { anonymize_ip: true });
+      window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
