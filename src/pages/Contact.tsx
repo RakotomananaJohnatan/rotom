@@ -158,48 +158,34 @@ const Contact = () => {
                   className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
               </Field>
 
-              {/* Searchable Combobox for power */}
+              {/* Grouped product select */}
               <Field label={t("contact.form.power")} id="power">
-                <Popover open={openPower} onOpenChange={setOpenPower}>
-                  <PopoverTrigger asChild>
-                    <button
-                      type="button"
-                      role="combobox"
-                      aria-expanded={openPower}
-                      className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan flex items-center justify-between text-left"
-                    >
-                      <span className={cn("truncate", !selectedProduct && "text-muted-foreground")}>
-                        {selectedProduct ? `${selectedProduct.kva} — ${selectedProduct.name}` : t("contact.form.powerPlaceholder")}
-                      </span>
-                      <ChevronsUpDown className="size-4 text-muted-foreground flex-shrink-0 ml-2" />
-                    </button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-[--radix-popover-trigger-width] p-0" align="start">
-                    <Command>
-                      <CommandInput placeholder={t("contact.form.powerSearch")} />
-                      <CommandList>
-                        <CommandEmpty>{t("contact.form.powerEmpty")}</CommandEmpty>
-                        <CommandGroup>
-                          {allProducts.map((p) => (
-                            <CommandItem
-                              key={p.slug}
-                              value={`${p.kva} ${p.name}`}
-                              onSelect={() => {
-                                setForm((f) => ({ ...f, power: p.slug }));
-                                setOpenPower(false);
-                              }}
-                            >
-                              <Check className={cn("mr-2 size-4", form.power === p.slug ? "opacity-100" : "opacity-0")} />
-                              <span className="font-bold text-primary mr-2">{p.kva}</span>
-                              <span className="truncate">{p.name}</span>
-                            </CommandItem>
-                          ))}
-                        </CommandGroup>
-                      </CommandList>
-                    </Command>
-                  </PopoverContent>
-                </Popover>
+                <select
+                  id="power"
+                  value={form.power}
+                  onChange={onChange("power")}
+                  className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan"
+                >
+                  <option value="">{t("contact.form.powerPlaceholder")}</option>
+                  <optgroup label={t("contact.form.group.new")}>
+                    {newProducts.map((p) => (
+                      <option key={p.slug} value={p.slug}>{`${p.kva} — ${p.name}`}</option>
+                    ))}
+                  </optgroup>
+                  <optgroup label={t("contact.form.group.used")}>
+                    {usedProducts.map((p) => (
+                      <option key={p.slug} value={p.slug}>{`${p.kva} — ${p.name}`}</option>
+                    ))}
+                  </optgroup>
+                  <optgroup label={t("contact.form.group.equip")}>
+                    {equipmentOptions.map((e) => (
+                      <option key={e.value} value={e.value}>{e.label}</option>
+                    ))}
+                  </optgroup>
+                  <option value="other">{t("contact.form.other")}</option>
+                </select>
               </Field>
+
 
               <Field label={t("contact.form.subject")} id="subject">
                 <select value={form.subject} onChange={onChange("subject")} id="subject"
