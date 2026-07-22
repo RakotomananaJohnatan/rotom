@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import ContactCtaBanner from "@/components/ContactCtaBanner";
 import { toast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, MessageCircle, Clock, Send, Check, ChevronsUpDown } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Clock, Send } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
 import Reveal from "@/components/Reveal";
-import { allProducts, findProductBySlug } from "@/data/products";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import { cn } from "@/lib/utils";
+import { newProducts, usedProducts, findProductBySlug } from "@/data/products";
 
 const Contact = () => {
   const { t } = useLang();
