@@ -45,7 +45,7 @@ const ProductDetail = () => {
       ];
 
   const goQuote = () => {
-    navigate(`/contact?power=${encodeURIComponent(product.slug)}`);
+    navigate(`/contact?product=${encodeURIComponent(product.slug)}`);
   };
 
   return (

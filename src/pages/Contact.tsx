@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import ContactCtaBanner from "@/components/ContactCtaBanner";
 import { toast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, MessageCircle, Clock, Send, Check, ChevronsUpDown } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Clock, Send } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
 import Reveal from "@/components/Reveal";
-import { allProducts, findProductBySlug } from "@/data/products";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import { cn } from "@/lib/utils";
+import { newProducts, usedProducts, findProductBySlug } from "@/data/products";
 
 const Contact = () => {
   const { t } = useLang();
@@ -25,13 +22,35 @@ const Contact = () => {
     subject: t("contact.subject.quote"),
     message: "",
   });
-  const [openPower, setOpenPower] = useState(false);
+
+  const equipmentOptions = useMemo(
+    () => [
+      { value: "equip:ats", label: t("equip.ats.title") },
+      { value: "equip:tank", label: t("equip.tank.title") },
+      { value: "equip:canopy", label: t("equip.canopy.title") },
+      { value: "equip:container", label: t("equip.container.title") },
+      { value: "equip:cable", label: t("equip.cable.title") },
+      { value: "equip:control", label: t("equip.control.title") },
+      { value: "equip:filters", label: t("equip.filters.title") },
+    ],
+    [t]
+  );
+
+  const resolveLabel = (value: string): string => {
+    if (!value) return "";
+    if (value === "other") return t("contact.form.other");
+    if (value.startsWith("equip:")) {
+      return equipmentOptions.find((e) => e.value === value)?.label || value;
+    }
+    const p = findProductBySlug(value);
+    return p ? `${p.kva} — ${p.name}` : value;
+  };
 
   useEffect(() => {
-    const slug = searchParams.get("power");
-    if (slug) {
-      const product = findProductBySlug(slug);
-      if (product) setForm((f) => ({ ...f, power: product.slug }));
+    const raw = searchParams.get("product") || searchParams.get("power");
+    if (!raw) return;
+    if (raw === "other" || raw.startsWith("equip:") || findProductBySlug(raw)) {
+      setForm((f) => ({ ...f, power: raw }));
     }
   }, [searchParams]);
 
@@ -40,8 +59,7 @@ const Contact = () => {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const selected = form.power ? findProductBySlug(form.power) : null;
-    const powerLabel = selected ? `${selected.kva} — ${selected.name}` : "";
+    const productLabel = resolveLabel(form.power);
     const data = new URLSearchParams();
     data.append("access_key", "5bcbb7a9-17d8-4271-ba1a-c5f93fdfb8d7");
     data.append("subject", `Contact ROTOM — ${form.subject}`);
@@ -52,7 +70,7 @@ const Contact = () => {
     data.append("Société", form.company);
     data.append("Email", form.email);
     data.append("Téléphone", form.phone);
-    data.append("Puissance recherchée (kVA)", powerLabel);
+    data.append("Produit recherché", productLabel);
     data.append("Sujet", form.subject);
     data.append("Message", form.message);
     try {
@@ -71,7 +89,6 @@ const Contact = () => {
     }
   };
 
-  const selectedProduct = form.power ? findProductBySlug(form.power) : null;
 
   return (
     <SiteLayout>
@@ -141,48 +158,34 @@ const Contact = () => {
                   className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan" />
               </Field>
 
-              {/* Searchable Combobox for power */}
+              {/* Grouped product select */}
               <Field label={t("contact.form.power")} id="power">
-                <Popover open={openPower} onOpenChange={setOpenPower}>
-                  <PopoverTrigger asChild>
-                    <button
-                      type="button"
-                      role="combobox"
-                      aria-expanded={openPower}
-                      className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan flex items-center justify-between text-left"
-                    >
-                      <span className={cn("truncate", !selectedProduct && "text-muted-foreground")}>
-                        {selectedProduct ? `${selectedProduct.kva} — ${selectedProduct.name}` : t("contact.form.powerPlaceholder")}
-                      </span>
-                      <ChevronsUpDown className="size-4 text-muted-foreground flex-shrink-0 ml-2" />
-                    </button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-[--radix-popover-trigger-width] p-0" align="start">
-                    <Command>
-                      <CommandInput placeholder={t("contact.form.powerSearch")} />
-                      <CommandList>
-                        <CommandEmpty>{t("contact.form.powerEmpty")}</CommandEmpty>
-                        <CommandGroup>
-                          {allProducts.map((p) => (
-                            <CommandItem
-                              key={p.slug}
-                              value={`${p.kva} ${p.name}`}
-                              onSelect={() => {
-                                setForm((f) => ({ ...f, power: p.slug }));
-                                setOpenPower(false);
-                              }}
-                            >
-                              <Check className={cn("mr-2 size-4", form.power === p.slug ? "opacity-100" : "opacity-0")} />
-                              <span className="font-bold text-primary mr-2">{p.kva}</span>
-                              <span className="truncate">{p.name}</span>
-                            </CommandItem>
-                          ))}
-                        </CommandGroup>
-                      </CommandList>
-                    </Command>
-                  </PopoverContent>
-                </Popover>
+                <select
+                  id="power"
+                  value={form.power}
+                  onChange={onChange("power")}
+                  className="w-full border-2 border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-brand-cyan"
+                >
+                  <option value="">{t("contact.form.powerPlaceholder")}</option>
+                  <optgroup label={t("contact.form.group.new")}>
+                    {newProducts.map((p) => (
+                      <option key={p.slug} value={p.slug}>{`${p.kva} — ${p.name}`}</option>
+                    ))}
+                  </optgroup>
+                  <optgroup label={t("contact.form.group.used")}>
+                    {usedProducts.map((p) => (
+                      <option key={p.slug} value={p.slug}>{`${p.kva} — ${p.name}`}</option>
+                    ))}
+                  </optgroup>
+                  <optgroup label={t("contact.form.group.equip")}>
+                    {equipmentOptions.map((e) => (
+                      <option key={e.value} value={e.value}>{e.label}</option>
+                    ))}
+                  </optgroup>
+                  <option value="other">{t("contact.form.other")}</option>
+                </select>
               </Field>
+
 
               <Field label={t("contact.form.subject")} id="subject">
                 <select value={form.subject} onChange={onChange("subject")} id="subject"

@@ -15,13 +15,13 @@ const Equipements = () => {
 
   const equipments = useMemo(
     () => [
-      { icon: Zap, title: t("equip.ats.title"), desc: t("equip.ats.desc"), count: 18, cat: "power" as EquipCategory },
-      { icon: Fuel, title: t("equip.tank.title"), desc: t("equip.tank.desc"), count: 12, cat: "storage" as EquipCategory },
-      { icon: Volume2, title: t("equip.canopy.title"), desc: t("equip.canopy.desc"), count: 9, cat: "acoustic" as EquipCategory },
-      { icon: Box, title: t("equip.container.title"), desc: t("equip.container.desc"), count: 7, cat: "storage" as EquipCategory },
-      { icon: Cable, title: t("equip.cable.title"), desc: t("equip.cable.desc"), count: 14, cat: "cabling" as EquipCategory },
-      { icon: Gauge, title: t("equip.control.title"), desc: t("equip.control.desc"), count: 22, cat: "power" as EquipCategory },
-      { icon: Filter, title: t("equip.filters.title"), desc: t("equip.filters.desc"), count: 25, cat: "filters" as EquipCategory },
+      { key: "ats", icon: Zap, title: t("equip.ats.title"), desc: t("equip.ats.desc"), count: 18, cat: "power" as EquipCategory },
+      { key: "tank", icon: Fuel, title: t("equip.tank.title"), desc: t("equip.tank.desc"), count: 12, cat: "storage" as EquipCategory },
+      { key: "canopy", icon: Volume2, title: t("equip.canopy.title"), desc: t("equip.canopy.desc"), count: 9, cat: "acoustic" as EquipCategory },
+      { key: "container", icon: Box, title: t("equip.container.title"), desc: t("equip.container.desc"), count: 7, cat: "storage" as EquipCategory },
+      { key: "cable", icon: Cable, title: t("equip.cable.title"), desc: t("equip.cable.desc"), count: 14, cat: "cabling" as EquipCategory },
+      { key: "control", icon: Gauge, title: t("equip.control.title"), desc: t("equip.control.desc"), count: 22, cat: "power" as EquipCategory },
+      { key: "filters", icon: Filter, title: t("equip.filters.title"), desc: t("equip.filters.desc"), count: 25, cat: "filters" as EquipCategory },
     ],
     [t]
   );
@@ -87,7 +87,7 @@ const Equipements = () => {
                 </div>
                 <h3 className="font-impact text-lg uppercase font-bold text-primary leading-tight mb-2">{eq.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{eq.desc}</p>
-                <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-impact uppercase tracking-wider text-brand-cyan hover:text-fluo-yellow transition-colors group/link">
+                <Link to={`/contact?product=equip:${eq.key}`} className="inline-flex items-center gap-1.5 text-xs font-impact uppercase tracking-wider text-brand-cyan hover:text-fluo-yellow transition-colors group/link">
                   {t("equip.cta.quote")} <ArrowRight className="size-3.5 transition-transform group-hover/link:translate-x-1" />
                 </Link>
               </article>
