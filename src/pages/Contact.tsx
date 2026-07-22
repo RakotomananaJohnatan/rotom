@@ -22,13 +22,35 @@ const Contact = () => {
     subject: t("contact.subject.quote"),
     message: "",
   });
-  const [openPower, setOpenPower] = useState(false);
+
+  const equipmentOptions = useMemo(
+    () => [
+      { value: "equip:ats", label: t("equip.ats.title") },
+      { value: "equip:tank", label: t("equip.tank.title") },
+      { value: "equip:canopy", label: t("equip.canopy.title") },
+      { value: "equip:container", label: t("equip.container.title") },
+      { value: "equip:cable", label: t("equip.cable.title") },
+      { value: "equip:control", label: t("equip.control.title") },
+      { value: "equip:filters", label: t("equip.filters.title") },
+    ],
+    [t]
+  );
+
+  const resolveLabel = (value: string): string => {
+    if (!value) return "";
+    if (value === "other") return t("contact.form.other");
+    if (value.startsWith("equip:")) {
+      return equipmentOptions.find((e) => e.value === value)?.label || value;
+    }
+    const p = findProductBySlug(value);
+    return p ? `${p.kva} — ${p.name}` : value;
+  };
 
   useEffect(() => {
-    const slug = searchParams.get("power");
-    if (slug) {
-      const product = findProductBySlug(slug);
-      if (product) setForm((f) => ({ ...f, power: product.slug }));
+    const raw = searchParams.get("product") || searchParams.get("power");
+    if (!raw) return;
+    if (raw === "other" || raw.startsWith("equip:") || findProductBySlug(raw)) {
+      setForm((f) => ({ ...f, power: raw }));
     }
   }, [searchParams]);
 
@@ -37,8 +59,7 @@ const Contact = () => {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const selected = form.power ? findProductBySlug(form.power) : null;
-    const powerLabel = selected ? `${selected.kva} — ${selected.name}` : "";
+    const productLabel = resolveLabel(form.power);
     const data = new URLSearchParams();
     data.append("access_key", "5bcbb7a9-17d8-4271-ba1a-c5f93fdfb8d7");
     data.append("subject", `Contact ROTOM — ${form.subject}`);
@@ -49,7 +70,7 @@ const Contact = () => {
     data.append("Société", form.company);
     data.append("Email", form.email);
     data.append("Téléphone", form.phone);
-    data.append("Puissance recherchée (kVA)", powerLabel);
+    data.append("Produit recherché", productLabel);
     data.append("Sujet", form.subject);
     data.append("Message", form.message);
     try {
@@ -68,7 +89,6 @@ const Contact = () => {
     }
   };
 
-  const selectedProduct = form.power ? findProductBySlug(form.power) : null;
 
   return (
     <SiteLayout>
