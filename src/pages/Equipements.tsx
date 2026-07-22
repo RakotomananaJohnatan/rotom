@@ -15,13 +15,13 @@ const Equipements = () => {
 
   const equipments = useMemo(
     () => [
-      { icon: Zap, title: t("equip.ats.title"), desc: t("equip.ats.desc"), count: 18, cat: "power" as EquipCategory },
-      { icon: Fuel, title: t("equip.tank.title"), desc: t("equip.tank.desc"), count: 12, cat: "storage" as EquipCategory },
-      { icon: Volume2, title: t("equip.canopy.title"), desc: t("equip.canopy.desc"), count: 9, cat: "acoustic" as EquipCategory },
-      { icon: Box, title: t("equip.container.title"), desc: t("equip.container.desc"), count: 7, cat: "storage" as EquipCategory },
-      { icon: Cable, title: t("equip.cable.title"), desc: t("equip.cable.desc"), count: 14, cat: "cabling" as EquipCategory },
-      { icon: Gauge, title: t("equip.control.title"), desc: t("equip.control.desc"), count: 22, cat: "power" as EquipCategory },
-      { icon: Filter, title: t("equip.filters.title"), desc: t("equip.filters.desc"), count: 25, cat: "filters" as EquipCategory },
+      { key: "ats", icon: Zap, title: t("equip.ats.title"), desc: t("equip.ats.desc"), count: 18, cat: "power" as EquipCategory },
+      { key: "tank", icon: Fuel, title: t("equip.tank.title"), desc: t("equip.tank.desc"), count: 12, cat: "storage" as EquipCategory },
+      { key: "canopy", icon: Volume2, title: t("equip.canopy.title"), desc: t("equip.canopy.desc"), count: 9, cat: "acoustic" as EquipCategory },
+      { key: "container", icon: Box, title: t("equip.container.title"), desc: t("equip.container.desc"), count: 7, cat: "storage" as EquipCategory },
+      { key: "cable", icon: Cable, title: t("equip.cable.title"), desc: t("equip.cable.desc"), count: 14, cat: "cabling" as EquipCategory },
+      { key: "control", icon: Gauge, title: t("equip.control.title"), desc: t("equip.control.desc"), count: 22, cat: "power" as EquipCategory },
+      { key: "filters", icon: Filter, title: t("equip.filters.title"), desc: t("equip.filters.desc"), count: 25, cat: "filters" as EquipCategory },
     ],
     [t]
   );
