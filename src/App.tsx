@@ -18,6 +18,7 @@ import MentionsLegales from "./pages/MentionsLegales.tsx";
 import ConditionsGenerales from "./pages/ConditionsGenerales.tsx";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.tsx";
 import ScrollToTop from "./components/ScrollToTop";
+import CookieBanner from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
 
