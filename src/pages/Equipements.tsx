@@ -87,7 +87,7 @@ const Equipements = () => {
                 </div>
                 <h3 className="font-impact text-lg uppercase font-bold text-primary leading-tight mb-2">{eq.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{eq.desc}</p>
-                <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-impact uppercase tracking-wider text-brand-cyan hover:text-fluo-yellow transition-colors group/link">
+                <Link to={`/contact?product=equip:${eq.key}`} className="inline-flex items-center gap-1.5 text-xs font-impact uppercase tracking-wider text-brand-cyan hover:text-fluo-yellow transition-colors group/link">
                   {t("equip.cta.quote")} <ArrowRight className="size-3.5 transition-transform group-hover/link:translate-x-1" />
                 </Link>
               </article>
