@@ -116,6 +116,13 @@ export const en = {
   "footer.legal": "Legal notice",
   "footer.terms": "Terms & conditions",
   "footer.privacy": "Privacy policy",
+  "footer.cookies": "Manage cookies",
+  "cookies.title": "Cookie consent",
+  "cookies.message": "This site uses analytics cookies to improve your experience. Learn more in our",
+  "cookies.link": "privacy policy",
+  "cookies.accept": "Accept",
+  "cookies.refuse": "Refuse",
+
 
   // Common
   "common.viewDetails": "View details",

@@ -81,7 +81,15 @@ const SiteFooter = () => {
             <Link to="/mentions-legales" className="hover:underline">{t("footer.legal")}</Link>
             <Link to="/conditions-generales" className="hover:underline">{t("footer.terms")}</Link>
             <Link to="/politique-confidentialite" className="hover:underline">{t("footer.privacy")}</Link>
+            <button
+              type="button"
+              onClick={() => window.openCookieSettings?.()}
+              className="hover:underline"
+            >
+              {t("footer.cookies")}
+            </button>
           </div>
+
         </div>
       </div>
     </footer>

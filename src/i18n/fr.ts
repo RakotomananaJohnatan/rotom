@@ -116,6 +116,13 @@ export const fr = {
   "footer.legal": "Mentions légales",
   "footer.terms": "Conditions générales",
   "footer.privacy": "Politique de confidentialité",
+  "footer.cookies": "Gérer les cookies",
+  "cookies.title": "Consentement cookies",
+  "cookies.message": "Ce site utilise des cookies analytiques pour améliorer votre expérience. En savoir plus dans notre",
+  "cookies.link": "politique de confidentialité",
+  "cookies.accept": "Accepter",
+  "cookies.refuse": "Refuser",
+
 
   // Common
   "common.viewDetails": "Voir détails",
