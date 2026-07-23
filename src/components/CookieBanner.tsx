@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/useLang";
-import { loadAnalytics } from "@/lib/analytics";
+import { denyAnalyticsConsent, grantAnalyticsConsent, loadAnalytics } from "@/lib/analytics";
 
 const STORAGE_KEY = "rotom_cookie_consent";
 
@@ -40,7 +40,9 @@ const CookieBanner = () => {
       // ignore
     }
     if (granted) {
-      loadAnalytics();
+      grantAnalyticsConsent();
+    } else {
+      denyAnalyticsConsent();
     }
     setVisible(false);
   };

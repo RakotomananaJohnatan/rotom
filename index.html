@@ -1,13 +1,22 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <!-- Google Analytics 4 — loaded ONLY after explicit user consent (RGPD).
-         No script, no request, no page_view is sent until the user clicks "Accept"
-         in the cookie banner. Loader lives in src/lib/analytics.ts. -->
+    <!-- Google Analytics 4 / Consent Mode v2.
+         gtag.js is present in <head>, but GA is denied by default and no page_view
+         is configured or sent until the user clicks "Accept" in the cookie banner. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+      window.gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
+      window.gtag('set', 'ads_data_redaction', true);
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRHQNMZQCE"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.png" type="image/png" />
