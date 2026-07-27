@@ -732,7 +732,7 @@ export const usedProducts: Product[] = enrich([
     kva: s.kva,
     year: "—",
     fuel: "Diesel",
-    img: "/placeholder.svg",
+    img: s.kva === "60 kVA" ? used60kvaAsset.url : "/placeholder.svg",
     type: (s.soundEn === "Canopy" ? "closed" : "open") as ProductType,
     specs: makeUsedSpecs({
       ratingsEn: s.ratingsEn, ratingsFr: s.ratingsFr,
