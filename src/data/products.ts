@@ -11,6 +11,7 @@ import genSEAsset from "@/assets/rotom-se.jpg.asset.json";
 import genSREUAsset from "@/assets/rotom-sreu.jpg.asset.json";
 import genSCAsset from "@/assets/rotom-sc.jpg.asset.json";
 import genOE500Asset from "@/assets/rotom-oe-500.jpg.asset.json";
+import used60kvaAsset from "@/assets/used-60kva.jpeg.asset.json";
 import type { Product } from "@/components/ProductCard";
 
 export const brands = ["ROTOM"];
@@ -731,7 +732,7 @@ export const usedProducts: Product[] = enrich([
     kva: s.kva,
     year: "—",
     fuel: "Diesel",
-    img: "/placeholder.svg",
+    img: s.kva === "60 kVA" ? used60kvaAsset.url : "/placeholder.svg",
     type: (s.soundEn === "Canopy" ? "closed" : "open") as ProductType,
     specs: makeUsedSpecs({
       ratingsEn: s.ratingsEn, ratingsFr: s.ratingsFr,
