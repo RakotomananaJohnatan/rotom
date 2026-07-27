@@ -12,6 +12,7 @@ import genSREUAsset from "@/assets/rotom-sreu.jpg.asset.json";
 import genSCAsset from "@/assets/rotom-sc.jpg.asset.json";
 import genOE500Asset from "@/assets/rotom-oe-500.jpg.asset.json";
 import used60kvaAsset from "@/assets/used-60kva.jpeg.asset.json";
+import used30kvaAsset from "@/assets/used-30kva.jpeg.asset.json";
 import type { Product } from "@/components/ProductCard";
 
 export const brands = ["ROTOM"];
