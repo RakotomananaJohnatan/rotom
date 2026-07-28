@@ -16,7 +16,7 @@ import { newProducts } from "@/data/products";
 import type { CategoryKey } from "@/components/CatalogFilters";
 import { useLang } from "@/i18n/useLang";
 
-import heroIndustrial from "@/assets/hero-industrial-new.jpg.asset.json";
+import heroIndustrial from "@/assets/hero-industrial-new.jpg";
 import catNeufs from "@/assets/cat-neufs.jpg";
 import catOccasion from "@/assets/cat-occasion.jpg";
 import catHybrid from "@/assets/cat-hybrid.jpg";
@@ -72,7 +72,7 @@ const Index = () => {
       <section className="home-hero relative w-full overflow-hidden bg-[#0a0a0a]">
         <div className="home-hero-frame relative w-full min-h-[600px] sm:min-h-0 sm:aspect-[16/9] sm:max-h-[88vh]">
           <img
-            src={heroIndustrial.url}
+            src={heroIndustrial}
             alt="Site industriel avec groupes électrogènes ROTOM"
             width={1920}
             height={1080}
