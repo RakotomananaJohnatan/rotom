@@ -398,4 +398,11 @@ export const en = {
   "privacy.s7.title": "Cookies",
   "privacy.s7.body": "Our website uses technical cookies necessary for its proper operation, as well as anonymised audience measurement cookies. You can configure your browser to refuse them.",
   "products.used.subtitle": "Used generator",
+  "products.new.sr.subtitle": "Rounded corners, With anti collision corner · 6 to 650 kVA · Diesel",
+  "products.new.srau.subtitle": "Rounded corners/Right angle optional, With anti collision corner · 6 to 650 kVA · Diesel",
+  "products.new.sr2.subtitle": "Right angle, Without anti collision · 6 to 1000 kVA · Diesel",
+  "products.new.se.subtitle": "Right angle, Without anti collision · 6 to 1000 kVA · Diesel",
+  "products.new.sreu.subtitle": "Rounded corners/Right angle optional, With anti collision corner · 6 to 650 kVA · Diesel",
+  "products.new.sc.subtitle": "Containerized · ≥ 500 kVA · Diesel",
+  "products.new.oe500.subtitle": "Open-type Genset · 500 kVA · Diesel",
 };
