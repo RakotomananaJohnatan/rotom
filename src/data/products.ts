@@ -21,6 +21,7 @@ import used375kvaAsset from "@/assets/375-kva-300kw.jpg.asset.json";
 import used410kvaAsset from "@/assets/410kva-328kw.jpg.asset.json";
 import used500kvaAsset from "@/assets/500-kva-400kw.jpg.asset.json";
 import used640kvaAsset from "@/assets/640kva-512kw.jpg.asset.json";
+import used675kvaAsset from "@/assets/675-kva-540kw.jpg.asset.json";
 import type { Product } from "@/components/ProductCard";
 
 export const brands = ["ROTOM"];
