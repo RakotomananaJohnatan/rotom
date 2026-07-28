@@ -9,7 +9,7 @@ interface SeoProps {
   jsonLd?: object | object[];
 }
 
-const BASE_URL = "https://rotom.lovable.app";
+const BASE_URL = "https://rotom-power.com";
 const DEFAULT_OG_IMAGE =
   "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/16becfb8-2d6f-4914-96df-8cc953203c89/id-preview-852d6271--cd9c3fd5-dbff-4821-b92f-156f169febc6.lovable.app-1776845825830.png";
 
