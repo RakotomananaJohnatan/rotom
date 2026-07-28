@@ -301,7 +301,7 @@ export const fr = {
   "services.why.title.2": "d'expertise énergétique",
   "services.why.b1": "Réseau international de partenaires constructeurs",
   "services.why.b2": "Stock permanent de plus de 200 groupes",
-  "services.why.b3": "Équipe multilingue (NL, FR, EN, ES)",
+  "services.why.b3": "Équipe multilingue (FR, EN)",
   "services.why.b4": "Certifications ISO 9001:2015",
   "services.why.b5": "Garantie constructeur et SAV mondial",
   "services.stat1": "Années d'expérience",
