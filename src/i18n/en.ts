@@ -301,7 +301,7 @@ export const en = {
   "services.why.title.2": "of power expertise",
   "services.why.b1": "International network of manufacturer partners",
   "services.why.b2": "Permanent stock of 200+ generators",
-  "services.why.b3": "Multilingual team (NL, FR, EN, ES)",
+  "services.why.b3": "Multilingual team (FR, EN)",
   "services.why.b4": "ISO 9001:2015 certified",
   "services.why.b5": "Manufacturer warranty and worldwide after-sales",
   "services.stat1": "Years of experience",
