@@ -4,25 +4,25 @@ import genPerkins from "@/assets/gen-perkins.jpg";
 import genFgWilson from "@/assets/gen-fgwilson.jpg";
 import genVolvo from "@/assets/gen-volvo.jpg";
 import genDoosan from "@/assets/gen-doosan.jpg";
-import genSRAsset from "@/assets/rotom-sr.jpg.asset.json";
-import genSRAUAsset from "@/assets/rotom-srau.jpg.asset.json";
-import genSR2Asset from "@/assets/rotom-sr2.jpg.asset.json";
-import genSEAsset from "@/assets/rotom-se.jpg.asset.json";
-import genSREUAsset from "@/assets/rotom-sreu.jpg.asset.json";
-import genSCAsset from "@/assets/rotom-sc.jpg.asset.json";
-import genOE500Asset from "@/assets/rotom-oe-500.jpg.asset.json";
-import used60kvaAsset from "@/assets/used-60kva.jpeg.asset.json";
-import used30kvaAsset from "@/assets/used-30kva.jpeg.asset.json";
-import used20kvaAsset from "@/assets/used-20kva.jpeg.asset.json";
-import used13kvaAsset from "@/assets/used-13kva.jpg.asset.json";
-import used250kvaAsset from "@/assets/used-250kva.jpg.asset.json";
-import used275kvaAsset from "@/assets/275kva-200kw.jpg.asset.json";
-import used375kvaAsset from "@/assets/375-kva-300kw.jpg.asset.json";
-import used410kvaAsset from "@/assets/410kva-328kw.jpg.asset.json";
-import used500kvaAsset from "@/assets/500-kva-400kw.jpg.asset.json";
-import used640kvaAsset from "@/assets/640kva-512kw.jpg.asset.json";
-import used675kvaAsset from "@/assets/675-kva-540kw.jpg.asset.json";
-import used700kvaAsset from "@/assets/700kva-560kw.jpg.asset.json";
+import genSRAsset from "@/assets/rotom-sr.jpg";
+import genSRAUAsset from "@/assets/rotom-srau.jpg";
+import genSR2Asset from "@/assets/rotom-sr2.jpg";
+import genSEAsset from "@/assets/rotom-se.jpg";
+import genSREUAsset from "@/assets/rotom-sreu.jpg";
+import genSCAsset from "@/assets/rotom-sc.jpg";
+import genOE500Asset from "@/assets/rotom-oe-500.jpg";
+import used60kvaAsset from "@/assets/used-60kva.jpeg";
+import used30kvaAsset from "@/assets/used-30kva.jpeg";
+import used20kvaAsset from "@/assets/used-20kva.jpeg";
+import used13kvaAsset from "@/assets/used-13kva.jpg";
+import used250kvaAsset from "@/assets/used-250kva.jpg";
+import used275kvaAsset from "@/assets/275kva-200kw.jpg";
+import used375kvaAsset from "@/assets/375-kva-300kw.jpg";
+import used410kvaAsset from "@/assets/410kva-328kw.jpg";
+import used500kvaAsset from "@/assets/500-kva-400kw.jpg";
+import used640kvaAsset from "@/assets/640kva-512kw.jpg";
+import used675kvaAsset from "@/assets/675-kva-540kw.jpg";
+import used700kvaAsset from "@/assets/700kva-560kw.jpg";
 import type { Product } from "@/components/ProductCard";
 
 export const brands = ["ROTOM"];
@@ -555,7 +555,7 @@ export const newProducts: Product[] = enrich([
     kva: "6 à 650 kVA",
     year: "2024",
     fuel: "Diesel",
-    img: genSRAsset.url,
+    img: genSRAsset,
     type: "closed",
     specs: specsSR,
   },
@@ -566,7 +566,7 @@ export const newProducts: Product[] = enrich([
     kva: "6 à 650 kVA",
     year: "2024",
     fuel: "Diesel",
-    img: genSRAUAsset.url,
+    img: genSRAUAsset,
     type: "closed",
     specs: specsSRAU,
   },
@@ -577,7 +577,7 @@ export const newProducts: Product[] = enrich([
     kva: "6 à 1000 kVA",
     year: "2024",
     fuel: "Diesel",
-    img: genSR2Asset.url,
+    img: genSR2Asset,
     type: "closed",
     specs: specsSR2,
   },
@@ -588,7 +588,7 @@ export const newProducts: Product[] = enrich([
     kva: "6 à 1000 kVA",
     year: "2024",
     fuel: "Diesel",
-    img: genSEAsset.url,
+    img: genSEAsset,
     type: "closed",
     specs: specsSE,
   },
@@ -599,7 +599,7 @@ export const newProducts: Product[] = enrich([
     kva: "6 à 650 kVA",
     year: "2024",
     fuel: "Diesel",
-    img: genSREUAsset.url,
+    img: genSREUAsset,
     type: "closed",
     specs: specsSREU,
   },
@@ -610,7 +610,7 @@ export const newProducts: Product[] = enrich([
     kva: "≥ 500 kVA",
     year: "2024",
     fuel: "Diesel",
-    img: genSCAsset.url,
+    img: genSCAsset,
     type: "closed",
     specs: specsSC,
   },
@@ -621,7 +621,7 @@ export const newProducts: Product[] = enrich([
     kva: "500 kVA",
     year: "TBD",
     fuel: "Diesel",
-    img: genOE500Asset.url,
+    img: genOE500Asset,
     type: "open",
     description: {
       fr: "Groupe électrogène industriel de type ouvert équipé d'un moteur Cummins QSZ13-G3. Conçu pour les applications Prime et Secours nécessitant une puissance élevée, il offre une consommation de carburant optimisée et une grande fiabilité pour les sites industriels, chantiers de construction et installations permanentes.",
@@ -743,7 +743,7 @@ export const usedProducts: Product[] = enrich([
     kva: s.kva,
     year: "—",
     fuel: "Diesel",
-    img: s.kva === "250 kVA" ? used250kvaAsset.url : s.kva === "275 kVA" ? used275kvaAsset.url : s.kva === "375 kVA" ? used375kvaAsset.url : s.kva === "410 kVA" ? used410kvaAsset.url : s.kva === "500 kVA" ? used500kvaAsset.url : s.kva === "640 kVA" ? used640kvaAsset.url : s.kva === "675 kVA" ? used675kvaAsset.url : s.kva === "700 kVA" ? used700kvaAsset.url : s.kva === "60 kVA" ? used60kvaAsset.url : s.kva === "30 kVA" ? used30kvaAsset.url : s.kva === "20 kVA" ? used20kvaAsset.url : s.kva === "13 kVA" ? used13kvaAsset.url : "/placeholder.svg",
+    img: s.kva === "250 kVA" ? used250kvaAsset : s.kva === "275 kVA" ? used275kvaAsset : s.kva === "375 kVA" ? used375kvaAsset : s.kva === "410 kVA" ? used410kvaAsset : s.kva === "500 kVA" ? used500kvaAsset : s.kva === "640 kVA" ? used640kvaAsset : s.kva === "675 kVA" ? used675kvaAsset : s.kva === "700 kVA" ? used700kvaAsset : s.kva === "60 kVA" ? used60kvaAsset : s.kva === "30 kVA" ? used30kvaAsset : s.kva === "20 kVA" ? used20kvaAsset : s.kva === "13 kVA" ? used13kvaAsset : "/placeholder.svg",
     type: (s.soundEn === "Canopy" ? "closed" : "open") as ProductType,
     specs: makeUsedSpecs({
       ratingsEn: s.ratingsEn, ratingsFr: s.ratingsFr,
