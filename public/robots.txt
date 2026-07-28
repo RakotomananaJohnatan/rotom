@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://rotom.lovable.app/sitemap.xml
+Sitemap: https://rotom-power.com/sitemap.xml

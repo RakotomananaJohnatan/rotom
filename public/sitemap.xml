@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://rotom.lovable.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://rotom.lovable.app/generateurs-neufs</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://rotom.lovable.app/generateurs-occasion</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://rotom.lovable.app/equipements</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rotom.lovable.app/services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rotom.lovable.app/demande-sur-mesure</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rotom.lovable.app/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://rotom.lovable.app/produit/rotom-sr</loc><priority>0.6</priority></url>
-  <url><loc>https://rotom.lovable.app/produit/rotom-srau</loc><priority>0.6</priority></url>
-  <url><loc>https://rotom.lovable.app/produit/rotom-sr2</loc><priority>0.6</priority></url>
-  <url><loc>https://rotom.lovable.app/produit/rotom-se</loc><priority>0.6</priority></url>
-  <url><loc>https://rotom.lovable.app/produit/rotom-sreu</loc><priority>0.6</priority></url>
-  <url><loc>https://rotom.lovable.app/produit/rotom-sc</loc><priority>0.6</priority></url>
-  <url><loc>https://rotom.lovable.app/produit/rotom-oe-500</loc><priority>0.6</priority></url>
-  <url><loc>https://rotom.lovable.app/mentions-legales</loc><priority>0.3</priority></url>
-  <url><loc>https://rotom.lovable.app/conditions-generales</loc><priority>0.3</priority></url>
-  <url><loc>https://rotom.lovable.app/politique-confidentialite</loc><priority>0.3</priority></url>
+  <url><loc>https://rotom-power.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://rotom-power.com/generateurs-neufs</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://rotom-power.com/generateurs-occasion</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://rotom-power.com/equipements</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rotom-power.com/services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rotom-power.com/demande-sur-mesure</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rotom-power.com/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rotom-power.com/produit/rotom-sr</loc><priority>0.6</priority></url>
+  <url><loc>https://rotom-power.com/produit/rotom-srau</loc><priority>0.6</priority></url>
+  <url><loc>https://rotom-power.com/produit/rotom-sr2</loc><priority>0.6</priority></url>
+  <url><loc>https://rotom-power.com/produit/rotom-se</loc><priority>0.6</priority></url>
+  <url><loc>https://rotom-power.com/produit/rotom-sreu</loc><priority>0.6</priority></url>
+  <url><loc>https://rotom-power.com/produit/rotom-sc</loc><priority>0.6</priority></url>
+  <url><loc>https://rotom-power.com/produit/rotom-oe-500</loc><priority>0.6</priority></url>
+  <url><loc>https://rotom-power.com/mentions-legales</loc><priority>0.3</priority></url>
+  <url><loc>https://rotom-power.com/conditions-generales</loc><priority>0.3</priority></url>
+  <url><loc>https://rotom-power.com/politique-confidentialite</loc><priority>0.3</priority></url>
 </urlset>
