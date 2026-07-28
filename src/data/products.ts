@@ -595,7 +595,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SREU",
-    subtitle: "Rounded corners/Right angle optional, With anti collision corner · 6 à 650 kVA · Diesel",
+    subtitle: "i18n:products.new.sreu.subtitle",
     kva: "6 à 650 kVA",
     year: "2024",
     fuel: "Diesel",
