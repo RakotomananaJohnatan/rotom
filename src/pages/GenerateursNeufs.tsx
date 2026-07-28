@@ -31,8 +31,12 @@ const GenerateursNeufs = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Générateurs neufs — ROTOM"
-        description="Catalogue de groupes électrogènes neufs ROTOM de 10 à 2500 kVA : Diesel, Gaz, capotés ou ouverts. Livraison et installation en France."
+        title={t("common.home") && (useLangMeta("en", t) === "en"
+          ? "New industrial generators 10–2500 kVA — ROTOM Madagascar"
+          : "Groupes électrogènes neufs 10 à 2500 kVA — ROTOM Madagascar")}
+        description={useLangMeta("en", t) === "en"
+          ? "Catalog of new ROTOM diesel and gas generators from 10 to 2500 kVA in Madagascar: silent or open, delivery and installation in Antananarivo."
+          : "Catalogue de groupes électrogènes neufs ROTOM de 10 à 2500 kVA à Madagascar : diesel, gaz, capotés ou ouverts. Livraison et installation à Antananarivo."}
         path="/generateurs-neufs"
       />
       <PageHero

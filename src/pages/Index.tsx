@@ -61,8 +61,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Seo
-        title="ROTOM — Groupes électrogènes industriels 10 à 2500 kVA"
-        description="ROTOM : spécialiste de la vente, location et maintenance de groupes électrogènes industriels Diesel et Gaz de 10 à 2500 kVA. Neufs, occasion et sur mesure."
+        title={lang === "en"
+          ? "ROTOM Madagascar — Industrial diesel generators 10 to 2500 kVA"
+          : "ROTOM Madagascar — Groupes électrogènes industriels 10 à 2500 kVA"}
+        description={lang === "en"
+          ? "ROTOM Madagascar: sales, rental and maintenance of diesel and gas generators from 10 to 2500 kVA in Antananarivo. New, used and custom solutions."
+          : "ROTOM Madagascar : vente, location et maintenance de groupes électrogènes diesel et gaz de 10 à 2500 kVA à Antananarivo. Neuf, occasion et sur mesure."}
         path="/"
       />
       <SiteHeader />
@@ -73,7 +77,7 @@ const Index = () => {
         <div className="home-hero-frame relative w-full min-h-[600px] sm:min-h-0 sm:aspect-[16/9] sm:max-h-[88vh]">
           <img
             src={heroIndustrial}
-            alt="Site industriel avec groupes électrogènes ROTOM"
+            alt="Groupes électrogènes industriels ROTOM diesel installés à Antananarivo, Madagascar"
             width={1920}
             height={1080}
             className="home-hero-image absolute inset-0 h-full w-full object-cover object-center"
