@@ -398,4 +398,11 @@ export const fr = {
   "privacy.s7.title": "Cookies",
   "privacy.s7.body": "Notre site utilise des cookies techniques nécessaires à son bon fonctionnement, ainsi que des cookies de mesure d'audience anonymisés. Vous pouvez configurer votre navigateur pour les refuser.",
   "products.used.subtitle": "Groupe électrogène d'occasion",
+  "products.new.sr.subtitle": "Coins arrondis, avec coin anti-collision · 6 à 650 kVA · Diesel",
+  "products.new.srau.subtitle": "Coins arrondis/angle droit en option, avec coin anti-collision · 6 à 650 kVA · Diesel",
+  "products.new.sr2.subtitle": "Angle droit, sans anti-collision · 6 à 1000 kVA · Diesel",
+  "products.new.se.subtitle": "Angle droit, sans anti-collision · 6 à 1000 kVA · Diesel",
+  "products.new.sreu.subtitle": "Coins arrondis/angle droit en option, avec coin anti-collision · 6 à 650 kVA · Diesel",
+  "products.new.sc.subtitle": "Conteneurisé · ≥ 500 kVA · Diesel",
+  "products.new.oe500.subtitle": "Groupe électrogène ouvert · 500 kVA · Diesel",
 };
