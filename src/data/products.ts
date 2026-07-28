@@ -551,7 +551,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SR",
-    subtitle: "Rounded corners, With anti collision corner · 6 à 650 kVA · Diesel",
+    subtitle: "i18n:products.new.sr.subtitle",
     kva: "6 à 650 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -562,7 +562,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SRAU",
-    subtitle: "Rounded corners/Right angle optional, With anti collision corner · 6 à 650 kVA · Diesel",
+    subtitle: "i18n:products.new.srau.subtitle",
     kva: "6 à 650 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -573,7 +573,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SR2",
-    subtitle: "Right angle, Without anti collision · 6 à 1000 kVA · Diesel",
+    subtitle: "i18n:products.new.sr2.subtitle",
     kva: "6 à 1000 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -584,7 +584,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "SUR COMMANDE",
     name: "ROTOM SE",
-    subtitle: "Right angle, Without anti collision · 6 à 1000 kVA · Diesel",
+    subtitle: "i18n:products.new.se.subtitle",
     kva: "6 à 1000 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -595,7 +595,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "EN STOCK",
     name: "ROTOM SREU",
-    subtitle: "Rounded corners/Right angle optional, With anti collision corner · 6 à 650 kVA · Diesel",
+    subtitle: "i18n:products.new.sreu.subtitle",
     kva: "6 à 650 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -606,7 +606,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "SUR COMMANDE",
     name: "ROTOM SC",
-    subtitle: "Containerized · ≥ 500 kVA · Diesel",
+    subtitle: "i18n:products.new.sc.subtitle",
     kva: "≥ 500 kVA",
     year: "2024",
     fuel: "Diesel",
@@ -617,7 +617,7 @@ export const newProducts: Product[] = enrich([
   {
     stock: "SUR COMMANDE",
     name: "ROTOM OE-500",
-    subtitle: "Open-type Genset · 500 kVA · Diesel",
+    subtitle: "i18n:products.new.oe500.subtitle",
     kva: "500 kVA",
     year: "TBD",
     fuel: "Diesel",
