@@ -11,7 +11,7 @@ import { useLang } from "@/i18n/useLang";
 import Reveal from "@/components/Reveal";
 
 const GenerateursOccasion = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [powerRange, setPowerRange] = useState<[number, number]>([10, 2500]);
   const [selectedCategories, setSelectedCategories] = useState<CategoryKey[]>([]);
 
@@ -30,8 +30,12 @@ const GenerateursOccasion = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Générateurs d'occasion — ROTOM"
-        description="Groupes électrogènes d'occasion révisés et garantis ROTOM, de 10 à 2500 kVA. Disponibles en stock avec maintenance assurée."
+        title={lang === "en"
+          ? "Used industrial generators 10–2500 kVA — ROTOM Madagascar"
+          : "Groupes électrogènes d'occasion 10 à 2500 kVA — ROTOM Madagascar"}
+        description={lang === "en"
+          ? "Overhauled and warranted used diesel generators from 10 to 2500 kVA. In-stock units delivered and serviced across Madagascar by ROTOM."
+          : "Groupes électrogènes diesel d'occasion révisés et garantis, de 10 à 2500 kVA. Disponibles en stock, livrés et entretenus par ROTOM à Madagascar."}
         path="/generateurs-occasion"
       />
       <PageHero

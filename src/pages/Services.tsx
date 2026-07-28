@@ -8,7 +8,7 @@ import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 
 const Services = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   const services = [
     { icon: Search, title: t("services.s1.title"), desc: t("services.s1.desc") },
@@ -43,8 +43,12 @@ const Services = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Services — ROTOM"
-        description="Services ROTOM : maintenance, dépannage, installation et contrats de service pour groupes électrogènes industriels partout en France."
+        title={lang === "en"
+          ? "Generator services — Maintenance & repair in Madagascar — ROTOM"
+          : "Services groupes électrogènes — Maintenance & dépannage Madagascar — ROTOM"}
+        description={lang === "en"
+          ? "ROTOM services in Madagascar: installation, preventive maintenance, 24/7 repair and service contracts for industrial diesel generators."
+          : "Services ROTOM à Madagascar : installation, maintenance préventive, dépannage 24/7 et contrats de service pour groupes électrogènes industriels."}
         path="/services"
       />
       <PageHero
