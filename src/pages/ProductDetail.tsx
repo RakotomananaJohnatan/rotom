@@ -91,7 +91,7 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Image */}
           <div className="relative bg-card border-2 border-border p-2 overflow-hidden">
-            <img src={product.img} alt={product.name} className="w-full aspect-[4/3] object-cover" />
+            <img src={product.img} alt={`Groupe électrogène ${product.name} ${product.kva} kVA ${product.fuel ?? ""} — ROTOM Madagascar`} className="w-full aspect-[4/3] object-cover" />
           </div>
 
           {/* Specs + CTA */}

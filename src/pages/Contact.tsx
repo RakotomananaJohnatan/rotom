@@ -11,7 +11,7 @@ import Reveal from "@/components/Reveal";
 import { newProducts, usedProducts, findProductBySlug } from "@/data/products";
 
 const Contact = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [searchParams] = useSearchParams();
   const [form, setForm] = useState({
     name: "",
@@ -93,8 +93,12 @@ const Contact = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Contact — ROTOM"
-        description="Contactez ROTOM pour un devis sur un groupe électrogène industriel, une demande de maintenance ou une intervention urgente."
+        title={lang === "en"
+          ? "Contact ROTOM Madagascar — Generator quote & support"
+          : "Contact ROTOM Madagascar — Devis groupe électrogène & support"}
+        description={lang === "en"
+          ? "Contact ROTOM in Antananarivo for a diesel generator quote, a maintenance request or an emergency service intervention in Madagascar."
+          : "Contactez ROTOM à Antananarivo pour un devis de groupe électrogène diesel, une demande de maintenance ou une intervention d'urgence à Madagascar."}
         path="/contact"
       />
       <PageHero

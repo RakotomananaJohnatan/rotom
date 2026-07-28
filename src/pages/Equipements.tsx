@@ -10,7 +10,7 @@ import Reveal from "@/components/Reveal";
 type EquipCategory = "all" | "power" | "storage" | "acoustic" | "cabling" | "filters";
 
 const Equipements = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [activeCat, setActiveCat] = useState<EquipCategory>("all");
 
   const equipments = useMemo(
@@ -40,8 +40,12 @@ const Equipements = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Équipements — ROTOM"
-        description="Équipements pour groupes électrogènes : ATS, parafoudres, cuves carburant, capotages acoustiques, câblage et filtration."
+        title={lang === "en"
+          ? "Generator accessories & equipment — ATS, tanks, canopies — ROTOM Madagascar"
+          : "Équipements pour groupes électrogènes — ATS, cuves, capotages — ROTOM Madagascar"}
+        description={lang === "en"
+          ? "ROTOM accessories for diesel generators in Madagascar: ATS transfer switches, surge protectors, fuel tanks, acoustic canopies, cabling and filtration."
+          : "Équipements ROTOM pour groupes électrogènes à Madagascar : ATS, parafoudres, cuves carburant, capotages acoustiques, câblage et filtration."}
         path="/equipements"
       />
       <PageHero

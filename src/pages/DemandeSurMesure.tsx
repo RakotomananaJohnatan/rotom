@@ -91,7 +91,7 @@ const initial: FormState = {
 };
 
 const DemandeSurMesure = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [form, setForm] = useState<FormState>(initial);
   const [submitted, setSubmitted] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
@@ -158,8 +158,12 @@ const DemandeSurMesure = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Demande sur mesure — ROTOM"
-        description="Configurez votre groupe électrogène sur mesure : puissance, carburant, contraintes techniques. Réponse technique personnalisée ROTOM."
+        title={lang === "en"
+          ? "Custom generator request — Tailored diesel gensets — ROTOM Madagascar"
+          : "Demande sur mesure — Groupes électrogènes personnalisés — ROTOM Madagascar"}
+        description={lang === "en"
+          ? "Configure a custom diesel generator: power, fuel and technical constraints. Get a personalized ROTOM engineering answer for your project in Madagascar."
+          : "Configurez votre groupe électrogène diesel sur mesure : puissance, carburant, contraintes techniques. Réponse ROTOM personnalisée pour votre projet à Madagascar."}
         path="/demande-sur-mesure"
       />
       <PageHero
