@@ -15,6 +15,7 @@ import used60kvaAsset from "@/assets/used-60kva.jpeg.asset.json";
 import used30kvaAsset from "@/assets/used-30kva.jpeg.asset.json";
 import used20kvaAsset from "@/assets/used-20kva.jpeg.asset.json";
 import used13kvaAsset from "@/assets/used-13kva.jpg.asset.json";
+import used250kvaAsset from "@/assets/used-250kva.jpg.asset.json";
 import type { Product } from "@/components/ProductCard";
 
 export const brands = ["ROTOM"];
@@ -735,7 +736,7 @@ export const usedProducts: Product[] = enrich([
     kva: s.kva,
     year: "—",
     fuel: "Diesel",
-    img: s.kva === "60 kVA" ? used60kvaAsset.url : s.kva === "30 kVA" ? used30kvaAsset.url : s.kva === "20 kVA" ? used20kvaAsset.url : s.kva === "13 kVA" ? used13kvaAsset.url : "/placeholder.svg",
+    img: s.kva === "250 kVA" ? used250kvaAsset.url : s.kva === "60 kVA" ? used60kvaAsset.url : s.kva === "30 kVA" ? used30kvaAsset.url : s.kva === "20 kVA" ? used20kvaAsset.url : s.kva === "13 kVA" ? used13kvaAsset.url : "/placeholder.svg",
     type: (s.soundEn === "Canopy" ? "closed" : "open") as ProductType,
     specs: makeUsedSpecs({
       ratingsEn: s.ratingsEn, ratingsFr: s.ratingsFr,
