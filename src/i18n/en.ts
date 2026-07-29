@@ -15,6 +15,7 @@ export const en = {
   "nav.home": "Home",
   "nav.new": "New generators",
   "nav.used": "Used generators",
+  "nav.rental": "Rental generators",
   "nav.equip": "Related equipment",
   "nav.services": "Services",
   "nav.contact": "Contact",

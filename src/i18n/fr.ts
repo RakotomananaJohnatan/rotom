@@ -15,6 +15,7 @@ export const fr = {
   "nav.home": "Accueil",
   "nav.new": "Générateurs neufs",
   "nav.used": "Générateurs d'occasion",
+  "nav.rental": "Générateurs en location",
   "nav.equip": "Équipements associés",
   "nav.services": "Services",
   "nav.contact": "Contact",

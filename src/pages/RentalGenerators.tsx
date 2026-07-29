@@ -14,7 +14,7 @@ const KVA_OPTIONS = [
   "550 kVA", "600 kVA", "640 kVA", "650 kVA", "675 kVA", "700 kVA",
 ];
 
-const PRIME_HOURS = Array.from({ length: 15 }, (_, i) => String(i + 8)); // 8..22
+const PRIME_HOURS = Array.from({ length: 17 }, (_, i) => String(i + 8)); // 8..24
 const RENTAL_DAYS = [
   ...Array.from({ length: 81 }, (_, i) => String(i + 10)), // 10..90
 ];
