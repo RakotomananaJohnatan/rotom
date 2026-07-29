@@ -6,6 +6,7 @@
   <url><loc>https://rotom-power.com/equipements</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://rotom-power.com/services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://rotom-power.com/demande-sur-mesure</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://rotom-power.com/rental-generators</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://rotom-power.com/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://rotom-power.com/produit/rotom-sr</loc><priority>0.6</priority></url>
   <url><loc>https://rotom-power.com/produit/rotom-srau</loc><priority>0.6</priority></url>
