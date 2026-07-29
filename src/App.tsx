@@ -18,6 +18,7 @@ import ProductDetail from "./pages/ProductDetail.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
 import ConditionsGenerales from "./pages/ConditionsGenerales.tsx";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.tsx";
+import RentalGenerators from "./pages/RentalGenerators.tsx";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieBanner from "./components/CookieBanner";
 import { trackPageView } from "@/lib/analytics";
@@ -56,6 +57,7 @@ const App = () => (
               <Route path="/mentions-legales" element={<MentionsLegales />} />
               <Route path="/conditions-generales" element={<ConditionsGenerales />} />
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+              <Route path="/rental-generators" element={<RentalGenerators />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

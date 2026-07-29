@@ -29,7 +29,7 @@ const Index = () => {
   const categories = [
     { title: t("nav.new"), img: catNeufs, to: "/generateurs-neufs" },
     { title: t("nav.used"), img: catOccasion, to: "/generateurs-occasion" },
-    { title: t("home.cat.hybrid"), img: catHybrid, to: "/equipements" },
+    { title: t("home.cat.rental"), img: catHybrid, to: "/rental-generators" },
     { title: t("nav.equip"), img: catEquip, to: "/equipements" },
   ];
 
