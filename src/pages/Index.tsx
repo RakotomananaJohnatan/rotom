@@ -11,6 +11,7 @@ import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import Typewriter from "@/components/Typewriter";
+import EvChargingCarousel from "@/components/EvChargingCarousel";
 import { useReveal } from "@/hooks/useReveal";
 import { newProducts } from "@/data/products";
 import type { CategoryKey } from "@/components/CatalogFilters";
@@ -179,6 +180,10 @@ const Index = () => {
           </Reveal>
         </div>
       </section>
+
+      {/* EV Charging carousel */}
+      <EvChargingCarousel />
+
 
       {/* Main Content: Sidebar + Grid */}
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 pb-12 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
