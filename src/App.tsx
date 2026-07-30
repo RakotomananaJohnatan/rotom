@@ -19,6 +19,8 @@ import MentionsLegales from "./pages/MentionsLegales.tsx";
 import ConditionsGenerales from "./pages/ConditionsGenerales.tsx";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.tsx";
 import RentalGenerators from "./pages/RentalGenerators.tsx";
+import EvChargingStation from "./pages/EvChargingStation.tsx";
+import EvChargerDetail from "./pages/EvChargerDetail.tsx";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieBanner from "./components/CookieBanner";
 import { trackPageView } from "@/lib/analytics";
@@ -58,6 +60,8 @@ const App = () => (
               <Route path="/conditions-generales" element={<ConditionsGenerales />} />
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
               <Route path="/rental-generators" element={<RentalGenerators />} />
+              <Route path="/ev-charging-station" element={<EvChargingStation />} />
+              <Route path="/borne-recharge/:slug" element={<EvChargerDetail />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
