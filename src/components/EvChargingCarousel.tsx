@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import {
@@ -6,13 +7,59 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import Reveal from "@/components/Reveal";
 import { evChargers } from "@/data/evChargers";
 import { useLang } from "@/i18n/useLang";
 
+const AUTO_SCROLL_INTERVAL = 4000;
+const PAUSE_AFTER_INTERACTION = 5000;
+
 const EvChargingCarousel = () => {
   const { lang } = useLang();
+  const [api, setApi] = useState<CarouselApi | null>(null);
+  const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isPausedRef = useRef(false);
+
+  const stopAutoScroll = useCallback(() => {
+    if (autoScrollRef.current) {
+      clearInterval(autoScrollRef.current);
+      autoScrollRef.current = null;
+    }
+  }, []);
+
+  const startAutoScroll = useCallback(() => {
+    if (!api || isPausedRef.current) return;
+    stopAutoScroll();
+    autoScrollRef.current = setInterval(() => {
+      api.scrollNext();
+    }, AUTO_SCROLL_INTERVAL);
+  }, [api, stopAutoScroll]);
+
+  const pauseAutoScroll = useCallback(() => {
+    isPausedRef.current = true;
+    stopAutoScroll();
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+    }
+    resumeTimeoutRef.current = setTimeout(() => {
+      isPausedRef.current = false;
+      startAutoScroll();
+    }, PAUSE_AFTER_INTERACTION);
+  }, [startAutoScroll, stopAutoScroll]);
+
+  useEffect(() => {
+    if (!api) return;
+    startAutoScroll();
+    return () => {
+      stopAutoScroll();
+      if (resumeTimeoutRef.current) {
+        clearTimeout(resumeTimeoutRef.current);
+      }
+    };
+  }, [api, startAutoScroll, stopAutoScroll]);
 
   return (
     <section className="max-w-[1500px] mx-auto px-4 sm:px-6 pb-14">
@@ -30,7 +77,12 @@ const EvChargingCarousel = () => {
         </p>
       </Reveal>
 
-      <Carousel opts={{ align: "start", loop: true }} className="w-full">
+      <Carousel
+        setApi={setApi}
+        opts={{ align: "start", loop: true }}
+        className="w-full"
+        onPointerDown={pauseAutoScroll}
+      >
         <CarouselContent className="-ml-4">
           {evChargers.map((c) => (
             <CarouselItem key={c.slug} className="pl-4 sm:basis-1/2 lg:basis-1/3">
@@ -38,14 +90,14 @@ const EvChargingCarousel = () => {
                 to="/ev-charging-station"
                 className="bg-card border-2 border-border hover:border-fluo-yellow transition-colors flex flex-col h-full group"
               >
-                <div className="aspect-[4/3] bg-secondary border-b-2 border-border flex items-center justify-center overflow-hidden">
+                <div className="aspect-video bg-secondary border-b-2 border-border flex items-center justify-center overflow-hidden">
                   <img
                     src={c.img}
                     loading="lazy"
                     width={400}
-                    height={300}
+                    height={225}
                     alt={`${c.name} — ${c.power} ${c.current} — ROTOM`}
-                    className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-4 flex flex-col flex-1">
