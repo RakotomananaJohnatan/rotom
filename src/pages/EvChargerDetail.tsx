@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
@@ -171,8 +172,8 @@ const EvChargerDetail = () => {
             </thead>
             <tbody>
               {charger.sections.map((section) => (
-                <>
-                  <tr key={`s-${section.title.en}`} className="bg-primary/5">
+                <Fragment key={section.title.en}>
+                  <tr className="bg-primary/5">
                     <td
                       colSpan={cols + 1}
                       className="px-4 py-2.5 font-impact uppercase text-xs font-bold text-primary tracking-wider border-t border-b border-primary/20"
@@ -201,7 +202,7 @@ const EvChargerDetail = () => {
                       </tr>
                     );
                   })}
-                </>
+                </Fragment>
               ))}
             </tbody>
           </table>
