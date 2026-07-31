@@ -9,6 +9,7 @@ import { MapPin, Phone, Mail, MessageCircle, Clock, Send } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
 import Reveal from "@/components/Reveal";
 import { newProducts, usedProducts, findProductBySlug } from "@/data/products";
+import { evChargers, getEvCharger } from "@/data/evChargers";
 
 const Contact = () => {
   const { t, lang } = useLang();
@@ -39,6 +40,9 @@ const Contact = () => {
   const resolveLabel = (value: string): string => {
     if (!value) return "";
     if (value === "other") return t("contact.form.other");
+    if (value.startsWith("ev:")) {
+      return getEvCharger(value.slice(3))?.name || value;
+    }
     if (value.startsWith("equip:")) {
       return equipmentOptions.find((e) => e.value === value)?.label || value;
     }
@@ -49,7 +53,7 @@ const Contact = () => {
   useEffect(() => {
     const raw = searchParams.get("product") || searchParams.get("power");
     if (!raw) return;
-    if (raw === "other" || raw.startsWith("equip:") || findProductBySlug(raw)) {
+    if (raw === "other" || raw.startsWith("equip:") || (raw.startsWith("ev:") && getEvCharger(raw.slice(3))) || findProductBySlug(raw)) {
       setForm((f) => ({ ...f, power: raw }));
     }
   }, [searchParams]);
@@ -184,6 +188,11 @@ const Contact = () => {
                   <optgroup label={t("contact.form.group.equip")}>
                     {equipmentOptions.map((e) => (
                       <option key={e.value} value={e.value}>{e.label}</option>
+                    ))}
+                  </optgroup>
+                  <optgroup label={lang === "en" ? "EV Charging Stations" : "Bornes de recharge"}>
+                    {evChargers.map((c) => (
+                      <option key={c.slug} value={`ev:${c.slug}`}>{`${c.name} — ${c.power}`}</option>
                     ))}
                   </optgroup>
                   <option value="other">{t("contact.form.other")}</option>
