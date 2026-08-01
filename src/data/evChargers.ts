@@ -239,7 +239,7 @@ export const evChargers: EvCharger[] = [
     subtitle: { fr: "Chargeur DC professionnel / domestique", en: "Business/Home DC Charger" },
     power: "7 – 40 kW",
     current: "DC",
-    img: PLACEHOLDER,
+    img: scOcSeriesImg,
     description: {
       fr: "Chargeur DC polyvalent de 7 à 40 kW, adapté aussi bien aux petites entreprises qu'aux installations résidentielles haut de gamme.",
       en: "Versatile DC charger from 7 to 40 kW, suitable for small businesses as well as premium residential installations.",
