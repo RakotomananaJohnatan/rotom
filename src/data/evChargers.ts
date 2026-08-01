@@ -26,6 +26,7 @@ export interface EvCharger {
 }
 
 import acqSeriesImg from "@/assets/ev-acq-series.jpeg";
+import hcSeriesImg from "@/assets/ev-hc-series.jpeg";
 
 const PLACEHOLDER = "/placeholder.svg";
 
@@ -166,7 +167,7 @@ export const evChargers: EvCharger[] = [
     subtitle: { fr: "Station de recharge professionnelle", en: "Business Charging Station" },
     power: "60 – 240 kW",
     current: "DC",
-    img: PLACEHOLDER,
+    img: hcSeriesImg,
     description: {
       fr: "Station de recharge rapide DC haute puissance de 60 à 240 kW, conçue pour les flottes, stations-service et sites commerciaux.",
       en: "High-power DC fast charging station from 60 to 240 kW, designed for fleets, service stations and commercial sites.",
