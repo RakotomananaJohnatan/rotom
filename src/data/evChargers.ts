@@ -27,6 +27,7 @@ export interface EvCharger {
 
 import acqSeriesImg from "@/assets/ev-acq-series.jpeg";
 import hcSeriesImg from "@/assets/ev-hc-series.jpeg";
+import scOcSeriesImg from "@/assets/ev-sc-oc-series.jpeg";
 
 const PLACEHOLDER = "/placeholder.svg";
 
