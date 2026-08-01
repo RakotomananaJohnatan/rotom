@@ -25,6 +25,8 @@ export interface EvCharger {
   sections: SpecSection[];
 }
 
+import acqSeriesImg from "@/assets/ev-acq-series.jpeg";
+
 const PLACEHOLDER = "/placeholder.svg";
 
 /* ---------- shared values ---------- */
@@ -108,7 +110,7 @@ export const evChargers: EvCharger[] = [
     subtitle: { fr: "Borne de recharge AC domestique", en: "Home AC Charger" },
     power: "7 – 22 kW",
     current: "AC",
-    img: PLACEHOLDER,
+    img: acqSeriesImg,
     description: {
       fr: "Borne de recharge AC compacte pour usage domestique et résidentiel, de 7 à 22 kW, installation murale simple et pilotage intelligent.",
       en: "Compact AC charging station for home and residential use, from 7 to 22 kW, with easy wall mounting and smart control.",
