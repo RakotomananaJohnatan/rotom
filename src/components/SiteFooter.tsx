@@ -19,6 +19,7 @@ const SiteFooter = () => {
             <li><Link to="/generateurs-neufs" className="hover:text-fluo-yellow">{t("nav.new")}</Link></li>
             <li><Link to="/generateurs-occasion" className="hover:text-fluo-yellow">{t("nav.used")}</Link></li>
             <li><Link to="/rental-generators" className="hover:text-fluo-yellow">{t("nav.rental")}</Link></li>
+            <li><Link to="/ev-charging-station" className="hover:text-fluo-yellow">{t("nav.ev")}</Link></li>
             <li><Link to="/equipements" className="hover:text-fluo-yellow">{t("nav.equip")}</Link></li>
             <li><Link to="/services" className="hover:text-fluo-yellow">{t("nav.services")}</Link></li>
             <li><Link to="/contact" className="hover:text-fluo-yellow">{t("nav.contact")}</Link></li>
