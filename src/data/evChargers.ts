@@ -25,6 +25,8 @@ export interface EvCharger {
   sections: SpecSection[];
 }
 
+import acqSeriesImg from "@/assets/ev-acq-series.jpeg";
+
 const PLACEHOLDER = "/placeholder.svg";
 
 /* ---------- shared values ---------- */
