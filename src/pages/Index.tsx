@@ -181,10 +181,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* EV Charging carousel */}
-      <EvChargingCarousel />
-
-
       {/* Main Content: Sidebar + Grid */}
       <section className="max-w-[1500px] mx-auto px-4 sm:px-6 pb-12 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
         {/* Sidebar Filters */}
@@ -306,6 +302,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* EV Charging carousel */}
+      <EvChargingCarousel />
 
       {/* Stats (déplacés depuis le hero) */}
       <section className="relative bg-primary text-primary-foreground overflow-hidden">
