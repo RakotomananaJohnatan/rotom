@@ -85,11 +85,12 @@ const RentalGenerators = () => {
     data.append("Extra material details", form.extra || "—");
 
     try {
-      await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
         body: data,
       });
+      if (!res.ok) throw new Error("send failed");
       toast({
         title: t("custom.toast.title"),
         description: t("custom.toast.desc"),
