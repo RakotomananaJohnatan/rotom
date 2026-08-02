@@ -28,6 +28,7 @@ export interface EvCharger {
 import acqSeriesImg from "@/assets/ev-acq-series.jpeg";
 import hcSeriesImg from "@/assets/ev-hc-series.jpeg";
 import scOcSeriesImg from "@/assets/ev-sc-oc-series.jpeg";
+import vcSeriesImg from "@/assets/ev-vc-series.jpeg";
 
 const PLACEHOLDER = "/placeholder.svg";
 
@@ -313,7 +314,7 @@ export const evChargers: EvCharger[] = [
     subtitle: { fr: "Station de recharge professionnelle", en: "Business Charging Station" },
     power: "30 – 80 kW",
     current: "DC",
-    img: PLACEHOLDER,
+    img: vcSeriesImg,
     description: {
       fr: "Station de recharge DC de 30 à 80 kW pour parkings d'entreprise, hôtels et commerces.",
       en: "DC charging station from 30 to 80 kW for corporate car parks, hotels and retail locations.",
