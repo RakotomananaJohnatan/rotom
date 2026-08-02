@@ -87,7 +87,7 @@ const EvChargingCarousel = () => {
           {evChargers.map((c) => (
             <CarouselItem key={c.slug} className="pl-4 sm:basis-1/2 lg:basis-1/3">
               <Link
-                to="/ev-charging-station"
+                to={`/borne-recharge/${c.slug}`}
                 className="bg-card border-2 border-border hover:border-fluo-yellow transition-colors flex flex-col h-full group"
               >
                 <div className="aspect-video bg-secondary border-b-2 border-border flex items-center justify-center overflow-hidden">
