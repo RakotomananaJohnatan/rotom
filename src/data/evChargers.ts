@@ -384,7 +384,7 @@ export const evChargers: EvCharger[] = [
     subtitle: { fr: "Station de recharge professionnelle", en: "Business Charging Station" },
     power: "60 – 160 kW",
     current: "DC",
-    img: PLACEHOLDER,
+    img: vcpSeriesImg,
     description: {
       fr: "Station de recharge DC ultra-rapide de 60 à 160 kW, pensée pour les axes routiers et les flottes intensives.",
       en: "Ultra-fast DC charging station from 60 to 160 kW, built for highway corridors and intensive fleet operations.",
