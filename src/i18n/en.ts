@@ -351,7 +351,7 @@ export const en = {
   "home.stats.s1": "Units in stock",
   "home.stats.s2": "Countries served",
   "home.stats.s3": "Of experience",
-  "home.stats.s3.suffix": " yrs",
+  "home.stats.s3.suffix": " years",
   "home.stats.s4": "Technical support",
   "home.trust.1.title": "Certified company",
   "home.trust.1.desc": "ISO 9001:2015 standards\nGuaranteed quality",
