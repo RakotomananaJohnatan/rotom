@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import { useLang } from "@/i18n/useLang";
 
