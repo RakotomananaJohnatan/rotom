@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
+import { useLang } from "@/i18n/useLang";
 
 interface CounterProps {
   to: number;
@@ -10,6 +11,7 @@ interface CounterProps {
 }
 
 const Counter = ({ to, suffix = "", prefix = "", duration = 1600, className }: CounterProps) => {
+  const { lang } = useLang();
   const { ref, visible } = useReveal<HTMLSpanElement>();
   const [value, setValue] = useState(0);
   const startedRef = useRef(false);
@@ -31,7 +33,7 @@ const Counter = ({ to, suffix = "", prefix = "", duration = 1600, className }: C
 
   return (
     <span ref={ref} className={className}>
-      {prefix}{value.toLocaleString("fr-FR")}{suffix}
+      {prefix}{value.toLocaleString(lang === "en" ? "en-US" : "fr-FR")}{suffix}
     </span>
   );
 };

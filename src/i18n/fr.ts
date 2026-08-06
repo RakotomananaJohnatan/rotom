@@ -347,7 +347,7 @@ export const fr = {
   "home.stats.eyebrow": "10+ ans d'expertise · à Madagascar",
   "home.stats.title.1": "Énergie",
   "home.stats.title.2": "industrielle",
-  "home.stats.title.3": "de 10 à 2 500 kVA",
+  "home.stats.title.3": "de 10 à 2 500 kVA",
   "home.stats.s1": "Groupes en stock",
   "home.stats.s2": "Pays livrés",
   "home.stats.s3": "D'expérience",
