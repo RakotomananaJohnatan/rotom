@@ -27,7 +27,11 @@ const pages: SearchEntry[] = [
   { id: "page-equip", type: "page", titleKey: "nav.equip", to: "/equipements", keywords: ["equipement", "equipment", "accessoires", "accessories"] },
   { id: "page-services", type: "page", titleKey: "nav.services", to: "/services", keywords: ["service", "services", "maintenance", "installation"] },
   { id: "page-contact", type: "page", titleKey: "nav.contact", subtitleKey: "contact.hero.subtitle", to: "/contact", keywords: ["contact", "devis", "quote", "email", "telephone", "phone"] },
+  { id: "page-ev", type: "page", titleKey: "search.ev.title", to: "/ev-charging-station", keywords: ["borne", "recharge", "charging", "station", "ev", "vehicule electrique", "electric vehicle", "acq", "hc series", "vc series", "vcp", "sc+oc"] },
+  { id: "page-rental", type: "page", titleKey: "search.rental.title", to: "/rental-generators", keywords: ["location", "rental", "louer", "rent", "generateur en location"] },
+  { id: "page-custom", type: "page", titleKey: "search.custom.title", to: "/demande-sur-mesure", keywords: ["sur mesure", "custom", "demande specifique", "specific request", "engine brand", "alternator", "controller"] },
 ];
+
 
 const services: SearchEntry[] = [
   { id: "svc-research", type: "service", titleKey: "footer.svc.research", to: "/services", keywords: ["sourcing", "recherche", "demande"] },
@@ -35,9 +39,11 @@ const services: SearchEntry[] = [
   { id: "svc-maintenance", type: "service", titleKey: "footer.svc.maintenance", to: "/services", keywords: ["maintenance", "entretien", "preventive"] },
   { id: "svc-parts", type: "service", titleKey: "footer.svc.parts", to: "/services", keywords: ["pieces", "spare parts", "detachees"] },
   { id: "svc-financing", type: "service", titleKey: "footer.svc.financing", to: "/services", keywords: ["financement", "credit", "financing", "leasing"] },
+  { id: "svc-loadbank", type: "service", titleKey: "search.loadbank.title", to: "/services", keywords: ["load bank", "banc de charge", "test", "essai", "pleine puissance", "full power", "performance"] },
   { id: "svc-support", type: "service", title: "Support 24/7", to: "/services", keywords: ["support", "24/7", "assistance", "telemaintenance"] },
   { id: "svc-delivery", type: "service", title: "Livraison internationale / International delivery", to: "/services", keywords: ["livraison", "delivery", "international", "logistics", "douane"] },
 ];
+
 
 const equipments: SearchEntry[] = [
   { id: "eq-ats", type: "equipment", title: "Inverseurs de source (ATS)", to: "/equipements", keywords: ["ats", "inverseur", "automatic transfer switch", "commutation"] },

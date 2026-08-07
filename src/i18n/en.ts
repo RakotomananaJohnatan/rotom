@@ -22,6 +22,13 @@ export const en = {
   "nav.contact": "Contact",
   "nav.custom": "Custom request",
 
+  // Search result titles
+  "search.ev.title": "EV Charging Station",
+  "search.rental.title": "Rental Generators",
+  "search.loadbank.title": "Load bank testing",
+  "search.custom.title": "Custom Request",
+
+
   // Custom request
   "custom.hero.eyebrow": "Tailored solution",
   "custom.hero.title": "Custom request",
