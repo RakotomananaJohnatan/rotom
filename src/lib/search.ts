@@ -1,4 +1,5 @@
 import { allProducts } from "@/data/products";
+import { evChargers } from "@/data/evChargers";
 
 export type SearchResultType = "product" | "page" | "section" | "brand" | "service" | "equipment" | "contact";
 
@@ -66,6 +67,18 @@ const productEntries: SearchEntry[] = allProducts.map((p) => ({
   keywords: [p.name, p.kva, p.year, p.fuel, p.subtitle, p.condition === "new" ? "neuf new" : "occasion used", p.stock],
 }));
 
+const EV_KEYWORDS: Record<string, string[]> = {"rotom-acq-series": ["acq", "home ac charger", "borne domestique", "home charger", "ac", "7kw", "11kw", "22kw"], "rotom-hc-series": ["hc series", "business charging station", "station professionnelle", "dc", "60kw", "240kw", "ultra-fast", "ultra-rapide"], "rotom-sc-oc-series": ["sc+oc", "sc series", "oc series", "business/home dc charger", "dc", "7kw", "40kw"], "rotom-vc-series": ["vc series", "business charging station", "dc", "30kw", "80kw", "slim", "ultra-slim"], "rotom-vcp-series": ["vcp series", "business charging station", "dc", "30kw", "80kw", "slim", "ultra-slim"]};
+
+const evEntries: SearchEntry[] = evChargers.map((c) => ({
+  id: `ev-${c.slug}`,
+  type: "product",
+  title: c.name,
+  subtitle: `${c.power} · ${c.current}`,
+  to: `/borne-recharge/${c.slug}`,
+  img: c.img,
+  keywords: [c.name, c.power, c.current, c.subtitle.fr, c.subtitle.en, "borne recharge ev charging station", ...(EV_KEYWORDS[c.slug] ?? []), ...c.models],
+}));
+
 const contactInfo: SearchEntry[] = [
   { id: "ct-phone", type: "contact", title: "+261 38 11 531 04", subtitle: "Téléphone / Phone", to: "/contact", keywords: ["telephone", "phone", "+261", "appeler", "call"] },
   { id: "ct-email", type: "contact", title: "sales@rotom-power.com", subtitle: "Email", to: "/contact", keywords: ["mail", "email", "sales", "@rotom"] },
@@ -76,6 +89,7 @@ const contactInfo: SearchEntry[] = [
 export const searchIndex: SearchEntry[] = [
   ...pages,
   ...productEntries,
+  ...evEntries,
   ...brandEntries,
   ...services,
   ...equipments,
