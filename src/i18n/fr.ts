@@ -22,6 +22,13 @@ export const fr = {
   "nav.contact": "Contact",
   "nav.custom": "Demande sur mesure",
 
+  // Search result titles
+  "search.ev.title": "Bornes de recharge",
+  "search.rental.title": "Générateurs en location",
+  "search.loadbank.title": "Bancs de charge / Tests en charge",
+  "search.custom.title": "Demande sur mesure",
+
+
   // Custom request
   "custom.hero.eyebrow": "Solution personnalisée",
   "custom.hero.title": "Demande sur mesure",
