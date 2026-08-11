@@ -5,7 +5,7 @@ import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import ContactCtaBanner from "@/components/ContactCtaBanner";
 import { toast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, MessageCircle, Clock, Send } from "lucide-react";
+import { MapPin, Mail, Clock, Send } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
 import Reveal from "@/components/Reveal";
 import { newProducts, usedProducts, findProductBySlug } from "@/data/products";
@@ -115,11 +115,9 @@ const Contact = () => {
 
       {/* Quick contact bar */}
       <section className="bg-secondary border-b border-border">
-        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
-            { icon: Phone, label: t("contact.quick.phone"), value: "+261 38 11 531 04", href: "tel:+261381153104", color: "text-accent" },
             { icon: Mail, label: t("contact.quick.email"), value: "sales@rotom-power.com", href: "mailto:sales@rotom-power.com", color: "text-brand-cyan" },
-            { icon: MessageCircle, label: t("contact.quick.whatsapp"), value: t("contact.quick.whatsappValue"), href: "https://wa.me/261381153104", color: "text-accent" },
             { icon: Clock, label: t("contact.quick.hours"), value: t("contact.quick.hoursValue"), href: undefined, color: "text-brand-cyan" },
           ].map((item, i) => {
             const Inner = (
@@ -239,10 +237,6 @@ const Contact = () => {
                     Alarobia, Rue Tsarasaotra<br />Antananarivo 101<br />Madagascar
                   </a>
                 </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="size-4 text-accent flex-shrink-0" />
-                <a href="tel:+261381153104" className="text-accent font-bold hover:underline">+261 38 11 531 04</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="size-4 text-brand-cyan flex-shrink-0" />

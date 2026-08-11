@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, MessageCircle, Linkedin, Facebook } from "lucide-react";
+import { MapPin, Mail, Linkedin, Facebook } from "lucide-react";
 import { useLang } from "@/i18n/useLang";
 
 const SiteFooter = () => {
@@ -49,16 +49,8 @@ const SiteFooter = () => {
               </span>
             </li>
             <li className="flex items-center gap-2">
-              <Phone className="size-3.5 text-accent flex-shrink-0" />
-              <a href="tel:+261381153104" className="text-accent hover:underline font-bold">+261 38 11 531 04</a>
-            </li>
-            <li className="flex items-center gap-2">
               <Mail className="size-3.5 text-brand-cyan flex-shrink-0" />
               <a href="mailto:sales@rotom-power.com" className="text-brand-cyan hover:underline">sales@rotom-power.com</a>
-            </li>
-            <li className="flex items-center gap-2">
-              <MessageCircle className="size-3.5 text-accent flex-shrink-0" />
-              <a href="https://wa.me/261381153104" target="_blank" rel="noopener noreferrer" className="hover:text-fluo-yellow">{t("footer.whatsapp")}</a>
             </li>
           </ul>
         </div>
