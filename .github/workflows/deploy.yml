@@ -52,4 +52,4 @@ jobs:
           username: ${{ secrets.O2SWITCH_FTP_USER }}
           password: ${{ secrets.O2SWITCH_FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./public_html/ # adapte si tu déploies dans un sous-dossier de public_html
+          server-dir: ./rotom-power/ # adapte si tu déploies dans un sous-dossier de public_html
