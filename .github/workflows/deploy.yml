@@ -18,7 +18,7 @@ jobs:
           node-version: 20
 
       - name: Installer les dépendances
-        run: npm ci
+        run: npm install
 
       - name: Build du site
         run: npm run build
