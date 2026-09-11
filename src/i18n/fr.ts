@@ -293,7 +293,7 @@ export const fr = {
   "services.s5.desc": "Assistance téléphonique et télémaintenance pour diagnostic à distance et résolution rapide d'incidents.",
   "services.s6.title": "Solutions de financement",
   "services.s6.desc": "Crédit-bail, location longue durée, financement projet : nous adaptons la solution à votre budget.",
-  "services.process.eyebrow": "Méthodologie",
+  "services.process.eyebrow": "Méthodologies",
   "services.process.title": "Notre processus en 5 étapes",
   "services.p1.title": "Étude du besoin",
   "services.p1.desc": "Analyse de votre site, calcul de puissance, contraintes environnementales.",
