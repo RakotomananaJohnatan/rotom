@@ -293,7 +293,7 @@ export const en = {
   "services.s5.desc": "Phone support and remote maintenance for fast diagnostics and incident resolution.",
   "services.s6.title": "Financing solutions",
   "services.s6.desc": "Leasing, long-term rental, project financing: we tailor the solution to your budget.",
-  "services.process.eyebrow": "Methodology",
+  "services.process.eyebrow": "Methodologies",
   "services.process.title": "Our 5-step process",
   "services.p1.title": "Needs assessment",
   "services.p1.desc": "Site analysis, power calculation, environmental constraints.",
