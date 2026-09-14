@@ -61,28 +61,87 @@ const RentalGenerators = () => {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const emailLabels = lang === "fr"
+      ? {
+          subject: "Demande de location — ROTOM",
+          fromName: "Demande de location ROTOM",
+          customerSection: "INFORMATIONS CLIENT",
+          rentalSection: "DÉTAILS DE LA LOCATION",
+          fullName: "Nom complet",
+          company: "Société",
+          email: "Email",
+          phone: "Téléphone",
+          genset: "Groupe électrogène",
+          category: "Catégorie",
+          hours: "Heures",
+          rentalDays: "Jours de location",
+          rentalLocation: "Lieu de location",
+          city: "Ville",
+          atsAvailability: "Disponibilité d'un ATS existant",
+          extraDetails: "Détails du matériel supplémentaire",
+          standbyHours: "4 heures",
+          daysAndAbove: "90 jours et plus",
+          prime: "Prime",
+          standby: "Secours",
+          local: "Local",
+          remote: "Éloigné",
+          yes: "Oui",
+          no: "Non",
+        }
+      : {
+          subject: "Rental Request — ROTOM",
+          fromName: "ROTOM Rental Request",
+          customerSection: "CUSTOMER INFORMATION",
+          rentalSection: "RENTAL DETAILS",
+          fullName: "Full name",
+          company: "Company",
+          email: "Email",
+          phone: "Phone",
+          genset: "Genset",
+          category: "Category",
+          hours: "Hours",
+          rentalDays: "Rental days",
+          rentalLocation: "Location for rental",
+          city: "City",
+          atsAvailability: "Existing ATS availability",
+          extraDetails: "Extra material details",
+          standbyHours: "4 hours",
+          daysAndAbove: "90 days and above",
+          prime: "Prime",
+          standby: "Standby",
+          local: "Local",
+          remote: "Remote",
+          yes: "Yes",
+          no: "No",
+        };
+    const category = form.category === "Standby" ? emailLabels.standby : emailLabels.prime;
+    const rentalLocation = form.locationType === "Remote" ? emailLabels.remote : emailLabels.local;
+    const atsAvailability = form.ats === "Yes" ? emailLabels.yes : emailLabels.no;
     const data = new URLSearchParams();
     data.append("access_key", "5bcbb7a9-17d8-4271-ba1a-c5f93fdfb8d7");
-    data.append("subject", "Rental request — ROTOM");
-    data.append("from_name", form.name || "Rental request ROTOM");
+    data.append("subject", emailLabels.subject);
+    data.append("from_name", form.name || emailLabels.fromName);
     data.append("replyto", form.email);
 
-    data.append("Full name", form.name);
-    data.append("Company", form.company);
-    data.append("Email", form.email);
-    data.append("Phone", form.phone);
-    data.append("Genset", form.genset);
-    data.append("Category", form.category);
-    if (form.category === "Prime") data.append("Hours", form.hours);
-    if (form.category === "Standby") data.append("Hours", "4 hours");
+    data.append(emailLabels.customerSection, "");
+    data.append(emailLabels.fullName, form.name);
+    data.append(emailLabels.company, form.company);
+    data.append(emailLabels.email, form.email);
+    data.append(emailLabels.phone, form.phone);
+
+    data.append(emailLabels.rentalSection, "");
+    data.append(emailLabels.genset, form.genset);
+    data.append(emailLabels.category, category);
+    if (form.category === "Prime") data.append(emailLabels.hours, form.hours);
+    if (form.category === "Standby") data.append(emailLabels.hours, emailLabels.standbyHours);
     data.append(
-      "Rental days",
-      form.rentalDaysPlus ? "90 days and above" : form.rentalDays,
+      emailLabels.rentalDays,
+      form.rentalDaysPlus ? emailLabels.daysAndAbove : form.rentalDays,
     );
-    data.append("Location for rental", form.locationType);
-    data.append("City", form.city);
-    data.append("Existing ATS availability", form.ats);
-    data.append("Extra material details", form.extra || "—");
+    data.append(emailLabels.rentalLocation, rentalLocation);
+    data.append(emailLabels.city, form.city);
+    data.append(emailLabels.atsAvailability, atsAvailability);
+    data.append(emailLabels.extraDetails, form.extra || "—");
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
