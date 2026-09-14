@@ -65,6 +65,8 @@ const RentalGenerators = () => {
       ? {
           subject: "Demande de location — ROTOM",
           fromName: "Demande de location ROTOM",
+          customerSection: "INFORMATIONS CLIENT",
+          rentalSection: "DÉTAILS DE LA LOCATION",
           fullName: "Nom complet",
           company: "Société",
           email: "Email",
@@ -89,6 +91,8 @@ const RentalGenerators = () => {
       : {
           subject: "Rental Request — ROTOM",
           fromName: "ROTOM Rental Request",
+          customerSection: "CUSTOMER INFORMATION",
+          rentalSection: "RENTAL DETAILS",
           fullName: "Full name",
           company: "Company",
           email: "Email",
@@ -119,10 +123,13 @@ const RentalGenerators = () => {
     data.append("from_name", form.name || emailLabels.fromName);
     data.append("replyto", form.email);
 
+    data.append(emailLabels.customerSection, "");
     data.append(emailLabels.fullName, form.name);
     data.append(emailLabels.company, form.company);
     data.append(emailLabels.email, form.email);
     data.append(emailLabels.phone, form.phone);
+
+    data.append(emailLabels.rentalSection, "");
     data.append(emailLabels.genset, form.genset);
     data.append(emailLabels.category, category);
     if (form.category === "Prime") data.append(emailLabels.hours, form.hours);
