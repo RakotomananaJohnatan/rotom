@@ -58,7 +58,7 @@ const SiteFooter = () => {
         <div>
           <h4 className="font-impact text-xs uppercase tracking-widest text-accent mb-4">{t("footer.follow")}</h4>
           <div className="flex gap-3">
-            <a href="https://www.linkedin.com/company/135208037/admin/edit/?editPageActiveTab=info" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="size-10 rounded-full bg-white/10 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground flex items-center justify-center transition-colors">
+            <a href="https://www.linkedin.com/company/rotom-power-generation/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="size-10 rounded-full bg-white/10 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground flex items-center justify-center transition-colors">
               <Linkedin className="size-4" />
             </a>
             <a href="https://www.facebook.com/profile.php?id=61591849032919" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="size-10 rounded-full bg-white/10 hover:bg-fluo-yellow hover:text-fluo-yellow-foreground flex items-center justify-center transition-colors">
