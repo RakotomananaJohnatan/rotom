@@ -106,37 +106,94 @@ const DemandeSurMesure = () => {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const emailLabels = lang === "fr"
+      ? {
+          subject: "Demande sur mesure — ROTOM",
+          fromName: "Demande sur mesure ROTOM",
+          clientSection: "INFORMATIONS CLIENT",
+          fullName: "Nom complet",
+          company: "Société",
+          email: "Email",
+          phone: "Téléphone",
+          countryCity: "Pays/Ville",
+          technicalSection: "BESOIN TECHNIQUE",
+          generatorType: "Type de groupe électrogène",
+          desiredPower: "Puissance souhaitée (kVA)",
+          fuelType: "Type de carburant",
+          intendedUse: "Usage prévu",
+          desiredAutonomy: "Autonomie souhaitée",
+          desiredInstallation: "Installation souhaitée",
+          location: "Localisation",
+          engineBrand: "Marque du moteur",
+          alternatorBrand: "Marque de l'alternateur",
+          controller: "Module de contrôle",
+          desiredObjective: "Objectif souhaité",
+          constraintsSection: "CONTRAINTES & BESOINS SPÉCIFIQUES",
+          estimatedBudget: "Budget estimatif",
+          desiredDeadline: "Délai souhaité",
+          installationConditions: "Conditions d'installation",
+          specialRequirements: "Exigences particulières",
+          notProvided: "Non renseigné",
+        }
+      : {
+          subject: "Custom Request — ROTOM",
+          fromName: "ROTOM Custom Request",
+          clientSection: "CUSTOMER INFORMATION",
+          fullName: "Full name",
+          company: "Company",
+          email: "Email",
+          phone: "Phone",
+          countryCity: "Country/City",
+          technicalSection: "TECHNICAL REQUIREMENTS",
+          generatorType: "Generator type",
+          desiredPower: "Required power (kVA)",
+          fuelType: "Fuel type",
+          intendedUse: "Intended use",
+          desiredAutonomy: "Required autonomy",
+          desiredInstallation: "Required installation",
+          location: "Location",
+          engineBrand: "Engine Brand",
+          alternatorBrand: "Alternator Brand",
+          controller: "Controller/Operating Module",
+          desiredObjective: "Desired objective",
+          constraintsSection: "CONSTRAINTS & SPECIFIC REQUIREMENTS",
+          estimatedBudget: "Estimated budget",
+          desiredDeadline: "Required deadline",
+          installationConditions: "Installation conditions",
+          specialRequirements: "Special requirements",
+          notProvided: "Not provided",
+        };
     const data = new URLSearchParams();
     data.append("access_key", "5bcbb7a9-17d8-4271-ba1a-c5f93fdfb8d7");
-    data.append("subject", "Demande sur mesure — ROTOM");
-    data.append("from_name", form.name || "Demande sur mesure ROTOM");
+    data.append("subject", emailLabels.subject);
+    data.append("from_name", form.name || emailLabels.fromName);
     data.append("replyto", form.email);
 
-    data.append("INFORMATIONS CLIENT", "");
-    data.append("Nom complet", form.name);
-    data.append("Société", form.company);
-    data.append("Email", form.email);
-    data.append("Téléphone", form.phone);
-    data.append("Pays/Ville", form.location);
+    data.append(emailLabels.clientSection, "");
+    data.append(emailLabels.fullName, form.name);
+    data.append(emailLabels.company, form.company);
+    data.append(emailLabels.email, form.email);
+    data.append(emailLabels.phone, form.phone);
+    data.append(emailLabels.countryCity, form.location);
 
-    data.append("BESOIN TECHNIQUE", "");
-    data.append("Type de groupe électrogène", form.genType);
-    data.append("Puissance souhaitée (kVA)", form.power);
-    data.append("Type de carburant", form.fuel);
-    data.append("Usage prévu", form.usage);
-    data.append("Autonomie souhaitée", form.autonomy);
-    data.append("Installation souhaitée", form.installation);
-    data.append("Localisation", form.location);
-    data.append("Engine Brand", form.engineBrand || "Non renseigné");
-    data.append("Alternator Brand", form.alternatorBrand || "Non renseigné");
-    data.append("Controller/Operating Module", form.controller || "Non renseigné");
-    data.append("Objectif souhaité", form.description);
+    data.append(emailLabels.technicalSection, "");
+    data.append(emailLabels.generatorType, form.genType);
+    data.append(emailLabels.desiredPower, form.power);
+    data.append(emailLabels.fuelType, form.fuel);
+    data.append(emailLabels.intendedUse, form.usage);
+    data.append(emailLabels.desiredAutonomy, form.autonomy);
+    data.append(emailLabels.desiredInstallation, form.installation);
+    data.append(emailLabels.location, form.location);
+    data.append(emailLabels.engineBrand, form.engineBrand || emailLabels.notProvided);
+    data.append(emailLabels.alternatorBrand, form.alternatorBrand || emailLabels.notProvided);
+    data.append(emailLabels.controller, form.controller || emailLabels.notProvided);
+    data.append(emailLabels.desiredObjective, form.description);
 
-    data.append("CONTRAINTES & BESOINS SPÉCIFIQUES", "");
-    data.append("Budget estimatif", form.budget);
-    data.append("Délai souhaité", form.deadline);
-    data.append("Conditions d'installation", form.conditions);
-    data.append("Exigences particulières", form.description);
+    data.append(emailLabels.constraintsSection, "");
+    data.append(emailLabels.estimatedBudget, form.budget);
+    data.append(emailLabels.desiredDeadline, form.deadline);
+    data.append(emailLabels.installationConditions, form.conditions);
+    data.append(emailLabels.specialRequirements, form.description);
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {

@@ -64,19 +64,44 @@ const Contact = () => {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const productLabel = resolveLabel(form.power);
+    const emailLabels = lang === "fr"
+      ? {
+          subject: "Contact ROTOM",
+          fromName: "Contact ROTOM",
+          section: "CONTACT",
+          fullName: "Nom complet",
+          company: "Société",
+          email: "Email",
+          phone: "Téléphone",
+          product: "Produit recherché",
+          requestSubject: "Sujet",
+          message: "Message",
+        }
+      : {
+          subject: "ROTOM Contact",
+          fromName: "ROTOM Contact",
+          section: "CONTACT",
+          fullName: "Full name",
+          company: "Company",
+          email: "Email",
+          phone: "Phone",
+          product: "Product requested",
+          requestSubject: "Subject",
+          message: "Message",
+        };
     const data = new URLSearchParams();
     data.append("access_key", "5bcbb7a9-17d8-4271-ba1a-c5f93fdfb8d7");
-    data.append("subject", `Contact ROTOM — ${form.subject}`);
-    data.append("from_name", form.name || "Contact ROTOM");
+    data.append("subject", `${emailLabels.subject} — ${form.subject}`);
+    data.append("from_name", form.name || emailLabels.fromName);
     data.append("replyto", form.email);
-    data.append("CONTACT", "");
-    data.append("Nom complet", form.name);
-    data.append("Société", form.company);
-    data.append("Email", form.email);
-    data.append("Téléphone", form.phone);
-    data.append("Produit recherché", productLabel);
-    data.append("Sujet", form.subject);
-    data.append("Message", form.message);
+    data.append(emailLabels.section, "");
+    data.append(emailLabels.fullName, form.name);
+    data.append(emailLabels.company, form.company);
+    data.append(emailLabels.email, form.email);
+    data.append(emailLabels.phone, form.phone);
+    data.append(emailLabels.product, productLabel);
+    data.append(emailLabels.requestSubject, form.subject);
+    data.append(emailLabels.message, form.message);
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
