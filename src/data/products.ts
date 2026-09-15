@@ -8,7 +8,7 @@ import genSRAsset from "@/assets/rotom-sr.jpg";
 import genSRAUAsset from "@/assets/rotom-srau.png";
 import genSR2Asset from "@/assets/rotom-sr2.png";
 import genSEAsset from "@/assets/rotom-se.png";
-import genSREUAsset from "@/assets/rotom-sreu.jpg";
+import genSREUAsset from "@/assets/rotom-sreu.png";
 import genSCAsset from "@/assets/rotom-sc.jpg";
 import genOE500Asset from "@/assets/rotom-oe-500.jpg";
 import used60kvaAsset from "@/assets/used-60kva.jpeg";
