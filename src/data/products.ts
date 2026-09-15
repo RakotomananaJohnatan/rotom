@@ -9,7 +9,7 @@ import genSRAUAsset from "@/assets/rotom-srau.png";
 import genSR2Asset from "@/assets/rotom-sr2.png";
 import genSEAsset from "@/assets/rotom-se.png";
 import genSREUAsset from "@/assets/rotom-sreu.png";
-import genSCAsset from "@/assets/rotom-sc.jpg";
+import genSCAsset from "@/assets/rotom-sc.png";
 import genOE500Asset from "@/assets/rotom-oe-500.jpg";
 import used60kvaAsset from "@/assets/used-60kva.jpeg";
 import used30kvaAsset from "@/assets/used-30kva.jpeg";
