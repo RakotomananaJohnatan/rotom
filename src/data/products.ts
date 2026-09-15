@@ -6,7 +6,7 @@ import genVolvo from "@/assets/gen-volvo.jpg";
 import genDoosan from "@/assets/gen-doosan.jpg";
 import genSRAsset from "@/assets/rotom-sr.jpg";
 import genSRAUAsset from "@/assets/rotom-srau.png";
-import genSR2Asset from "@/assets/rotom-sr2.jpg";
+import genSR2Asset from "@/assets/rotom-sr2.png";
 import genSEAsset from "@/assets/rotom-se.jpg";
 import genSREUAsset from "@/assets/rotom-sreu.jpg";
 import genSCAsset from "@/assets/rotom-sc.jpg";
