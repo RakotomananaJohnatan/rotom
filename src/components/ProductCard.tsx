@@ -27,6 +27,7 @@ const ProductCard = ({ p }: { p: Product }) => {
         <img
           src={p.img}
           loading="lazy"
+          decoding="async"
           width={400}
           height={300}
           alt={`Groupe électrogène ${p.name} ${p.kva} kVA ${p.fuel ?? ""} — ROTOM Madagascar`}
